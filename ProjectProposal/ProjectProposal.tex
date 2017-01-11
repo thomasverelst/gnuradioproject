@@ -1,0 +1,165 @@
+\documentclass[12pt,english]{TCLsem}
+
+\usepackage{textcomp}
+\usepackage{cite}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\usepackage{glossaries}
+\makeglossaries
+
+\usepackage{color}
+\newcommand{\fixme}[2]{\ifx&#2&{\color{red}#1}\else{\color{red}FIXME\{}#1{\color{red}\}}\footnote{{\color{red}#2}}\PackageWarning{Fixme}{#1: #2}\fi}
+\usepackage{changes}
+% Replace the above with the following to remove the markings
+%\usepackage[final]{changes}
+\setdeletedmarkup{{\color{orange}\sout{#1}}}
+
+\begin{document}
+\newacronym{bpsk}{BPSK}{binary phase-shift keying}
+\newacronym[plural=USRPs,firstplural=Universal Software Radio Peripherals (USRPs)]{usrp}{USRP}{Universal Software Radio Peripheral}
+
+\semester{Spring 2017}
+
+
+\title{Implemention of a packet encoder/decoder pair for the GNU Radio framework }
+
+\students{Thomas Verelst}
+
+\assistant{Dr Pascal Giard,  EPFL-STI-IEL-TCL} 
+\vice{Orion Afisiadis, EPFL-STI-IEL-TCL}
+
+\handout{16.12.2016}
+\handin{20.02.2017}
+
+\maketitle
+
+
+\section{Introduction}
+In this student project, a wireless communication system will be implemented in the GNU Radio framework. The GNU Radio framework is the most popular open-source toolkit that provides signal processing blocks to implement software-defined radios. An example of a wireless communication chain is given in Figure \ref{fcommchain}.
+
+\begin{figure}[H]
+\hspace*{-1cm}
+\begin{center}
+\includegraphics[width=1\textwidth]{fig/commchain.png}
+\end{center} 
+\caption{Communication chain}
+\label{fcommchain}
+\end{figure}
+
+The current packet encoder/decoder implementations will be made more flexible. Specifically, the new packet encoder/decoder should make it possible to use soft-decision error correction and \gls{bpsk} modulation for the preamble, while using higher-order modulations for the payload data.
+
+\section{Task Description} 
+\subsection{Objectives}
+The main objective of this project is to familiarize with the GNU Radio framework, mostly written in Python and C++. \\ 
+
+A more flexible packet encoder and decoder block will be implemented. A packet encoder encapsulates the incoming stream into packets, consisting of a preamble, header (containing packet length), payload and checksum. In particular, support for soft channel outputs should be added to enable soft-input error-correction, leading to more reliable wireless communications. \\
+
+Also, better support for modulating the preamble with \gls{bpsk} will be added, since this is difficult with the current available blocks in the GNU Radio framework. The synchronization will be modulated with \gls{bpsk}, while a higher-order modulation is used for other packet data to improve data throughput in good channel conditions. \\
+
+The blocks should be documented and of sufficient quality to be contributed back into the free software framework. Ideally, the core of the blocks should be sufficiently decoupled from GNU Radio so that they could easily be integrated into another framework (e.g. NI Labview) at the cost of writing another wrapper.
+
+\subsection{Specific Tasks}
+\begin{enumerate}
+\item Review the existing packet encoder/decoder blocks.
+
+\item Adapt the existing blocks or write new ones to support soft-input error correction.
+
+\item Add support for distinct modulations for the preamble and payload e.g. \gls{bpsk} for the preamble and some higher-order modulation for the rest of the packet.
+
+\item
+If time permits, the current GNU Radio blocks can be optimized or extra functionality can be implemented. This can consist of:
+
+\begin{itemize}
+\item Improve the performance of the packet encoder/decoder (or another processing block that might be a bottleneck) by using advanced C++ techniques, such as using SIMD instructions, assembly code or multithreaded processing. The optimization should be benchmarked to quantify the improvement.
+
+\item Implement new blocks, e.g. blocks for live video transmission.
+\end{itemize}
+
+\item Iteratively setup a system to demonstrate the implemented blocks.  In the first iteration, the transmitter/receiver is simulated. In the second iteration, two \glspl{usrp} are used but transmission is done over a wire with an attenuator. In the third and final iteration, transmission is done over the air.
+
+\item
+Give a 20 minutes presentation in front of an audience, covering the project results and demonstrating the implemented project.
+
+\item Write a report describing the results of the project.
+
+\item Contribute the implemented blocks back into the free software framework.
+
+\item 
+In case the project is of high quality, summarize the key results in a 4 to 6 pages article to be submitted at a scientific conference.
+
+\end{enumerate}
+
+
+\subsection{Expected Results}
+Significantly better GNU Radio packet encoder/decoder blocks allowing the use of soft-input error-correction, and that supports the use of one modulation for synchronization (preamble) along with a different one for the remainder of the packet. For the same operating conditions, the former reduces the error rate while the latter improves synchronization stability at greater throughput.
+
+\section{Administrative Considerations and\\ Recommendations}
+
+\subsection{Administrative Considerations}
+
+\begin{itemize}
+
+\item Regular meetings with your advisors to evaluate the status of work and to plan the next steps are a necessary precondition for successful completion of your student project.
+\item You will be assigned a desk and a workstation for carrying out the work.
+
+\item About the report:
+  \begin{itemize}
+  \item The report comprises a detailed description of the architecture of your final design and of the tradeoffs you encountered during your work.
+  \item Include block diagrams and flow-charts whenever they help to clarify your architecture or the design flow. 
+  \item Write about decisions you had to make and the corresponding reasoning. Evaluate what others have done and justify your architecture(s) and implementation(s). 
+  \item Include a short data-sheet for your RTL implementation(s). This datasheet should briefly summarize the functionality and should provide all the necessary information to use your RTL code as a building block for a larger design (e.g., clearly describe interfaces and configuration information).
+  \item Emphasize the achievements of your work.
+  \item Pay attention to the structure of your report.
+  \item One of the bonus goals of the project is to publish your work to a conference, thus be careful and detailed while writing your report. 
+  \end{itemize}
+
+\item Prepare a compressed archive that contains all relevant files and data used and generated during the project.
+
+\item Your student project has to be presented in front of the laboratory members once you have finished your work.
+
+\end{itemize}
+
+
+\subsection{General Recommendations}
+
+\begin{itemize}
+
+\item Keep it simple. If any portion of your code or your architecture looks complicated, have another look.  
+
+\item Plan enough time for verification and, when applicable, testing.
+
+\item Plan enough time for documentation.
+
+\item The tools (MATLAB, Synopsys Design Compiler, Cadence Encounter, ...) that you are going to use are extensively used in both academia and industry. Thus, several tutorials are available on the web. The knowledge that you will aqcuire will certainly be useful in the near future.
+  \begin{itemize}
+    \item VLSI-related tutorials can be found at:\\ \url{http://www.vtvt.ece.vt.edu/vlsidesign/index.php}.
+    \item Tutorials on ASIC design software as well as on the design environment at EPFL are available at:\\ \url{http://edadk.epfl.ch}.
+  \end{itemize}
+
+\item Try to get used to compilation scripts (and using command line options for the tools). 
+  They may be a little more time consuming the first time around, but they will make life easier during the 
+  numerous iterations needed to reach the final design.
+  
+\item If you are looking for references, like conference or journal 
+  paper, use...
+  \begin{itemize}
+  \item IEEEXplore:\\\url{http://ieeexplore.ieee.org/search/advsearch.jsp} 
+  \item Google Scholar:\\ \url{http://scholar.google.com}
+  \end{itemize}
+
+\end{itemize}
+
+%\bibliographystyle{IEEEtran} 
+% The following assumes that you'll put your references in BibTeX format in a file named ProjectProposal.bib
+%\bibliography{ProjectProposal}
+
+\end{document}

@@ -1,0 +1,92 @@
+%% 
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{a4tcl}[1996/10/25 v1.0 A4 page layout TCL style]
+\newif\if@binding \@bindingfalse
+\DeclareOption{binding}{\@bindingtrue}
+\ProcessOptions
+\setlength\paperheight {297mm}
+\setlength\paperwidth  {210mm}
+\setlength\headsep   {20\p@}
+\setlength\@tempdima{\paperwidth}
+\addtolength\@tempdima{-2in}
+\ifcase\@ptsize\setlength\@tempdimb{430\p@}%
+  \or\setlength\@tempdimb{\@tempdima}%
+  \or\setlength\@tempdimb{\@tempdima}%
+\fi
+\if@twocolumn
+  \setlength\textwidth{\@tempdima}
+\else
+  \setlength\textwidth{\@tempdimb}
+\fi
+\@settopoint\textwidth
+\setlength\@tempdima{\paperheight}
+\addtolength\@tempdima{-2in}
+\addtolength\@tempdima{-1.2in}
+\divide\@tempdima\baselineskip
+\@tempcnta=\@tempdima
+\setlength\textheight{\@tempcnta\baselineskip}
+\addtolength\textheight{\topskip}
+\if@twoside
+  \setlength\@tempdima        {\paperwidth}
+  \addtolength\@tempdima      {-\textwidth}
+  \addtolength\@tempdima      {-8mm}
+  \setlength\oddsidemargin    {.4\@tempdima}
+  \addtolength\oddsidemargin  {-1in}
+  \addtolength\oddsidemargin  {8mm}
+  \setlength\marginparwidth   {.6\@tempdima}
+  \addtolength\marginparwidth {-\marginparsep}
+  \addtolength\marginparwidth {-7mm}
+\else
+  \if@binding
+    \setlength\@tempdima        {\paperwidth}
+    \addtolength\@tempdima      {-\textwidth}
+    \addtolength\@tempdima      {-8mm}
+    \setlength\oddsidemargin    {.5\@tempdima}
+    \addtolength\oddsidemargin  {-1in}
+    \addtolength\oddsidemargin  {8mm}
+    \setlength\marginparwidth   {.5\@tempdima}
+    \addtolength\marginparwidth {-\marginparsep}
+    \addtolength\marginparwidth {-7mm}
+  \else
+    \setlength\@tempdima        {\paperwidth}
+    \addtolength\@tempdima      {-\textwidth}
+    \setlength\oddsidemargin    {.5\@tempdima}
+    \addtolength\oddsidemargin  {-1in}
+    \setlength\marginparwidth   {.5\@tempdima}
+    \addtolength\marginparwidth {-\marginparsep}
+    \addtolength\marginparwidth {-7mm}
+  \fi
+\fi
+\@settopoint\oddsidemargin
+\@settopoint\marginparwidth
+\setlength\evensidemargin  {\paperwidth}
+\addtolength\evensidemargin{-2in}
+\addtolength\evensidemargin{-\textwidth}
+\addtolength\evensidemargin{-\oddsidemargin}
+\@settopoint\evensidemargin
+\setlength\topmargin{\paperheight}
+\addtolength\topmargin{-2in}
+\addtolength\topmargin{-\headheight}
+\addtolength\topmargin{-\headsep}
+\addtolength\topmargin{-\textheight}
+\addtolength\topmargin{-\footskip}
+\@settopoint\topmargin
+
+\endinput
+%%
+

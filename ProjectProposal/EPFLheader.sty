@@ -1,0 +1,158 @@
+%% 
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+\NeedsTeXFormat{LaTeX2e}[1996/12/01]
+\ProvidesPackage{EPFLheader} [2008/05/29 v1.4 EPFL header macros]
+\newif\iftcl  \tclfalse
+
+
+\DeclareOption{binding}{\PassOptionsToPackage{binding}{a4tcl}}
+\DeclareOption{tcl}{%
+  \tcltrue}
+
+\ExecuteOptions{tcl}
+\ProcessOptions\relax
+\newcommand*{\unitnameone}[1]{\def\@unitnameone{#1}}
+\newcommand*{\unitnametwo}[1]{\def\@unitnametwo{#1}}
+\unitnameone{}
+\unitnametwo{}
+\iftcl
+  \input{tcl.clo}
+\fi
+
+\RequirePackage{a4tcl}
+\RequirePackage{graphicx}
+\newcommand\makeheader{%
+  \thispagestyle{firstpage}}
+\renewenvironment{titlepage}{%
+  \if@twocolumn
+    \@restonecoltrue\onecolumn
+  \else
+    \@restonecolfalse\newpage
+  \fi
+  \thispagestyle{firstpage}%
+  \setcounter{page}\@ne%
+}%
+{\if@restonecol\twocolumn \else \newpage \fi
+  \if@twoside\else
+    \setcounter{page}\@ne
+  \fi
+}
+\if@titlepage
+\else
+  \renewcommand\maketitle{\par
+    \begingroup
+      \renewcommand\thefootnote{\@fnsymbol\c@footnote}%
+      \def\@makefnmark{\rlap{\@textsuperscript{\normalfont\@thefnmark}}}%
+      \long\def\@makefntext##1{\parindent 1em\noindent
+          \hb@xt@1.8em{%
+              \hss\@textsuperscript{\normalfont\@thefnmark}}##1}%
+      \if@twocolumn
+        \ifnum \col@number=\@ne
+          \@maketitle
+        \else
+          \twocolumn[\@maketitle]%
+        \fi
+      \else
+        \newpage
+        \global\@topnum\z@
+        \@maketitle
+      \fi
+      \thispagestyle{firstpage}\@thanks
+    \endgroup
+    \setcounter{footnote}{0}%
+    \global\let\thanks\relax
+    \global\let\maketitle\relax
+    \global\let\@maketitle\relax
+    \global\let\@thanks\@empty
+    \global\let\@author\@empty
+    \global\let\@date\@empty
+    \global\let\@title\@empty
+    \global\let\title\relax
+    \global\let\author\relax
+    \global\let\date\relax
+    \global\let\and\relax
+  }
+  \def\@maketitle{%
+    \newpage
+    \null
+    \vskip 2em%
+    \begin{center}%
+      \let \footnote \thanks
+      {\LARGE \@title \par}%
+      \vskip 1.5em%
+      {\large
+        \lineskip .5em%
+        \begin{tabular}[t]{c}%
+          \@author
+        \end{tabular}\par}%
+      \vskip 1em%
+      {\large \@date}%
+    \end{center}%
+    \par
+    \vskip 1.5em}
+\fi
+\newenvironment{orgtitlepage}
+  {%
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse\newpage
+    \fi
+    \thispagestyle{empty}%
+    \setcounter{page}\@ne
+  }%
+  {\if@restonecol\twocolumn \else \newpage \fi
+   \if@twoside\else
+     \setcounter{page}\@ne
+   \fi
+  }
+\if@titlepage
+  \renewenvironment{abstract}{%
+      \orgtitlepage
+      \null\vfil
+      \@beginparpenalty\@lowpenalty
+      \begin{center}%
+        \bfseries \abstractname
+        \@endparpenalty\@M
+      \end{center}}%
+     {\par\vfil\null\endorgtitlepage}
+\fi
+\def\ps@firstpage{%
+  \addtolength{\headheight}{33pt}
+  \addtolength{\topmargin}{-33pt}
+  \def\@oddhead{%
+    \begin{minipage}[b]{\textwidth}
+      \includegraphics[width=5cm]{fig/EPFL_logo_color}%
+      \hfill%
+      \setlength{\@tempdimb}{\textwidth}%
+      \addtolength{\@tempdimb}{-64mm}%
+%%      \includegraphics[height=2cm]{fig/tcl_logo_long}%
+      \begin{minipage}[b][45pt]{\@tempdimb}%
+        \fontfamily{let}\fontseries{b}\fontsize{\@xpt}{20}\selectfont%
+        \noindent\hfill\@unitnameone\par%
+        \noindent\hfill\@unitnametwo\strut\par\vspace{-15.5pt}\null%
+        \vspace{1cm}%
+     \end{minipage}%
+    \end{minipage}%
+  }
+  \let\@oddfoot\@empty
+  \let\@evenhead\@oddhead
+  \let\@evenfoot\@empty
+}
+\endinput
+%%
+

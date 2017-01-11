@@ -1,0 +1,52 @@
+%% 
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+\NeedsTeXFormat{LaTeX2e}[1995/06/01]
+\ProvidesFile{tcl.clo}[2008/05/28 v1.3 TCL Data]
+\newif\if@inst     \@instfalse
+\newif\if@longinst \@longinstfalse
+\@ifpackageloaded{EPFLheader}{\@insttrue}{}
+\@ifclassloaded{EPFLreport}{\@insttrue}{}
+\@ifclassloaded{EPFLfax}{\@longinsttrue}{}
+\@ifclassloaded{EPFLletter2}{\@longinsttrue}{}
+\if@longinst
+    \iflanguage{english}{%
+        \laboratory{Telecommunications Circuits Laboratory}
+        
+    }{}
+    \iflanguage{german}{%
+        \laboratory{Telecommunications Circuits Laboratory}
+        
+    }{}
+    \iflanguage{french}{%
+        \laboratory{Telecommunications Circuits Laboratory}
+        
+    }{}
+    \iflanguage{italian}{%
+        \laboratory{Telecommunications Circuits Laboratory}
+        
+    }{}
+    \postaladdress{EPFL Station 11}
+    \town{CH-1015 Lausanne}
+   
+\fi
+\if@inst
+    \unitnameone{Telecommunications Circuits Laboratory}
+    \unitnametwo{EPFL, Lausanne}
+\fi
+\endinput
+%%
+
