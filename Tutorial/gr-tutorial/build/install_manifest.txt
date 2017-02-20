@@ -1,0 +1,9 @@
+/usr/local/lib/cmake/tutorial/tutorialConfig.cmake
+/usr/local/include/tutorial/api.h
+/usr/local/lib/python2.7/dist-packages/tutorial/__init__.py
+/usr/local/lib/python2.7/dist-packages/tutorial/multiply_py_ff.py
+/usr/local/lib/python2.7/dist-packages/tutorial/__init__.pyc
+/usr/local/lib/python2.7/dist-packages/tutorial/multiply_py_ff.pyc
+/usr/local/lib/python2.7/dist-packages/tutorial/__init__.pyo
+/usr/local/lib/python2.7/dist-packages/tutorial/multiply_py_ff.pyo
+/usr/local/share/gnuradio/grc/blocks/tutorial_multiply_py_ff.xml
