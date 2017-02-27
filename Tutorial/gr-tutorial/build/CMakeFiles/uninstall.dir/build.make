@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/thomas/Documents/GR/gr-tutorial
+CMAKE_SOURCE_DIR = /home/thomas/gr/Tutorial/gr-tutorial
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/thomas/Documents/GR/gr-tutorial/build
+CMAKE_BINARY_DIR = /home/thomas/gr/Tutorial/gr-tutorial/build
 
 # Utility rule file for uninstall.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/thomas/Documents/GR/gr-tutorial/build
 include CMakeFiles/uninstall.dir/progress.make
 
 CMakeFiles/uninstall:
-	/usr/bin/cmake -P /home/thomas/Documents/GR/gr-tutorial/build/cmake_uninstall.cmake
+	/usr/bin/cmake -P /home/thomas/gr/Tutorial/gr-tutorial/build/cmake_uninstall.cmake
 
 uninstall: CMakeFiles/uninstall
 uninstall: CMakeFiles/uninstall.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/thomas/Documents/GR/gr-tutorial/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/thomas/Documents/GR/gr-tutorial /home/thomas/Documents/GR/gr-tutorial /home/thomas/Documents/GR/gr-tutorial/build /home/thomas/Documents/GR/gr-tutorial/build /home/thomas/Documents/GR/gr-tutorial/build/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/thomas/gr/Tutorial/gr-tutorial /home/thomas/gr/Tutorial/gr-tutorial /home/thomas/gr/Tutorial/gr-tutorial/build /home/thomas/gr/Tutorial/gr-tutorial/build /home/thomas/gr/Tutorial/gr-tutorial/build/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

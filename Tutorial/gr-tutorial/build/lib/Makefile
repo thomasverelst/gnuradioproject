@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/thomas/Documents/GR/gr-tutorial
+CMAKE_SOURCE_DIR = /home/thomas/gr/Tutorial/gr-tutorial
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/thomas/Documents/GR/gr-tutorial/build
+CMAKE_BINARY_DIR = /home/thomas/gr/Tutorial/gr-tutorial/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -89,16 +89,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target install/strip
-install/strip/fast: install/strip
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : install/strip/fast
+.PHONY : edit_cache/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -122,27 +122,16 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # The main all target
 all: cmake_check_build_system
-	cd /home/thomas/Documents/GR/gr-tutorial/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/thomas/Documents/GR/gr-tutorial/build/CMakeFiles /home/thomas/Documents/GR/gr-tutorial/build/lib/CMakeFiles/progress.marks
-	cd /home/thomas/Documents/GR/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 lib/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thomas/Documents/GR/gr-tutorial/build/CMakeFiles 0
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/thomas/gr/Tutorial/gr-tutorial/build/CMakeFiles /home/thomas/gr/Tutorial/gr-tutorial/build/lib/CMakeFiles/progress.marks
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 lib/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/thomas/gr/Tutorial/gr-tutorial/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/thomas/Documents/GR/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 lib/clean
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 lib/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,18 +141,161 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/thomas/Documents/GR/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 lib/preinstall
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 lib/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/thomas/Documents/GR/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 lib/preinstall
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 lib/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/thomas/Documents/GR/gr-tutorial/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+lib/CMakeFiles/gnuradio-tutorial.dir/rule:
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 lib/CMakeFiles/gnuradio-tutorial.dir/rule
+.PHONY : lib/CMakeFiles/gnuradio-tutorial.dir/rule
+
+# Convenience name for target.
+gnuradio-tutorial: lib/CMakeFiles/gnuradio-tutorial.dir/rule
+
+.PHONY : gnuradio-tutorial
+
+# fast build rule for target.
+gnuradio-tutorial/fast:
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f lib/CMakeFiles/gnuradio-tutorial.dir/build.make lib/CMakeFiles/gnuradio-tutorial.dir/build
+.PHONY : gnuradio-tutorial/fast
+
+# Manual pre-install relink rule for target.
+gnuradio-tutorial/preinstall:
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 lib/CMakeFiles/gnuradio-tutorial.dir/preinstall
+.PHONY : gnuradio-tutorial/preinstall
+
+# Convenience name for target.
+lib/CMakeFiles/test-tutorial.dir/rule:
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 lib/CMakeFiles/test-tutorial.dir/rule
+.PHONY : lib/CMakeFiles/test-tutorial.dir/rule
+
+# Convenience name for target.
+test-tutorial: lib/CMakeFiles/test-tutorial.dir/rule
+
+.PHONY : test-tutorial
+
+# fast build rule for target.
+test-tutorial/fast:
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f lib/CMakeFiles/test-tutorial.dir/build.make lib/CMakeFiles/test-tutorial.dir/build
+.PHONY : test-tutorial/fast
+
+my_qpsk_demod_cb_impl.o: my_qpsk_demod_cb_impl.cc.o
+
+.PHONY : my_qpsk_demod_cb_impl.o
+
+# target to build an object file
+my_qpsk_demod_cb_impl.cc.o:
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f lib/CMakeFiles/gnuradio-tutorial.dir/build.make lib/CMakeFiles/gnuradio-tutorial.dir/my_qpsk_demod_cb_impl.cc.o
+.PHONY : my_qpsk_demod_cb_impl.cc.o
+
+my_qpsk_demod_cb_impl.i: my_qpsk_demod_cb_impl.cc.i
+
+.PHONY : my_qpsk_demod_cb_impl.i
+
+# target to preprocess a source file
+my_qpsk_demod_cb_impl.cc.i:
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f lib/CMakeFiles/gnuradio-tutorial.dir/build.make lib/CMakeFiles/gnuradio-tutorial.dir/my_qpsk_demod_cb_impl.cc.i
+.PHONY : my_qpsk_demod_cb_impl.cc.i
+
+my_qpsk_demod_cb_impl.s: my_qpsk_demod_cb_impl.cc.s
+
+.PHONY : my_qpsk_demod_cb_impl.s
+
+# target to generate assembly for a file
+my_qpsk_demod_cb_impl.cc.s:
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f lib/CMakeFiles/gnuradio-tutorial.dir/build.make lib/CMakeFiles/gnuradio-tutorial.dir/my_qpsk_demod_cb_impl.cc.s
+.PHONY : my_qpsk_demod_cb_impl.cc.s
+
+qa_my_qpsk_demod_cb.o: qa_my_qpsk_demod_cb.cc.o
+
+.PHONY : qa_my_qpsk_demod_cb.o
+
+# target to build an object file
+qa_my_qpsk_demod_cb.cc.o:
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f lib/CMakeFiles/test-tutorial.dir/build.make lib/CMakeFiles/test-tutorial.dir/qa_my_qpsk_demod_cb.cc.o
+.PHONY : qa_my_qpsk_demod_cb.cc.o
+
+qa_my_qpsk_demod_cb.i: qa_my_qpsk_demod_cb.cc.i
+
+.PHONY : qa_my_qpsk_demod_cb.i
+
+# target to preprocess a source file
+qa_my_qpsk_demod_cb.cc.i:
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f lib/CMakeFiles/test-tutorial.dir/build.make lib/CMakeFiles/test-tutorial.dir/qa_my_qpsk_demod_cb.cc.i
+.PHONY : qa_my_qpsk_demod_cb.cc.i
+
+qa_my_qpsk_demod_cb.s: qa_my_qpsk_demod_cb.cc.s
+
+.PHONY : qa_my_qpsk_demod_cb.s
+
+# target to generate assembly for a file
+qa_my_qpsk_demod_cb.cc.s:
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f lib/CMakeFiles/test-tutorial.dir/build.make lib/CMakeFiles/test-tutorial.dir/qa_my_qpsk_demod_cb.cc.s
+.PHONY : qa_my_qpsk_demod_cb.cc.s
+
+qa_tutorial.o: qa_tutorial.cc.o
+
+.PHONY : qa_tutorial.o
+
+# target to build an object file
+qa_tutorial.cc.o:
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f lib/CMakeFiles/test-tutorial.dir/build.make lib/CMakeFiles/test-tutorial.dir/qa_tutorial.cc.o
+.PHONY : qa_tutorial.cc.o
+
+qa_tutorial.i: qa_tutorial.cc.i
+
+.PHONY : qa_tutorial.i
+
+# target to preprocess a source file
+qa_tutorial.cc.i:
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f lib/CMakeFiles/test-tutorial.dir/build.make lib/CMakeFiles/test-tutorial.dir/qa_tutorial.cc.i
+.PHONY : qa_tutorial.cc.i
+
+qa_tutorial.s: qa_tutorial.cc.s
+
+.PHONY : qa_tutorial.s
+
+# target to generate assembly for a file
+qa_tutorial.cc.s:
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f lib/CMakeFiles/test-tutorial.dir/build.make lib/CMakeFiles/test-tutorial.dir/qa_tutorial.cc.s
+.PHONY : qa_tutorial.cc.s
+
+test_tutorial.o: test_tutorial.cc.o
+
+.PHONY : test_tutorial.o
+
+# target to build an object file
+test_tutorial.cc.o:
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f lib/CMakeFiles/test-tutorial.dir/build.make lib/CMakeFiles/test-tutorial.dir/test_tutorial.cc.o
+.PHONY : test_tutorial.cc.o
+
+test_tutorial.i: test_tutorial.cc.i
+
+.PHONY : test_tutorial.i
+
+# target to preprocess a source file
+test_tutorial.cc.i:
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f lib/CMakeFiles/test-tutorial.dir/build.make lib/CMakeFiles/test-tutorial.dir/test_tutorial.cc.i
+.PHONY : test_tutorial.cc.i
+
+test_tutorial.s: test_tutorial.cc.s
+
+.PHONY : test_tutorial.s
+
+# target to generate assembly for a file
+test_tutorial.cc.s:
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f lib/CMakeFiles/test-tutorial.dir/build.make lib/CMakeFiles/test-tutorial.dir/test_tutorial.cc.s
+.PHONY : test_tutorial.cc.s
 
 # Help Target
 help:
@@ -174,10 +306,23 @@ help:
 	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... rebuild_cache"
-	@echo "... install/strip"
-	@echo "... install/local"
-	@echo "... test"
 	@echo "... edit_cache"
+	@echo "... gnuradio-tutorial"
+	@echo "... install/local"
+	@echo "... test-tutorial"
+	@echo "... test"
+	@echo "... my_qpsk_demod_cb_impl.o"
+	@echo "... my_qpsk_demod_cb_impl.i"
+	@echo "... my_qpsk_demod_cb_impl.s"
+	@echo "... qa_my_qpsk_demod_cb.o"
+	@echo "... qa_my_qpsk_demod_cb.i"
+	@echo "... qa_my_qpsk_demod_cb.s"
+	@echo "... qa_tutorial.o"
+	@echo "... qa_tutorial.i"
+	@echo "... qa_tutorial.s"
+	@echo "... test_tutorial.o"
+	@echo "... test_tutorial.i"
+	@echo "... test_tutorial.s"
 .PHONY : help
 
 
@@ -189,6 +334,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/thomas/Documents/GR/gr-tutorial/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

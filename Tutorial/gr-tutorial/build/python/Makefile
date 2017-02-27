@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/thomas/Documents/GR/gr-tutorial
+CMAKE_SOURCE_DIR = /home/thomas/gr/Tutorial/gr-tutorial
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/thomas/Documents/GR/gr-tutorial/build
+CMAKE_BINARY_DIR = /home/thomas/gr/Tutorial/gr-tutorial/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -89,17 +89,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -110,17 +99,6 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
 
 # Special rule for the target test
 test:
@@ -133,16 +111,27 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/thomas/Documents/GR/gr-tutorial/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/thomas/Documents/GR/gr-tutorial/build/CMakeFiles /home/thomas/Documents/GR/gr-tutorial/build/python/CMakeFiles/progress.marks
-	cd /home/thomas/Documents/GR/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 python/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thomas/Documents/GR/gr-tutorial/build/CMakeFiles 0
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/thomas/gr/Tutorial/gr-tutorial/build/CMakeFiles /home/thomas/gr/Tutorial/gr-tutorial/build/python/CMakeFiles/progress.marks
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 python/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/thomas/gr/Tutorial/gr-tutorial/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/thomas/Documents/GR/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 python/clean
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 python/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,33 +141,33 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/thomas/Documents/GR/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 python/preinstall
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 python/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/thomas/Documents/GR/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 python/preinstall
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 python/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/thomas/Documents/GR/gr-tutorial/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-python/CMakeFiles/pygen_python_4e8f5.dir/rule:
-	cd /home/thomas/Documents/GR/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 python/CMakeFiles/pygen_python_4e8f5.dir/rule
-.PHONY : python/CMakeFiles/pygen_python_4e8f5.dir/rule
+python/CMakeFiles/pygen_python_5cb0f.dir/rule:
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f CMakeFiles/Makefile2 python/CMakeFiles/pygen_python_5cb0f.dir/rule
+.PHONY : python/CMakeFiles/pygen_python_5cb0f.dir/rule
 
 # Convenience name for target.
-pygen_python_4e8f5: python/CMakeFiles/pygen_python_4e8f5.dir/rule
+pygen_python_5cb0f: python/CMakeFiles/pygen_python_5cb0f.dir/rule
 
-.PHONY : pygen_python_4e8f5
+.PHONY : pygen_python_5cb0f
 
 # fast build rule for target.
-pygen_python_4e8f5/fast:
-	cd /home/thomas/Documents/GR/gr-tutorial/build && $(MAKE) -f python/CMakeFiles/pygen_python_4e8f5.dir/build.make python/CMakeFiles/pygen_python_4e8f5.dir/build
-.PHONY : pygen_python_4e8f5/fast
+pygen_python_5cb0f/fast:
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(MAKE) -f python/CMakeFiles/pygen_python_5cb0f.dir/build.make python/CMakeFiles/pygen_python_5cb0f.dir/build
+.PHONY : pygen_python_5cb0f/fast
 
 # Help Target
 help:
@@ -189,11 +178,10 @@ help:
 	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... pygen_python_4e8f5"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... test"
+	@echo "... pygen_python_5cb0f"
+	@echo "... edit_cache"
 .PHONY : help
 
 
@@ -205,6 +193,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/thomas/Documents/GR/gr-tutorial/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

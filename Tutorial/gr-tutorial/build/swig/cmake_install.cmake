@@ -1,4 +1,4 @@
-# Install script for directory: /home/thomas/Documents/GR/gr-tutorial/swig
+# Install script for directory: /home/thomas/gr/Tutorial/gr-tutorial/swig
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

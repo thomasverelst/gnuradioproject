@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="include_2tutorial_2api_8h" kind="file" language="C++">
+    <compoundname>include/tutorial/api.h</compoundname>
+    <includes local="no">gnuradio/attributes.h</includes>
+    <includedby refid="my__qpsk__demod__cb_8h" local="no">my_qpsk_demod_cb.h</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>gnuradio/attributes.h</label>
+      </node>
+      <node id="3">
+        <label>api.h</label>
+        <link refid="include/tutorial/api.h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6">
+        <label>my_qpsk_demod_cb.h</label>
+        <link refid="my__qpsk__demod__cb_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>api.h</label>
+        <link refid="include/tutorial/api.h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>my_qpsk_demod_cb_impl.h</label>
+        <link refid="my__qpsk__demod__cb__impl_8h"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="include_2tutorial_2api_8h_1a45c9968e855920f445a95a230901673d" prot="public" static="no">
+        <name>TUTORIAL_API</name>
+        <initializer>__GR_ATTR_IMPORT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomas/gr/Tutorial/gr-tutorial/include/tutorial/api.h" line="30" column="12" bodyfile="/home/thomas/gr/Tutorial/gr-tutorial/include/tutorial/api.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/thomas/gr/Tutorial/gr-tutorial/include/tutorial/api.h"/>
+  </compounddef>
+</doxygen>

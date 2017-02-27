@@ -31,7 +31,8 @@ endif()
 GR_PYTHON_INSTALL(
     FILES
     __init__.py
-    multiply_py_ff.py DESTINATION ${GR_PYTHON_DIR}/tutorial
+    multiply_py_ff.py
+    qpsk_demod_py_cb.py DESTINATION ${GR_PYTHON_DIR}/tutorial
 )
 
 ########################################################################
@@ -42,3 +43,5 @@ include(GrTest)
 set(GR_TEST_TARGET_DEPS gnuradio-tutorial)
 set(GR_TEST_PYTHON_DIRS ${CMAKE_BINARY_DIR}/swig)
 GR_ADD_TEST(qa_multiply_py_ff ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_multiply_py_ff.py)
+GR_ADD_TEST(qa_qpsk_demod_py_cb ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_qpsk_demod_py_cb.py)
+GR_ADD_TEST(qa_my_qpsk_demod_cb ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_my_qpsk_demod_cb.py)

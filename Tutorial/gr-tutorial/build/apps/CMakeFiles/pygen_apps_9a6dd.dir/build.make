@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/thomas/Documents/GR/gr-tutorial
+CMAKE_SOURCE_DIR = /home/thomas/gr/Tutorial/gr-tutorial
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/thomas/Documents/GR/gr-tutorial/build
+CMAKE_BINARY_DIR = /home/thomas/gr/Tutorial/gr-tutorial/build
 
 # Utility rule file for pygen_apps_9a6dd.
 
@@ -63,10 +63,10 @@ apps/CMakeFiles/pygen_apps_9a6dd.dir/build: pygen_apps_9a6dd
 .PHONY : apps/CMakeFiles/pygen_apps_9a6dd.dir/build
 
 apps/CMakeFiles/pygen_apps_9a6dd.dir/clean:
-	cd /home/thomas/Documents/GR/gr-tutorial/build/apps && $(CMAKE_COMMAND) -P CMakeFiles/pygen_apps_9a6dd.dir/cmake_clean.cmake
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build/apps && $(CMAKE_COMMAND) -P CMakeFiles/pygen_apps_9a6dd.dir/cmake_clean.cmake
 .PHONY : apps/CMakeFiles/pygen_apps_9a6dd.dir/clean
 
 apps/CMakeFiles/pygen_apps_9a6dd.dir/depend:
-	cd /home/thomas/Documents/GR/gr-tutorial/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/thomas/Documents/GR/gr-tutorial /home/thomas/Documents/GR/gr-tutorial/apps /home/thomas/Documents/GR/gr-tutorial/build /home/thomas/Documents/GR/gr-tutorial/build/apps /home/thomas/Documents/GR/gr-tutorial/build/apps/CMakeFiles/pygen_apps_9a6dd.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/thomas/gr/Tutorial/gr-tutorial/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/thomas/gr/Tutorial/gr-tutorial /home/thomas/gr/Tutorial/gr-tutorial/apps /home/thomas/gr/Tutorial/gr-tutorial/build /home/thomas/gr/Tutorial/gr-tutorial/build/apps /home/thomas/gr/Tutorial/gr-tutorial/build/apps/CMakeFiles/pygen_apps_9a6dd.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : apps/CMakeFiles/pygen_apps_9a6dd.dir/depend
 

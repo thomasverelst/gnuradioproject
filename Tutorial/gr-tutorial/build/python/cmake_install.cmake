@@ -1,4 +1,4 @@
-# Install script for directory: /home/thomas/Documents/GR/gr-tutorial/python
+# Install script for directory: /home/thomas/gr/Tutorial/gr-tutorial/python
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,17 +34,20 @@ endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/tutorial" TYPE FILE FILES
-    "/home/thomas/Documents/GR/gr-tutorial/python/__init__.py"
-    "/home/thomas/Documents/GR/gr-tutorial/python/multiply_py_ff.py"
+    "/home/thomas/gr/Tutorial/gr-tutorial/python/__init__.py"
+    "/home/thomas/gr/Tutorial/gr-tutorial/python/multiply_py_ff.py"
+    "/home/thomas/gr/Tutorial/gr-tutorial/python/qpsk_demod_py_cb.py"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/tutorial" TYPE FILE FILES
-    "/home/thomas/Documents/GR/gr-tutorial/build/python/__init__.pyc"
-    "/home/thomas/Documents/GR/gr-tutorial/build/python/multiply_py_ff.pyc"
-    "/home/thomas/Documents/GR/gr-tutorial/build/python/__init__.pyo"
-    "/home/thomas/Documents/GR/gr-tutorial/build/python/multiply_py_ff.pyo"
+    "/home/thomas/gr/Tutorial/gr-tutorial/build/python/__init__.pyc"
+    "/home/thomas/gr/Tutorial/gr-tutorial/build/python/multiply_py_ff.pyc"
+    "/home/thomas/gr/Tutorial/gr-tutorial/build/python/qpsk_demod_py_cb.pyc"
+    "/home/thomas/gr/Tutorial/gr-tutorial/build/python/__init__.pyo"
+    "/home/thomas/gr/Tutorial/gr-tutorial/build/python/multiply_py_ff.pyo"
+    "/home/thomas/gr/Tutorial/gr-tutorial/build/python/qpsk_demod_py_cb.pyo"
     )
 endif()
 

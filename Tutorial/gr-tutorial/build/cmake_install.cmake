@@ -1,4 +1,4 @@
-# Install script for directory: /home/thomas/Documents/GR/gr-tutorial
+# Install script for directory: /home/thomas/gr/Tutorial/gr-tutorial
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,18 +33,18 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/tutorial" TYPE FILE FILES "/home/thomas/Documents/GR/gr-tutorial/cmake/Modules/tutorialConfig.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/tutorial" TYPE FILE FILES "/home/thomas/gr/Tutorial/gr-tutorial/cmake/Modules/tutorialConfig.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/thomas/Documents/GR/gr-tutorial/build/include/tutorial/cmake_install.cmake")
-  include("/home/thomas/Documents/GR/gr-tutorial/build/lib/cmake_install.cmake")
-  include("/home/thomas/Documents/GR/gr-tutorial/build/swig/cmake_install.cmake")
-  include("/home/thomas/Documents/GR/gr-tutorial/build/python/cmake_install.cmake")
-  include("/home/thomas/Documents/GR/gr-tutorial/build/grc/cmake_install.cmake")
-  include("/home/thomas/Documents/GR/gr-tutorial/build/apps/cmake_install.cmake")
-  include("/home/thomas/Documents/GR/gr-tutorial/build/docs/cmake_install.cmake")
+  include("/home/thomas/gr/Tutorial/gr-tutorial/build/include/tutorial/cmake_install.cmake")
+  include("/home/thomas/gr/Tutorial/gr-tutorial/build/lib/cmake_install.cmake")
+  include("/home/thomas/gr/Tutorial/gr-tutorial/build/swig/cmake_install.cmake")
+  include("/home/thomas/gr/Tutorial/gr-tutorial/build/python/cmake_install.cmake")
+  include("/home/thomas/gr/Tutorial/gr-tutorial/build/grc/cmake_install.cmake")
+  include("/home/thomas/gr/Tutorial/gr-tutorial/build/apps/cmake_install.cmake")
+  include("/home/thomas/gr/Tutorial/gr-tutorial/build/docs/cmake_install.cmake")
 
 endif()
 
@@ -56,5 +56,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/thomas/Documents/GR/gr-tutorial/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/thomas/gr/Tutorial/gr-tutorial/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

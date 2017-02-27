@@ -26,11 +26,13 @@
  */
 
 #include "qa_tutorial.h"
+#include "qa_my_qpsk_demod_cb.h"
 
 CppUnit::TestSuite *
 qa_tutorial::suite()
 {
   CppUnit::TestSuite *s = new CppUnit::TestSuite("tutorial");
+  s->addTest(gr::tutorial::qa_my_qpsk_demod_cb::suite());
 
   return s;
 }

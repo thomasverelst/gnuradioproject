@@ -24,9 +24,8 @@ include(GrPlatform) #define LIB_SUFFIX
 
 include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
-
 list(APPEND tutorial_sources
-)
+    my_qpsk_demod_cb_impl.cc )
 
 set(tutorial_sources "${tutorial_sources}" PARENT_SCOPE)
 if(NOT tutorial_sources)
@@ -59,11 +58,11 @@ install(TARGETS gnuradio-tutorial
 include(GrTest)
 
 include_directories(${CPPUNIT_INCLUDE_DIRS})
-
 list(APPEND test_tutorial_sources
     ${CMAKE_CURRENT_SOURCE_DIR}/test_tutorial.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/qa_tutorial.cc
-)
+    ${CMAKE_CURRENT_SOURCE_DIR}/qa_my_qpsk_demod_cb.cc
+    )
 
 add_executable(test-tutorial ${test_tutorial_sources})
 

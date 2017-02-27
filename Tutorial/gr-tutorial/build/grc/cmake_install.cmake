@@ -1,4 +1,4 @@
-# Install script for directory: /home/thomas/Documents/GR/gr-tutorial/grc
+# Install script for directory: /home/thomas/gr/Tutorial/gr-tutorial/grc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,6 +33,10 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gnuradio/grc/blocks" TYPE FILE FILES "/home/thomas/Documents/GR/gr-tutorial/grc/tutorial_multiply_py_ff.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gnuradio/grc/blocks" TYPE FILE FILES
+    "/home/thomas/gr/Tutorial/gr-tutorial/grc/tutorial_multiply_py_ff.xml"
+    "/home/thomas/gr/Tutorial/gr-tutorial/grc/tutorial_qpsk_demod_py_cb.xml"
+    "/home/thomas/gr/Tutorial/gr-tutorial/grc/tutorial_my_qpsk_demod_cb.xml"
+    )
 endif()
 

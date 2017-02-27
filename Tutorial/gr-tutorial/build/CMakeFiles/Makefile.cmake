@@ -16,12 +16,15 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../cmake/Modules/GrPlatform.cmake"
   "../cmake/cmake_uninstall.cmake.in"
   "../docs/CMakeLists.txt"
+  "../docs/doxygen/CMakeLists.txt"
+  "../docs/doxygen/Doxyfile.in"
   "../grc/CMakeLists.txt"
   "../include/tutorial/CMakeLists.txt"
   "../lib/CMakeLists.txt"
   "../python/CMakeLists.txt"
   "../swig/CMakeLists.txt"
   "/usr/lib/x86_64-linux-gnu/cmake/gnuradio/CMakeParseArgumentsCopy.cmake"
+  "/usr/lib/x86_64-linux-gnu/cmake/gnuradio/FindSWIG.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/gnuradio/GnuradioConfig.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/gnuradio/GnuradioConfigVersion.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/gnuradio/GrPlatform.cmake"
@@ -30,11 +33,13 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.5/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeCommonLanguageInclude.cmake"
+  "/usr/share/cmake-3.5/Modules/CMakeFindFrameworks.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeGenericSystem.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeLanguageInformation.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeParseArguments.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeSystemSpecificInitialize.cmake"
+  "/usr/share/cmake-3.5/Modules/CMakeUnixFindMake.cmake"
   "/usr/share/cmake-3.5/Modules/Compiler/GNU-C.cmake"
   "/usr/share/cmake-3.5/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-3.5/Modules/Compiler/GNU.cmake"
@@ -43,12 +48,16 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.5/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/share/cmake-3.5/Modules/FindPackageMessage.cmake"
   "/usr/share/cmake-3.5/Modules/FindPkgConfig.cmake"
+  "/usr/share/cmake-3.5/Modules/FindPythonInterp.cmake"
+  "/usr/share/cmake-3.5/Modules/FindPythonLibs.cmake"
+  "/usr/share/cmake-3.5/Modules/FindSWIG.cmake"
   "/usr/share/cmake-3.5/Modules/MultiArchCross.cmake"
   "/usr/share/cmake-3.5/Modules/Platform/Linux-GNU-C.cmake"
   "/usr/share/cmake-3.5/Modules/Platform/Linux-GNU-CXX.cmake"
   "/usr/share/cmake-3.5/Modules/Platform/Linux-GNU.cmake"
   "/usr/share/cmake-3.5/Modules/Platform/Linux.cmake"
   "/usr/share/cmake-3.5/Modules/Platform/UnixPaths.cmake"
+  "/usr/share/cmake-3.5/Modules/SelectLibraryConfigurations.cmake"
   )
 
 # The corresponding makefile is:
@@ -68,11 +77,15 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "grc/CMakeFiles/CMakeDirectoryInformation.cmake"
   "apps/CMakeFiles/CMakeDirectoryInformation.cmake"
   "docs/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "docs/doxygen/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/uninstall.dir/DependInfo.cmake"
-  "python/CMakeFiles/pygen_python_4e8f5.dir/DependInfo.cmake"
+  "lib/CMakeFiles/gnuradio-tutorial.dir/DependInfo.cmake"
+  "lib/CMakeFiles/test-tutorial.dir/DependInfo.cmake"
+  "python/CMakeFiles/pygen_python_5cb0f.dir/DependInfo.cmake"
   "apps/CMakeFiles/pygen_apps_9a6dd.dir/DependInfo.cmake"
+  "docs/doxygen/CMakeFiles/doxygen_target.dir/DependInfo.cmake"
   )

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/thomas/Documents/GR/gr-tutorial
+CMAKE_SOURCE_DIR = /home/thomas/gr/Tutorial/gr-tutorial
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/thomas/Documents/GR/gr-tutorial/build
+CMAKE_BINARY_DIR = /home/thomas/gr/Tutorial/gr-tutorial/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -89,28 +89,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -133,11 +111,22 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thomas/Documents/GR/gr-tutorial/build/CMakeFiles /home/thomas/Documents/GR/gr-tutorial/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/thomas/gr/Tutorial/gr-tutorial/build/CMakeFiles /home/thomas/gr/Tutorial/gr-tutorial/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thomas/Documents/GR/gr-tutorial/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/thomas/gr/Tutorial/gr-tutorial/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -179,17 +168,48 @@ uninstall/fast:
 .PHONY : uninstall/fast
 
 #=============================================================================
-# Target rules for targets named pygen_python_4e8f5
+# Target rules for targets named gnuradio-tutorial
 
 # Build rule for target.
-pygen_python_4e8f5: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 pygen_python_4e8f5
-.PHONY : pygen_python_4e8f5
+gnuradio-tutorial: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gnuradio-tutorial
+.PHONY : gnuradio-tutorial
 
 # fast build rule for target.
-pygen_python_4e8f5/fast:
-	$(MAKE) -f python/CMakeFiles/pygen_python_4e8f5.dir/build.make python/CMakeFiles/pygen_python_4e8f5.dir/build
-.PHONY : pygen_python_4e8f5/fast
+gnuradio-tutorial/fast:
+	$(MAKE) -f lib/CMakeFiles/gnuradio-tutorial.dir/build.make lib/CMakeFiles/gnuradio-tutorial.dir/build
+.PHONY : gnuradio-tutorial/fast
+
+# Manual pre-install relink rule for target.
+gnuradio-tutorial/preinstall:
+	$(MAKE) -f lib/CMakeFiles/gnuradio-tutorial.dir/build.make lib/CMakeFiles/gnuradio-tutorial.dir/preinstall
+.PHONY : gnuradio-tutorial/preinstall
+
+#=============================================================================
+# Target rules for targets named test-tutorial
+
+# Build rule for target.
+test-tutorial: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-tutorial
+.PHONY : test-tutorial
+
+# fast build rule for target.
+test-tutorial/fast:
+	$(MAKE) -f lib/CMakeFiles/test-tutorial.dir/build.make lib/CMakeFiles/test-tutorial.dir/build
+.PHONY : test-tutorial/fast
+
+#=============================================================================
+# Target rules for targets named pygen_python_5cb0f
+
+# Build rule for target.
+pygen_python_5cb0f: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pygen_python_5cb0f
+.PHONY : pygen_python_5cb0f
+
+# fast build rule for target.
+pygen_python_5cb0f/fast:
+	$(MAKE) -f python/CMakeFiles/pygen_python_5cb0f.dir/build.make python/CMakeFiles/pygen_python_5cb0f.dir/build
+.PHONY : pygen_python_5cb0f/fast
 
 #=============================================================================
 # Target rules for targets named pygen_apps_9a6dd
@@ -204,6 +224,19 @@ pygen_apps_9a6dd/fast:
 	$(MAKE) -f apps/CMakeFiles/pygen_apps_9a6dd.dir/build.make apps/CMakeFiles/pygen_apps_9a6dd.dir/build
 .PHONY : pygen_apps_9a6dd/fast
 
+#=============================================================================
+# Target rules for targets named doxygen_target
+
+# Build rule for target.
+doxygen_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 doxygen_target
+.PHONY : doxygen_target
+
+# fast build rule for target.
+doxygen_target/fast:
+	$(MAKE) -f docs/doxygen/CMakeFiles/doxygen_target.dir/build.make docs/doxygen/CMakeFiles/doxygen_target.dir/build
+.PHONY : doxygen_target/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -213,13 +246,15 @@ help:
 	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... uninstall"
-	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... test"
-	@echo "... pygen_python_4e8f5"
+	@echo "... edit_cache"
+	@echo "... gnuradio-tutorial"
+	@echo "... test-tutorial"
+	@echo "... pygen_python_5cb0f"
 	@echo "... pygen_apps_9a6dd"
+	@echo "... doxygen_target"
 .PHONY : help
 
 

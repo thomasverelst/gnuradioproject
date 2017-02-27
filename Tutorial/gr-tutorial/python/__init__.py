@@ -32,4 +32,5 @@ except ImportError:
 
 # import any pure python here
 from multiply_py_ff import multiply_py_ff
+from qpsk_demod_py_cb import qpsk_demod_py_cb
 #

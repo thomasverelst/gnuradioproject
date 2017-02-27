@@ -1,4 +1,4 @@
-# Install script for directory: /home/thomas/Documents/GR/gr-tutorial/include/tutorial
+# Install script for directory: /home/thomas/gr/Tutorial/gr-tutorial/include/tutorial
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,6 +33,9 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/tutorial" TYPE FILE FILES "/home/thomas/Documents/GR/gr-tutorial/include/tutorial/api.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/tutorial" TYPE FILE FILES
+    "/home/thomas/gr/Tutorial/gr-tutorial/include/tutorial/api.h"
+    "/home/thomas/gr/Tutorial/gr-tutorial/include/tutorial/my_qpsk_demod_cb.h"
+    )
 endif()
 
