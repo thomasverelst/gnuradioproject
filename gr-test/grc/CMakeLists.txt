@@ -18,5 +18,5 @@
 # Boston, MA 02110-1301, USA.
 
 install(FILES
-    test_square_ff.xml DESTINATION share/gnuradio/grc/blocks
+    test_test.xml DESTINATION share/gnuradio/grc/blocks
 )

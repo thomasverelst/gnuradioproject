@@ -19,41 +19,38 @@
  */
 
 
-#ifndef INCLUDED_PACKETIZR_PACKET_ENCODER_H
-#define INCLUDED_PACKETIZR_PACKET_ENCODER_H
+#ifndef INCLUDED_TEST_TEST_H
+#define INCLUDED_TEST_TEST_H
 
-#include <packetizr/api.h>
-#include <gnuradio/digital/api.h>
+#include <test/api.h>
 #include <gnuradio/tagged_stream_block.h>
-#include <gnuradio/digital/constellation.h>
-#include <gnuradio/block.h>
 
 namespace gr {
-  namespace packetizr {
+  namespace test {
 
     /*!
      * \brief <+description of block+>
-     * \ingroup packetizr
+     * \ingroup test
      *
      */
-    class PACKETIZR_API packet_encoder : virtual public gr::tagged_stream_block
+    class TEST_API test : virtual public gr::tagged_stream_block
     {
      public:
-      typedef boost::shared_ptr<packet_encoder> sptr;
+      typedef boost::shared_ptr<test> sptr;
 
       /*!
-       * \brief Return a shared_ptr to a new instance of packetizr::packet_encoder.
+       * \brief Return a shared_ptr to a new instance of test::test.
        *
-       * To avoid accidental use of raw pointers, packetizr::packet_encoder's
+       * To avoid accidental use of raw pointers, test::test's
        * constructor is in a private implementation
-       * class. packetizr::packet_encoder::make is the public interface for
+       * class. test::test::make is the public interface for
        * creating new instances.
        */
-      static sptr make(unsigned int sps, int preamble, gr::digital::constellation_sptr  header_constel, gr::digital::constellation_sptr  payload_constel, size_t itemsize, const std::string &lengthtagname);
+      static sptr make(unsigned int sps, int preamble, digital::constellation_sptr header_constel, digital::constellation_sptr payload_constel, size_t itemsize, const std::string &lengthtagname);
     };
 
-  } // namespace packetizr
+  } // namespace test
 } // namespace gr
 
-#endif /* INCLUDED_PACKETIZR_PACKET_ENCODER_H */
+#endif /* INCLUDED_TEST_TEST_H */
 

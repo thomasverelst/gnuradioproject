@@ -18,31 +18,25 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_PACKETIZR_PACKET_ENCODER_IMPL_H
-#define INCLUDED_PACKETIZR_PACKET_ENCODER_IMPL_H
+#ifndef INCLUDED_TEST_TEST_IMPL_H
+#define INCLUDED_TEST_TEST_IMPL_H
 
-#include <packetizr/packet_encoder.h>
-#include <gnuradio/digital/constellation.h>
-
+#include <test/test.h>
 
 namespace gr {
-  namespace packetizr {
+  namespace test {
 
-    class packet_encoder_impl : public packet_encoder
+    class test_impl : public test
     {
-    private:
-      gr::digital::constellation_sptr d_header_constel;
-      gr::digital::constellation_sptr d_payload_constel;
-      unsigned int d_sps;
-      size_t d_itemsize;
-      unsigned int d_tag_preserve_head_pos;
+     private:
+      // Nothing to declare in this block.
 
      protected:
       int calculate_output_stream_length(const gr_vector_int &ninput_items);
 
      public:
-      packet_encoder_impl(unsigned int sps, int preamble, gr::digital::constellation_sptr  header_constel, gr::digital::constellation_sptr  payload_constel, size_t itemsize, const std::string &lengthtagname);
-      ~packet_encoder_impl();
+      test_impl(unsigned int sps, int preamble, digital::constellation_sptr header_constel, digital::constellation_sptr payload_constel, size_t itemsize, const std::string &lengthtagname);
+      ~test_impl();
 
       // Where all the action really happens
       int work(int noutput_items,
@@ -51,8 +45,8 @@ namespace gr {
            gr_vector_void_star &output_items);
     };
 
-  } // namespace packetizr
+  } // namespace test
 } // namespace gr
 
-#endif /* INCLUDED_PACKETIZR_PACKET_ENCODER_IMPL_H */
+#endif /* INCLUDED_TEST_TEST_IMPL_H */
 

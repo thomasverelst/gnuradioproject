@@ -3016,43 +3016,69 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 #define SWIGTYPE_p_boost__shared_ptrT_gr__block_t swig_types[4]
 #define SWIGTYPE_p_boost__shared_ptrT_gr__buffer_reader_t swig_types[5]
 #define SWIGTYPE_p_boost__shared_ptrT_gr__buffer_t swig_types[6]
-#define SWIGTYPE_p_boost__shared_ptrT_gr__flat_flowgraph_t swig_types[7]
-#define SWIGTYPE_p_boost__shared_ptrT_gr__flowgraph_t swig_types[8]
-#define SWIGTYPE_p_boost__shared_ptrT_gr__hier_block2_t swig_types[9]
-#define SWIGTYPE_p_boost__shared_ptrT_gr__io_signature_t swig_types[10]
-#define SWIGTYPE_p_boost__shared_ptrT_gr__packetizr__packet_encoder_t swig_types[11]
-#define SWIGTYPE_p_boost__shared_ptrT_gr__top_block_t swig_types[12]
-#define SWIGTYPE_p_char swig_types[13]
-#define SWIGTYPE_p_const_reference swig_types[14]
-#define SWIGTYPE_p_difference_type swig_types[15]
-#define SWIGTYPE_p_gr__basic_block swig_types[16]
-#define SWIGTYPE_p_gr__block swig_types[17]
-#define SWIGTYPE_p_gr__block_gateway swig_types[18]
-#define SWIGTYPE_p_gr__endianness_t swig_types[19]
-#define SWIGTYPE_p_gr__hier_block2 swig_types[20]
-#define SWIGTYPE_p_gr__packetizr__packet_encoder swig_types[21]
-#define SWIGTYPE_p_gr__rt_status_t swig_types[22]
-#define SWIGTYPE_p_gr__sync_block swig_types[23]
-#define SWIGTYPE_p_gr__sync_decimator swig_types[24]
-#define SWIGTYPE_p_gr__sync_interpolator swig_types[25]
-#define SWIGTYPE_p_gr__tagged_stream_block swig_types[26]
-#define SWIGTYPE_p_gr__top_block swig_types[27]
-#define SWIGTYPE_p_int swig_types[28]
-#define SWIGTYPE_p_long_long swig_types[29]
-#define SWIGTYPE_p_reference swig_types[30]
-#define SWIGTYPE_p_short swig_types[31]
-#define SWIGTYPE_p_signed_char swig_types[32]
-#define SWIGTYPE_p_size_type swig_types[33]
-#define SWIGTYPE_p_sptr swig_types[34]
-#define SWIGTYPE_p_std__complexT_double_t swig_types[35]
-#define SWIGTYPE_p_std__complexT_float_t swig_types[36]
-#define SWIGTYPE_p_unsigned_char swig_types[37]
-#define SWIGTYPE_p_unsigned_int swig_types[38]
-#define SWIGTYPE_p_unsigned_long_long swig_types[39]
-#define SWIGTYPE_p_unsigned_short swig_types[40]
-#define SWIGTYPE_p_value_type swig_types[41]
-static swig_type_info *swig_types[43];
-static swig_module_info swig_module = {swig_types, 42, 0, 0, 0, 0};
+#define SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_16qam_t swig_types[7]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_8psk_natural_t swig_types[8]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_8psk_t swig_types[9]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_bpsk_t swig_types[10]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_calcdist_t swig_types[11]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_dqpsk_t swig_types[12]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_expl_rect_t swig_types[13]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_psk_t swig_types[14]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_qpsk_t swig_types[15]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_rect_t swig_types[16]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_t swig_types[17]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__flat_flowgraph_t swig_types[18]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__flowgraph_t swig_types[19]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__hier_block2_t swig_types[20]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__io_signature_t swig_types[21]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__packetizr__packet_encoder_t swig_types[22]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__top_block_t swig_types[23]
+#define SWIGTYPE_p_char swig_types[24]
+#define SWIGTYPE_p_const_reference swig_types[25]
+#define SWIGTYPE_p_difference_type swig_types[26]
+#define SWIGTYPE_p_float swig_types[27]
+#define SWIGTYPE_p_gr__basic_block swig_types[28]
+#define SWIGTYPE_p_gr__block swig_types[29]
+#define SWIGTYPE_p_gr__block_gateway swig_types[30]
+#define SWIGTYPE_p_gr__digital__constellation swig_types[31]
+#define SWIGTYPE_p_gr__digital__constellation_16qam swig_types[32]
+#define SWIGTYPE_p_gr__digital__constellation_8psk swig_types[33]
+#define SWIGTYPE_p_gr__digital__constellation_8psk_natural swig_types[34]
+#define SWIGTYPE_p_gr__digital__constellation_bpsk swig_types[35]
+#define SWIGTYPE_p_gr__digital__constellation_calcdist swig_types[36]
+#define SWIGTYPE_p_gr__digital__constellation_dqpsk swig_types[37]
+#define SWIGTYPE_p_gr__digital__constellation_expl_rect swig_types[38]
+#define SWIGTYPE_p_gr__digital__constellation_psk swig_types[39]
+#define SWIGTYPE_p_gr__digital__constellation_qpsk swig_types[40]
+#define SWIGTYPE_p_gr__digital__constellation_rect swig_types[41]
+#define SWIGTYPE_p_gr__digital__constellation_sector swig_types[42]
+#define SWIGTYPE_p_gr__digital__trellis_metric_type_t swig_types[43]
+#define SWIGTYPE_p_gr__endianness_t swig_types[44]
+#define SWIGTYPE_p_gr__filter__firdes swig_types[45]
+#define SWIGTYPE_p_gr__hier_block2 swig_types[46]
+#define SWIGTYPE_p_gr__packetizr__packet_encoder swig_types[47]
+#define SWIGTYPE_p_gr__rt_status_t swig_types[48]
+#define SWIGTYPE_p_gr__sync_block swig_types[49]
+#define SWIGTYPE_p_gr__sync_decimator swig_types[50]
+#define SWIGTYPE_p_gr__sync_interpolator swig_types[51]
+#define SWIGTYPE_p_gr__tagged_stream_block swig_types[52]
+#define SWIGTYPE_p_gr__top_block swig_types[53]
+#define SWIGTYPE_p_int swig_types[54]
+#define SWIGTYPE_p_long_long swig_types[55]
+#define SWIGTYPE_p_reference swig_types[56]
+#define SWIGTYPE_p_short swig_types[57]
+#define SWIGTYPE_p_signed_char swig_types[58]
+#define SWIGTYPE_p_size_type swig_types[59]
+#define SWIGTYPE_p_sptr swig_types[60]
+#define SWIGTYPE_p_std__complexT_double_t swig_types[61]
+#define SWIGTYPE_p_std__complexT_float_t swig_types[62]
+#define SWIGTYPE_p_unsigned_char swig_types[63]
+#define SWIGTYPE_p_unsigned_int swig_types[64]
+#define SWIGTYPE_p_unsigned_long_long swig_types[65]
+#define SWIGTYPE_p_unsigned_short swig_types[66]
+#define SWIGTYPE_p_value_type swig_types[67]
+static swig_type_info *swig_types[69];
+static swig_module_info swig_module = {swig_types, 68, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -4368,6 +4394,12 @@ SWIG_From_long_SS_long  (long long value)
 
 
 #include "packetizr/packet_encoder.h"
+#include "gnuradio/digital/constellation.h"
+#include <gnuradio/digital/api.h>
+#include <gnuradio/tagged_stream_block.h>
+#include <gnuradio/digital/constellation.h>
+#include <gnuradio/block.h>
+#include <gnuradio/filter/firdes.h>
 
 
 SWIGINTERN int
@@ -4728,45 +4760,6 @@ SWIG_AsPtr_std_string (PyObject * obj, std::string **val)
 }
 
 
-SWIGINTERNINLINE PyObject*
-  SWIG_From_unsigned_SS_int  (unsigned int value)
-{
-  return PyInt_FromSize_t((size_t) value);
-}
-
-
-SWIGINTERNINLINE PyObject*
-  SWIG_From_int  (int value)
-{
-  return PyInt_FromLong((long) value);
-}
-
-
-  #define SWIG_From_double   PyFloat_FromDouble 
-
-
-SWIGINTERNINLINE PyObject*
-  SWIG_From_bool  (bool value)
-{
-  return PyBool_FromLong(value ? 1 : 0);
-}
-
-
-SWIGINTERNINLINE PyObject* 
-SWIG_From_unsigned_SS_long_SS_long  (unsigned long long value)
-{
-  return (value > LONG_MAX) ?
-    PyLong_FromUnsignedLongLong(value) : PyLong_FromLong(static_cast< long >(value)); 
-}
-
-
-SWIGINTERNINLINE PyObject *
-SWIG_From_float  (float value)
-{    
-  return SWIG_From_double  (value);
-}
-
-
 /* Getting isfinite working pre C99 across multiple platforms is non-trivial. Users can provide SWIG_isfinite on older platforms. */
 #ifndef SWIG_isfinite
 # if defined(isfinite)
@@ -4804,21 +4797,59 @@ SWIG_AsVal_float (PyObject * obj, float *val)
 }
 
 
+SWIGINTERN int
+SWIG_AsVal_std_complex_Sl_float_Sg_ (PyObject *o, std::complex<float> *val)
+{
+  if (PyComplex_Check(o)) {
+    double re = PyComplex_RealAsDouble(o);
+    double im = PyComplex_ImagAsDouble(o);
+    if ((-FLT_MAX <= re && re <= FLT_MAX) && (-FLT_MAX <= im && im <= FLT_MAX)) {
+      if (val) *val = std::complex<float>(static_cast< float >(re),
+				  static_cast< float >(im));
+      return SWIG_OK;
+    } else {
+      return SWIG_OverflowError;
+    }    
+  } else {
+    float re;
+    int res = SWIG_AddCast(SWIG_AsVal_float (o, &re));
+    if (SWIG_IsOK(res)) {
+      if (val) *val = std::complex<float>(re, 0.0);
+      return res;
+    }
+  }
+  return SWIG_TypeError;
+}
+
+
+SWIGINTERNINLINE PyObject*
+SWIG_From_std_complex_Sl_float_Sg_  (/*@SWIG:/usr/share/swig3.0/typemaps/swigmacros.swg,104,%ifcplusplus@*/
+
+const std::complex<float>&
+
+
+
+/*@SWIG@*/ c)
+{
+  return PyComplex_FromDoubles(std::real(c), std::imag(c));
+}
+
+
 namespace swig {
-  template <> struct traits< float > {
+  template <> struct traits< std::complex<float> > {
     typedef value_category category;
-    static const char* type_name() { return"float"; }
+    static const char* type_name() { return"std::complex<float>"; }
   };
-  template <>  struct traits_asval< float > {
-    typedef float value_type;
+  template <>  struct traits_asval< std::complex<float> > {
+    typedef std::complex<float> value_type;
     static int asval(PyObject *obj, value_type *val) {
-      return SWIG_AsVal_float (obj, val);
+      return SWIG_AsVal_std_complex_Sl_float_Sg_ (obj, val);
     }
   };
-  template <>  struct traits_from< float > {
-    typedef float value_type;
+  template <>  struct traits_from< std::complex<float> > {
+    typedef std::complex<float> value_type;
     static PyObject *from(const value_type& val) {
-      return SWIG_From_float  (val);
+      return SWIG_From_std_complex_Sl_float_Sg_  (val);
     }
   };
 }
@@ -4922,14 +4953,59 @@ namespace swig {
 
 
       namespace swig {
-	template <>  struct traits<std::vector< float, std::allocator< float > > > {
+	template <>  struct traits<std::vector< std::complex< float >, std::allocator< std::complex< float > > > > {
 	  typedef pointer_category category;
 	  static const char* type_name() {
-	    return "std::vector<" "float" "," "std::allocator< float >" " >";
+	    return "std::vector<" "std::complex< float >" "," "std::allocator< std::complex< float > >" " >";
 	  }
 	};
       }
     
+
+SWIGINTERNINLINE PyObject*
+  SWIG_From_unsigned_SS_int  (unsigned int value)
+{
+  return PyInt_FromSize_t((size_t) value);
+}
+
+
+      namespace swig {
+	template <>  struct traits<std::vector< std::vector< std::complex< float >,std::allocator< std::complex< float > > >, std::allocator< std::vector< std::complex< float >,std::allocator< std::complex< float > > > > > > {
+	  typedef pointer_category category;
+	  static const char* type_name() {
+	    return "std::vector<" "std::vector< std::complex< float >,std::allocator< std::complex< float > > >" "," "std::allocator< std::vector< std::complex< float >,std::allocator< std::complex< float > > > >" " >";
+	  }
+	};
+      }
+    
+
+SWIGINTERNINLINE PyObject*
+  SWIG_From_bool  (bool value)
+{
+  return PyBool_FromLong(value ? 1 : 0);
+}
+
+
+SWIGINTERN int
+SWIG_AsVal_bool (PyObject *obj, bool *val)
+{
+  int r;
+  if (!PyBool_Check(obj))
+    return SWIG_ERROR;
+  r = PyObject_IsTrue(obj);
+  if (r == -1)
+    return SWIG_ERROR;
+  if (val) *val = r ? true : false;
+  return SWIG_OK;
+}
+
+
+SWIGINTERNINLINE PyObject*
+  SWIG_From_int  (int value)
+{
+  return PyInt_FromLong((long) value);
+}
+
 
 namespace swig {
   template <> struct traits< int > {
@@ -4960,6 +5036,94 @@ namespace swig {
 	};
       }
     
+
+  #define SWIG_From_double   PyFloat_FromDouble 
+
+
+SWIGINTERNINLINE PyObject *
+SWIG_From_float  (float value)
+{    
+  return SWIG_From_double  (value);
+}
+
+
+namespace swig {
+  template <> struct traits< float > {
+    typedef value_category category;
+    static const char* type_name() { return"float"; }
+  };
+  template <>  struct traits_asval< float > {
+    typedef float value_type;
+    static int asval(PyObject *obj, value_type *val) {
+      return SWIG_AsVal_float (obj, val);
+    }
+  };
+  template <>  struct traits_from< float > {
+    typedef float value_type;
+    static PyObject *from(const value_type& val) {
+      return SWIG_From_float  (val);
+    }
+  };
+}
+
+
+      namespace swig {
+	template <>  struct traits<std::vector< float, std::allocator< float > > > {
+	  typedef pointer_category category;
+	  static const char* type_name() {
+	    return "std::vector<" "float" "," "std::allocator< float >" " >";
+	  }
+	};
+      }
+    
+
+      namespace swig {
+	template <>  struct traits<std::vector< std::vector< float,std::allocator< float > >, std::allocator< std::vector< float,std::allocator< float > > > > > {
+	  typedef pointer_category category;
+	  static const char* type_name() {
+	    return "std::vector<" "std::vector< float,std::allocator< float > >" "," "std::allocator< std::vector< float,std::allocator< float > > >" " >";
+	  }
+	};
+      }
+    
+
+namespace swig {
+  template <> struct traits< unsigned int > {
+    typedef value_category category;
+    static const char* type_name() { return"unsigned int"; }
+  };
+  template <>  struct traits_asval< unsigned int > {
+    typedef unsigned int value_type;
+    static int asval(PyObject *obj, value_type *val) {
+      return SWIG_AsVal_unsigned_SS_int (obj, val);
+    }
+  };
+  template <>  struct traits_from< unsigned int > {
+    typedef unsigned int value_type;
+    static PyObject *from(const value_type& val) {
+      return SWIG_From_unsigned_SS_int  (val);
+    }
+  };
+}
+
+
+      namespace swig {
+	template <>  struct traits<std::vector< unsigned int, std::allocator< unsigned int > > > {
+	  typedef pointer_category category;
+	  static const char* type_name() {
+	    return "std::vector<" "unsigned int" "," "std::allocator< unsigned int >" " >";
+	  }
+	};
+      }
+    
+
+SWIGINTERNINLINE PyObject* 
+SWIG_From_unsigned_SS_long_SS_long  (unsigned long long value)
+{
+  return (value > LONG_MAX) ?
+    PyLong_FromUnsignedLongLong(value) : PyLong_FromLong(static_cast< long >(value)); 
+}
+
 
 SWIGINTERNINLINE PyObject *
 SWIG_FromCharPtrAndSize(const char* carray, size_t size)
@@ -5095,18 +5259,18 @@ SWIGINTERN PyObject *_wrap_packet_encoder_make(PyObject *SWIGUNUSEDPARM(self), P
   PyObject *resultobj = 0;
   unsigned int arg1 ;
   int arg2 ;
-  unsigned int arg3 ;
-  unsigned int arg4 ;
+  SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > arg3 ;
+  SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > arg4 ;
   size_t arg5 ;
   std::string *arg6 = 0 ;
   unsigned int val1 ;
   int ecode1 = 0 ;
   int val2 ;
   int ecode2 = 0 ;
-  unsigned int val3 ;
-  int ecode3 = 0 ;
-  unsigned int val4 ;
-  int ecode4 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
   size_t val5 ;
   int ecode5 = 0 ;
   int res6 = SWIG_OLDOBJ ;
@@ -5132,16 +5296,32 @@ SWIGINTERN PyObject *_wrap_packet_encoder_make(PyObject *SWIGUNUSEDPARM(self), P
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "packet_encoder_make" "', argument " "2"" of type '" "int""'");
   } 
   arg2 = static_cast< int >(val2);
-  ecode3 = SWIG_AsVal_unsigned_SS_int(obj2, &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "packet_encoder_make" "', argument " "3"" of type '" "unsigned int""'");
-  } 
-  arg3 = static_cast< unsigned int >(val3);
-  ecode4 = SWIG_AsVal_unsigned_SS_int(obj3, &val4);
-  if (!SWIG_IsOK(ecode4)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "packet_encoder_make" "', argument " "4"" of type '" "unsigned int""'");
-  } 
-  arg4 = static_cast< unsigned int >(val4);
+  {
+    res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_t,  0  | 0);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "packet_encoder_make" "', argument " "3"" of type '" "gr::digital::constellation_sptr""'"); 
+    }  
+    if (!argp3) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_make" "', argument " "3"" of type '" "gr::digital::constellation_sptr""'");
+    } else {
+      gr::digital::constellation_sptr * temp = reinterpret_cast< gr::digital::constellation_sptr * >(argp3);
+      arg3 = *temp;
+      if (SWIG_IsNewObj(res3)) delete temp;
+    }
+  }
+  {
+    res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_t,  0  | 0);
+    if (!SWIG_IsOK(res4)) {
+      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "packet_encoder_make" "', argument " "4"" of type '" "gr::digital::constellation_sptr""'"); 
+    }  
+    if (!argp4) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_make" "', argument " "4"" of type '" "gr::digital::constellation_sptr""'");
+    } else {
+      gr::digital::constellation_sptr * temp = reinterpret_cast< gr::digital::constellation_sptr * >(argp4);
+      arg4 = *temp;
+      if (SWIG_IsNewObj(res4)) delete temp;
+    }
+  }
   ecode5 = SWIG_AsVal_size_t(obj4, &val5);
   if (!SWIG_IsOK(ecode5)) {
     SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "packet_encoder_make" "', argument " "5"" of type '" "size_t""'");
@@ -5215,6 +5395,3312 @@ SWIGINTERN PyObject *packet_encoder_swigregister(PyObject *SWIGUNUSEDPARM(self),
   PyObject *obj;
   if (!PyArg_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
   SWIG_TypeNewClientData(SWIGTYPE_p_gr__packetizr__packet_encoder, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_delete_constellation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"delete_constellation",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_constellation" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  {
+    try {
+      delete arg1;
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_map_to_points(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  unsigned int arg2 ;
+  gr_complex *arg3 = (gr_complex *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "value",(char *) "points", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:constellation_map_to_points",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_map_to_points" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "constellation_map_to_points" "', argument " "2"" of type '" "unsigned int""'");
+  } 
+  arg2 = static_cast< unsigned int >(val2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3,SWIGTYPE_p_std__complexT_float_t, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "constellation_map_to_points" "', argument " "3"" of type '" "gr_complex *""'"); 
+  }
+  arg3 = reinterpret_cast< gr_complex * >(argp3);
+  {
+    try {
+      (arg1)->map_to_points(arg2,arg3);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_map_to_points_v(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  unsigned int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "value", NULL 
+  };
+  std::vector< gr_complex,std::allocator< gr_complex > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:constellation_map_to_points_v",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_map_to_points_v" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "constellation_map_to_points_v" "', argument " "2"" of type '" "unsigned int""'");
+  } 
+  arg2 = static_cast< unsigned int >(val2);
+  {
+    try {
+      result = (arg1)->map_to_points_v(arg2);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< std::complex< float >,std::allocator< std::complex< float > > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_decision_maker(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  gr_complex *arg2 = (gr_complex *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "sample", NULL 
+  };
+  unsigned int result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:constellation_decision_maker",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_decision_maker" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_std__complexT_float_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "constellation_decision_maker" "', argument " "2"" of type '" "gr_complex const *""'"); 
+  }
+  arg2 = reinterpret_cast< gr_complex * >(argp2);
+  {
+    try {
+      result = (unsigned int)(arg1)->decision_maker((gr_complex const *)arg2);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_decision_maker_v(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  std::vector< gr_complex,std::allocator< gr_complex > > arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "sample", NULL 
+  };
+  unsigned int result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:constellation_decision_maker_v",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_decision_maker_v" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  {
+    std::vector< std::complex< float >,std::allocator< std::complex< float > > > *ptr = (std::vector< std::complex< float >,std::allocator< std::complex< float > > > *)0;
+    int res = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "constellation_decision_maker_v" "', argument " "2"" of type '" "std::vector< gr_complex,std::allocator< gr_complex > >""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try {
+      result = (unsigned int)(arg1)->decision_maker_v(arg2);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_decision_maker_pe(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  gr_complex *arg2 = (gr_complex *) 0 ;
+  float *arg3 = (float *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "sample",(char *) "phase_error", NULL 
+  };
+  unsigned int result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:constellation_decision_maker_pe",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_decision_maker_pe" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_std__complexT_float_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "constellation_decision_maker_pe" "', argument " "2"" of type '" "gr_complex const *""'"); 
+  }
+  arg2 = reinterpret_cast< gr_complex * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3,SWIGTYPE_p_float, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "constellation_decision_maker_pe" "', argument " "3"" of type '" "float *""'"); 
+  }
+  arg3 = reinterpret_cast< float * >(argp3);
+  {
+    try {
+      result = (unsigned int)(arg1)->decision_maker_pe((gr_complex const *)arg2,arg3);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_calc_metric(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  gr_complex *arg2 = (gr_complex *) 0 ;
+  float *arg3 = (float *) 0 ;
+  gr::digital::trellis_metric_type_t arg4 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "sample",(char *) "metric",(char *) "type", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOO:constellation_calc_metric",kwnames,&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_calc_metric" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_std__complexT_float_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "constellation_calc_metric" "', argument " "2"" of type '" "gr_complex const *""'"); 
+  }
+  arg2 = reinterpret_cast< gr_complex * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3,SWIGTYPE_p_float, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "constellation_calc_metric" "', argument " "3"" of type '" "float *""'"); 
+  }
+  arg3 = reinterpret_cast< float * >(argp3);
+  {
+    res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_gr__digital__trellis_metric_type_t,  0  | 0);
+    if (!SWIG_IsOK(res4)) {
+      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "constellation_calc_metric" "', argument " "4"" of type '" "gr::digital::trellis_metric_type_t""'"); 
+    }  
+    if (!argp4) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "constellation_calc_metric" "', argument " "4"" of type '" "gr::digital::trellis_metric_type_t""'");
+    } else {
+      gr::digital::trellis_metric_type_t * temp = reinterpret_cast< gr::digital::trellis_metric_type_t * >(argp4);
+      arg4 = *temp;
+      if (SWIG_IsNewObj(res4)) delete temp;
+    }
+  }
+  {
+    try {
+      (arg1)->calc_metric((gr_complex const *)arg2,arg3,arg4);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_calc_euclidean_metric(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  gr_complex *arg2 = (gr_complex *) 0 ;
+  float *arg3 = (float *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "sample",(char *) "metric", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:constellation_calc_euclidean_metric",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_calc_euclidean_metric" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_std__complexT_float_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "constellation_calc_euclidean_metric" "', argument " "2"" of type '" "gr_complex const *""'"); 
+  }
+  arg2 = reinterpret_cast< gr_complex * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3,SWIGTYPE_p_float, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "constellation_calc_euclidean_metric" "', argument " "3"" of type '" "float *""'"); 
+  }
+  arg3 = reinterpret_cast< float * >(argp3);
+  {
+    try {
+      (arg1)->calc_euclidean_metric((gr_complex const *)arg2,arg3);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_calc_hard_symbol_metric(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  gr_complex *arg2 = (gr_complex *) 0 ;
+  float *arg3 = (float *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "sample",(char *) "metric", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:constellation_calc_hard_symbol_metric",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_calc_hard_symbol_metric" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_std__complexT_float_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "constellation_calc_hard_symbol_metric" "', argument " "2"" of type '" "gr_complex const *""'"); 
+  }
+  arg2 = reinterpret_cast< gr_complex * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3,SWIGTYPE_p_float, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "constellation_calc_hard_symbol_metric" "', argument " "3"" of type '" "float *""'"); 
+  }
+  arg3 = reinterpret_cast< float * >(argp3);
+  {
+    try {
+      (arg1)->calc_hard_symbol_metric((gr_complex const *)arg2,arg3);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_points(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< gr_complex,std::allocator< gr_complex > > result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"constellation_points",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_points" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  {
+    try {
+      result = (arg1)->points();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< std::complex< float >,std::allocator< std::complex< float > > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_s_points(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< gr_complex,std::allocator< gr_complex > > result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"constellation_s_points",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_s_points" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  {
+    try {
+      result = (arg1)->s_points();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< std::complex< float >,std::allocator< std::complex< float > > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_v_points(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< std::vector< gr_complex,std::allocator< gr_complex > >,std::allocator< std::vector< gr_complex,std::allocator< gr_complex > > > > result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"constellation_v_points",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_v_points" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  {
+    try {
+      result = (arg1)->v_points();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< std::vector< std::complex< float >,std::allocator< std::complex< float > > >,std::allocator< std::vector< std::complex< float >,std::allocator< std::complex< float > > > > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_apply_pre_diff_code(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  bool result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"constellation_apply_pre_diff_code",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_apply_pre_diff_code" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->apply_pre_diff_code();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_set_pre_diff_code(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  bool arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  bool val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "a", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:constellation_set_pre_diff_code",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_set_pre_diff_code" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  ecode2 = SWIG_AsVal_bool(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "constellation_set_pre_diff_code" "', argument " "2"" of type '" "bool""'");
+  } 
+  arg2 = static_cast< bool >(val2);
+  {
+    try {
+      (arg1)->set_pre_diff_code(arg2);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_pre_diff_code(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< int,std::allocator< int > > result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"constellation_pre_diff_code",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_pre_diff_code" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  {
+    try {
+      result = (arg1)->pre_diff_code();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< int,std::allocator< int > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_rotational_symmetry(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned int result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"constellation_rotational_symmetry",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_rotational_symmetry" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->rotational_symmetry();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_dimensionality(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned int result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"constellation_dimensionality",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_dimensionality" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->dimensionality();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_bits_per_symbol(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned int result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"constellation_bits_per_symbol",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_bits_per_symbol" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->bits_per_symbol();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_arity(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned int result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"constellation_arity",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_arity" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  {
+    try {
+      result = (unsigned int)(arg1)->arity();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_base(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"constellation_base",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_base" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  {
+    try {
+      result = (arg1)->base();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj((new gr::digital::constellation_sptr(static_cast< const gr::digital::constellation_sptr& >(result))), SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_as_pmt(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  pmt::pmt_t result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"constellation_as_pmt",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_as_pmt" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  {
+    try {
+      result = (arg1)->as_pmt();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj((new pmt::pmt_t(static_cast< const pmt::pmt_t& >(result))), SWIGTYPE_p_boost__intrusive_ptrT_pmt__pmt_base_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_gen_soft_dec_lut(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  int arg2 ;
+  float arg3 = (float) 1.0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  float val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "precision",(char *) "npwr", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO|O:constellation_gen_soft_dec_lut",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_gen_soft_dec_lut" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "constellation_gen_soft_dec_lut" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (obj2) {
+    ecode3 = SWIG_AsVal_float(obj2, &val3);
+    if (!SWIG_IsOK(ecode3)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "constellation_gen_soft_dec_lut" "', argument " "3"" of type '" "float""'");
+    } 
+    arg3 = static_cast< float >(val3);
+  }
+  {
+    try {
+      (arg1)->gen_soft_dec_lut(arg2,arg3);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_calc_soft_dec(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  gr_complex arg2 ;
+  float arg3 = (float) 1.0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  std::complex< float > val2 ;
+  int ecode2 = 0 ;
+  float val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "sample",(char *) "npwr", NULL 
+  };
+  std::vector< float,std::allocator< float > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO|O:constellation_calc_soft_dec",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_calc_soft_dec" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  ecode2 = SWIG_AsVal_std_complex_Sl_float_Sg_(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "constellation_calc_soft_dec" "', argument " "2"" of type '" "gr_complex""'");
+  } 
+  arg2 = static_cast< gr_complex >(val2);
+  if (obj2) {
+    ecode3 = SWIG_AsVal_float(obj2, &val3);
+    if (!SWIG_IsOK(ecode3)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "constellation_calc_soft_dec" "', argument " "3"" of type '" "float""'");
+    } 
+    arg3 = static_cast< float >(val3);
+  }
+  {
+    try {
+      result = (arg1)->calc_soft_dec(arg2,arg3);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< float,std::allocator< float > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_set_soft_dec_lut(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  std::vector< std::vector< float,std::allocator< float > >,std::allocator< std::vector< float,std::allocator< float > > > > *arg2 = 0 ;
+  int arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  int val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "soft_dec_lut",(char *) "precision", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:constellation_set_soft_dec_lut",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_set_soft_dec_lut" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  {
+    std::vector< std::vector< float,std::allocator< float > >,std::allocator< std::vector< float,std::allocator< float > > > > *ptr = (std::vector< std::vector< float,std::allocator< float > >,std::allocator< std::vector< float,std::allocator< float > > > > *)0;
+    res2 = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "constellation_set_soft_dec_lut" "', argument " "2"" of type '" "std::vector< std::vector< float,std::allocator< float > >,std::allocator< std::vector< float,std::allocator< float > > > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "constellation_set_soft_dec_lut" "', argument " "2"" of type '" "std::vector< std::vector< float,std::allocator< float > >,std::allocator< std::vector< float,std::allocator< float > > > > const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  ecode3 = SWIG_AsVal_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "constellation_set_soft_dec_lut" "', argument " "3"" of type '" "int""'");
+  } 
+  arg3 = static_cast< int >(val3);
+  {
+    try {
+      (arg1)->set_soft_dec_lut((std::vector< std::vector< float,std::allocator< float > >,std::allocator< std::vector< float,std::allocator< float > > > > const &)*arg2,arg3);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_has_soft_dec_lut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  bool result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"constellation_has_soft_dec_lut",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_has_soft_dec_lut" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  {
+    try {
+      result = (bool)(arg1)->has_soft_dec_lut();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_soft_dec_lut(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< std::vector< float,std::allocator< float > >,std::allocator< std::vector< float,std::allocator< float > > > > result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"constellation_soft_dec_lut",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_soft_dec_lut" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  {
+    try {
+      result = (arg1)->soft_dec_lut();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< std::vector< float,std::allocator< float > >,std::allocator< std::vector< float,std::allocator< float > > > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_constellation_soft_decision_maker(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation *arg1 = (gr::digital::constellation *) 0 ;
+  gr_complex arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  std::complex< float > val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "sample", NULL 
+  };
+  std::vector< float,std::allocator< float > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:constellation_soft_decision_maker",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "constellation_soft_decision_maker" "', argument " "1"" of type '" "gr::digital::constellation *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation * >(argp1);
+  ecode2 = SWIG_AsVal_std_complex_Sl_float_Sg_(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "constellation_soft_decision_maker" "', argument " "2"" of type '" "gr_complex""'");
+  } 
+  arg2 = static_cast< gr_complex >(val2);
+  {
+    try {
+      result = (arg1)->soft_decision_maker(arg2);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< float,std::allocator< float > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *constellation_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_gr__digital__constellation, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_constellation_calcdist_make(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  std::vector< gr_complex,std::allocator< gr_complex > > arg1 ;
+  std::vector< int,std::allocator< int > > arg2 ;
+  unsigned int arg3 ;
+  unsigned int arg4 ;
+  unsigned int val3 ;
+  int ecode3 = 0 ;
+  unsigned int val4 ;
+  int ecode4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  char *  kwnames[] = {
+    (char *) "constell",(char *) "pre_diff_code",(char *) "rotational_symmetry",(char *) "dimensionality", NULL 
+  };
+  SwigValueWrapper< boost::shared_ptr< gr::digital::constellation_calcdist > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOO:constellation_calcdist_make",kwnames,&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  {
+    std::vector< std::complex< float >,std::allocator< std::complex< float > > > *ptr = (std::vector< std::complex< float >,std::allocator< std::complex< float > > > *)0;
+    int res = swig::asptr(obj0, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "constellation_calcdist_make" "', argument " "1"" of type '" "std::vector< gr_complex,std::allocator< gr_complex > >""'"); 
+    }
+    arg1 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    std::vector< int,std::allocator< int > > *ptr = (std::vector< int,std::allocator< int > > *)0;
+    int res = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "constellation_calcdist_make" "', argument " "2"" of type '" "std::vector< int,std::allocator< int > >""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  ecode3 = SWIG_AsVal_unsigned_SS_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "constellation_calcdist_make" "', argument " "3"" of type '" "unsigned int""'");
+  } 
+  arg3 = static_cast< unsigned int >(val3);
+  ecode4 = SWIG_AsVal_unsigned_SS_int(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "constellation_calcdist_make" "', argument " "4"" of type '" "unsigned int""'");
+  } 
+  arg4 = static_cast< unsigned int >(val4);
+  {
+    try {
+      result = gr::digital::constellation_calcdist::make(arg1,arg2,arg3,arg4);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj((new gr::digital::constellation_calcdist::sptr(static_cast< const gr::digital::constellation_calcdist::sptr& >(result))), SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_calcdist_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_constellation_calcdist(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation_calcdist *arg1 = (gr::digital::constellation_calcdist *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"delete_constellation_calcdist",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation_calcdist, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_constellation_calcdist" "', argument " "1"" of type '" "gr::digital::constellation_calcdist *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation_calcdist * >(argp1);
+  {
+    try {
+      delete arg1;
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *constellation_calcdist_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_gr__digital__constellation_calcdist, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_delete_constellation_sector(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation_sector *arg1 = (gr::digital::constellation_sector *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"delete_constellation_sector",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation_sector, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_constellation_sector" "', argument " "1"" of type '" "gr::digital::constellation_sector *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation_sector * >(argp1);
+  {
+    try {
+      delete arg1;
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *constellation_sector_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_gr__digital__constellation_sector, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_constellation_rect_make(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  std::vector< gr_complex,std::allocator< gr_complex > > arg1 ;
+  std::vector< int,std::allocator< int > > arg2 ;
+  unsigned int arg3 ;
+  unsigned int arg4 ;
+  unsigned int arg5 ;
+  float arg6 ;
+  float arg7 ;
+  unsigned int val3 ;
+  int ecode3 = 0 ;
+  unsigned int val4 ;
+  int ecode4 = 0 ;
+  unsigned int val5 ;
+  int ecode5 = 0 ;
+  float val6 ;
+  int ecode6 = 0 ;
+  float val7 ;
+  int ecode7 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  char *  kwnames[] = {
+    (char *) "constell",(char *) "pre_diff_code",(char *) "rotational_symmetry",(char *) "real_sectors",(char *) "imag_sectors",(char *) "width_real_sectors",(char *) "width_imag_sectors", NULL 
+  };
+  SwigValueWrapper< boost::shared_ptr< gr::digital::constellation_rect > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOOO:constellation_rect_make",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6)) SWIG_fail;
+  {
+    std::vector< std::complex< float >,std::allocator< std::complex< float > > > *ptr = (std::vector< std::complex< float >,std::allocator< std::complex< float > > > *)0;
+    int res = swig::asptr(obj0, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "constellation_rect_make" "', argument " "1"" of type '" "std::vector< gr_complex,std::allocator< gr_complex > >""'"); 
+    }
+    arg1 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    std::vector< int,std::allocator< int > > *ptr = (std::vector< int,std::allocator< int > > *)0;
+    int res = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "constellation_rect_make" "', argument " "2"" of type '" "std::vector< int,std::allocator< int > >""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  ecode3 = SWIG_AsVal_unsigned_SS_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "constellation_rect_make" "', argument " "3"" of type '" "unsigned int""'");
+  } 
+  arg3 = static_cast< unsigned int >(val3);
+  ecode4 = SWIG_AsVal_unsigned_SS_int(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "constellation_rect_make" "', argument " "4"" of type '" "unsigned int""'");
+  } 
+  arg4 = static_cast< unsigned int >(val4);
+  ecode5 = SWIG_AsVal_unsigned_SS_int(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "constellation_rect_make" "', argument " "5"" of type '" "unsigned int""'");
+  } 
+  arg5 = static_cast< unsigned int >(val5);
+  ecode6 = SWIG_AsVal_float(obj5, &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "constellation_rect_make" "', argument " "6"" of type '" "float""'");
+  } 
+  arg6 = static_cast< float >(val6);
+  ecode7 = SWIG_AsVal_float(obj6, &val7);
+  if (!SWIG_IsOK(ecode7)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "constellation_rect_make" "', argument " "7"" of type '" "float""'");
+  } 
+  arg7 = static_cast< float >(val7);
+  {
+    try {
+      result = gr::digital::constellation_rect::make(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj((new gr::digital::constellation_rect::sptr(static_cast< const gr::digital::constellation_rect::sptr& >(result))), SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_rect_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_constellation_rect(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation_rect *arg1 = (gr::digital::constellation_rect *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"delete_constellation_rect",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation_rect, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_constellation_rect" "', argument " "1"" of type '" "gr::digital::constellation_rect *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation_rect * >(argp1);
+  {
+    try {
+      delete arg1;
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *constellation_rect_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_gr__digital__constellation_rect, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_constellation_expl_rect_make(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  std::vector< gr_complex,std::allocator< gr_complex > > arg1 ;
+  std::vector< int,std::allocator< int > > arg2 ;
+  unsigned int arg3 ;
+  unsigned int arg4 ;
+  unsigned int arg5 ;
+  float arg6 ;
+  float arg7 ;
+  std::vector< unsigned int,std::allocator< unsigned int > > arg8 ;
+  unsigned int val3 ;
+  int ecode3 = 0 ;
+  unsigned int val4 ;
+  int ecode4 = 0 ;
+  unsigned int val5 ;
+  int ecode5 = 0 ;
+  float val6 ;
+  int ecode6 = 0 ;
+  float val7 ;
+  int ecode7 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  PyObject * obj7 = 0 ;
+  char *  kwnames[] = {
+    (char *) "constellation",(char *) "pre_diff_code",(char *) "rotational_symmetry",(char *) "real_sectors",(char *) "imag_sectors",(char *) "width_real_sectors",(char *) "width_imag_sectors",(char *) "sector_values", NULL 
+  };
+  SwigValueWrapper< boost::shared_ptr< gr::digital::constellation_expl_rect > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOOOO:constellation_expl_rect_make",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7)) SWIG_fail;
+  {
+    std::vector< std::complex< float >,std::allocator< std::complex< float > > > *ptr = (std::vector< std::complex< float >,std::allocator< std::complex< float > > > *)0;
+    int res = swig::asptr(obj0, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "constellation_expl_rect_make" "', argument " "1"" of type '" "std::vector< gr_complex,std::allocator< gr_complex > >""'"); 
+    }
+    arg1 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    std::vector< int,std::allocator< int > > *ptr = (std::vector< int,std::allocator< int > > *)0;
+    int res = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "constellation_expl_rect_make" "', argument " "2"" of type '" "std::vector< int,std::allocator< int > >""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  ecode3 = SWIG_AsVal_unsigned_SS_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "constellation_expl_rect_make" "', argument " "3"" of type '" "unsigned int""'");
+  } 
+  arg3 = static_cast< unsigned int >(val3);
+  ecode4 = SWIG_AsVal_unsigned_SS_int(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "constellation_expl_rect_make" "', argument " "4"" of type '" "unsigned int""'");
+  } 
+  arg4 = static_cast< unsigned int >(val4);
+  ecode5 = SWIG_AsVal_unsigned_SS_int(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "constellation_expl_rect_make" "', argument " "5"" of type '" "unsigned int""'");
+  } 
+  arg5 = static_cast< unsigned int >(val5);
+  ecode6 = SWIG_AsVal_float(obj5, &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "constellation_expl_rect_make" "', argument " "6"" of type '" "float""'");
+  } 
+  arg6 = static_cast< float >(val6);
+  ecode7 = SWIG_AsVal_float(obj6, &val7);
+  if (!SWIG_IsOK(ecode7)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "constellation_expl_rect_make" "', argument " "7"" of type '" "float""'");
+  } 
+  arg7 = static_cast< float >(val7);
+  {
+    std::vector< unsigned int,std::allocator< unsigned int > > *ptr = (std::vector< unsigned int,std::allocator< unsigned int > > *)0;
+    int res = swig::asptr(obj7, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "constellation_expl_rect_make" "', argument " "8"" of type '" "std::vector< unsigned int,std::allocator< unsigned int > >""'"); 
+    }
+    arg8 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    try {
+      result = gr::digital::constellation_expl_rect::make(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj((new gr::digital::constellation_expl_rect::sptr(static_cast< const gr::digital::constellation_expl_rect::sptr& >(result))), SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_expl_rect_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_constellation_expl_rect(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation_expl_rect *arg1 = (gr::digital::constellation_expl_rect *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"delete_constellation_expl_rect",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation_expl_rect, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_constellation_expl_rect" "', argument " "1"" of type '" "gr::digital::constellation_expl_rect *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation_expl_rect * >(argp1);
+  {
+    try {
+      delete arg1;
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *constellation_expl_rect_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_gr__digital__constellation_expl_rect, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_constellation_psk_make(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  std::vector< gr_complex,std::allocator< gr_complex > > arg1 ;
+  std::vector< int,std::allocator< int > > arg2 ;
+  unsigned int arg3 ;
+  unsigned int val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "constell",(char *) "pre_diff_code",(char *) "n_sectors", NULL 
+  };
+  SwigValueWrapper< boost::shared_ptr< gr::digital::constellation_psk > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:constellation_psk_make",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  {
+    std::vector< std::complex< float >,std::allocator< std::complex< float > > > *ptr = (std::vector< std::complex< float >,std::allocator< std::complex< float > > > *)0;
+    int res = swig::asptr(obj0, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "constellation_psk_make" "', argument " "1"" of type '" "std::vector< gr_complex,std::allocator< gr_complex > >""'"); 
+    }
+    arg1 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    std::vector< int,std::allocator< int > > *ptr = (std::vector< int,std::allocator< int > > *)0;
+    int res = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "constellation_psk_make" "', argument " "2"" of type '" "std::vector< int,std::allocator< int > >""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  ecode3 = SWIG_AsVal_unsigned_SS_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "constellation_psk_make" "', argument " "3"" of type '" "unsigned int""'");
+  } 
+  arg3 = static_cast< unsigned int >(val3);
+  {
+    try {
+      result = gr::digital::constellation_psk::make(arg1,arg2,arg3);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj((new gr::digital::constellation_psk::sptr(static_cast< const gr::digital::constellation_psk::sptr& >(result))), SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_psk_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_constellation_psk(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation_psk *arg1 = (gr::digital::constellation_psk *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"delete_constellation_psk",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation_psk, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_constellation_psk" "', argument " "1"" of type '" "gr::digital::constellation_psk *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation_psk * >(argp1);
+  {
+    try {
+      delete arg1;
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *constellation_psk_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_gr__digital__constellation_psk, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_constellation_bpsk_make(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SwigValueWrapper< boost::shared_ptr< gr::digital::constellation_bpsk > > result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"constellation_bpsk_make",0,0)) SWIG_fail;
+  {
+    try {
+      result = gr::digital::constellation_bpsk::make();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj((new gr::digital::constellation_bpsk::sptr(static_cast< const gr::digital::constellation_bpsk::sptr& >(result))), SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_bpsk_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_constellation_bpsk(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation_bpsk *arg1 = (gr::digital::constellation_bpsk *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"delete_constellation_bpsk",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation_bpsk, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_constellation_bpsk" "', argument " "1"" of type '" "gr::digital::constellation_bpsk *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation_bpsk * >(argp1);
+  {
+    try {
+      delete arg1;
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *constellation_bpsk_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_gr__digital__constellation_bpsk, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_constellation_qpsk_make(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SwigValueWrapper< boost::shared_ptr< gr::digital::constellation_qpsk > > result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"constellation_qpsk_make",0,0)) SWIG_fail;
+  {
+    try {
+      result = gr::digital::constellation_qpsk::make();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj((new gr::digital::constellation_qpsk::sptr(static_cast< const gr::digital::constellation_qpsk::sptr& >(result))), SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_qpsk_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_constellation_qpsk(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation_qpsk *arg1 = (gr::digital::constellation_qpsk *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"delete_constellation_qpsk",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation_qpsk, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_constellation_qpsk" "', argument " "1"" of type '" "gr::digital::constellation_qpsk *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation_qpsk * >(argp1);
+  {
+    try {
+      delete arg1;
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *constellation_qpsk_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_gr__digital__constellation_qpsk, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_constellation_dqpsk_make(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SwigValueWrapper< boost::shared_ptr< gr::digital::constellation_dqpsk > > result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"constellation_dqpsk_make",0,0)) SWIG_fail;
+  {
+    try {
+      result = gr::digital::constellation_dqpsk::make();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj((new gr::digital::constellation_dqpsk::sptr(static_cast< const gr::digital::constellation_dqpsk::sptr& >(result))), SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_dqpsk_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_constellation_dqpsk(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation_dqpsk *arg1 = (gr::digital::constellation_dqpsk *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"delete_constellation_dqpsk",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation_dqpsk, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_constellation_dqpsk" "', argument " "1"" of type '" "gr::digital::constellation_dqpsk *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation_dqpsk * >(argp1);
+  {
+    try {
+      delete arg1;
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *constellation_dqpsk_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_gr__digital__constellation_dqpsk, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_constellation_8psk_make(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SwigValueWrapper< boost::shared_ptr< gr::digital::constellation_8psk > > result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"constellation_8psk_make",0,0)) SWIG_fail;
+  {
+    try {
+      result = gr::digital::constellation_8psk::make();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj((new gr::digital::constellation_8psk::sptr(static_cast< const gr::digital::constellation_8psk::sptr& >(result))), SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_8psk_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_constellation_8psk(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation_8psk *arg1 = (gr::digital::constellation_8psk *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"delete_constellation_8psk",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation_8psk, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_constellation_8psk" "', argument " "1"" of type '" "gr::digital::constellation_8psk *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation_8psk * >(argp1);
+  {
+    try {
+      delete arg1;
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *constellation_8psk_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_gr__digital__constellation_8psk, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_constellation_8psk_natural_make(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SwigValueWrapper< boost::shared_ptr< gr::digital::constellation_8psk_natural > > result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"constellation_8psk_natural_make",0,0)) SWIG_fail;
+  {
+    try {
+      result = gr::digital::constellation_8psk_natural::make();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj((new gr::digital::constellation_8psk_natural::sptr(static_cast< const gr::digital::constellation_8psk_natural::sptr& >(result))), SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_8psk_natural_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_constellation_8psk_natural(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation_8psk_natural *arg1 = (gr::digital::constellation_8psk_natural *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"delete_constellation_8psk_natural",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation_8psk_natural, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_constellation_8psk_natural" "', argument " "1"" of type '" "gr::digital::constellation_8psk_natural *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation_8psk_natural * >(argp1);
+  {
+    try {
+      delete arg1;
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *constellation_8psk_natural_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_gr__digital__constellation_8psk_natural, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_constellation_16qam_make(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  SwigValueWrapper< boost::shared_ptr< gr::digital::constellation_16qam > > result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"constellation_16qam_make",0,0)) SWIG_fail;
+  {
+    try {
+      result = gr::digital::constellation_16qam::make();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj((new gr::digital::constellation_16qam::sptr(static_cast< const gr::digital::constellation_16qam::sptr& >(result))), SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_16qam_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_constellation_16qam(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::constellation_16qam *arg1 = (gr::digital::constellation_16qam *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"delete_constellation_16qam",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__constellation_16qam, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_constellation_16qam" "', argument " "1"" of type '" "gr::digital::constellation_16qam *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::constellation_16qam * >(argp1);
+  {
+    try {
+      delete arg1;
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *constellation_16qam_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_gr__digital__constellation_16qam, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_firdes_window(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::filter::firdes::win_type arg1 ;
+  int arg2 ;
+  double arg3 ;
+  int val1 ;
+  int ecode1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "type",(char *) "ntaps",(char *) "beta", NULL 
+  };
+  std::vector< float,std::allocator< float > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:firdes_window",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  ecode1 = SWIG_AsVal_int(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "firdes_window" "', argument " "1"" of type '" "gr::filter::firdes::win_type""'");
+  } 
+  arg1 = static_cast< gr::filter::firdes::win_type >(val1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "firdes_window" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "firdes_window" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  {
+    try {
+      result = gr::filter::firdes::window(arg1,arg2,arg3);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< float,std::allocator< float > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_firdes_low_pass(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  gr::filter::firdes::win_type arg5 = (gr::filter::firdes::win_type) gr::filter::firdes::WIN_HAMMING ;
+  double arg6 = (double) 6.76 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  int val5 ;
+  int ecode5 = 0 ;
+  double val6 ;
+  int ecode6 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  char *  kwnames[] = {
+    (char *) "gain",(char *) "sampling_freq",(char *) "cutoff_freq",(char *) "transition_width",(char *) "window",(char *) "beta", NULL 
+  };
+  std::vector< float,std::allocator< float > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOO|OO:firdes_low_pass",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5)) SWIG_fail;
+  ecode1 = SWIG_AsVal_double(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "firdes_low_pass" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = static_cast< double >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "firdes_low_pass" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "firdes_low_pass" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "firdes_low_pass" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  if (obj4) {
+    ecode5 = SWIG_AsVal_int(obj4, &val5);
+    if (!SWIG_IsOK(ecode5)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "firdes_low_pass" "', argument " "5"" of type '" "gr::filter::firdes::win_type""'");
+    } 
+    arg5 = static_cast< gr::filter::firdes::win_type >(val5);
+  }
+  if (obj5) {
+    ecode6 = SWIG_AsVal_double(obj5, &val6);
+    if (!SWIG_IsOK(ecode6)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "firdes_low_pass" "', argument " "6"" of type '" "double""'");
+    } 
+    arg6 = static_cast< double >(val6);
+  }
+  {
+    try {
+      result = gr::filter::firdes::low_pass(arg1,arg2,arg3,arg4,arg5,arg6);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< float,std::allocator< float > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_firdes_low_pass_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  gr::filter::firdes::win_type arg6 = (gr::filter::firdes::win_type) gr::filter::firdes::WIN_HAMMING ;
+  double arg7 = (double) 6.76 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  int val6 ;
+  int ecode6 = 0 ;
+  double val7 ;
+  int ecode7 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  char *  kwnames[] = {
+    (char *) "gain",(char *) "sampling_freq",(char *) "cutoff_freq",(char *) "transition_width",(char *) "attenuation_dB",(char *) "window",(char *) "beta", NULL 
+  };
+  std::vector< float,std::allocator< float > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOO|OO:firdes_low_pass_2",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6)) SWIG_fail;
+  ecode1 = SWIG_AsVal_double(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "firdes_low_pass_2" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = static_cast< double >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "firdes_low_pass_2" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "firdes_low_pass_2" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "firdes_low_pass_2" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  ecode5 = SWIG_AsVal_double(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "firdes_low_pass_2" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
+  if (obj5) {
+    ecode6 = SWIG_AsVal_int(obj5, &val6);
+    if (!SWIG_IsOK(ecode6)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "firdes_low_pass_2" "', argument " "6"" of type '" "gr::filter::firdes::win_type""'");
+    } 
+    arg6 = static_cast< gr::filter::firdes::win_type >(val6);
+  }
+  if (obj6) {
+    ecode7 = SWIG_AsVal_double(obj6, &val7);
+    if (!SWIG_IsOK(ecode7)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "firdes_low_pass_2" "', argument " "7"" of type '" "double""'");
+    } 
+    arg7 = static_cast< double >(val7);
+  }
+  {
+    try {
+      result = gr::filter::firdes::low_pass_2(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< float,std::allocator< float > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_firdes_high_pass(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  gr::filter::firdes::win_type arg5 = (gr::filter::firdes::win_type) gr::filter::firdes::WIN_HAMMING ;
+  double arg6 = (double) 6.76 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  int val5 ;
+  int ecode5 = 0 ;
+  double val6 ;
+  int ecode6 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  char *  kwnames[] = {
+    (char *) "gain",(char *) "sampling_freq",(char *) "cutoff_freq",(char *) "transition_width",(char *) "window",(char *) "beta", NULL 
+  };
+  std::vector< float,std::allocator< float > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOO|OO:firdes_high_pass",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5)) SWIG_fail;
+  ecode1 = SWIG_AsVal_double(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "firdes_high_pass" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = static_cast< double >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "firdes_high_pass" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "firdes_high_pass" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "firdes_high_pass" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  if (obj4) {
+    ecode5 = SWIG_AsVal_int(obj4, &val5);
+    if (!SWIG_IsOK(ecode5)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "firdes_high_pass" "', argument " "5"" of type '" "gr::filter::firdes::win_type""'");
+    } 
+    arg5 = static_cast< gr::filter::firdes::win_type >(val5);
+  }
+  if (obj5) {
+    ecode6 = SWIG_AsVal_double(obj5, &val6);
+    if (!SWIG_IsOK(ecode6)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "firdes_high_pass" "', argument " "6"" of type '" "double""'");
+    } 
+    arg6 = static_cast< double >(val6);
+  }
+  {
+    try {
+      result = gr::filter::firdes::high_pass(arg1,arg2,arg3,arg4,arg5,arg6);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< float,std::allocator< float > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_firdes_high_pass_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  gr::filter::firdes::win_type arg6 = (gr::filter::firdes::win_type) gr::filter::firdes::WIN_HAMMING ;
+  double arg7 = (double) 6.76 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  int val6 ;
+  int ecode6 = 0 ;
+  double val7 ;
+  int ecode7 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  char *  kwnames[] = {
+    (char *) "gain",(char *) "sampling_freq",(char *) "cutoff_freq",(char *) "transition_width",(char *) "attenuation_dB",(char *) "window",(char *) "beta", NULL 
+  };
+  std::vector< float,std::allocator< float > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOO|OO:firdes_high_pass_2",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6)) SWIG_fail;
+  ecode1 = SWIG_AsVal_double(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "firdes_high_pass_2" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = static_cast< double >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "firdes_high_pass_2" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "firdes_high_pass_2" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "firdes_high_pass_2" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  ecode5 = SWIG_AsVal_double(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "firdes_high_pass_2" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
+  if (obj5) {
+    ecode6 = SWIG_AsVal_int(obj5, &val6);
+    if (!SWIG_IsOK(ecode6)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "firdes_high_pass_2" "', argument " "6"" of type '" "gr::filter::firdes::win_type""'");
+    } 
+    arg6 = static_cast< gr::filter::firdes::win_type >(val6);
+  }
+  if (obj6) {
+    ecode7 = SWIG_AsVal_double(obj6, &val7);
+    if (!SWIG_IsOK(ecode7)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "firdes_high_pass_2" "', argument " "7"" of type '" "double""'");
+    } 
+    arg7 = static_cast< double >(val7);
+  }
+  {
+    try {
+      result = gr::filter::firdes::high_pass_2(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< float,std::allocator< float > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_firdes_band_pass(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  gr::filter::firdes::win_type arg6 = (gr::filter::firdes::win_type) gr::filter::firdes::WIN_HAMMING ;
+  double arg7 = (double) 6.76 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  int val6 ;
+  int ecode6 = 0 ;
+  double val7 ;
+  int ecode7 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  char *  kwnames[] = {
+    (char *) "gain",(char *) "sampling_freq",(char *) "low_cutoff_freq",(char *) "high_cutoff_freq",(char *) "transition_width",(char *) "window",(char *) "beta", NULL 
+  };
+  std::vector< float,std::allocator< float > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOO|OO:firdes_band_pass",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6)) SWIG_fail;
+  ecode1 = SWIG_AsVal_double(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "firdes_band_pass" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = static_cast< double >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "firdes_band_pass" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "firdes_band_pass" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "firdes_band_pass" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  ecode5 = SWIG_AsVal_double(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "firdes_band_pass" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
+  if (obj5) {
+    ecode6 = SWIG_AsVal_int(obj5, &val6);
+    if (!SWIG_IsOK(ecode6)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "firdes_band_pass" "', argument " "6"" of type '" "gr::filter::firdes::win_type""'");
+    } 
+    arg6 = static_cast< gr::filter::firdes::win_type >(val6);
+  }
+  if (obj6) {
+    ecode7 = SWIG_AsVal_double(obj6, &val7);
+    if (!SWIG_IsOK(ecode7)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "firdes_band_pass" "', argument " "7"" of type '" "double""'");
+    } 
+    arg7 = static_cast< double >(val7);
+  }
+  {
+    try {
+      result = gr::filter::firdes::band_pass(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< float,std::allocator< float > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_firdes_band_pass_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  double arg6 ;
+  gr::filter::firdes::win_type arg7 = (gr::filter::firdes::win_type) gr::filter::firdes::WIN_HAMMING ;
+  double arg8 = (double) 6.76 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  double val6 ;
+  int ecode6 = 0 ;
+  int val7 ;
+  int ecode7 = 0 ;
+  double val8 ;
+  int ecode8 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  PyObject * obj7 = 0 ;
+  char *  kwnames[] = {
+    (char *) "gain",(char *) "sampling_freq",(char *) "low_cutoff_freq",(char *) "high_cutoff_freq",(char *) "transition_width",(char *) "attenuation_dB",(char *) "window",(char *) "beta", NULL 
+  };
+  std::vector< float,std::allocator< float > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOO|OO:firdes_band_pass_2",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7)) SWIG_fail;
+  ecode1 = SWIG_AsVal_double(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "firdes_band_pass_2" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = static_cast< double >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "firdes_band_pass_2" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "firdes_band_pass_2" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "firdes_band_pass_2" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  ecode5 = SWIG_AsVal_double(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "firdes_band_pass_2" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
+  ecode6 = SWIG_AsVal_double(obj5, &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "firdes_band_pass_2" "', argument " "6"" of type '" "double""'");
+  } 
+  arg6 = static_cast< double >(val6);
+  if (obj6) {
+    ecode7 = SWIG_AsVal_int(obj6, &val7);
+    if (!SWIG_IsOK(ecode7)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "firdes_band_pass_2" "', argument " "7"" of type '" "gr::filter::firdes::win_type""'");
+    } 
+    arg7 = static_cast< gr::filter::firdes::win_type >(val7);
+  }
+  if (obj7) {
+    ecode8 = SWIG_AsVal_double(obj7, &val8);
+    if (!SWIG_IsOK(ecode8)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode8), "in method '" "firdes_band_pass_2" "', argument " "8"" of type '" "double""'");
+    } 
+    arg8 = static_cast< double >(val8);
+  }
+  {
+    try {
+      result = gr::filter::firdes::band_pass_2(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< float,std::allocator< float > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_firdes_complex_band_pass(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  gr::filter::firdes::win_type arg6 = (gr::filter::firdes::win_type) gr::filter::firdes::WIN_HAMMING ;
+  double arg7 = (double) 6.76 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  int val6 ;
+  int ecode6 = 0 ;
+  double val7 ;
+  int ecode7 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  char *  kwnames[] = {
+    (char *) "gain",(char *) "sampling_freq",(char *) "low_cutoff_freq",(char *) "high_cutoff_freq",(char *) "transition_width",(char *) "window",(char *) "beta", NULL 
+  };
+  std::vector< gr_complex,std::allocator< gr_complex > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOO|OO:firdes_complex_band_pass",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6)) SWIG_fail;
+  ecode1 = SWIG_AsVal_double(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "firdes_complex_band_pass" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = static_cast< double >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "firdes_complex_band_pass" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "firdes_complex_band_pass" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "firdes_complex_band_pass" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  ecode5 = SWIG_AsVal_double(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "firdes_complex_band_pass" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
+  if (obj5) {
+    ecode6 = SWIG_AsVal_int(obj5, &val6);
+    if (!SWIG_IsOK(ecode6)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "firdes_complex_band_pass" "', argument " "6"" of type '" "gr::filter::firdes::win_type""'");
+    } 
+    arg6 = static_cast< gr::filter::firdes::win_type >(val6);
+  }
+  if (obj6) {
+    ecode7 = SWIG_AsVal_double(obj6, &val7);
+    if (!SWIG_IsOK(ecode7)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "firdes_complex_band_pass" "', argument " "7"" of type '" "double""'");
+    } 
+    arg7 = static_cast< double >(val7);
+  }
+  {
+    try {
+      result = gr::filter::firdes::complex_band_pass(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< std::complex< float >,std::allocator< std::complex< float > > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_firdes_complex_band_pass_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  double arg6 ;
+  gr::filter::firdes::win_type arg7 = (gr::filter::firdes::win_type) gr::filter::firdes::WIN_HAMMING ;
+  double arg8 = (double) 6.76 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  double val6 ;
+  int ecode6 = 0 ;
+  int val7 ;
+  int ecode7 = 0 ;
+  double val8 ;
+  int ecode8 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  PyObject * obj7 = 0 ;
+  char *  kwnames[] = {
+    (char *) "gain",(char *) "sampling_freq",(char *) "low_cutoff_freq",(char *) "high_cutoff_freq",(char *) "transition_width",(char *) "attenuation_dB",(char *) "window",(char *) "beta", NULL 
+  };
+  std::vector< gr_complex,std::allocator< gr_complex > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOO|OO:firdes_complex_band_pass_2",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7)) SWIG_fail;
+  ecode1 = SWIG_AsVal_double(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "firdes_complex_band_pass_2" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = static_cast< double >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "firdes_complex_band_pass_2" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "firdes_complex_band_pass_2" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "firdes_complex_band_pass_2" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  ecode5 = SWIG_AsVal_double(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "firdes_complex_band_pass_2" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
+  ecode6 = SWIG_AsVal_double(obj5, &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "firdes_complex_band_pass_2" "', argument " "6"" of type '" "double""'");
+  } 
+  arg6 = static_cast< double >(val6);
+  if (obj6) {
+    ecode7 = SWIG_AsVal_int(obj6, &val7);
+    if (!SWIG_IsOK(ecode7)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "firdes_complex_band_pass_2" "', argument " "7"" of type '" "gr::filter::firdes::win_type""'");
+    } 
+    arg7 = static_cast< gr::filter::firdes::win_type >(val7);
+  }
+  if (obj7) {
+    ecode8 = SWIG_AsVal_double(obj7, &val8);
+    if (!SWIG_IsOK(ecode8)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode8), "in method '" "firdes_complex_band_pass_2" "', argument " "8"" of type '" "double""'");
+    } 
+    arg8 = static_cast< double >(val8);
+  }
+  {
+    try {
+      result = gr::filter::firdes::complex_band_pass_2(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< std::complex< float >,std::allocator< std::complex< float > > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_firdes_band_reject(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  gr::filter::firdes::win_type arg6 = (gr::filter::firdes::win_type) gr::filter::firdes::WIN_HAMMING ;
+  double arg7 = (double) 6.76 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  int val6 ;
+  int ecode6 = 0 ;
+  double val7 ;
+  int ecode7 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  char *  kwnames[] = {
+    (char *) "gain",(char *) "sampling_freq",(char *) "low_cutoff_freq",(char *) "high_cutoff_freq",(char *) "transition_width",(char *) "window",(char *) "beta", NULL 
+  };
+  std::vector< float,std::allocator< float > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOO|OO:firdes_band_reject",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6)) SWIG_fail;
+  ecode1 = SWIG_AsVal_double(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "firdes_band_reject" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = static_cast< double >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "firdes_band_reject" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "firdes_band_reject" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "firdes_band_reject" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  ecode5 = SWIG_AsVal_double(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "firdes_band_reject" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
+  if (obj5) {
+    ecode6 = SWIG_AsVal_int(obj5, &val6);
+    if (!SWIG_IsOK(ecode6)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "firdes_band_reject" "', argument " "6"" of type '" "gr::filter::firdes::win_type""'");
+    } 
+    arg6 = static_cast< gr::filter::firdes::win_type >(val6);
+  }
+  if (obj6) {
+    ecode7 = SWIG_AsVal_double(obj6, &val7);
+    if (!SWIG_IsOK(ecode7)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "firdes_band_reject" "', argument " "7"" of type '" "double""'");
+    } 
+    arg7 = static_cast< double >(val7);
+  }
+  {
+    try {
+      result = gr::filter::firdes::band_reject(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< float,std::allocator< float > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_firdes_band_reject_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  double arg6 ;
+  gr::filter::firdes::win_type arg7 = (gr::filter::firdes::win_type) gr::filter::firdes::WIN_HAMMING ;
+  double arg8 = (double) 6.76 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  double val6 ;
+  int ecode6 = 0 ;
+  int val7 ;
+  int ecode7 = 0 ;
+  double val8 ;
+  int ecode8 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
+  PyObject * obj7 = 0 ;
+  char *  kwnames[] = {
+    (char *) "gain",(char *) "sampling_freq",(char *) "low_cutoff_freq",(char *) "high_cutoff_freq",(char *) "transition_width",(char *) "attenuation_dB",(char *) "window",(char *) "beta", NULL 
+  };
+  std::vector< float,std::allocator< float > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOO|OO:firdes_band_reject_2",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7)) SWIG_fail;
+  ecode1 = SWIG_AsVal_double(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "firdes_band_reject_2" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = static_cast< double >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "firdes_band_reject_2" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "firdes_band_reject_2" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "firdes_band_reject_2" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  ecode5 = SWIG_AsVal_double(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "firdes_band_reject_2" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
+  ecode6 = SWIG_AsVal_double(obj5, &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "firdes_band_reject_2" "', argument " "6"" of type '" "double""'");
+  } 
+  arg6 = static_cast< double >(val6);
+  if (obj6) {
+    ecode7 = SWIG_AsVal_int(obj6, &val7);
+    if (!SWIG_IsOK(ecode7)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "firdes_band_reject_2" "', argument " "7"" of type '" "gr::filter::firdes::win_type""'");
+    } 
+    arg7 = static_cast< gr::filter::firdes::win_type >(val7);
+  }
+  if (obj7) {
+    ecode8 = SWIG_AsVal_double(obj7, &val8);
+    if (!SWIG_IsOK(ecode8)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode8), "in method '" "firdes_band_reject_2" "', argument " "8"" of type '" "double""'");
+    } 
+    arg8 = static_cast< double >(val8);
+  }
+  {
+    try {
+      result = gr::filter::firdes::band_reject_2(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< float,std::allocator< float > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_firdes_hilbert(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  unsigned int arg1 = (unsigned int) 19 ;
+  gr::filter::firdes::win_type arg2 = (gr::filter::firdes::win_type) gr::filter::firdes::WIN_RECTANGULAR ;
+  double arg3 = (double) 6.76 ;
+  unsigned int val1 ;
+  int ecode1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "ntaps",(char *) "windowtype",(char *) "beta", NULL 
+  };
+  std::vector< float,std::allocator< float > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"|OOO:firdes_hilbert",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  if (obj0) {
+    ecode1 = SWIG_AsVal_unsigned_SS_int(obj0, &val1);
+    if (!SWIG_IsOK(ecode1)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "firdes_hilbert" "', argument " "1"" of type '" "unsigned int""'");
+    } 
+    arg1 = static_cast< unsigned int >(val1);
+  }
+  if (obj1) {
+    ecode2 = SWIG_AsVal_int(obj1, &val2);
+    if (!SWIG_IsOK(ecode2)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "firdes_hilbert" "', argument " "2"" of type '" "gr::filter::firdes::win_type""'");
+    } 
+    arg2 = static_cast< gr::filter::firdes::win_type >(val2);
+  }
+  if (obj2) {
+    ecode3 = SWIG_AsVal_double(obj2, &val3);
+    if (!SWIG_IsOK(ecode3)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "firdes_hilbert" "', argument " "3"" of type '" "double""'");
+    } 
+    arg3 = static_cast< double >(val3);
+  }
+  {
+    try {
+      result = gr::filter::firdes::hilbert(arg1,arg2,arg3);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< float,std::allocator< float > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_firdes_root_raised_cosine(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  int arg5 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  int val5 ;
+  int ecode5 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  char *  kwnames[] = {
+    (char *) "gain",(char *) "sampling_freq",(char *) "symbol_rate",(char *) "alpha",(char *) "ntaps", NULL 
+  };
+  std::vector< float,std::allocator< float > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOO:firdes_root_raised_cosine",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4)) SWIG_fail;
+  ecode1 = SWIG_AsVal_double(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "firdes_root_raised_cosine" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = static_cast< double >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "firdes_root_raised_cosine" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "firdes_root_raised_cosine" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "firdes_root_raised_cosine" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  ecode5 = SWIG_AsVal_int(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "firdes_root_raised_cosine" "', argument " "5"" of type '" "int""'");
+  } 
+  arg5 = static_cast< int >(val5);
+  {
+    try {
+      result = gr::filter::firdes::root_raised_cosine(arg1,arg2,arg3,arg4,arg5);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< float,std::allocator< float > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_firdes_gaussian(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  double arg1 ;
+  double arg2 ;
+  double arg3 ;
+  int arg4 ;
+  double val1 ;
+  int ecode1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  int val4 ;
+  int ecode4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  char *  kwnames[] = {
+    (char *) "gain",(char *) "spb",(char *) "bt",(char *) "ntaps", NULL 
+  };
+  std::vector< float,std::allocator< float > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOO:firdes_gaussian",kwnames,&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  ecode1 = SWIG_AsVal_double(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "firdes_gaussian" "', argument " "1"" of type '" "double""'");
+  } 
+  arg1 = static_cast< double >(val1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "firdes_gaussian" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "firdes_gaussian" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_int(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "firdes_gaussian" "', argument " "4"" of type '" "int""'");
+  } 
+  arg4 = static_cast< int >(val4);
+  {
+    try {
+      result = gr::filter::firdes::gaussian(arg1,arg2,arg3,arg4);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< float,std::allocator< float > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_firdes(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::firdes *result = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"new_firdes",0,0)) SWIG_fail;
+  {
+    try {
+      result = (gr::filter::firdes *)new gr::filter::firdes();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_gr__filter__firdes, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_firdes(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::firdes *arg1 = (gr::filter::firdes *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"delete_firdes",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__firdes, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_firdes" "', argument " "1"" of type '" "gr::filter::firdes *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::firdes * >(argp1);
+  {
+    try {
+      delete arg1;
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *firdes_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_gr__filter__firdes, SWIG_NewClientData(obj));
   return SWIG_Py_Void();
 }
 
@@ -5379,8 +8865,8 @@ SWIGINTERN PyObject *_wrap_packet_encoder_sptr_make(PyObject *SWIGUNUSEDPARM(sel
   boost::shared_ptr< gr::packetizr::packet_encoder > *arg1 = (boost::shared_ptr< gr::packetizr::packet_encoder > *) 0 ;
   unsigned int arg2 ;
   int arg3 ;
-  unsigned int arg4 ;
-  unsigned int arg5 ;
+  SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > arg4 ;
+  SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > arg5 ;
   size_t arg6 ;
   std::string *arg7 = 0 ;
   void *argp1 = 0 ;
@@ -5389,10 +8875,10 @@ SWIGINTERN PyObject *_wrap_packet_encoder_sptr_make(PyObject *SWIGUNUSEDPARM(sel
   int ecode2 = 0 ;
   int val3 ;
   int ecode3 = 0 ;
-  unsigned int val4 ;
-  int ecode4 = 0 ;
-  unsigned int val5 ;
-  int ecode5 = 0 ;
+  void *argp4 ;
+  int res4 = 0 ;
+  void *argp5 ;
+  int res5 = 0 ;
   size_t val6 ;
   int ecode6 = 0 ;
   int res7 = SWIG_OLDOBJ ;
@@ -5424,16 +8910,32 @@ SWIGINTERN PyObject *_wrap_packet_encoder_sptr_make(PyObject *SWIGUNUSEDPARM(sel
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "packet_encoder_sptr_make" "', argument " "3"" of type '" "int""'");
   } 
   arg3 = static_cast< int >(val3);
-  ecode4 = SWIG_AsVal_unsigned_SS_int(obj3, &val4);
-  if (!SWIG_IsOK(ecode4)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "packet_encoder_sptr_make" "', argument " "4"" of type '" "unsigned int""'");
-  } 
-  arg4 = static_cast< unsigned int >(val4);
-  ecode5 = SWIG_AsVal_unsigned_SS_int(obj4, &val5);
-  if (!SWIG_IsOK(ecode5)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "packet_encoder_sptr_make" "', argument " "5"" of type '" "unsigned int""'");
-  } 
-  arg5 = static_cast< unsigned int >(val5);
+  {
+    res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_t,  0  | 0);
+    if (!SWIG_IsOK(res4)) {
+      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "packet_encoder_sptr_make" "', argument " "4"" of type '" "gr::digital::constellation_sptr""'"); 
+    }  
+    if (!argp4) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_sptr_make" "', argument " "4"" of type '" "gr::digital::constellation_sptr""'");
+    } else {
+      gr::digital::constellation_sptr * temp = reinterpret_cast< gr::digital::constellation_sptr * >(argp4);
+      arg4 = *temp;
+      if (SWIG_IsNewObj(res4)) delete temp;
+    }
+  }
+  {
+    res5 = SWIG_ConvertPtr(obj4, &argp5, SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_t,  0  | 0);
+    if (!SWIG_IsOK(res5)) {
+      SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "packet_encoder_sptr_make" "', argument " "5"" of type '" "gr::digital::constellation_sptr""'"); 
+    }  
+    if (!argp5) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_sptr_make" "', argument " "5"" of type '" "gr::digital::constellation_sptr""'");
+    } else {
+      gr::digital::constellation_sptr * temp = reinterpret_cast< gr::digital::constellation_sptr * >(argp5);
+      arg5 = *temp;
+      if (SWIG_IsNewObj(res5)) delete temp;
+    }
+  }
   ecode6 = SWIG_AsVal_size_t(obj5, &val6);
   if (!SWIG_IsOK(ecode6)) {
     SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "packet_encoder_sptr_make" "', argument " "6"" of type '" "size_t""'");
@@ -8376,7 +11878,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"high_res_timer_tps", _wrap_high_res_timer_tps, METH_VARARGS, (char *)"high_res_timer_tps() -> gr::high_res_timer_type"},
 	 { (char *)"high_res_timer_epoch", _wrap_high_res_timer_epoch, METH_VARARGS, (char *)"high_res_timer_epoch() -> gr::high_res_timer_type"},
 	 { (char *)"packet_encoder_make", (PyCFunction) _wrap_packet_encoder_make, METH_VARARGS | METH_KEYWORDS, (char *)"\n"
-		"packet_encoder_make(unsigned int sps, int preamble, unsigned int header_constel, unsigned int payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr\n"
+		"packet_encoder_make(unsigned int sps, int preamble, gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr\n"
 		"\n"
 		"Return a shared_ptr to a new instance of packetizr::packet_encoder.\n"
 		"\n"
@@ -8386,6 +11888,83 @@ static PyMethodDef SwigMethods[] = {
 		""},
 	 { (char *)"delete_packet_encoder", _wrap_delete_packet_encoder, METH_VARARGS, (char *)"delete_packet_encoder(packet_encoder self)"},
 	 { (char *)"packet_encoder_swigregister", packet_encoder_swigregister, METH_VARARGS, NULL},
+	 { (char *)"delete_constellation", _wrap_delete_constellation, METH_VARARGS, (char *)"delete_constellation(constellation self)"},
+	 { (char *)"constellation_map_to_points", (PyCFunction) _wrap_constellation_map_to_points, METH_VARARGS | METH_KEYWORDS, (char *)"constellation_map_to_points(constellation self, unsigned int value, gr_complex * points)"},
+	 { (char *)"constellation_map_to_points_v", (PyCFunction) _wrap_constellation_map_to_points_v, METH_VARARGS | METH_KEYWORDS, (char *)"constellation_map_to_points_v(constellation self, unsigned int value) -> pmt_vector_cfloat"},
+	 { (char *)"constellation_decision_maker", (PyCFunction) _wrap_constellation_decision_maker, METH_VARARGS | METH_KEYWORDS, (char *)"constellation_decision_maker(constellation self, gr_complex const * sample) -> unsigned int"},
+	 { (char *)"constellation_decision_maker_v", (PyCFunction) _wrap_constellation_decision_maker_v, METH_VARARGS | METH_KEYWORDS, (char *)"constellation_decision_maker_v(constellation self, pmt_vector_cfloat sample) -> unsigned int"},
+	 { (char *)"constellation_decision_maker_pe", (PyCFunction) _wrap_constellation_decision_maker_pe, METH_VARARGS | METH_KEYWORDS, (char *)"constellation_decision_maker_pe(constellation self, gr_complex const * sample, float * phase_error) -> unsigned int"},
+	 { (char *)"constellation_calc_metric", (PyCFunction) _wrap_constellation_calc_metric, METH_VARARGS | METH_KEYWORDS, (char *)"constellation_calc_metric(constellation self, gr_complex const * sample, float * metric, gr::digital::trellis_metric_type_t type)"},
+	 { (char *)"constellation_calc_euclidean_metric", (PyCFunction) _wrap_constellation_calc_euclidean_metric, METH_VARARGS | METH_KEYWORDS, (char *)"constellation_calc_euclidean_metric(constellation self, gr_complex const * sample, float * metric)"},
+	 { (char *)"constellation_calc_hard_symbol_metric", (PyCFunction) _wrap_constellation_calc_hard_symbol_metric, METH_VARARGS | METH_KEYWORDS, (char *)"constellation_calc_hard_symbol_metric(constellation self, gr_complex const * sample, float * metric)"},
+	 { (char *)"constellation_points", _wrap_constellation_points, METH_VARARGS, (char *)"constellation_points(constellation self) -> pmt_vector_cfloat"},
+	 { (char *)"constellation_s_points", _wrap_constellation_s_points, METH_VARARGS, (char *)"constellation_s_points(constellation self) -> pmt_vector_cfloat"},
+	 { (char *)"constellation_v_points", _wrap_constellation_v_points, METH_VARARGS, (char *)"constellation_v_points(constellation self) -> gr_vector_vector_complexf"},
+	 { (char *)"constellation_apply_pre_diff_code", _wrap_constellation_apply_pre_diff_code, METH_VARARGS, (char *)"constellation_apply_pre_diff_code(constellation self) -> bool"},
+	 { (char *)"constellation_set_pre_diff_code", (PyCFunction) _wrap_constellation_set_pre_diff_code, METH_VARARGS | METH_KEYWORDS, (char *)"constellation_set_pre_diff_code(constellation self, bool a)"},
+	 { (char *)"constellation_pre_diff_code", _wrap_constellation_pre_diff_code, METH_VARARGS, (char *)"constellation_pre_diff_code(constellation self) -> std::vector< int,std::allocator< int > >"},
+	 { (char *)"constellation_rotational_symmetry", _wrap_constellation_rotational_symmetry, METH_VARARGS, (char *)"constellation_rotational_symmetry(constellation self) -> unsigned int"},
+	 { (char *)"constellation_dimensionality", _wrap_constellation_dimensionality, METH_VARARGS, (char *)"constellation_dimensionality(constellation self) -> unsigned int"},
+	 { (char *)"constellation_bits_per_symbol", _wrap_constellation_bits_per_symbol, METH_VARARGS, (char *)"constellation_bits_per_symbol(constellation self) -> unsigned int"},
+	 { (char *)"constellation_arity", _wrap_constellation_arity, METH_VARARGS, (char *)"constellation_arity(constellation self) -> unsigned int"},
+	 { (char *)"constellation_base", _wrap_constellation_base, METH_VARARGS, (char *)"constellation_base(constellation self) -> gr::digital::constellation_sptr"},
+	 { (char *)"constellation_as_pmt", _wrap_constellation_as_pmt, METH_VARARGS, (char *)"constellation_as_pmt(constellation self) -> swig_int_ptr"},
+	 { (char *)"constellation_gen_soft_dec_lut", (PyCFunction) _wrap_constellation_gen_soft_dec_lut, METH_VARARGS | METH_KEYWORDS, (char *)"constellation_gen_soft_dec_lut(constellation self, int precision, float npwr=1.0)"},
+	 { (char *)"constellation_calc_soft_dec", (PyCFunction) _wrap_constellation_calc_soft_dec, METH_VARARGS | METH_KEYWORDS, (char *)"constellation_calc_soft_dec(constellation self, gr_complex sample, float npwr=1.0) -> pmt_vector_float"},
+	 { (char *)"constellation_set_soft_dec_lut", (PyCFunction) _wrap_constellation_set_soft_dec_lut, METH_VARARGS | METH_KEYWORDS, (char *)"constellation_set_soft_dec_lut(constellation self, std::vector< std::vector< float,std::allocator< float > >,std::allocator< std::vector< float,std::allocator< float > > > > const & soft_dec_lut, int precision)"},
+	 { (char *)"constellation_has_soft_dec_lut", _wrap_constellation_has_soft_dec_lut, METH_VARARGS, (char *)"constellation_has_soft_dec_lut(constellation self) -> bool"},
+	 { (char *)"constellation_soft_dec_lut", _wrap_constellation_soft_dec_lut, METH_VARARGS, (char *)"constellation_soft_dec_lut(constellation self) -> std::vector< std::vector< float,std::allocator< float > >,std::allocator< std::vector< float,std::allocator< float > > > >"},
+	 { (char *)"constellation_soft_decision_maker", (PyCFunction) _wrap_constellation_soft_decision_maker, METH_VARARGS | METH_KEYWORDS, (char *)"constellation_soft_decision_maker(constellation self, gr_complex sample) -> pmt_vector_float"},
+	 { (char *)"constellation_swigregister", constellation_swigregister, METH_VARARGS, NULL},
+	 { (char *)"constellation_calcdist_make", (PyCFunction) _wrap_constellation_calcdist_make, METH_VARARGS | METH_KEYWORDS, (char *)"constellation_calcdist_make(pmt_vector_cfloat constell, std::vector< int,std::allocator< int > > pre_diff_code, unsigned int rotational_symmetry, unsigned int dimensionality) -> gr::digital::constellation_calcdist::sptr"},
+	 { (char *)"delete_constellation_calcdist", _wrap_delete_constellation_calcdist, METH_VARARGS, (char *)"delete_constellation_calcdist(constellation_calcdist self)"},
+	 { (char *)"constellation_calcdist_swigregister", constellation_calcdist_swigregister, METH_VARARGS, NULL},
+	 { (char *)"delete_constellation_sector", _wrap_delete_constellation_sector, METH_VARARGS, (char *)"delete_constellation_sector(constellation_sector self)"},
+	 { (char *)"constellation_sector_swigregister", constellation_sector_swigregister, METH_VARARGS, NULL},
+	 { (char *)"constellation_rect_make", (PyCFunction) _wrap_constellation_rect_make, METH_VARARGS | METH_KEYWORDS, (char *)"constellation_rect_make(pmt_vector_cfloat constell, std::vector< int,std::allocator< int > > pre_diff_code, unsigned int rotational_symmetry, unsigned int real_sectors, unsigned int imag_sectors, float width_real_sectors, float width_imag_sectors) -> gr::digital::constellation_rect::sptr"},
+	 { (char *)"delete_constellation_rect", _wrap_delete_constellation_rect, METH_VARARGS, (char *)"delete_constellation_rect(constellation_rect self)"},
+	 { (char *)"constellation_rect_swigregister", constellation_rect_swigregister, METH_VARARGS, NULL},
+	 { (char *)"constellation_expl_rect_make", (PyCFunction) _wrap_constellation_expl_rect_make, METH_VARARGS | METH_KEYWORDS, (char *)"constellation_expl_rect_make(pmt_vector_cfloat constellation, std::vector< int,std::allocator< int > > pre_diff_code, unsigned int rotational_symmetry, unsigned int real_sectors, unsigned int imag_sectors, float width_real_sectors, float width_imag_sectors, std::vector< unsigned int,std::allocator< unsigned int > > sector_values) -> gr::digital::constellation_expl_rect::sptr"},
+	 { (char *)"delete_constellation_expl_rect", _wrap_delete_constellation_expl_rect, METH_VARARGS, (char *)"delete_constellation_expl_rect(constellation_expl_rect self)"},
+	 { (char *)"constellation_expl_rect_swigregister", constellation_expl_rect_swigregister, METH_VARARGS, NULL},
+	 { (char *)"constellation_psk_make", (PyCFunction) _wrap_constellation_psk_make, METH_VARARGS | METH_KEYWORDS, (char *)"constellation_psk_make(pmt_vector_cfloat constell, std::vector< int,std::allocator< int > > pre_diff_code, unsigned int n_sectors) -> gr::digital::constellation_psk::sptr"},
+	 { (char *)"delete_constellation_psk", _wrap_delete_constellation_psk, METH_VARARGS, (char *)"delete_constellation_psk(constellation_psk self)"},
+	 { (char *)"constellation_psk_swigregister", constellation_psk_swigregister, METH_VARARGS, NULL},
+	 { (char *)"constellation_bpsk_make", _wrap_constellation_bpsk_make, METH_VARARGS, (char *)"constellation_bpsk_make() -> gr::digital::constellation_bpsk::sptr"},
+	 { (char *)"delete_constellation_bpsk", _wrap_delete_constellation_bpsk, METH_VARARGS, (char *)"delete_constellation_bpsk(constellation_bpsk self)"},
+	 { (char *)"constellation_bpsk_swigregister", constellation_bpsk_swigregister, METH_VARARGS, NULL},
+	 { (char *)"constellation_qpsk_make", _wrap_constellation_qpsk_make, METH_VARARGS, (char *)"constellation_qpsk_make() -> gr::digital::constellation_qpsk::sptr"},
+	 { (char *)"delete_constellation_qpsk", _wrap_delete_constellation_qpsk, METH_VARARGS, (char *)"delete_constellation_qpsk(constellation_qpsk self)"},
+	 { (char *)"constellation_qpsk_swigregister", constellation_qpsk_swigregister, METH_VARARGS, NULL},
+	 { (char *)"constellation_dqpsk_make", _wrap_constellation_dqpsk_make, METH_VARARGS, (char *)"constellation_dqpsk_make() -> gr::digital::constellation_dqpsk::sptr"},
+	 { (char *)"delete_constellation_dqpsk", _wrap_delete_constellation_dqpsk, METH_VARARGS, (char *)"delete_constellation_dqpsk(constellation_dqpsk self)"},
+	 { (char *)"constellation_dqpsk_swigregister", constellation_dqpsk_swigregister, METH_VARARGS, NULL},
+	 { (char *)"constellation_8psk_make", _wrap_constellation_8psk_make, METH_VARARGS, (char *)"constellation_8psk_make() -> gr::digital::constellation_8psk::sptr"},
+	 { (char *)"delete_constellation_8psk", _wrap_delete_constellation_8psk, METH_VARARGS, (char *)"delete_constellation_8psk(constellation_8psk self)"},
+	 { (char *)"constellation_8psk_swigregister", constellation_8psk_swigregister, METH_VARARGS, NULL},
+	 { (char *)"constellation_8psk_natural_make", _wrap_constellation_8psk_natural_make, METH_VARARGS, (char *)"constellation_8psk_natural_make() -> gr::digital::constellation_8psk_natural::sptr"},
+	 { (char *)"delete_constellation_8psk_natural", _wrap_delete_constellation_8psk_natural, METH_VARARGS, (char *)"delete_constellation_8psk_natural(constellation_8psk_natural self)"},
+	 { (char *)"constellation_8psk_natural_swigregister", constellation_8psk_natural_swigregister, METH_VARARGS, NULL},
+	 { (char *)"constellation_16qam_make", _wrap_constellation_16qam_make, METH_VARARGS, (char *)"constellation_16qam_make() -> gr::digital::constellation_16qam::sptr"},
+	 { (char *)"delete_constellation_16qam", _wrap_delete_constellation_16qam, METH_VARARGS, (char *)"delete_constellation_16qam(constellation_16qam self)"},
+	 { (char *)"constellation_16qam_swigregister", constellation_16qam_swigregister, METH_VARARGS, NULL},
+	 { (char *)"firdes_window", (PyCFunction) _wrap_firdes_window, METH_VARARGS | METH_KEYWORDS, (char *)"firdes_window(gr::filter::firdes::win_type type, int ntaps, double beta) -> pmt_vector_float"},
+	 { (char *)"firdes_low_pass", (PyCFunction) _wrap_firdes_low_pass, METH_VARARGS | METH_KEYWORDS, (char *)"firdes_low_pass(double gain, double sampling_freq, double cutoff_freq, double transition_width, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"},
+	 { (char *)"firdes_low_pass_2", (PyCFunction) _wrap_firdes_low_pass_2, METH_VARARGS | METH_KEYWORDS, (char *)"firdes_low_pass_2(double gain, double sampling_freq, double cutoff_freq, double transition_width, double attenuation_dB, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"},
+	 { (char *)"firdes_high_pass", (PyCFunction) _wrap_firdes_high_pass, METH_VARARGS | METH_KEYWORDS, (char *)"firdes_high_pass(double gain, double sampling_freq, double cutoff_freq, double transition_width, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"},
+	 { (char *)"firdes_high_pass_2", (PyCFunction) _wrap_firdes_high_pass_2, METH_VARARGS | METH_KEYWORDS, (char *)"firdes_high_pass_2(double gain, double sampling_freq, double cutoff_freq, double transition_width, double attenuation_dB, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"},
+	 { (char *)"firdes_band_pass", (PyCFunction) _wrap_firdes_band_pass, METH_VARARGS | METH_KEYWORDS, (char *)"firdes_band_pass(double gain, double sampling_freq, double low_cutoff_freq, double high_cutoff_freq, double transition_width, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"},
+	 { (char *)"firdes_band_pass_2", (PyCFunction) _wrap_firdes_band_pass_2, METH_VARARGS | METH_KEYWORDS, (char *)"firdes_band_pass_2(double gain, double sampling_freq, double low_cutoff_freq, double high_cutoff_freq, double transition_width, double attenuation_dB, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"},
+	 { (char *)"firdes_complex_band_pass", (PyCFunction) _wrap_firdes_complex_band_pass, METH_VARARGS | METH_KEYWORDS, (char *)"firdes_complex_band_pass(double gain, double sampling_freq, double low_cutoff_freq, double high_cutoff_freq, double transition_width, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_cfloat"},
+	 { (char *)"firdes_complex_band_pass_2", (PyCFunction) _wrap_firdes_complex_band_pass_2, METH_VARARGS | METH_KEYWORDS, (char *)"firdes_complex_band_pass_2(double gain, double sampling_freq, double low_cutoff_freq, double high_cutoff_freq, double transition_width, double attenuation_dB, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_cfloat"},
+	 { (char *)"firdes_band_reject", (PyCFunction) _wrap_firdes_band_reject, METH_VARARGS | METH_KEYWORDS, (char *)"firdes_band_reject(double gain, double sampling_freq, double low_cutoff_freq, double high_cutoff_freq, double transition_width, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"},
+	 { (char *)"firdes_band_reject_2", (PyCFunction) _wrap_firdes_band_reject_2, METH_VARARGS | METH_KEYWORDS, (char *)"firdes_band_reject_2(double gain, double sampling_freq, double low_cutoff_freq, double high_cutoff_freq, double transition_width, double attenuation_dB, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"},
+	 { (char *)"firdes_hilbert", (PyCFunction) _wrap_firdes_hilbert, METH_VARARGS | METH_KEYWORDS, (char *)"firdes_hilbert(unsigned int ntaps=19, gr::filter::firdes::win_type windowtype, double beta=6.76) -> pmt_vector_float"},
+	 { (char *)"firdes_root_raised_cosine", (PyCFunction) _wrap_firdes_root_raised_cosine, METH_VARARGS | METH_KEYWORDS, (char *)"firdes_root_raised_cosine(double gain, double sampling_freq, double symbol_rate, double alpha, int ntaps) -> pmt_vector_float"},
+	 { (char *)"firdes_gaussian", (PyCFunction) _wrap_firdes_gaussian, METH_VARARGS | METH_KEYWORDS, (char *)"firdes_gaussian(double gain, double spb, double bt, int ntaps) -> pmt_vector_float"},
+	 { (char *)"new_firdes", _wrap_new_firdes, METH_VARARGS, (char *)"new_firdes() -> firdes"},
+	 { (char *)"delete_firdes", _wrap_delete_firdes, METH_VARARGS, (char *)"delete_firdes(firdes self)"},
+	 { (char *)"firdes_swigregister", firdes_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_packet_encoder_sptr", _wrap_new_packet_encoder_sptr, METH_VARARGS, (char *)"\n"
 		"packet_encoder_sptr()\n"
 		"new_packet_encoder_sptr(packet_encoder p) -> packet_encoder_sptr\n"
@@ -8393,7 +11972,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"packet_encoder_sptr___deref__", _wrap_packet_encoder_sptr___deref__, METH_VARARGS, (char *)"packet_encoder_sptr___deref__(packet_encoder_sptr self) -> packet_encoder"},
 	 { (char *)"delete_packet_encoder_sptr", _wrap_delete_packet_encoder_sptr, METH_VARARGS, (char *)"delete_packet_encoder_sptr(packet_encoder_sptr self)"},
 	 { (char *)"packet_encoder_sptr_make", (PyCFunction) _wrap_packet_encoder_sptr_make, METH_VARARGS | METH_KEYWORDS, (char *)"\n"
-		"packet_encoder_sptr_make(packet_encoder_sptr self, unsigned int sps, int preamble, unsigned int header_constel, unsigned int payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr\n"
+		"packet_encoder_sptr_make(packet_encoder_sptr self, unsigned int sps, int preamble, gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr\n"
 		"\n"
 		"Return a shared_ptr to a new instance of packetizr::packet_encoder.\n"
 		"\n"
@@ -8490,6 +12069,51 @@ static PyMethodDef SwigMethods[] = {
 
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
+static void *_p_gr__digital__constellation_expl_rectTo_p_gr__digital__constellation_rect(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((gr::digital::constellation_rect *)  ((gr::digital::constellation_expl_rect *) x));
+}
+static void *_p_gr__digital__constellation_sectorTo_p_gr__digital__constellation(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((gr::digital::constellation *)  ((gr::digital::constellation_sector *) x));
+}
+static void *_p_gr__digital__constellation_expl_rectTo_p_gr__digital__constellation(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((gr::digital::constellation *) (gr::digital::constellation_sector *)(gr::digital::constellation_rect *) ((gr::digital::constellation_expl_rect *) x));
+}
+static void *_p_gr__digital__constellation_dqpskTo_p_gr__digital__constellation(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((gr::digital::constellation *)  ((gr::digital::constellation_dqpsk *) x));
+}
+static void *_p_gr__digital__constellation_bpskTo_p_gr__digital__constellation(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((gr::digital::constellation *)  ((gr::digital::constellation_bpsk *) x));
+}
+static void *_p_gr__digital__constellation_8pskTo_p_gr__digital__constellation(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((gr::digital::constellation *)  ((gr::digital::constellation_8psk *) x));
+}
+static void *_p_gr__digital__constellation_qpskTo_p_gr__digital__constellation(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((gr::digital::constellation *)  ((gr::digital::constellation_qpsk *) x));
+}
+static void *_p_gr__digital__constellation_calcdistTo_p_gr__digital__constellation(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((gr::digital::constellation *)  ((gr::digital::constellation_calcdist *) x));
+}
+static void *_p_gr__digital__constellation_rectTo_p_gr__digital__constellation(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((gr::digital::constellation *) (gr::digital::constellation_sector *) ((gr::digital::constellation_rect *) x));
+}
+static void *_p_gr__digital__constellation_pskTo_p_gr__digital__constellation(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((gr::digital::constellation *) (gr::digital::constellation_sector *) ((gr::digital::constellation_psk *) x));
+}
+static void *_p_gr__digital__constellation_8psk_naturalTo_p_gr__digital__constellation(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((gr::digital::constellation *)  ((gr::digital::constellation_8psk_natural *) x));
+}
+static void *_p_gr__digital__constellation_16qamTo_p_gr__digital__constellation(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((gr::digital::constellation *)  ((gr::digital::constellation_16qam *) x));
+}
+static void *_p_gr__digital__constellation_expl_rectTo_p_gr__digital__constellation_sector(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((gr::digital::constellation_sector *) (gr::digital::constellation_rect *) ((gr::digital::constellation_expl_rect *) x));
+}
+static void *_p_gr__digital__constellation_rectTo_p_gr__digital__constellation_sector(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((gr::digital::constellation_sector *)  ((gr::digital::constellation_rect *) x));
+}
+static void *_p_gr__digital__constellation_pskTo_p_gr__digital__constellation_sector(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((gr::digital::constellation_sector *)  ((gr::digital::constellation_psk *) x));
+}
 static void *_p_gr__packetizr__packet_encoderTo_p_gr__block(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((gr::block *) (gr::tagged_stream_block *) ((gr::packetizr::packet_encoder *) x));
 }
@@ -8545,6 +12169,17 @@ static swig_type_info _swigt__p_boost__shared_ptrT_gr__block_detail_t = {"_p_boo
 static swig_type_info _swigt__p_boost__shared_ptrT_gr__block_t = {"_p_boost__shared_ptrT_gr__block_t", "boost::shared_ptr< gr::block > *|gr::block_sptr *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_boost__shared_ptrT_gr__buffer_reader_t = {"_p_boost__shared_ptrT_gr__buffer_reader_t", "boost::shared_ptr< gr::buffer_reader > *|gr::buffer_reader_sptr *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_boost__shared_ptrT_gr__buffer_t = {"_p_boost__shared_ptrT_gr__buffer_t", "boost::shared_ptr< gr::buffer > *|gr::buffer_sptr *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_boost__shared_ptrT_gr__digital__constellation_16qam_t = {"_p_boost__shared_ptrT_gr__digital__constellation_16qam_t", "gr::digital::constellation_16qam::sptr *|boost::shared_ptr< gr::digital::constellation_16qam > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_boost__shared_ptrT_gr__digital__constellation_8psk_natural_t = {"_p_boost__shared_ptrT_gr__digital__constellation_8psk_natural_t", "gr::digital::constellation_8psk_natural::sptr *|boost::shared_ptr< gr::digital::constellation_8psk_natural > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_boost__shared_ptrT_gr__digital__constellation_8psk_t = {"_p_boost__shared_ptrT_gr__digital__constellation_8psk_t", "gr::digital::constellation_8psk::sptr *|boost::shared_ptr< gr::digital::constellation_8psk > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_boost__shared_ptrT_gr__digital__constellation_bpsk_t = {"_p_boost__shared_ptrT_gr__digital__constellation_bpsk_t", "gr::digital::constellation_bpsk::sptr *|boost::shared_ptr< gr::digital::constellation_bpsk > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_boost__shared_ptrT_gr__digital__constellation_calcdist_t = {"_p_boost__shared_ptrT_gr__digital__constellation_calcdist_t", "boost::shared_ptr< gr::digital::constellation_calcdist > *|gr::digital::constellation_calcdist::sptr *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_boost__shared_ptrT_gr__digital__constellation_dqpsk_t = {"_p_boost__shared_ptrT_gr__digital__constellation_dqpsk_t", "gr::digital::constellation_dqpsk::sptr *|boost::shared_ptr< gr::digital::constellation_dqpsk > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_boost__shared_ptrT_gr__digital__constellation_expl_rect_t = {"_p_boost__shared_ptrT_gr__digital__constellation_expl_rect_t", "gr::digital::constellation_expl_rect::sptr *|boost::shared_ptr< gr::digital::constellation_expl_rect > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_boost__shared_ptrT_gr__digital__constellation_psk_t = {"_p_boost__shared_ptrT_gr__digital__constellation_psk_t", "gr::digital::constellation_psk::sptr *|boost::shared_ptr< gr::digital::constellation_psk > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_boost__shared_ptrT_gr__digital__constellation_qpsk_t = {"_p_boost__shared_ptrT_gr__digital__constellation_qpsk_t", "gr::digital::constellation_qpsk::sptr *|boost::shared_ptr< gr::digital::constellation_qpsk > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_boost__shared_ptrT_gr__digital__constellation_rect_t = {"_p_boost__shared_ptrT_gr__digital__constellation_rect_t", "gr::digital::constellation_rect::sptr *|boost::shared_ptr< gr::digital::constellation_rect > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_boost__shared_ptrT_gr__digital__constellation_t = {"_p_boost__shared_ptrT_gr__digital__constellation_t", "boost::shared_ptr< gr::digital::constellation > *|gr::digital::constellation_sptr *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_boost__shared_ptrT_gr__flat_flowgraph_t = {"_p_boost__shared_ptrT_gr__flat_flowgraph_t", "boost::shared_ptr< gr::flat_flowgraph > *|gr::flat_flowgraph_sptr *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_boost__shared_ptrT_gr__flowgraph_t = {"_p_boost__shared_ptrT_gr__flowgraph_t", "boost::shared_ptr< gr::flowgraph > *|gr::flowgraph_sptr *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_boost__shared_ptrT_gr__hier_block2_t = {"_p_boost__shared_ptrT_gr__hier_block2_t", "boost::shared_ptr< gr::hier_block2 > *|gr::hier_block2_sptr *", 0, 0, (void*)0, 0};
@@ -8554,6 +12189,7 @@ static swig_type_info _swigt__p_boost__shared_ptrT_gr__top_block_t = {"_p_boost_
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_const_reference = {"_p_const_reference", "const_reference *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_difference_type = {"_p_difference_type", "difference_type *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_float = {"_p_float", "float *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_gr__basic_block = {"_p_gr__basic_block", "gr::basic_block *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_gr__sync_decimator = {"_p_gr__sync_decimator", 0, 0, 0, 0, 0};
 static swig_type_info _swigt__p_gr__sync_block = {"_p_gr__sync_block", 0, 0, 0, 0, 0};
@@ -8562,7 +12198,21 @@ static swig_type_info _swigt__p_gr__hier_block2 = {"_p_gr__hier_block2", 0, 0, 0
 static swig_type_info _swigt__p_gr__sync_interpolator = {"_p_gr__sync_interpolator", 0, 0, 0, 0, 0};
 static swig_type_info _swigt__p_gr__top_block = {"_p_gr__top_block", 0, 0, 0, 0, 0};
 static swig_type_info _swigt__p_gr__block = {"_p_gr__block", "gr::block *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_gr__digital__constellation = {"_p_gr__digital__constellation", "gr::digital::constellation *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_gr__digital__constellation_16qam = {"_p_gr__digital__constellation_16qam", "gr::digital::constellation_16qam *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_gr__digital__constellation_8psk = {"_p_gr__digital__constellation_8psk", "gr::digital::constellation_8psk *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_gr__digital__constellation_8psk_natural = {"_p_gr__digital__constellation_8psk_natural", "gr::digital::constellation_8psk_natural *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_gr__digital__constellation_bpsk = {"_p_gr__digital__constellation_bpsk", "gr::digital::constellation_bpsk *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_gr__digital__constellation_calcdist = {"_p_gr__digital__constellation_calcdist", "gr::digital::constellation_calcdist *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_gr__digital__constellation_dqpsk = {"_p_gr__digital__constellation_dqpsk", "gr::digital::constellation_dqpsk *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_gr__digital__constellation_expl_rect = {"_p_gr__digital__constellation_expl_rect", "gr::digital::constellation_expl_rect *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_gr__digital__constellation_psk = {"_p_gr__digital__constellation_psk", "gr::digital::constellation_psk *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_gr__digital__constellation_qpsk = {"_p_gr__digital__constellation_qpsk", "gr::digital::constellation_qpsk *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_gr__digital__constellation_rect = {"_p_gr__digital__constellation_rect", "gr::digital::constellation_rect *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_gr__digital__constellation_sector = {"_p_gr__digital__constellation_sector", "gr::digital::constellation_sector *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_gr__digital__trellis_metric_type_t = {"_p_gr__digital__trellis_metric_type_t", "gr::digital::trellis_metric_type_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_gr__endianness_t = {"_p_gr__endianness_t", "enum gr::endianness_t *|gr::endianness_t *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_gr__filter__firdes = {"_p_gr__filter__firdes", "gr::filter::firdes *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_gr__packetizr__packet_encoder = {"_p_gr__packetizr__packet_encoder", "gr::packetizr::packet_encoder *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_gr__rt_status_t = {"_p_gr__rt_status_t", "enum gr::rt_status_t *|gr::rt_status_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_gr__tagged_stream_block = {"_p_gr__tagged_stream_block", "gr::tagged_stream_block *", 0, 0, (void*)0, 0};
@@ -8589,6 +12239,17 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_boost__shared_ptrT_gr__block_t,
   &_swigt__p_boost__shared_ptrT_gr__buffer_reader_t,
   &_swigt__p_boost__shared_ptrT_gr__buffer_t,
+  &_swigt__p_boost__shared_ptrT_gr__digital__constellation_16qam_t,
+  &_swigt__p_boost__shared_ptrT_gr__digital__constellation_8psk_natural_t,
+  &_swigt__p_boost__shared_ptrT_gr__digital__constellation_8psk_t,
+  &_swigt__p_boost__shared_ptrT_gr__digital__constellation_bpsk_t,
+  &_swigt__p_boost__shared_ptrT_gr__digital__constellation_calcdist_t,
+  &_swigt__p_boost__shared_ptrT_gr__digital__constellation_dqpsk_t,
+  &_swigt__p_boost__shared_ptrT_gr__digital__constellation_expl_rect_t,
+  &_swigt__p_boost__shared_ptrT_gr__digital__constellation_psk_t,
+  &_swigt__p_boost__shared_ptrT_gr__digital__constellation_qpsk_t,
+  &_swigt__p_boost__shared_ptrT_gr__digital__constellation_rect_t,
+  &_swigt__p_boost__shared_ptrT_gr__digital__constellation_t,
   &_swigt__p_boost__shared_ptrT_gr__flat_flowgraph_t,
   &_swigt__p_boost__shared_ptrT_gr__flowgraph_t,
   &_swigt__p_boost__shared_ptrT_gr__hier_block2_t,
@@ -8598,10 +12259,25 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_char,
   &_swigt__p_const_reference,
   &_swigt__p_difference_type,
+  &_swigt__p_float,
   &_swigt__p_gr__basic_block,
   &_swigt__p_gr__block,
   &_swigt__p_gr__block_gateway,
+  &_swigt__p_gr__digital__constellation,
+  &_swigt__p_gr__digital__constellation_16qam,
+  &_swigt__p_gr__digital__constellation_8psk,
+  &_swigt__p_gr__digital__constellation_8psk_natural,
+  &_swigt__p_gr__digital__constellation_bpsk,
+  &_swigt__p_gr__digital__constellation_calcdist,
+  &_swigt__p_gr__digital__constellation_dqpsk,
+  &_swigt__p_gr__digital__constellation_expl_rect,
+  &_swigt__p_gr__digital__constellation_psk,
+  &_swigt__p_gr__digital__constellation_qpsk,
+  &_swigt__p_gr__digital__constellation_rect,
+  &_swigt__p_gr__digital__constellation_sector,
+  &_swigt__p_gr__digital__trellis_metric_type_t,
   &_swigt__p_gr__endianness_t,
+  &_swigt__p_gr__filter__firdes,
   &_swigt__p_gr__hier_block2,
   &_swigt__p_gr__packetizr__packet_encoder,
   &_swigt__p_gr__rt_status_t,
@@ -8633,6 +12309,17 @@ static swig_cast_info _swigc__p_boost__shared_ptrT_gr__block_detail_t[] = {  {&_
 static swig_cast_info _swigc__p_boost__shared_ptrT_gr__block_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__block_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_boost__shared_ptrT_gr__buffer_reader_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__buffer_reader_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_boost__shared_ptrT_gr__buffer_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__buffer_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_boost__shared_ptrT_gr__digital__constellation_16qam_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__digital__constellation_16qam_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_boost__shared_ptrT_gr__digital__constellation_8psk_natural_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__digital__constellation_8psk_natural_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_boost__shared_ptrT_gr__digital__constellation_8psk_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__digital__constellation_8psk_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_boost__shared_ptrT_gr__digital__constellation_bpsk_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__digital__constellation_bpsk_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_boost__shared_ptrT_gr__digital__constellation_calcdist_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__digital__constellation_calcdist_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_boost__shared_ptrT_gr__digital__constellation_dqpsk_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__digital__constellation_dqpsk_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_boost__shared_ptrT_gr__digital__constellation_expl_rect_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__digital__constellation_expl_rect_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_boost__shared_ptrT_gr__digital__constellation_psk_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__digital__constellation_psk_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_boost__shared_ptrT_gr__digital__constellation_qpsk_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__digital__constellation_qpsk_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_boost__shared_ptrT_gr__digital__constellation_rect_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__digital__constellation_rect_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_boost__shared_ptrT_gr__digital__constellation_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__digital__constellation_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_boost__shared_ptrT_gr__flat_flowgraph_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__flat_flowgraph_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_boost__shared_ptrT_gr__flowgraph_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__flowgraph_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_boost__shared_ptrT_gr__hier_block2_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__hier_block2_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -8642,6 +12329,7 @@ static swig_cast_info _swigc__p_boost__shared_ptrT_gr__top_block_t[] = {  {&_swi
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_const_reference[] = {  {&_swigt__p_const_reference, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_difference_type[] = {  {&_swigt__p_difference_type, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_float[] = {  {&_swigt__p_float, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_gr__sync_decimator[] = {{&_swigt__p_gr__sync_decimator, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_gr__sync_block[] = {{&_swigt__p_gr__sync_block, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_gr__block_gateway[] = {{&_swigt__p_gr__block_gateway, 0, 0, 0},{0, 0, 0, 0}};
@@ -8650,7 +12338,21 @@ static swig_cast_info _swigc__p_gr__sync_interpolator[] = {{&_swigt__p_gr__sync_
 static swig_cast_info _swigc__p_gr__top_block[] = {{&_swigt__p_gr__top_block, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_gr__basic_block[] = {  {&_swigt__p_gr__packetizr__packet_encoder, _p_gr__packetizr__packet_encoderTo_p_gr__basic_block, 0, 0},  {&_swigt__p_gr__sync_decimator, _p_gr__sync_decimatorTo_p_gr__basic_block, 0, 0},  {&_swigt__p_gr__basic_block, 0, 0, 0},  {&_swigt__p_gr__block, _p_gr__blockTo_p_gr__basic_block, 0, 0},  {&_swigt__p_gr__sync_block, _p_gr__sync_blockTo_p_gr__basic_block, 0, 0},  {&_swigt__p_gr__tagged_stream_block, _p_gr__tagged_stream_blockTo_p_gr__basic_block, 0, 0},  {&_swigt__p_gr__block_gateway, _p_gr__block_gatewayTo_p_gr__basic_block, 0, 0},  {&_swigt__p_gr__hier_block2, _p_gr__hier_block2To_p_gr__basic_block, 0, 0},  {&_swigt__p_gr__sync_interpolator, _p_gr__sync_interpolatorTo_p_gr__basic_block, 0, 0},  {&_swigt__p_gr__top_block, _p_gr__top_blockTo_p_gr__basic_block, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_gr__block[] = {  {&_swigt__p_gr__packetizr__packet_encoder, _p_gr__packetizr__packet_encoderTo_p_gr__block, 0, 0},  {&_swigt__p_gr__sync_decimator, _p_gr__sync_decimatorTo_p_gr__block, 0, 0},  {&_swigt__p_gr__block, 0, 0, 0},  {&_swigt__p_gr__sync_block, _p_gr__sync_blockTo_p_gr__block, 0, 0},  {&_swigt__p_gr__tagged_stream_block, _p_gr__tagged_stream_blockTo_p_gr__block, 0, 0},  {&_swigt__p_gr__block_gateway, _p_gr__block_gatewayTo_p_gr__block, 0, 0},  {&_swigt__p_gr__sync_interpolator, _p_gr__sync_interpolatorTo_p_gr__block, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_gr__digital__constellation[] = {  {&_swigt__p_gr__digital__constellation_sector, _p_gr__digital__constellation_sectorTo_p_gr__digital__constellation, 0, 0},  {&_swigt__p_gr__digital__constellation_expl_rect, _p_gr__digital__constellation_expl_rectTo_p_gr__digital__constellation, 0, 0},  {&_swigt__p_gr__digital__constellation_dqpsk, _p_gr__digital__constellation_dqpskTo_p_gr__digital__constellation, 0, 0},  {&_swigt__p_gr__digital__constellation_bpsk, _p_gr__digital__constellation_bpskTo_p_gr__digital__constellation, 0, 0},  {&_swigt__p_gr__digital__constellation_8psk, _p_gr__digital__constellation_8pskTo_p_gr__digital__constellation, 0, 0},  {&_swigt__p_gr__digital__constellation_qpsk, _p_gr__digital__constellation_qpskTo_p_gr__digital__constellation, 0, 0},  {&_swigt__p_gr__digital__constellation_rect, _p_gr__digital__constellation_rectTo_p_gr__digital__constellation, 0, 0},  {&_swigt__p_gr__digital__constellation_calcdist, _p_gr__digital__constellation_calcdistTo_p_gr__digital__constellation, 0, 0},  {&_swigt__p_gr__digital__constellation, 0, 0, 0},  {&_swigt__p_gr__digital__constellation_psk, _p_gr__digital__constellation_pskTo_p_gr__digital__constellation, 0, 0},  {&_swigt__p_gr__digital__constellation_8psk_natural, _p_gr__digital__constellation_8psk_naturalTo_p_gr__digital__constellation, 0, 0},  {&_swigt__p_gr__digital__constellation_16qam, _p_gr__digital__constellation_16qamTo_p_gr__digital__constellation, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_gr__digital__constellation_16qam[] = {  {&_swigt__p_gr__digital__constellation_16qam, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_gr__digital__constellation_8psk[] = {  {&_swigt__p_gr__digital__constellation_8psk, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_gr__digital__constellation_8psk_natural[] = {  {&_swigt__p_gr__digital__constellation_8psk_natural, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_gr__digital__constellation_bpsk[] = {  {&_swigt__p_gr__digital__constellation_bpsk, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_gr__digital__constellation_calcdist[] = {  {&_swigt__p_gr__digital__constellation_calcdist, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_gr__digital__constellation_dqpsk[] = {  {&_swigt__p_gr__digital__constellation_dqpsk, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_gr__digital__constellation_expl_rect[] = {  {&_swigt__p_gr__digital__constellation_expl_rect, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_gr__digital__constellation_psk[] = {  {&_swigt__p_gr__digital__constellation_psk, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_gr__digital__constellation_qpsk[] = {  {&_swigt__p_gr__digital__constellation_qpsk, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_gr__digital__constellation_rect[] = {  {&_swigt__p_gr__digital__constellation_expl_rect, _p_gr__digital__constellation_expl_rectTo_p_gr__digital__constellation_rect, 0, 0},  {&_swigt__p_gr__digital__constellation_rect, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_gr__digital__constellation_sector[] = {  {&_swigt__p_gr__digital__constellation_sector, 0, 0, 0},  {&_swigt__p_gr__digital__constellation_expl_rect, _p_gr__digital__constellation_expl_rectTo_p_gr__digital__constellation_sector, 0, 0},  {&_swigt__p_gr__digital__constellation_rect, _p_gr__digital__constellation_rectTo_p_gr__digital__constellation_sector, 0, 0},  {&_swigt__p_gr__digital__constellation_psk, _p_gr__digital__constellation_pskTo_p_gr__digital__constellation_sector, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_gr__digital__trellis_metric_type_t[] = {  {&_swigt__p_gr__digital__trellis_metric_type_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_gr__endianness_t[] = {  {&_swigt__p_gr__endianness_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_gr__filter__firdes[] = {  {&_swigt__p_gr__filter__firdes, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_gr__packetizr__packet_encoder[] = {  {&_swigt__p_gr__packetizr__packet_encoder, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_gr__rt_status_t[] = {  {&_swigt__p_gr__rt_status_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_gr__tagged_stream_block[] = {  {&_swigt__p_gr__packetizr__packet_encoder, _p_gr__packetizr__packet_encoderTo_p_gr__tagged_stream_block, 0, 0},  {&_swigt__p_gr__tagged_stream_block, 0, 0, 0},{0, 0, 0, 0}};
@@ -8677,6 +12379,17 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_boost__shared_ptrT_gr__block_t,
   _swigc__p_boost__shared_ptrT_gr__buffer_reader_t,
   _swigc__p_boost__shared_ptrT_gr__buffer_t,
+  _swigc__p_boost__shared_ptrT_gr__digital__constellation_16qam_t,
+  _swigc__p_boost__shared_ptrT_gr__digital__constellation_8psk_natural_t,
+  _swigc__p_boost__shared_ptrT_gr__digital__constellation_8psk_t,
+  _swigc__p_boost__shared_ptrT_gr__digital__constellation_bpsk_t,
+  _swigc__p_boost__shared_ptrT_gr__digital__constellation_calcdist_t,
+  _swigc__p_boost__shared_ptrT_gr__digital__constellation_dqpsk_t,
+  _swigc__p_boost__shared_ptrT_gr__digital__constellation_expl_rect_t,
+  _swigc__p_boost__shared_ptrT_gr__digital__constellation_psk_t,
+  _swigc__p_boost__shared_ptrT_gr__digital__constellation_qpsk_t,
+  _swigc__p_boost__shared_ptrT_gr__digital__constellation_rect_t,
+  _swigc__p_boost__shared_ptrT_gr__digital__constellation_t,
   _swigc__p_boost__shared_ptrT_gr__flat_flowgraph_t,
   _swigc__p_boost__shared_ptrT_gr__flowgraph_t,
   _swigc__p_boost__shared_ptrT_gr__hier_block2_t,
@@ -8686,10 +12399,25 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_char,
   _swigc__p_const_reference,
   _swigc__p_difference_type,
+  _swigc__p_float,
   _swigc__p_gr__basic_block,
   _swigc__p_gr__block,
   _swigc__p_gr__block_gateway,
+  _swigc__p_gr__digital__constellation,
+  _swigc__p_gr__digital__constellation_16qam,
+  _swigc__p_gr__digital__constellation_8psk,
+  _swigc__p_gr__digital__constellation_8psk_natural,
+  _swigc__p_gr__digital__constellation_bpsk,
+  _swigc__p_gr__digital__constellation_calcdist,
+  _swigc__p_gr__digital__constellation_dqpsk,
+  _swigc__p_gr__digital__constellation_expl_rect,
+  _swigc__p_gr__digital__constellation_psk,
+  _swigc__p_gr__digital__constellation_qpsk,
+  _swigc__p_gr__digital__constellation_rect,
+  _swigc__p_gr__digital__constellation_sector,
+  _swigc__p_gr__digital__trellis_metric_type_t,
   _swigc__p_gr__endianness_t,
+  _swigc__p_gr__filter__firdes,
   _swigc__p_gr__hier_block2,
   _swigc__p_gr__packetizr__packet_encoder,
   _swigc__p_gr__rt_status_t,
@@ -9406,6 +13134,16 @@ SWIG_init(void) {
   
   SWIG_InstallConstants(d,swig_const_table);
   
+  SWIG_Python_SetConstant(d, "firdes_WIN_NONE",SWIG_From_int(static_cast< int >(gr::filter::firdes::WIN_NONE)));
+  SWIG_Python_SetConstant(d, "firdes_WIN_HAMMING",SWIG_From_int(static_cast< int >(gr::filter::firdes::WIN_HAMMING)));
+  SWIG_Python_SetConstant(d, "firdes_WIN_HANN",SWIG_From_int(static_cast< int >(gr::filter::firdes::WIN_HANN)));
+  SWIG_Python_SetConstant(d, "firdes_WIN_BLACKMAN",SWIG_From_int(static_cast< int >(gr::filter::firdes::WIN_BLACKMAN)));
+  SWIG_Python_SetConstant(d, "firdes_WIN_RECTANGULAR",SWIG_From_int(static_cast< int >(gr::filter::firdes::WIN_RECTANGULAR)));
+  SWIG_Python_SetConstant(d, "firdes_WIN_KAISER",SWIG_From_int(static_cast< int >(gr::filter::firdes::WIN_KAISER)));
+  SWIG_Python_SetConstant(d, "firdes_WIN_BLACKMAN_hARRIS",SWIG_From_int(static_cast< int >(gr::filter::firdes::WIN_BLACKMAN_hARRIS)));
+  SWIG_Python_SetConstant(d, "firdes_WIN_BLACKMAN_HARRIS",SWIG_From_int(static_cast< int >(gr::filter::firdes::WIN_BLACKMAN_HARRIS)));
+  SWIG_Python_SetConstant(d, "firdes_WIN_BARTLETT",SWIG_From_int(static_cast< int >(gr::filter::firdes::WIN_BARTLETT)));
+  SWIG_Python_SetConstant(d, "firdes_WIN_FLATTOP",SWIG_From_int(static_cast< int >(gr::filter::firdes::WIN_FLATTOP)));
 #if PY_VERSION_HEX >= 0x03000000
   return m;
 #else

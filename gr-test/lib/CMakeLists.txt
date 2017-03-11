@@ -26,7 +26,7 @@ include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
 
 list(APPEND test_sources
-    square_ff_impl.cc
+    test_impl.cc
 )
 
 set(test_sources "${test_sources}" PARENT_SCOPE)
@@ -63,6 +63,7 @@ include_directories(${CPPUNIT_INCLUDE_DIRS})
 
 list(APPEND test_test_sources
     ${CMAKE_CURRENT_SOURCE_DIR}/test_test.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/qa_test.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/qa_test.cc
 )
 

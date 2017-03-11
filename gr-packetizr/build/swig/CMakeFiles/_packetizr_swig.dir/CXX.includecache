@@ -13,7 +13,13 @@ gnuradio/attributes.h
 ../include/packetizr/packet_encoder.h
 packetizr/api.h
 -
+gnuradio/digital/api.h
+-
 gnuradio/tagged_stream_block.h
+-
+gnuradio/digital/constellation.h
+-
+gnuradio/block.h
 -
 
 /home/thomas/gr/gr-packetizr/build/swig/packetizr_swigPYTHON_wrap.cxx
@@ -63,6 +69,18 @@ limits.h
 -
 packetizr/packet_encoder.h
 /home/thomas/gr/gr-packetizr/build/swig/packetizr/packet_encoder.h
+gnuradio/digital/constellation.h
+/home/thomas/gr/gr-packetizr/build/swig/gnuradio/digital/constellation.h
+gnuradio/digital/api.h
+-
+gnuradio/tagged_stream_block.h
+-
+gnuradio/digital/constellation.h
+-
+gnuradio/block.h
+-
+gnuradio/filter/firdes.h
+-
 float.h
 -
 math.h

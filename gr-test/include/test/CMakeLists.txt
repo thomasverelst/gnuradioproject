@@ -22,5 +22,5 @@
 ########################################################################
 install(FILES
     api.h
-    square_ff.h DESTINATION include/test
+    test.h DESTINATION include/test
 )

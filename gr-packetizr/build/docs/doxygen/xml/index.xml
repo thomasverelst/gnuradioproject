@@ -2,12 +2,15 @@
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.11">
   <compound refid="classgr_1_1packetizr_1_1packet__encoder" kind="class"><name>gr::packetizr::packet_encoder</name>
     <member refid="classgr_1_1packetizr_1_1packet__encoder_1a637ee1f077bdc36cbebcc0b9898f2ce5" kind="typedef"><name>sptr</name></member>
-    <member refid="classgr_1_1packetizr_1_1packet__encoder_1aec299d8c88e65b4722c11cdcd5b67c00" kind="function"><name>make</name></member>
+    <member refid="classgr_1_1packetizr_1_1packet__encoder_1a046d265c4f0d69e9c260a8762692ebc0" kind="function"><name>make</name></member>
   </compound>
   <compound refid="classgr_1_1packetizr_1_1packet__encoder__impl" kind="class"><name>gr::packetizr::packet_encoder_impl</name>
+    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1aeb0d9445bddb8099dc2209e5f0e52900" kind="variable"><name>d_header_constel</name></member>
+    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a4b8803f1e3e11865decd21bcaafe9e72" kind="variable"><name>d_payload_constel</name></member>
     <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a2b8207b607609b089e190b86f7cc595d" kind="variable"><name>d_itemsize</name></member>
+    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a97fc165f7d6b54c482e0ec342eb689a9" kind="variable"><name>d_tag_preserve_head_pos</name></member>
     <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a1b62cca2666d2009522eb4c83e54dae0" kind="function"><name>calculate_output_stream_length</name></member>
-    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1ac12783bb167da4de195bc451968e377e" kind="function"><name>packet_encoder_impl</name></member>
+    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1ac30a8ba164e25ec969a8ca6733e0f58f" kind="function"><name>packet_encoder_impl</name></member>
     <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a9cd40d2f0225d34fe4d460f6e173cea1" kind="function"><name>~packet_encoder_impl</name></member>
     <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1acd94578e6847ab2736ce2d175c8da88a" kind="function"><name>work</name></member>
   </compound>

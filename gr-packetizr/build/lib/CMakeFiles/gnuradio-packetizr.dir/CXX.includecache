@@ -13,13 +13,23 @@ gnuradio/attributes.h
 ../include/packetizr/packet_encoder.h
 packetizr/api.h
 -
+gnuradio/digital/api.h
+-
 gnuradio/tagged_stream_block.h
+-
+gnuradio/digital/constellation.h
+-
+gnuradio/block.h
 -
 
 /home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.cc
 config.h
 /home/thomas/gr/gr-packetizr/lib/config.h
 gnuradio/io_signature.h
+-
+gnuradio/digital/constellation.h
+-
+gnuradio/filter/firdes.h
 -
 packet_encoder_impl.h
 /home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h
@@ -30,5 +40,7 @@ iostream
 
 /home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h
 packetizr/packet_encoder.h
+-
+gnuradio/digital/constellation.h
 -
 

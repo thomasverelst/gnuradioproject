@@ -1,4 +1,0 @@
-test_test 4 0.000937462
-qa_square_ff 0 0
----
-qa_square_ff

@@ -1,38 +1,46 @@
 /* -*- c++ -*- */
-/*
- * Copyright 2012 Free Software Foundation, Inc.
- *
- * This file is part of GNU Radio
- *
- * GNU Radio is free software; you can redistribute it and/or modify
+/* 
+ * Copyright 2017 <+YOU OR YOUR COMPANY+>.
+ * 
+ * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 3, or (at your option)
  * any later version.
- *
- * GNU Radio is distributed in the hope that it will be useful,
+ * 
+ * This software is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
+ * 
  * You should have received a copy of the GNU General Public License
- * along with GNU Radio; see the file COPYING.  If not, write to
+ * along with this software; see the file COPYING.  If not, write to
  * the Free Software Foundation, Inc., 51 Franklin Street,
  * Boston, MA 02110-1301, USA.
  */
 
+
 #ifndef _QA_TEST_H_
 #define _QA_TEST_H_
 
-#include <gnuradio/attributes.h>
-#include <cppunit/TestSuite.h>
+#include <cppunit/extensions/HelperMacros.h>
+#include <cppunit/TestCase.h>
 
-//! collect all the tests for the gr-filter directory
+namespace gr {
+  namespace test {
 
-class __GR_ATTR_EXPORT qa_test
-{
- public:
-  //! return suite of tests for all of gr-filter directory
-  static CppUnit::TestSuite *suite();
-};
+    class qa_test : public CppUnit::TestCase
+    {
+    public:
+      CPPUNIT_TEST_SUITE(qa_test);
+      CPPUNIT_TEST(t1);
+      CPPUNIT_TEST_SUITE_END();
+
+    private:
+      void t1();
+    };
+
+  } /* namespace test */
+} /* namespace gr */
 
 #endif /* _QA_TEST_H_ */
+

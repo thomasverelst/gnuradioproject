@@ -246,14 +246,11 @@ SWIG_DIR:PATH=/usr/share/swig3.0
 //Path to a program.
 SWIG_EXECUTABLE:FILEPATH=/usr/bin/swig3.0
 
-//Set to TRUE if a compatible version of SWIG is found
-SWIG_FOUND:BOOL=FALSE
-
 //Swig version
 SWIG_VERSION:STRING=3.0.8
 
 //Dependencies for the target
-_packetizr_swig_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;gnuradio-packetizr;
+_packetizr_swig_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;gnuradio-packetizr;general;gnuradio-digital;
 
 //Dependencies for the target
 gnuradio-packetizr_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libgnuradio-runtime.so;general;/usr/lib/x86_64-linux-gnu/libgnuradio-pmt.so;

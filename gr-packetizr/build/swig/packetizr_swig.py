@@ -126,7 +126,7 @@ class packet_encoder(object):
 
     def make(sps, preamble, header_constel, payload_constel, itemsize, lengthtagname):
         """
-        make(unsigned int sps, int preamble, unsigned int header_constel, unsigned int payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr
+        make(unsigned int sps, int preamble, gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr
 
         Return a shared_ptr to a new instance of packetizr::packet_encoder.
 
@@ -144,7 +144,7 @@ packet_encoder_swigregister(packet_encoder)
 
 def packet_encoder_make(sps, preamble, header_constel, payload_constel, itemsize, lengthtagname):
     """
-    packet_encoder_make(unsigned int sps, int preamble, unsigned int header_constel, unsigned int payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr
+    packet_encoder_make(unsigned int sps, int preamble, gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr
 
     Return a shared_ptr to a new instance of packetizr::packet_encoder.
 
@@ -153,6 +153,560 @@ def packet_encoder_make(sps, preamble, header_constel, payload_constel, itemsize
     Params: (sps, preamble, header_constel, payload_constel, itemsize, lengthtagname)
     """
     return _packetizr_swig.packet_encoder_make(sps, preamble, header_constel, payload_constel, itemsize, lengthtagname)
+
+class constellation(object):
+    """Proxy of C++ gr::digital::constellation class."""
+
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined - class is abstract")
+    __repr__ = _swig_repr
+    __swig_destroy__ = _packetizr_swig.delete_constellation
+    __del__ = lambda self: None
+
+    def map_to_points(self, value, points):
+        """map_to_points(constellation self, unsigned int value, gr_complex * points)"""
+        return _packetizr_swig.constellation_map_to_points(self, value, points)
+
+
+    def map_to_points_v(self, value):
+        """map_to_points_v(constellation self, unsigned int value) -> pmt_vector_cfloat"""
+        return _packetizr_swig.constellation_map_to_points_v(self, value)
+
+
+    def decision_maker(self, sample):
+        """decision_maker(constellation self, gr_complex const * sample) -> unsigned int"""
+        return _packetizr_swig.constellation_decision_maker(self, sample)
+
+
+    def decision_maker_v(self, sample):
+        """decision_maker_v(constellation self, pmt_vector_cfloat sample) -> unsigned int"""
+        return _packetizr_swig.constellation_decision_maker_v(self, sample)
+
+
+    def decision_maker_pe(self, sample, phase_error):
+        """decision_maker_pe(constellation self, gr_complex const * sample, float * phase_error) -> unsigned int"""
+        return _packetizr_swig.constellation_decision_maker_pe(self, sample, phase_error)
+
+
+    def calc_metric(self, sample, metric, type):
+        """calc_metric(constellation self, gr_complex const * sample, float * metric, gr::digital::trellis_metric_type_t type)"""
+        return _packetizr_swig.constellation_calc_metric(self, sample, metric, type)
+
+
+    def calc_euclidean_metric(self, sample, metric):
+        """calc_euclidean_metric(constellation self, gr_complex const * sample, float * metric)"""
+        return _packetizr_swig.constellation_calc_euclidean_metric(self, sample, metric)
+
+
+    def calc_hard_symbol_metric(self, sample, metric):
+        """calc_hard_symbol_metric(constellation self, gr_complex const * sample, float * metric)"""
+        return _packetizr_swig.constellation_calc_hard_symbol_metric(self, sample, metric)
+
+
+    def points(self):
+        """points(constellation self) -> pmt_vector_cfloat"""
+        return _packetizr_swig.constellation_points(self)
+
+
+    def s_points(self):
+        """s_points(constellation self) -> pmt_vector_cfloat"""
+        return _packetizr_swig.constellation_s_points(self)
+
+
+    def v_points(self):
+        """v_points(constellation self) -> gr_vector_vector_complexf"""
+        return _packetizr_swig.constellation_v_points(self)
+
+
+    def apply_pre_diff_code(self):
+        """apply_pre_diff_code(constellation self) -> bool"""
+        return _packetizr_swig.constellation_apply_pre_diff_code(self)
+
+
+    def set_pre_diff_code(self, a):
+        """set_pre_diff_code(constellation self, bool a)"""
+        return _packetizr_swig.constellation_set_pre_diff_code(self, a)
+
+
+    def pre_diff_code(self):
+        """pre_diff_code(constellation self) -> std::vector< int,std::allocator< int > >"""
+        return _packetizr_swig.constellation_pre_diff_code(self)
+
+
+    def rotational_symmetry(self):
+        """rotational_symmetry(constellation self) -> unsigned int"""
+        return _packetizr_swig.constellation_rotational_symmetry(self)
+
+
+    def dimensionality(self):
+        """dimensionality(constellation self) -> unsigned int"""
+        return _packetizr_swig.constellation_dimensionality(self)
+
+
+    def bits_per_symbol(self):
+        """bits_per_symbol(constellation self) -> unsigned int"""
+        return _packetizr_swig.constellation_bits_per_symbol(self)
+
+
+    def arity(self):
+        """arity(constellation self) -> unsigned int"""
+        return _packetizr_swig.constellation_arity(self)
+
+
+    def base(self):
+        """base(constellation self) -> gr::digital::constellation_sptr"""
+        return _packetizr_swig.constellation_base(self)
+
+
+    def as_pmt(self):
+        """as_pmt(constellation self) -> swig_int_ptr"""
+        return _packetizr_swig.constellation_as_pmt(self)
+
+
+    def gen_soft_dec_lut(self, precision, npwr=1.0):
+        """gen_soft_dec_lut(constellation self, int precision, float npwr=1.0)"""
+        return _packetizr_swig.constellation_gen_soft_dec_lut(self, precision, npwr)
+
+
+    def calc_soft_dec(self, sample, npwr=1.0):
+        """calc_soft_dec(constellation self, gr_complex sample, float npwr=1.0) -> pmt_vector_float"""
+        return _packetizr_swig.constellation_calc_soft_dec(self, sample, npwr)
+
+
+    def set_soft_dec_lut(self, soft_dec_lut, precision):
+        """set_soft_dec_lut(constellation self, std::vector< std::vector< float,std::allocator< float > >,std::allocator< std::vector< float,std::allocator< float > > > > const & soft_dec_lut, int precision)"""
+        return _packetizr_swig.constellation_set_soft_dec_lut(self, soft_dec_lut, precision)
+
+
+    def has_soft_dec_lut(self):
+        """has_soft_dec_lut(constellation self) -> bool"""
+        return _packetizr_swig.constellation_has_soft_dec_lut(self)
+
+
+    def soft_dec_lut(self):
+        """soft_dec_lut(constellation self) -> std::vector< std::vector< float,std::allocator< float > >,std::allocator< std::vector< float,std::allocator< float > > > >"""
+        return _packetizr_swig.constellation_soft_dec_lut(self)
+
+
+    def soft_decision_maker(self, sample):
+        """soft_decision_maker(constellation self, gr_complex sample) -> pmt_vector_float"""
+        return _packetizr_swig.constellation_soft_decision_maker(self, sample)
+
+constellation_swigregister = _packetizr_swig.constellation_swigregister
+constellation_swigregister(constellation)
+
+class constellation_calcdist(constellation):
+    """Proxy of C++ gr::digital::constellation_calcdist class."""
+
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined")
+    __repr__ = _swig_repr
+
+    def make(constell, pre_diff_code, rotational_symmetry, dimensionality):
+        """make(pmt_vector_cfloat constell, std::vector< int,std::allocator< int > > pre_diff_code, unsigned int rotational_symmetry, unsigned int dimensionality) -> gr::digital::constellation_calcdist::sptr"""
+        return _packetizr_swig.constellation_calcdist_make(constell, pre_diff_code, rotational_symmetry, dimensionality)
+
+    make = staticmethod(make)
+    __swig_destroy__ = _packetizr_swig.delete_constellation_calcdist
+    __del__ = lambda self: None
+constellation_calcdist_swigregister = _packetizr_swig.constellation_calcdist_swigregister
+constellation_calcdist_swigregister(constellation_calcdist)
+
+def constellation_calcdist_make(constell, pre_diff_code, rotational_symmetry, dimensionality):
+    """constellation_calcdist_make(pmt_vector_cfloat constell, std::vector< int,std::allocator< int > > pre_diff_code, unsigned int rotational_symmetry, unsigned int dimensionality) -> gr::digital::constellation_calcdist::sptr"""
+    return _packetizr_swig.constellation_calcdist_make(constell, pre_diff_code, rotational_symmetry, dimensionality)
+
+class constellation_sector(constellation):
+    """Proxy of C++ gr::digital::constellation_sector class."""
+
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined - class is abstract")
+    __repr__ = _swig_repr
+    __swig_destroy__ = _packetizr_swig.delete_constellation_sector
+    __del__ = lambda self: None
+constellation_sector_swigregister = _packetizr_swig.constellation_sector_swigregister
+constellation_sector_swigregister(constellation_sector)
+
+class constellation_rect(constellation_sector):
+    """Proxy of C++ gr::digital::constellation_rect class."""
+
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined")
+    __repr__ = _swig_repr
+
+    def make(constell, pre_diff_code, rotational_symmetry, real_sectors, imag_sectors, width_real_sectors, width_imag_sectors):
+        """make(pmt_vector_cfloat constell, std::vector< int,std::allocator< int > > pre_diff_code, unsigned int rotational_symmetry, unsigned int real_sectors, unsigned int imag_sectors, float width_real_sectors, float width_imag_sectors) -> gr::digital::constellation_rect::sptr"""
+        return _packetizr_swig.constellation_rect_make(constell, pre_diff_code, rotational_symmetry, real_sectors, imag_sectors, width_real_sectors, width_imag_sectors)
+
+    make = staticmethod(make)
+    __swig_destroy__ = _packetizr_swig.delete_constellation_rect
+    __del__ = lambda self: None
+constellation_rect_swigregister = _packetizr_swig.constellation_rect_swigregister
+constellation_rect_swigregister(constellation_rect)
+
+def constellation_rect_make(constell, pre_diff_code, rotational_symmetry, real_sectors, imag_sectors, width_real_sectors, width_imag_sectors):
+    """constellation_rect_make(pmt_vector_cfloat constell, std::vector< int,std::allocator< int > > pre_diff_code, unsigned int rotational_symmetry, unsigned int real_sectors, unsigned int imag_sectors, float width_real_sectors, float width_imag_sectors) -> gr::digital::constellation_rect::sptr"""
+    return _packetizr_swig.constellation_rect_make(constell, pre_diff_code, rotational_symmetry, real_sectors, imag_sectors, width_real_sectors, width_imag_sectors)
+
+class constellation_expl_rect(constellation_rect):
+    """Proxy of C++ gr::digital::constellation_expl_rect class."""
+
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined")
+    __repr__ = _swig_repr
+
+    def make(constellation, pre_diff_code, rotational_symmetry, real_sectors, imag_sectors, width_real_sectors, width_imag_sectors, sector_values):
+        """make(pmt_vector_cfloat constellation, std::vector< int,std::allocator< int > > pre_diff_code, unsigned int rotational_symmetry, unsigned int real_sectors, unsigned int imag_sectors, float width_real_sectors, float width_imag_sectors, std::vector< unsigned int,std::allocator< unsigned int > > sector_values) -> gr::digital::constellation_expl_rect::sptr"""
+        return _packetizr_swig.constellation_expl_rect_make(constellation, pre_diff_code, rotational_symmetry, real_sectors, imag_sectors, width_real_sectors, width_imag_sectors, sector_values)
+
+    make = staticmethod(make)
+    __swig_destroy__ = _packetizr_swig.delete_constellation_expl_rect
+    __del__ = lambda self: None
+constellation_expl_rect_swigregister = _packetizr_swig.constellation_expl_rect_swigregister
+constellation_expl_rect_swigregister(constellation_expl_rect)
+
+def constellation_expl_rect_make(constellation, pre_diff_code, rotational_symmetry, real_sectors, imag_sectors, width_real_sectors, width_imag_sectors, sector_values):
+    """constellation_expl_rect_make(pmt_vector_cfloat constellation, std::vector< int,std::allocator< int > > pre_diff_code, unsigned int rotational_symmetry, unsigned int real_sectors, unsigned int imag_sectors, float width_real_sectors, float width_imag_sectors, std::vector< unsigned int,std::allocator< unsigned int > > sector_values) -> gr::digital::constellation_expl_rect::sptr"""
+    return _packetizr_swig.constellation_expl_rect_make(constellation, pre_diff_code, rotational_symmetry, real_sectors, imag_sectors, width_real_sectors, width_imag_sectors, sector_values)
+
+class constellation_psk(constellation_sector):
+    """Proxy of C++ gr::digital::constellation_psk class."""
+
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined")
+    __repr__ = _swig_repr
+
+    def make(constell, pre_diff_code, n_sectors):
+        """make(pmt_vector_cfloat constell, std::vector< int,std::allocator< int > > pre_diff_code, unsigned int n_sectors) -> gr::digital::constellation_psk::sptr"""
+        return _packetizr_swig.constellation_psk_make(constell, pre_diff_code, n_sectors)
+
+    make = staticmethod(make)
+    __swig_destroy__ = _packetizr_swig.delete_constellation_psk
+    __del__ = lambda self: None
+constellation_psk_swigregister = _packetizr_swig.constellation_psk_swigregister
+constellation_psk_swigregister(constellation_psk)
+
+def constellation_psk_make(constell, pre_diff_code, n_sectors):
+    """constellation_psk_make(pmt_vector_cfloat constell, std::vector< int,std::allocator< int > > pre_diff_code, unsigned int n_sectors) -> gr::digital::constellation_psk::sptr"""
+    return _packetizr_swig.constellation_psk_make(constell, pre_diff_code, n_sectors)
+
+class constellation_bpsk(constellation):
+    """Proxy of C++ gr::digital::constellation_bpsk class."""
+
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined")
+    __repr__ = _swig_repr
+
+    def make():
+        """make() -> gr::digital::constellation_bpsk::sptr"""
+        return _packetizr_swig.constellation_bpsk_make()
+
+    make = staticmethod(make)
+    __swig_destroy__ = _packetizr_swig.delete_constellation_bpsk
+    __del__ = lambda self: None
+constellation_bpsk_swigregister = _packetizr_swig.constellation_bpsk_swigregister
+constellation_bpsk_swigregister(constellation_bpsk)
+
+def constellation_bpsk_make():
+    """constellation_bpsk_make() -> gr::digital::constellation_bpsk::sptr"""
+    return _packetizr_swig.constellation_bpsk_make()
+
+class constellation_qpsk(constellation):
+    """Proxy of C++ gr::digital::constellation_qpsk class."""
+
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined")
+    __repr__ = _swig_repr
+
+    def make():
+        """make() -> gr::digital::constellation_qpsk::sptr"""
+        return _packetizr_swig.constellation_qpsk_make()
+
+    make = staticmethod(make)
+    __swig_destroy__ = _packetizr_swig.delete_constellation_qpsk
+    __del__ = lambda self: None
+constellation_qpsk_swigregister = _packetizr_swig.constellation_qpsk_swigregister
+constellation_qpsk_swigregister(constellation_qpsk)
+
+def constellation_qpsk_make():
+    """constellation_qpsk_make() -> gr::digital::constellation_qpsk::sptr"""
+    return _packetizr_swig.constellation_qpsk_make()
+
+class constellation_dqpsk(constellation):
+    """Proxy of C++ gr::digital::constellation_dqpsk class."""
+
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined")
+    __repr__ = _swig_repr
+
+    def make():
+        """make() -> gr::digital::constellation_dqpsk::sptr"""
+        return _packetizr_swig.constellation_dqpsk_make()
+
+    make = staticmethod(make)
+    __swig_destroy__ = _packetizr_swig.delete_constellation_dqpsk
+    __del__ = lambda self: None
+constellation_dqpsk_swigregister = _packetizr_swig.constellation_dqpsk_swigregister
+constellation_dqpsk_swigregister(constellation_dqpsk)
+
+def constellation_dqpsk_make():
+    """constellation_dqpsk_make() -> gr::digital::constellation_dqpsk::sptr"""
+    return _packetizr_swig.constellation_dqpsk_make()
+
+class constellation_8psk(constellation):
+    """Proxy of C++ gr::digital::constellation_8psk class."""
+
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined")
+    __repr__ = _swig_repr
+
+    def make():
+        """make() -> gr::digital::constellation_8psk::sptr"""
+        return _packetizr_swig.constellation_8psk_make()
+
+    make = staticmethod(make)
+    __swig_destroy__ = _packetizr_swig.delete_constellation_8psk
+    __del__ = lambda self: None
+constellation_8psk_swigregister = _packetizr_swig.constellation_8psk_swigregister
+constellation_8psk_swigregister(constellation_8psk)
+
+def constellation_8psk_make():
+    """constellation_8psk_make() -> gr::digital::constellation_8psk::sptr"""
+    return _packetizr_swig.constellation_8psk_make()
+
+class constellation_8psk_natural(constellation):
+    """Proxy of C++ gr::digital::constellation_8psk_natural class."""
+
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined")
+    __repr__ = _swig_repr
+
+    def make():
+        """make() -> gr::digital::constellation_8psk_natural::sptr"""
+        return _packetizr_swig.constellation_8psk_natural_make()
+
+    make = staticmethod(make)
+    __swig_destroy__ = _packetizr_swig.delete_constellation_8psk_natural
+    __del__ = lambda self: None
+constellation_8psk_natural_swigregister = _packetizr_swig.constellation_8psk_natural_swigregister
+constellation_8psk_natural_swigregister(constellation_8psk_natural)
+
+def constellation_8psk_natural_make():
+    """constellation_8psk_natural_make() -> gr::digital::constellation_8psk_natural::sptr"""
+    return _packetizr_swig.constellation_8psk_natural_make()
+
+class constellation_16qam(constellation):
+    """Proxy of C++ gr::digital::constellation_16qam class."""
+
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined")
+    __repr__ = _swig_repr
+
+    def make():
+        """make() -> gr::digital::constellation_16qam::sptr"""
+        return _packetizr_swig.constellation_16qam_make()
+
+    make = staticmethod(make)
+    __swig_destroy__ = _packetizr_swig.delete_constellation_16qam
+    __del__ = lambda self: None
+constellation_16qam_swigregister = _packetizr_swig.constellation_16qam_swigregister
+constellation_16qam_swigregister(constellation_16qam)
+
+def constellation_16qam_make():
+    """constellation_16qam_make() -> gr::digital::constellation_16qam::sptr"""
+    return _packetizr_swig.constellation_16qam_make()
+
+class firdes(object):
+    """Proxy of C++ gr::filter::firdes class."""
+
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+    __repr__ = _swig_repr
+    WIN_NONE = _packetizr_swig.firdes_WIN_NONE
+    WIN_HAMMING = _packetizr_swig.firdes_WIN_HAMMING
+    WIN_HANN = _packetizr_swig.firdes_WIN_HANN
+    WIN_BLACKMAN = _packetizr_swig.firdes_WIN_BLACKMAN
+    WIN_RECTANGULAR = _packetizr_swig.firdes_WIN_RECTANGULAR
+    WIN_KAISER = _packetizr_swig.firdes_WIN_KAISER
+    WIN_BLACKMAN_hARRIS = _packetizr_swig.firdes_WIN_BLACKMAN_hARRIS
+    WIN_BLACKMAN_HARRIS = _packetizr_swig.firdes_WIN_BLACKMAN_HARRIS
+    WIN_BARTLETT = _packetizr_swig.firdes_WIN_BARTLETT
+    WIN_FLATTOP = _packetizr_swig.firdes_WIN_FLATTOP
+
+    def window(type, ntaps, beta):
+        """window(gr::filter::firdes::win_type type, int ntaps, double beta) -> pmt_vector_float"""
+        return _packetizr_swig.firdes_window(type, ntaps, beta)
+
+    window = staticmethod(window)
+
+    def low_pass(*args, **kwargs):
+        """low_pass(double gain, double sampling_freq, double cutoff_freq, double transition_width, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"""
+        return _packetizr_swig.firdes_low_pass(*args, **kwargs)
+
+    low_pass = staticmethod(low_pass)
+
+    def low_pass_2(*args, **kwargs):
+        """low_pass_2(double gain, double sampling_freq, double cutoff_freq, double transition_width, double attenuation_dB, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"""
+        return _packetizr_swig.firdes_low_pass_2(*args, **kwargs)
+
+    low_pass_2 = staticmethod(low_pass_2)
+
+    def high_pass(*args, **kwargs):
+        """high_pass(double gain, double sampling_freq, double cutoff_freq, double transition_width, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"""
+        return _packetizr_swig.firdes_high_pass(*args, **kwargs)
+
+    high_pass = staticmethod(high_pass)
+
+    def high_pass_2(*args, **kwargs):
+        """high_pass_2(double gain, double sampling_freq, double cutoff_freq, double transition_width, double attenuation_dB, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"""
+        return _packetizr_swig.firdes_high_pass_2(*args, **kwargs)
+
+    high_pass_2 = staticmethod(high_pass_2)
+
+    def band_pass(*args, **kwargs):
+        """band_pass(double gain, double sampling_freq, double low_cutoff_freq, double high_cutoff_freq, double transition_width, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"""
+        return _packetizr_swig.firdes_band_pass(*args, **kwargs)
+
+    band_pass = staticmethod(band_pass)
+
+    def band_pass_2(*args, **kwargs):
+        """band_pass_2(double gain, double sampling_freq, double low_cutoff_freq, double high_cutoff_freq, double transition_width, double attenuation_dB, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"""
+        return _packetizr_swig.firdes_band_pass_2(*args, **kwargs)
+
+    band_pass_2 = staticmethod(band_pass_2)
+
+    def complex_band_pass(*args, **kwargs):
+        """complex_band_pass(double gain, double sampling_freq, double low_cutoff_freq, double high_cutoff_freq, double transition_width, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_cfloat"""
+        return _packetizr_swig.firdes_complex_band_pass(*args, **kwargs)
+
+    complex_band_pass = staticmethod(complex_band_pass)
+
+    def complex_band_pass_2(*args, **kwargs):
+        """complex_band_pass_2(double gain, double sampling_freq, double low_cutoff_freq, double high_cutoff_freq, double transition_width, double attenuation_dB, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_cfloat"""
+        return _packetizr_swig.firdes_complex_band_pass_2(*args, **kwargs)
+
+    complex_band_pass_2 = staticmethod(complex_band_pass_2)
+
+    def band_reject(*args, **kwargs):
+        """band_reject(double gain, double sampling_freq, double low_cutoff_freq, double high_cutoff_freq, double transition_width, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"""
+        return _packetizr_swig.firdes_band_reject(*args, **kwargs)
+
+    band_reject = staticmethod(band_reject)
+
+    def band_reject_2(*args, **kwargs):
+        """band_reject_2(double gain, double sampling_freq, double low_cutoff_freq, double high_cutoff_freq, double transition_width, double attenuation_dB, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"""
+        return _packetizr_swig.firdes_band_reject_2(*args, **kwargs)
+
+    band_reject_2 = staticmethod(band_reject_2)
+
+    def hilbert(*args, **kwargs):
+        """hilbert(unsigned int ntaps=19, gr::filter::firdes::win_type windowtype, double beta=6.76) -> pmt_vector_float"""
+        return _packetizr_swig.firdes_hilbert(*args, **kwargs)
+
+    hilbert = staticmethod(hilbert)
+
+    def root_raised_cosine(gain, sampling_freq, symbol_rate, alpha, ntaps):
+        """root_raised_cosine(double gain, double sampling_freq, double symbol_rate, double alpha, int ntaps) -> pmt_vector_float"""
+        return _packetizr_swig.firdes_root_raised_cosine(gain, sampling_freq, symbol_rate, alpha, ntaps)
+
+    root_raised_cosine = staticmethod(root_raised_cosine)
+
+    def gaussian(gain, spb, bt, ntaps):
+        """gaussian(double gain, double spb, double bt, int ntaps) -> pmt_vector_float"""
+        return _packetizr_swig.firdes_gaussian(gain, spb, bt, ntaps)
+
+    gaussian = staticmethod(gaussian)
+
+    def __init__(self):
+        """__init__(gr::filter::firdes self) -> firdes"""
+        this = _packetizr_swig.new_firdes()
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+    __swig_destroy__ = _packetizr_swig.delete_firdes
+    __del__ = lambda self: None
+firdes_swigregister = _packetizr_swig.firdes_swigregister
+firdes_swigregister(firdes)
+
+def firdes_window(type, ntaps, beta):
+    """firdes_window(gr::filter::firdes::win_type type, int ntaps, double beta) -> pmt_vector_float"""
+    return _packetizr_swig.firdes_window(type, ntaps, beta)
+
+def firdes_low_pass(*args, **kwargs):
+    """firdes_low_pass(double gain, double sampling_freq, double cutoff_freq, double transition_width, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"""
+    return _packetizr_swig.firdes_low_pass(*args, **kwargs)
+
+def firdes_low_pass_2(*args, **kwargs):
+    """firdes_low_pass_2(double gain, double sampling_freq, double cutoff_freq, double transition_width, double attenuation_dB, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"""
+    return _packetizr_swig.firdes_low_pass_2(*args, **kwargs)
+
+def firdes_high_pass(*args, **kwargs):
+    """firdes_high_pass(double gain, double sampling_freq, double cutoff_freq, double transition_width, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"""
+    return _packetizr_swig.firdes_high_pass(*args, **kwargs)
+
+def firdes_high_pass_2(*args, **kwargs):
+    """firdes_high_pass_2(double gain, double sampling_freq, double cutoff_freq, double transition_width, double attenuation_dB, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"""
+    return _packetizr_swig.firdes_high_pass_2(*args, **kwargs)
+
+def firdes_band_pass(*args, **kwargs):
+    """firdes_band_pass(double gain, double sampling_freq, double low_cutoff_freq, double high_cutoff_freq, double transition_width, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"""
+    return _packetizr_swig.firdes_band_pass(*args, **kwargs)
+
+def firdes_band_pass_2(*args, **kwargs):
+    """firdes_band_pass_2(double gain, double sampling_freq, double low_cutoff_freq, double high_cutoff_freq, double transition_width, double attenuation_dB, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"""
+    return _packetizr_swig.firdes_band_pass_2(*args, **kwargs)
+
+def firdes_complex_band_pass(*args, **kwargs):
+    """firdes_complex_band_pass(double gain, double sampling_freq, double low_cutoff_freq, double high_cutoff_freq, double transition_width, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_cfloat"""
+    return _packetizr_swig.firdes_complex_band_pass(*args, **kwargs)
+
+def firdes_complex_band_pass_2(*args, **kwargs):
+    """firdes_complex_band_pass_2(double gain, double sampling_freq, double low_cutoff_freq, double high_cutoff_freq, double transition_width, double attenuation_dB, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_cfloat"""
+    return _packetizr_swig.firdes_complex_band_pass_2(*args, **kwargs)
+
+def firdes_band_reject(*args, **kwargs):
+    """firdes_band_reject(double gain, double sampling_freq, double low_cutoff_freq, double high_cutoff_freq, double transition_width, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"""
+    return _packetizr_swig.firdes_band_reject(*args, **kwargs)
+
+def firdes_band_reject_2(*args, **kwargs):
+    """firdes_band_reject_2(double gain, double sampling_freq, double low_cutoff_freq, double high_cutoff_freq, double transition_width, double attenuation_dB, gr::filter::firdes::win_type window, double beta=6.76) -> pmt_vector_float"""
+    return _packetizr_swig.firdes_band_reject_2(*args, **kwargs)
+
+def firdes_hilbert(*args, **kwargs):
+    """firdes_hilbert(unsigned int ntaps=19, gr::filter::firdes::win_type windowtype, double beta=6.76) -> pmt_vector_float"""
+    return _packetizr_swig.firdes_hilbert(*args, **kwargs)
+
+def firdes_root_raised_cosine(gain, sampling_freq, symbol_rate, alpha, ntaps):
+    """firdes_root_raised_cosine(double gain, double sampling_freq, double symbol_rate, double alpha, int ntaps) -> pmt_vector_float"""
+    return _packetizr_swig.firdes_root_raised_cosine(gain, sampling_freq, symbol_rate, alpha, ntaps)
+
+def firdes_gaussian(gain, spb, bt, ntaps):
+    """firdes_gaussian(double gain, double spb, double bt, int ntaps) -> pmt_vector_float"""
+    return _packetizr_swig.firdes_gaussian(gain, spb, bt, ntaps)
 
 class packet_encoder_sptr(object):
     """Proxy of C++ boost::shared_ptr<(gr::packetizr::packet_encoder)> class."""
@@ -180,7 +734,7 @@ class packet_encoder_sptr(object):
 
     def make(self, sps, preamble, header_constel, payload_constel, itemsize, lengthtagname):
         """
-        make(packet_encoder_sptr self, unsigned int sps, int preamble, unsigned int header_constel, unsigned int payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr
+        make(packet_encoder_sptr self, unsigned int sps, int preamble, gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr
 
         Return a shared_ptr to a new instance of packetizr::packet_encoder.
 
