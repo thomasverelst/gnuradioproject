@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/test/api.h
+gnuradio/attributes.h
+-
+
+../include/test/square_ff.h
+test/api.h
+-
+gnuradio/block.h
+-
+
+/home/thomas/gr/gr-test/lib/square_ff_impl.cc
+config.h
+/home/thomas/gr/gr-test/lib/config.h
+gnuradio/io_signature.h
+-
+square_ff_impl.h
+/home/thomas/gr/gr-test/lib/square_ff_impl.h
+
+/home/thomas/gr/gr-test/lib/square_ff_impl.h
+test/square_ff.h
+-
+

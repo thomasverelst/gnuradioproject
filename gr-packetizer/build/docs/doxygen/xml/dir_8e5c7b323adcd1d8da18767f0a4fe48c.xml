@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_8e5c7b323adcd1d8da18767f0a4fe48c" kind="dir">
+    <compoundname>packetizer</compoundname>
+    <innerfile refid="api_8h">api.h</innerfile>
+    <innerfile refid="packet__encoder__bc_8h">packet_encoder_bc.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/thomas/gr/gr-packetizer/include/packetizer/"/>
+  </compounddef>
+</doxygen>

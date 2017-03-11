@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.11">
+  <compound refid="classgr_1_1packetizr_1_1packet__encoder" kind="class"><name>gr::packetizr::packet_encoder</name>
+    <member refid="classgr_1_1packetizr_1_1packet__encoder_1a637ee1f077bdc36cbebcc0b9898f2ce5" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1packetizr_1_1packet__encoder_1aec299d8c88e65b4722c11cdcd5b67c00" kind="function"><name>make</name></member>
+  </compound>
+  <compound refid="classgr_1_1packetizr_1_1packet__encoder__impl" kind="class"><name>gr::packetizr::packet_encoder_impl</name>
+    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a2b8207b607609b089e190b86f7cc595d" kind="variable"><name>d_itemsize</name></member>
+    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a1b62cca2666d2009522eb4c83e54dae0" kind="function"><name>calculate_output_stream_length</name></member>
+    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1ac12783bb167da4de195bc451968e377e" kind="function"><name>packet_encoder_impl</name></member>
+    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a9cd40d2f0225d34fe4d460f6e173cea1" kind="function"><name>~packet_encoder_impl</name></member>
+    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1acd94578e6847ab2736ce2d175c8da88a" kind="function"><name>work</name></member>
+  </compound>
+  <compound refid="namespacegr" kind="namespace"><name>gr</name>
+  </compound>
+  <compound refid="namespacegr_1_1packetizr" kind="namespace"><name>gr::packetizr</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="api_8h" kind="file"><name>api.h</name>
+    <member refid="api_8h_1adc330ead7b8db21b945181927ccf5c98" kind="define"><name>PACKETIZR_API</name></member>
+  </compound>
+  <compound refid="group__defs_8dox" kind="file"><name>group_defs.dox</name>
+  </compound>
+  <compound refid="main__page_8dox" kind="file"><name>main_page.dox</name>
+  </compound>
+  <compound refid="packet__encoder_8h" kind="file"><name>packet_encoder.h</name>
+  </compound>
+  <compound refid="packet__encoder__impl_8h" kind="file"><name>packet_encoder_impl.h</name>
+  </compound>
+  <compound refid="group__block" kind="group"><name>block</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>include</name>
+  </compound>
+  <compound refid="dir_97aefd0d527b934f1d99a682da8fe6a9" kind="dir"><name>lib</name>
+  </compound>
+  <compound refid="dir_9d5dfbea2b5a71d18eabdfd89aaedb27" kind="dir"><name>packetizr</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

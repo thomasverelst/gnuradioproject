@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1test_1_1square__ff" kind="class" language="C++" prot="public">
+    <compoundname>gr::test::square_ff</compoundname>
+    <basecompoundref prot="public" virt="virtual">block</basecompoundref>
+    <derivedcompoundref refid="classgr_1_1test_1_1square__ff__impl" prot="public" virt="non-virtual">gr::test::square_ff_impl</derivedcompoundref>
+    <includes refid="square__ff_8h" local="no">square_ff.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgr_1_1test_1_1square__ff_1a36ffe0924576fc9d65a0ef0e2e270b45" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classgr_1_1test_1_1square__ff" kindref="compound">square_ff</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;square_ff&gt; gr::test::square_ff::sptr</definition>
+        <argsstring></argsstring>
+        <name>sptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomas/gr/gr-test/include/test/square_ff.h" line="39" column="1" bodyfile="/home/thomas/gr/gr-test/include/test/square_ff.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1test_1_1square__ff_1acc6ba19a6b323e36876cf36b1983e817" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgr_1_1test_1_1square__ff_1a36ffe0924576fc9d65a0ef0e2e270b45" kindref="member">sptr</ref></type>
+        <definition>static sptr gr::test::square_ff::make</definition>
+        <argsstring>()</argsstring>
+        <name>make</name>
+        <briefdescription>
+<para>Return a shared_ptr to a new instance of <ref refid="classgr_1_1test_1_1square__ff" kindref="compound">test::square_ff</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1test_1_1square__ff" kindref="compound">test::square_ff</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1test_1_1square__ff_1acc6ba19a6b323e36876cf36b1983e817" kindref="member">test::square_ff::make</ref> is the public interface for creating new instances. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomas/gr/gr-test/include/test/square_ff.h" line="49" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>&lt;+description of block+&gt; </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="0">
+        <label>gr::test::square_ff</label>
+        <link refid="classgr_1_1test_1_1square__ff"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>gr::test::square_ff_impl</label>
+        <link refid="classgr_1_1test_1_1square__ff__impl"/>
+        <childnode refid="0" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>gr::block</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>gr::test::square_ff</label>
+        <link refid="classgr_1_1test_1_1square__ff"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>gr::block</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/thomas/gr/gr-test/include/test/square_ff.h" line="37" column="1" bodyfile="/home/thomas/gr/gr-test/include/test/square_ff.h" bodystart="36" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classgr_1_1test_1_1square__ff_1acc6ba19a6b323e36876cf36b1983e817" prot="public" virt="non-virtual"><scope>gr::test::square_ff</scope><name>make</name></member>
+      <member refid="classgr_1_1test_1_1square__ff_1a36ffe0924576fc9d65a0ef0e2e270b45" prot="public" virt="non-virtual"><scope>gr::test::square_ff</scope><name>sptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

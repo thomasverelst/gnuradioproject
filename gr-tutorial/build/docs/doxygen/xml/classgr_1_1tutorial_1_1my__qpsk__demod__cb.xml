@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1tutorial_1_1my__qpsk__demod__cb" kind="class" language="C++" prot="public">
+    <compoundname>gr::tutorial::my_qpsk_demod_cb</compoundname>
+    <basecompoundref prot="public" virt="virtual">block</basecompoundref>
+    <derivedcompoundref refid="classgr_1_1tutorial_1_1my__qpsk__demod__cb__impl" prot="public" virt="non-virtual">gr::tutorial::my_qpsk_demod_cb_impl</derivedcompoundref>
+    <includes refid="my__qpsk__demod__cb_8h" local="no">my_qpsk_demod_cb.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgr_1_1tutorial_1_1my__qpsk__demod__cb_1a9c77faf7c540fe3f8cd1c9a7450887ee" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classgr_1_1tutorial_1_1my__qpsk__demod__cb" kindref="compound">my_qpsk_demod_cb</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;my_qpsk_demod_cb&gt; gr::tutorial::my_qpsk_demod_cb::sptr</definition>
+        <argsstring></argsstring>
+        <name>sptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomas/gr/gr-tutorial/include/tutorial/my_qpsk_demod_cb.h" line="39" column="1" bodyfile="/home/thomas/gr/gr-tutorial/include/tutorial/my_qpsk_demod_cb.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1tutorial_1_1my__qpsk__demod__cb_1aa37a7549e5133777d8d3d896261d4877" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgr_1_1tutorial_1_1my__qpsk__demod__cb_1a9c77faf7c540fe3f8cd1c9a7450887ee" kindref="member">sptr</ref></type>
+        <definition>static sptr gr::tutorial::my_qpsk_demod_cb::make</definition>
+        <argsstring>(bool gray_code)</argsstring>
+        <name>make</name>
+        <param>
+          <type>bool</type>
+          <declname>gray_code</declname>
+        </param>
+        <briefdescription>
+<para>Return a shared_ptr to a new instance of <ref refid="classgr_1_1tutorial_1_1my__qpsk__demod__cb" kindref="compound">tutorial::my_qpsk_demod_cb</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1tutorial_1_1my__qpsk__demod__cb" kindref="compound">tutorial::my_qpsk_demod_cb</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1tutorial_1_1my__qpsk__demod__cb_1aa37a7549e5133777d8d3d896261d4877" kindref="member">tutorial::my_qpsk_demod_cb::make</ref> is the public interface for creating new instances. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomas/gr/gr-tutorial/include/tutorial/my_qpsk_demod_cb.h" line="49" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>&lt;+description of block+&gt; </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>gr::tutorial::my_qpsk_demod_cb_impl</label>
+        <link refid="classgr_1_1tutorial_1_1my__qpsk__demod__cb__impl"/>
+        <childnode refid="0" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="0">
+        <label>gr::tutorial::my_qpsk_demod_cb</label>
+        <link refid="classgr_1_1tutorial_1_1my__qpsk__demod__cb"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>gr::block</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>gr::tutorial::my_qpsk_demod_cb</label>
+        <link refid="classgr_1_1tutorial_1_1my__qpsk__demod__cb"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>gr::block</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/thomas/gr/gr-tutorial/include/tutorial/my_qpsk_demod_cb.h" line="37" column="1" bodyfile="/home/thomas/gr/gr-tutorial/include/tutorial/my_qpsk_demod_cb.h" bodystart="36" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classgr_1_1tutorial_1_1my__qpsk__demod__cb_1aa37a7549e5133777d8d3d896261d4877" prot="public" virt="non-virtual"><scope>gr::tutorial::my_qpsk_demod_cb</scope><name>make</name></member>
+      <member refid="classgr_1_1tutorial_1_1my__qpsk__demod__cb_1a9c77faf7c540fe3f8cd1c9a7450887ee" prot="public" virt="non-virtual"><scope>gr::tutorial::my_qpsk_demod_cb</scope><name>sptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

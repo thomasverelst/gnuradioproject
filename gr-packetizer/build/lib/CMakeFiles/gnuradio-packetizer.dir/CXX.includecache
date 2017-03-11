@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/packetizer/api.h
+gnuradio/attributes.h
+-
+
+../include/packetizer/packet_encoder_bc.h
+packetizer/api.h
+-
+gnuradio/tagged_stream_block.h
+-
+
+/home/thomas/gr/gr-packetizer/lib/packet_encoder_bc_impl.cc
+config.h
+/home/thomas/gr/gr-packetizer/lib/config.h
+gnuradio/io_signature.h
+-
+packet_encoder_bc_impl.h
+/home/thomas/gr/gr-packetizer/lib/packet_encoder_bc_impl.h
+
+/home/thomas/gr/gr-packetizer/lib/packet_encoder_bc_impl.h
+packetizer/packet_encoder_bc.h
+-
+

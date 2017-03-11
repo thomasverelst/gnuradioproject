@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.11">
+  <compound refid="classgr_1_1test_1_1square__ff" kind="class"><name>gr::test::square_ff</name>
+    <member refid="classgr_1_1test_1_1square__ff_1a36ffe0924576fc9d65a0ef0e2e270b45" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1test_1_1square__ff_1acc6ba19a6b323e36876cf36b1983e817" kind="function"><name>make</name></member>
+  </compound>
+  <compound refid="classgr_1_1test_1_1square__ff__impl" kind="class"><name>gr::test::square_ff_impl</name>
+    <member refid="classgr_1_1test_1_1square__ff__impl_1a674b71211c022a5b6aeca513c2936d0c" kind="function"><name>square_ff_impl</name></member>
+    <member refid="classgr_1_1test_1_1square__ff__impl_1a30565175e0512597af1bdc1c6c8bf09d" kind="function"><name>~square_ff_impl</name></member>
+    <member refid="classgr_1_1test_1_1square__ff__impl_1a679356ecac20f276290b6779a3c4be25" kind="function"><name>forecast</name></member>
+    <member refid="classgr_1_1test_1_1square__ff__impl_1a45089147d0b72732e06899d0024c904a" kind="function"><name>general_work</name></member>
+  </compound>
+  <compound refid="namespacegr" kind="namespace"><name>gr</name>
+  </compound>
+  <compound refid="namespacegr_1_1test" kind="namespace"><name>gr::test</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="api_8h" kind="file"><name>api.h</name>
+    <member refid="api_8h_1adc7c4ab8613247d25ed7e0f37df46321" kind="define"><name>TEST_API</name></member>
+  </compound>
+  <compound refid="group__defs_8dox" kind="file"><name>group_defs.dox</name>
+  </compound>
+  <compound refid="main__page_8dox" kind="file"><name>main_page.dox</name>
+  </compound>
+  <compound refid="square__ff_8h" kind="file"><name>square_ff.h</name>
+  </compound>
+  <compound refid="square__ff__impl_8h" kind="file"><name>square_ff_impl.h</name>
+  </compound>
+  <compound refid="group__block" kind="group"><name>block</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>include</name>
+  </compound>
+  <compound refid="dir_97aefd0d527b934f1d99a682da8fe6a9" kind="dir"><name>lib</name>
+  </compound>
+  <compound refid="dir_69f6b0b437b9d7106ae46b3b241ba72b" kind="dir"><name>test</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

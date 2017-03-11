@@ -1,0 +1,30 @@
+INCLUDE(FindPkgConfig)
+PKG_CHECK_MODULES(PC_PACKETIZER packetizer)
+
+FIND_PATH(
+    PACKETIZER_INCLUDE_DIRS
+    NAMES packetizer/api.h
+    HINTS $ENV{PACKETIZER_DIR}/include
+        ${PC_PACKETIZER_INCLUDEDIR}
+    PATHS ${CMAKE_INSTALL_PREFIX}/include
+          /usr/local/include
+          /usr/include
+)
+
+FIND_LIBRARY(
+    PACKETIZER_LIBRARIES
+    NAMES gnuradio-packetizer
+    HINTS $ENV{PACKETIZER_DIR}/lib
+        ${PC_PACKETIZER_LIBDIR}
+    PATHS ${CMAKE_INSTALL_PREFIX}/lib
+          ${CMAKE_INSTALL_PREFIX}/lib64
+          /usr/local/lib
+          /usr/local/lib64
+          /usr/lib
+          /usr/lib64
+)
+
+INCLUDE(FindPackageHandleStandardArgs)
+FIND_PACKAGE_HANDLE_STANDARD_ARGS(PACKETIZER DEFAULT_MSG PACKETIZER_LIBRARIES PACKETIZER_INCLUDE_DIRS)
+MARK_AS_ADVANCED(PACKETIZER_LIBRARIES PACKETIZER_INCLUDE_DIRS)
+

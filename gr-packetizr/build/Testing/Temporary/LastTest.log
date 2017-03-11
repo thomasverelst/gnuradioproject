@@ -1,0 +1,76 @@
+Start testing: Mar 11 11:17 CET
+----------------------------------------------------------
+1/2 Testing: test_packetizr
+1/2 Test: test_packetizr
+Command: "/bin/sh" "/home/thomas/gr/gr-packetizr/build/lib/test_packetizr_test.sh"
+Directory: /home/thomas/gr/gr-packetizr/build/lib
+"test_packetizr" start time: Mar 11 11:17 CET
+Output:
+----------------------------------------------------------
+
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_packetizr" end time: Mar 11 11:17 CET
+"test_packetizr" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: qa_packet_encoder
+2/2 Test: qa_packet_encoder
+Command: "/bin/sh" "/home/thomas/gr/gr-packetizr/build/python/qa_packet_encoder_test.sh"
+Directory: /home/thomas/gr/gr-packetizr/build/python
+"qa_packet_encoder" start time: Mar 11 11:17 CET
+Output:
+----------------------------------------------------------
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.003s
+
+OK
+$$ NUMBER OF INPUTS:2
+$$ START printing in for input 0do0123456END 
+$$ NUMBER OF TAGS0
+$$ START printing in for input 1do0123456END 
+$$ NUMBER OF TAGS0
+$$ NUMBER OF INPUTS:2
+$$ START printing in for input 0do0123456END 
+$$ NUMBER OF TAGS0
+$$ START printing in for input 1do0123456END 
+$$ NUMBER OF TAGS0
+$$ NUMBER OF INPUTS:2
+$$ START printing in for input 0do0123456END 
+$$ NUMBER OF TAGS0
+$$ START printing in for input 1do0123456END 
+$$ NUMBER OF TAGS0
+
+ 0RESULT DATA (3L, 0L, 0L, 0L, 200L, 127L, 97L, 3L, 0L, 1L, 0L, 244L, 123L, 200L, 3L, 0L, 2L, 0L, 127L, 97L, 244L) 
+
+$$ NUMBER OF INPUTS:2
+$$ START printing in for input 0do01234END 
+$$ NUMBER OF TAGS0
+$$ START printing in for input 1do01234END 
+$$ NUMBER OF TAGS0
+$$ NUMBER OF INPUTS:2
+$$ START printing in for input 0do01234END 
+$$ NUMBER OF TAGS0
+$$ START printing in for input 1do01234END 
+$$ NUMBER OF TAGS0
+$$ NUMBER OF INPUTS:2
+$$ START printing in for input 0do01234END 
+$$ NUMBER OF TAGS0
+$$ START printing in for input 1do01234END 
+$$ NUMBER OF TAGS0
+
+ 0RESULT DATA (3L, 0L, 0L, 0L, 200L, 127L, 97L, 3L, 0L, 1L, 0L, 244L, 123L, 200L, 3L, 0L, 2L, 0L, 127L, 97L, 244L) 
+
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"qa_packet_encoder" end time: Mar 11 11:17 CET
+"qa_packet_encoder" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Mar 11 11:17 CET

@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/thomas/gr/gr-test/lib/qa_test.cc
+qa_test.h
+/home/thomas/gr/gr-test/lib/qa_test.h
+
+/home/thomas/gr/gr-test/lib/qa_test.h
+gnuradio/attributes.h
+-
+cppunit/TestSuite.h
+-
+
+/home/thomas/gr/gr-test/lib/test_test.cc
+config.h
+/home/thomas/gr/gr-test/lib/config.h
+cppunit/TextTestRunner.h
+-
+cppunit/XmlOutputter.h
+-
+gnuradio/unittests.h
+-
+qa_test.h
+/home/thomas/gr/gr-test/lib/qa_test.h
+iostream
+-
+fstream
+-
+
