@@ -72,8 +72,8 @@ Inheritance diagram for gr::packetizr::packet_encoder_impl:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac30a8ba164e25ec969a8ca6733e0f58f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgr_1_1packetizr_1_1packet__encoder__impl.html#ac30a8ba164e25ec969a8ca6733e0f58f">packet_encoder_impl</a> (unsigned int sps, int preamble, gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, const std::string &amp;lengthtagname)</td></tr>
-<tr class="separator:ac30a8ba164e25ec969a8ca6733e0f58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada21eececdbfd738107fe47f34febb32"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgr_1_1packetizr_1_1packet__encoder__impl.html#ada21eececdbfd738107fe47f34febb32">packet_encoder_impl</a> (unsigned int sps, int preamble[], gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, const std::string &amp;lengthtagname)</td></tr>
+<tr class="separator:ada21eececdbfd738107fe47f34febb32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cd40d2f0225d34fe4d460f6e173cea1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgr_1_1packetizr_1_1packet__encoder__impl.html#a9cd40d2f0225d34fe4d460f6e173cea1">~packet_encoder_impl</a> ()</td></tr>
 <tr class="separator:a9cd40d2f0225d34fe4d460f6e173cea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd94578e6847ab2736ce2d175c8da88a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgr_1_1packetizr_1_1packet__encoder__impl.html#acd94578e6847ab2736ce2d175c8da88a">work</a> (int noutput_items, gr_vector_int &amp;ninput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</td></tr>
@@ -90,12 +90,12 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a637ee1f077bdc36cbebcc0b9898f2ce5 inherit pub_types_classgr_1_1packetizr_1_1packet__encoder"><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr&lt; <a class="el" href="classgr_1_1packetizr_1_1packet__encoder.html">packet_encoder</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgr_1_1packetizr_1_1packet__encoder.html#a637ee1f077bdc36cbebcc0b9898f2ce5">sptr</a></td></tr>
 <tr class="separator:a637ee1f077bdc36cbebcc0b9898f2ce5 inherit pub_types_classgr_1_1packetizr_1_1packet__encoder"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classgr_1_1packetizr_1_1packet__encoder"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classgr_1_1packetizr_1_1packet__encoder')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classgr_1_1packetizr_1_1packet__encoder.html">gr::packetizr::packet_encoder</a></td></tr>
-<tr class="memitem:a046d265c4f0d69e9c260a8762692ebc0 inherit pub_static_methods_classgr_1_1packetizr_1_1packet__encoder"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgr_1_1packetizr_1_1packet__encoder.html#a637ee1f077bdc36cbebcc0b9898f2ce5">sptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgr_1_1packetizr_1_1packet__encoder.html#a046d265c4f0d69e9c260a8762692ebc0">make</a> (unsigned int sps, int preamble, gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, const std::string &amp;lengthtagname)</td></tr>
-<tr class="memdesc:a046d265c4f0d69e9c260a8762692ebc0 inherit pub_static_methods_classgr_1_1packetizr_1_1packet__encoder"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a shared_ptr to a new instance of <a class="el" href="classgr_1_1packetizr_1_1packet__encoder.html" title="&lt;+description of block+&gt; ">packetizr::packet_encoder</a>.  <a href="#a046d265c4f0d69e9c260a8762692ebc0">More...</a><br /></td></tr>
-<tr class="separator:a046d265c4f0d69e9c260a8762692ebc0 inherit pub_static_methods_classgr_1_1packetizr_1_1packet__encoder"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaab22bd08a5397f8243e93b3e0baa238 inherit pub_static_methods_classgr_1_1packetizr_1_1packet__encoder"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classgr_1_1packetizr_1_1packet__encoder.html#a637ee1f077bdc36cbebcc0b9898f2ce5">sptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgr_1_1packetizr_1_1packet__encoder.html#aaab22bd08a5397f8243e93b3e0baa238">make</a> (unsigned int sps, int preamble[], gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, const std::string &amp;lengthtagname)</td></tr>
+<tr class="memdesc:aaab22bd08a5397f8243e93b3e0baa238 inherit pub_static_methods_classgr_1_1packetizr_1_1packet__encoder"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a shared_ptr to a new instance of <a class="el" href="classgr_1_1packetizr_1_1packet__encoder.html" title="&lt;+description of block+&gt; ">packetizr::packet_encoder</a>.  <a href="#aaab22bd08a5397f8243e93b3e0baa238">More...</a><br /></td></tr>
+<tr class="separator:aaab22bd08a5397f8243e93b3e0baa238 inherit pub_static_methods_classgr_1_1packetizr_1_1packet__encoder"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ac30a8ba164e25ec969a8ca6733e0f58f"></a>
+<a class="anchor" id="ada21eececdbfd738107fe47f34febb32"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -109,7 +109,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>preamble</em>, </td>
+          <td class="paramname"><em>preamble</em>[], </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -232,7 +232,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacegr.html">gr</a></li><li class="navelem"><a class="el" href="namespacegr_1_1packetizr.html">packetizr</a></li><li class="navelem"><a class="el" href="classgr_1_1packetizr_1_1packet__encoder__impl.html">packet_encoder_impl</a></li>
-    <li class="footer">Generated on Sat Mar 11 2017 17:05:24 for GNU Radio&#39;s PACKETIZR Package by
+    <li class="footer">Generated on Sun Mar 12 2017 01:08:54 for GNU Radio&#39;s PACKETIZR Package by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

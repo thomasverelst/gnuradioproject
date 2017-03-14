@@ -20,10 +20,10 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="classgr_1_1packetizr_1_1packet__encoder_1a046d265c4f0d69e9c260a8762692ebc0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgr_1_1packetizr_1_1packet__encoder_1aaab22bd08a5397f8243e93b3e0baa238" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classgr_1_1packetizr_1_1packet__encoder_1a637ee1f077bdc36cbebcc0b9898f2ce5" kindref="member">sptr</ref></type>
         <definition>static sptr gr::packetizr::packet_encoder::make</definition>
-        <argsstring>(unsigned int sps, int preamble, gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, const std::string &amp;lengthtagname)</argsstring>
+        <argsstring>(unsigned int sps, int preamble[], gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, const std::string &amp;lengthtagname)</argsstring>
         <name>make</name>
         <param>
           <type>unsigned int</type>
@@ -32,6 +32,7 @@
         <param>
           <type>int</type>
           <declname>preamble</declname>
+          <array>[]</array>
         </param>
         <param>
           <type>gr::digital::constellation_sptr</type>
@@ -52,7 +53,7 @@
         <briefdescription>
 <para>Return a shared_ptr to a new instance of <ref refid="classgr_1_1packetizr_1_1packet__encoder" kindref="compound">packetizr::packet_encoder</ref>. </para>        </briefdescription>
         <detaileddescription>
-<para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1packetizr_1_1packet__encoder" kindref="compound">packetizr::packet_encoder</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1packetizr_1_1packet__encoder_1a046d265c4f0d69e9c260a8762692ebc0" kindref="member">packetizr::packet_encoder::make</ref> is the public interface for creating new instances. </para>        </detaileddescription>
+<para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1packetizr_1_1packet__encoder" kindref="compound">packetizr::packet_encoder</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1packetizr_1_1packet__encoder_1aaab22bd08a5397f8243e93b3e0baa238" kindref="member">packetizr::packet_encoder::make</ref> is the public interface for creating new instances. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="/home/thomas/gr/gr-packetizr/include/packetizr/packet_encoder.h" line="52" column="1"/>
@@ -86,7 +87,7 @@
     </collaborationgraph>
     <location file="/home/thomas/gr/gr-packetizr/include/packetizr/packet_encoder.h" line="40" column="1" bodyfile="/home/thomas/gr/gr-packetizr/include/packetizr/packet_encoder.h" bodystart="39" bodyend="53"/>
     <listofallmembers>
-      <member refid="classgr_1_1packetizr_1_1packet__encoder_1a046d265c4f0d69e9c260a8762692ebc0" prot="public" virt="non-virtual"><scope>gr::packetizr::packet_encoder</scope><name>make</name></member>
+      <member refid="classgr_1_1packetizr_1_1packet__encoder_1aaab22bd08a5397f8243e93b3e0baa238" prot="public" virt="non-virtual"><scope>gr::packetizr::packet_encoder</scope><name>make</name></member>
       <member refid="classgr_1_1packetizr_1_1packet__encoder_1a637ee1f077bdc36cbebcc0b9898f2ce5" prot="public" virt="non-virtual"><scope>gr::packetizr::packet_encoder</scope><name>sptr</name></member>
     </listofallmembers>
   </compounddef>

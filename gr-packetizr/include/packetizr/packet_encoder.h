@@ -49,7 +49,7 @@ namespace gr {
        * class. packetizr::packet_encoder::make is the public interface for
        * creating new instances.
        */
-      static sptr make(unsigned int sps, int preamble, gr::digital::constellation_sptr  header_constel, gr::digital::constellation_sptr  payload_constel, size_t itemsize, const std::string &lengthtagname);
+      static sptr make(unsigned int sps,  const std::vector<int> preamble, gr::digital::constellation_sptr  header_constel, gr::digital::constellation_sptr  payload_constel, size_t itemsize, const std::string &lengthtagname);
     };
 
   } // namespace packetizr

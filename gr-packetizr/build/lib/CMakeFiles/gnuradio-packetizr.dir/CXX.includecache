@@ -31,6 +31,8 @@ gnuradio/digital/constellation.h
 -
 gnuradio/filter/firdes.h
 -
+gnuradio/filter/pfb_arb_resampler.h
+-
 packet_encoder_impl.h
 /home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h
 stdio.h
@@ -42,5 +44,9 @@ iostream
 packetizr/packet_encoder.h
 -
 gnuradio/digital/constellation.h
+-
+gnuradio/filter/firdes.h
+-
+gnuradio/filter/pfb_arb_resampler.h
 -
 

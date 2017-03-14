@@ -81,6 +81,8 @@ gnuradio/block.h
 -
 gnuradio/filter/firdes.h
 -
+gnuradio/filter/pfb_arb_resampler.h
+-
 float.h
 -
 math.h

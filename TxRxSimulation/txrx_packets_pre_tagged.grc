@@ -1349,7 +1349,7 @@
     </param>
     <param>
       <key>packet_len</key>
-      <value>64</value>
+      <value>32000</value>
     </param>
     <param>
       <key>type</key>
@@ -1514,7 +1514,7 @@
     </param>
     <param>
       <key>samples_per_second</key>
-      <value>samp_rate/10</value>
+      <value>samp_rate</value>
     </param>
     <param>
       <key>type</key>

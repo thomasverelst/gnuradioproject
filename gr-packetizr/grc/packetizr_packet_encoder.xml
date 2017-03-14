@@ -1,19 +1,56 @@
 <?xml version="1.0"?>
 <block>
-  <name>packet_encoder</name>
+  <name>Packet Encoder</name>
   <key>packetizr_packet_encoder</key>
   <category>packetizr</category>
   <import>import packetizr</import>
-  <make>packetizr.packet_encoder($sps, $preamble[], $header_constel, $payload_constel, $itemsize, $&lengthtagname)</make>
+  <make>packetizr.packet_encoder($sps, $preamble, $header_constel, $payload_constel, $itemsize, $lengthtagname)</make>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
        * name
        * key (makes the value accessible as $keyname, e.g. in the make node)
        * type -->
+ <param>
+    <name>Samples per symbols</name>
+    <key>sps</key>
+    <value>4</value>
+    <type>int</type>
+  </param>
+<!--   <param>
+    <name>Length tag names</name>
+    <key>lengthtagname</key>
+    <type>string</type>
+  </param> -->
+
+<param>
+    <name>Preamble (tuple sequency of 1 and 0)</name>
+    <key>preamble</key>
+    <value>(1, 0, 0, 0, 1, 0)</value>
+    <type>int_vector</type>
+  </param>
+
+ <param>
+    <name>Header Constellation</name>
+    <key>header_constel</key>
+    <type>raw</type>
+  </param>
+
+<param>
+    <name>Payload Constellation</name>
+    <key>payload_constel</key>
+    <type>raw</type>
+  </param>
+ <param>
+    <name>Itemsize</name>
+    <key>itemsize</key>
+    <value>1</value>
+    <type>int</type>
+  </param>
   <param>
-    <name>...</name>
-    <key>...</key>
-    <type>...</type>
+   <name>Length Tag Name</name>
+    <key>lengthtagname</key>
+    <value>"packet_len"</value>
+    <type>string</type>
   </param>
 
   <!-- Make one 'sink' node per input. Sub-nodes:
@@ -22,8 +59,12 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <sink>
-    <name>in</name>
-    <type><!-- e.g. int, float, complex, byte, short, xxx_vector, ...--></type>
+    <name>header_data</name>
+    <type>byte</type>
+  </sink>
+  <sink>
+    <name>payload_data</name>
+    <type>byte</type>
   </sink>
 
   <!-- Make one 'source' node per output. Sub-nodes:
@@ -32,7 +73,7 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>out</name>
-    <type><!-- e.g. int, float, complex, byte, short, xxx_vector, ...--></type>
+    <name>modulated_out</name>
+    <type>complex</type>
   </source>
 </block>

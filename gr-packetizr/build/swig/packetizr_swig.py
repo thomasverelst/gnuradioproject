@@ -126,7 +126,7 @@ class packet_encoder(object):
 
     def make(sps, preamble, header_constel, payload_constel, itemsize, lengthtagname):
         """
-        make(unsigned int sps, int preamble, gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr
+        make(unsigned int sps, std::vector< int,std::allocator< int > > const preamble, gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr
 
         Return a shared_ptr to a new instance of packetizr::packet_encoder.
 
@@ -144,7 +144,7 @@ packet_encoder_swigregister(packet_encoder)
 
 def packet_encoder_make(sps, preamble, header_constel, payload_constel, itemsize, lengthtagname):
     """
-    packet_encoder_make(unsigned int sps, int preamble, gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr
+    packet_encoder_make(unsigned int sps, std::vector< int,std::allocator< int > > const preamble, gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr
 
     Return a shared_ptr to a new instance of packetizr::packet_encoder.
 
@@ -708,6 +708,255 @@ def firdes_gaussian(gain, spb, bt, ntaps):
     """firdes_gaussian(double gain, double spb, double bt, int ntaps) -> pmt_vector_float"""
     return _packetizr_swig.firdes_gaussian(gain, spb, bt, ntaps)
 
+class pfb_arb_resampler_ccf(object):
+    """Proxy of C++ gr::filter::kernel::pfb_arb_resampler_ccf class."""
+
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+    __repr__ = _swig_repr
+
+    def __init__(self, rate, taps, filter_size):
+        """__init__(gr::filter::kernel::pfb_arb_resampler_ccf self, float rate, pmt_vector_float taps, unsigned int filter_size) -> pfb_arb_resampler_ccf"""
+        this = _packetizr_swig.new_pfb_arb_resampler_ccf(rate, taps, filter_size)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+    __swig_destroy__ = _packetizr_swig.delete_pfb_arb_resampler_ccf
+    __del__ = lambda self: None
+
+    def set_taps(self, taps):
+        """set_taps(pfb_arb_resampler_ccf self, pmt_vector_float taps)"""
+        return _packetizr_swig.pfb_arb_resampler_ccf_set_taps(self, taps)
+
+
+    def taps(self):
+        """taps(pfb_arb_resampler_ccf self) -> std::vector< std::vector< float,std::allocator< float > >,std::allocator< std::vector< float,std::allocator< float > > > >"""
+        return _packetizr_swig.pfb_arb_resampler_ccf_taps(self)
+
+
+    def print_taps(self):
+        """print_taps(pfb_arb_resampler_ccf self)"""
+        return _packetizr_swig.pfb_arb_resampler_ccf_print_taps(self)
+
+
+    def set_rate(self, rate):
+        """set_rate(pfb_arb_resampler_ccf self, float rate)"""
+        return _packetizr_swig.pfb_arb_resampler_ccf_set_rate(self, rate)
+
+
+    def set_phase(self, ph):
+        """set_phase(pfb_arb_resampler_ccf self, float ph)"""
+        return _packetizr_swig.pfb_arb_resampler_ccf_set_phase(self, ph)
+
+
+    def phase(self):
+        """phase(pfb_arb_resampler_ccf self) -> float"""
+        return _packetizr_swig.pfb_arb_resampler_ccf_phase(self)
+
+
+    def taps_per_filter(self):
+        """taps_per_filter(pfb_arb_resampler_ccf self) -> unsigned int"""
+        return _packetizr_swig.pfb_arb_resampler_ccf_taps_per_filter(self)
+
+
+    def interpolation_rate(self):
+        """interpolation_rate(pfb_arb_resampler_ccf self) -> unsigned int"""
+        return _packetizr_swig.pfb_arb_resampler_ccf_interpolation_rate(self)
+
+
+    def decimation_rate(self):
+        """decimation_rate(pfb_arb_resampler_ccf self) -> unsigned int"""
+        return _packetizr_swig.pfb_arb_resampler_ccf_decimation_rate(self)
+
+
+    def fractional_rate(self):
+        """fractional_rate(pfb_arb_resampler_ccf self) -> float"""
+        return _packetizr_swig.pfb_arb_resampler_ccf_fractional_rate(self)
+
+
+    def group_delay(self):
+        """group_delay(pfb_arb_resampler_ccf self) -> int"""
+        return _packetizr_swig.pfb_arb_resampler_ccf_group_delay(self)
+
+
+    def phase_offset(self, freq, fs):
+        """phase_offset(pfb_arb_resampler_ccf self, float freq, float fs) -> float"""
+        return _packetizr_swig.pfb_arb_resampler_ccf_phase_offset(self, freq, fs)
+
+
+    def filter(self, output, input, n_to_read, n_read):
+        """filter(pfb_arb_resampler_ccf self, gr_complex * output, gr_complex * input, int n_to_read, int & n_read) -> int"""
+        return _packetizr_swig.pfb_arb_resampler_ccf_filter(self, output, input, n_to_read, n_read)
+
+pfb_arb_resampler_ccf_swigregister = _packetizr_swig.pfb_arb_resampler_ccf_swigregister
+pfb_arb_resampler_ccf_swigregister(pfb_arb_resampler_ccf)
+
+class pfb_arb_resampler_ccc(object):
+    """Proxy of C++ gr::filter::kernel::pfb_arb_resampler_ccc class."""
+
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+    __repr__ = _swig_repr
+
+    def __init__(self, rate, taps, filter_size):
+        """__init__(gr::filter::kernel::pfb_arb_resampler_ccc self, float rate, pmt_vector_cfloat taps, unsigned int filter_size) -> pfb_arb_resampler_ccc"""
+        this = _packetizr_swig.new_pfb_arb_resampler_ccc(rate, taps, filter_size)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+    __swig_destroy__ = _packetizr_swig.delete_pfb_arb_resampler_ccc
+    __del__ = lambda self: None
+
+    def set_taps(self, taps):
+        """set_taps(pfb_arb_resampler_ccc self, pmt_vector_cfloat taps)"""
+        return _packetizr_swig.pfb_arb_resampler_ccc_set_taps(self, taps)
+
+
+    def taps(self):
+        """taps(pfb_arb_resampler_ccc self) -> gr_vector_vector_complexf"""
+        return _packetizr_swig.pfb_arb_resampler_ccc_taps(self)
+
+
+    def print_taps(self):
+        """print_taps(pfb_arb_resampler_ccc self)"""
+        return _packetizr_swig.pfb_arb_resampler_ccc_print_taps(self)
+
+
+    def set_rate(self, rate):
+        """set_rate(pfb_arb_resampler_ccc self, float rate)"""
+        return _packetizr_swig.pfb_arb_resampler_ccc_set_rate(self, rate)
+
+
+    def set_phase(self, ph):
+        """set_phase(pfb_arb_resampler_ccc self, float ph)"""
+        return _packetizr_swig.pfb_arb_resampler_ccc_set_phase(self, ph)
+
+
+    def phase(self):
+        """phase(pfb_arb_resampler_ccc self) -> float"""
+        return _packetizr_swig.pfb_arb_resampler_ccc_phase(self)
+
+
+    def taps_per_filter(self):
+        """taps_per_filter(pfb_arb_resampler_ccc self) -> unsigned int"""
+        return _packetizr_swig.pfb_arb_resampler_ccc_taps_per_filter(self)
+
+
+    def interpolation_rate(self):
+        """interpolation_rate(pfb_arb_resampler_ccc self) -> unsigned int"""
+        return _packetizr_swig.pfb_arb_resampler_ccc_interpolation_rate(self)
+
+
+    def decimation_rate(self):
+        """decimation_rate(pfb_arb_resampler_ccc self) -> unsigned int"""
+        return _packetizr_swig.pfb_arb_resampler_ccc_decimation_rate(self)
+
+
+    def fractional_rate(self):
+        """fractional_rate(pfb_arb_resampler_ccc self) -> float"""
+        return _packetizr_swig.pfb_arb_resampler_ccc_fractional_rate(self)
+
+
+    def group_delay(self):
+        """group_delay(pfb_arb_resampler_ccc self) -> int"""
+        return _packetizr_swig.pfb_arb_resampler_ccc_group_delay(self)
+
+
+    def phase_offset(self, freq, fs):
+        """phase_offset(pfb_arb_resampler_ccc self, float freq, float fs) -> float"""
+        return _packetizr_swig.pfb_arb_resampler_ccc_phase_offset(self, freq, fs)
+
+
+    def filter(self, output, input, n_to_read, n_read):
+        """filter(pfb_arb_resampler_ccc self, gr_complex * output, gr_complex * input, int n_to_read, int & n_read) -> int"""
+        return _packetizr_swig.pfb_arb_resampler_ccc_filter(self, output, input, n_to_read, n_read)
+
+pfb_arb_resampler_ccc_swigregister = _packetizr_swig.pfb_arb_resampler_ccc_swigregister
+pfb_arb_resampler_ccc_swigregister(pfb_arb_resampler_ccc)
+
+class pfb_arb_resampler_fff(object):
+    """Proxy of C++ gr::filter::kernel::pfb_arb_resampler_fff class."""
+
+    thisown = _swig_property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc='The membership flag')
+    __repr__ = _swig_repr
+
+    def __init__(self, rate, taps, filter_size):
+        """__init__(gr::filter::kernel::pfb_arb_resampler_fff self, float rate, pmt_vector_float taps, unsigned int filter_size) -> pfb_arb_resampler_fff"""
+        this = _packetizr_swig.new_pfb_arb_resampler_fff(rate, taps, filter_size)
+        try:
+            self.this.append(this)
+        except Exception:
+            self.this = this
+    __swig_destroy__ = _packetizr_swig.delete_pfb_arb_resampler_fff
+    __del__ = lambda self: None
+
+    def set_taps(self, taps):
+        """set_taps(pfb_arb_resampler_fff self, pmt_vector_float taps)"""
+        return _packetizr_swig.pfb_arb_resampler_fff_set_taps(self, taps)
+
+
+    def taps(self):
+        """taps(pfb_arb_resampler_fff self) -> std::vector< std::vector< float,std::allocator< float > >,std::allocator< std::vector< float,std::allocator< float > > > >"""
+        return _packetizr_swig.pfb_arb_resampler_fff_taps(self)
+
+
+    def print_taps(self):
+        """print_taps(pfb_arb_resampler_fff self)"""
+        return _packetizr_swig.pfb_arb_resampler_fff_print_taps(self)
+
+
+    def set_rate(self, rate):
+        """set_rate(pfb_arb_resampler_fff self, float rate)"""
+        return _packetizr_swig.pfb_arb_resampler_fff_set_rate(self, rate)
+
+
+    def set_phase(self, ph):
+        """set_phase(pfb_arb_resampler_fff self, float ph)"""
+        return _packetizr_swig.pfb_arb_resampler_fff_set_phase(self, ph)
+
+
+    def phase(self):
+        """phase(pfb_arb_resampler_fff self) -> float"""
+        return _packetizr_swig.pfb_arb_resampler_fff_phase(self)
+
+
+    def taps_per_filter(self):
+        """taps_per_filter(pfb_arb_resampler_fff self) -> unsigned int"""
+        return _packetizr_swig.pfb_arb_resampler_fff_taps_per_filter(self)
+
+
+    def interpolation_rate(self):
+        """interpolation_rate(pfb_arb_resampler_fff self) -> unsigned int"""
+        return _packetizr_swig.pfb_arb_resampler_fff_interpolation_rate(self)
+
+
+    def decimation_rate(self):
+        """decimation_rate(pfb_arb_resampler_fff self) -> unsigned int"""
+        return _packetizr_swig.pfb_arb_resampler_fff_decimation_rate(self)
+
+
+    def fractional_rate(self):
+        """fractional_rate(pfb_arb_resampler_fff self) -> float"""
+        return _packetizr_swig.pfb_arb_resampler_fff_fractional_rate(self)
+
+
+    def group_delay(self):
+        """group_delay(pfb_arb_resampler_fff self) -> int"""
+        return _packetizr_swig.pfb_arb_resampler_fff_group_delay(self)
+
+
+    def phase_offset(self, freq, fs):
+        """phase_offset(pfb_arb_resampler_fff self, float freq, float fs) -> float"""
+        return _packetizr_swig.pfb_arb_resampler_fff_phase_offset(self, freq, fs)
+
+
+    def filter(self, output, input, n_to_read, n_read):
+        """filter(pfb_arb_resampler_fff self, float * output, float * input, int n_to_read, int & n_read) -> int"""
+        return _packetizr_swig.pfb_arb_resampler_fff_filter(self, output, input, n_to_read, n_read)
+
+pfb_arb_resampler_fff_swigregister = _packetizr_swig.pfb_arb_resampler_fff_swigregister
+pfb_arb_resampler_fff_swigregister(pfb_arb_resampler_fff)
+
 class packet_encoder_sptr(object):
     """Proxy of C++ boost::shared_ptr<(gr::packetizr::packet_encoder)> class."""
 
@@ -734,7 +983,7 @@ class packet_encoder_sptr(object):
 
     def make(self, sps, preamble, header_constel, payload_constel, itemsize, lengthtagname):
         """
-        make(packet_encoder_sptr self, unsigned int sps, int preamble, gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr
+        make(packet_encoder_sptr self, unsigned int sps, std::vector< int,std::allocator< int > > const preamble, gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr
 
         Return a shared_ptr to a new instance of packetizr::packet_encoder.
 

@@ -17,10 +17,12 @@
 #include <gnuradio/digital/constellation.h>
 #include <gnuradio/block.h>
 #include <gnuradio/filter/firdes.h>
+#include <gnuradio/filter/pfb_arb_resampler.h>
 %}
 
 
 %include "packetizr/packet_encoder.h"
 %include "gnuradio/digital/constellation.h"
 %include "gnuradio/filter/firdes.h"
+%include "gnuradio/filter/pfb_arb_resampler.h"
 GR_SWIG_BLOCK_MAGIC2(packetizr, packet_encoder);

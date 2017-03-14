@@ -3055,30 +3055,33 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 #define SWIGTYPE_p_gr__digital__trellis_metric_type_t swig_types[43]
 #define SWIGTYPE_p_gr__endianness_t swig_types[44]
 #define SWIGTYPE_p_gr__filter__firdes swig_types[45]
-#define SWIGTYPE_p_gr__hier_block2 swig_types[46]
-#define SWIGTYPE_p_gr__packetizr__packet_encoder swig_types[47]
-#define SWIGTYPE_p_gr__rt_status_t swig_types[48]
-#define SWIGTYPE_p_gr__sync_block swig_types[49]
-#define SWIGTYPE_p_gr__sync_decimator swig_types[50]
-#define SWIGTYPE_p_gr__sync_interpolator swig_types[51]
-#define SWIGTYPE_p_gr__tagged_stream_block swig_types[52]
-#define SWIGTYPE_p_gr__top_block swig_types[53]
-#define SWIGTYPE_p_int swig_types[54]
-#define SWIGTYPE_p_long_long swig_types[55]
-#define SWIGTYPE_p_reference swig_types[56]
-#define SWIGTYPE_p_short swig_types[57]
-#define SWIGTYPE_p_signed_char swig_types[58]
-#define SWIGTYPE_p_size_type swig_types[59]
-#define SWIGTYPE_p_sptr swig_types[60]
-#define SWIGTYPE_p_std__complexT_double_t swig_types[61]
-#define SWIGTYPE_p_std__complexT_float_t swig_types[62]
-#define SWIGTYPE_p_unsigned_char swig_types[63]
-#define SWIGTYPE_p_unsigned_int swig_types[64]
-#define SWIGTYPE_p_unsigned_long_long swig_types[65]
-#define SWIGTYPE_p_unsigned_short swig_types[66]
-#define SWIGTYPE_p_value_type swig_types[67]
-static swig_type_info *swig_types[69];
-static swig_module_info swig_module = {swig_types, 68, 0, 0, 0, 0};
+#define SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccc swig_types[46]
+#define SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccf swig_types[47]
+#define SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_fff swig_types[48]
+#define SWIGTYPE_p_gr__hier_block2 swig_types[49]
+#define SWIGTYPE_p_gr__packetizr__packet_encoder swig_types[50]
+#define SWIGTYPE_p_gr__rt_status_t swig_types[51]
+#define SWIGTYPE_p_gr__sync_block swig_types[52]
+#define SWIGTYPE_p_gr__sync_decimator swig_types[53]
+#define SWIGTYPE_p_gr__sync_interpolator swig_types[54]
+#define SWIGTYPE_p_gr__tagged_stream_block swig_types[55]
+#define SWIGTYPE_p_gr__top_block swig_types[56]
+#define SWIGTYPE_p_int swig_types[57]
+#define SWIGTYPE_p_long_long swig_types[58]
+#define SWIGTYPE_p_reference swig_types[59]
+#define SWIGTYPE_p_short swig_types[60]
+#define SWIGTYPE_p_signed_char swig_types[61]
+#define SWIGTYPE_p_size_type swig_types[62]
+#define SWIGTYPE_p_sptr swig_types[63]
+#define SWIGTYPE_p_std__complexT_double_t swig_types[64]
+#define SWIGTYPE_p_std__complexT_float_t swig_types[65]
+#define SWIGTYPE_p_unsigned_char swig_types[66]
+#define SWIGTYPE_p_unsigned_int swig_types[67]
+#define SWIGTYPE_p_unsigned_long_long swig_types[68]
+#define SWIGTYPE_p_unsigned_short swig_types[69]
+#define SWIGTYPE_p_value_type swig_types[70]
+static swig_type_info *swig_types[72];
+static swig_module_info swig_module = {swig_types, 71, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -4400,6 +4403,7 @@ SWIG_From_long_SS_long  (long long value)
 #include <gnuradio/digital/constellation.h>
 #include <gnuradio/block.h>
 #include <gnuradio/filter/firdes.h>
+#include <gnuradio/filter/pfb_arb_resampler.h>
 
 
 SWIGINTERN int
@@ -4606,6 +4610,140 @@ SWIG_AsVal_int (PyObject * obj, int *val)
   return res;
 }
 
+
+SWIGINTERNINLINE PyObject*
+  SWIG_From_int  (int value)
+{
+  return PyInt_FromLong((long) value);
+}
+
+
+namespace swig {
+  template <> struct traits< int > {
+    typedef value_category category;
+    static const char* type_name() { return"int"; }
+  };
+  template <>  struct traits_asval< int > {
+    typedef int value_type;
+    static int asval(PyObject *obj, value_type *val) {
+      return SWIG_AsVal_int (obj, val);
+    }
+  };
+  template <>  struct traits_from< int > {
+    typedef int value_type;
+    static PyObject *from(const value_type& val) {
+      return SWIG_From_int  (val);
+    }
+  };
+}
+
+
+namespace swig {
+  template <class SwigPySeq, class Seq>
+  inline void
+  assign(const SwigPySeq& swigpyseq, Seq* seq) {
+    // seq->assign(swigpyseq.begin(), swigpyseq.end()); // not used as not always implemented
+    typedef typename SwigPySeq::value_type value_type;
+    typename SwigPySeq::const_iterator it = swigpyseq.begin();
+    for (;it != swigpyseq.end(); ++it) {
+      seq->insert(seq->end(),(value_type)(*it));
+    }
+  }
+
+  template <class Seq, class T = typename Seq::value_type >
+  struct traits_asptr_stdseq {
+    typedef Seq sequence;
+    typedef T value_type;
+
+    static int asptr(PyObject *obj, sequence **seq) {
+      if (obj == Py_None || SWIG_Python_GetSwigThis(obj)) {
+	sequence *p;
+	if (::SWIG_ConvertPtr(obj,(void**)&p,
+			      swig::type_info<sequence>(),0) == SWIG_OK) {
+	  if (seq) *seq = p;
+	  return SWIG_OLDOBJ;
+	}
+      } else if (PySequence_Check(obj)) {
+	try {
+	  SwigPySequence_Cont<value_type> swigpyseq(obj);
+	  if (seq) {
+	    sequence *pseq = new sequence();
+	    assign(swigpyseq, pseq);
+	    *seq = pseq;
+	    return SWIG_NEWOBJ;
+	  } else {
+	    return swigpyseq.check() ? SWIG_OK : SWIG_ERROR;
+	  }
+	} catch (std::exception& e) {
+	  if (seq) {
+	    if (!PyErr_Occurred()) {
+	      PyErr_SetString(PyExc_TypeError, e.what());
+	    }
+	  }
+	  return SWIG_ERROR;
+	}
+      }
+      return SWIG_ERROR;
+    }
+  };
+
+  template <class Seq, class T = typename Seq::value_type >
+  struct traits_from_stdseq {
+    typedef Seq sequence;
+    typedef T value_type;
+    typedef typename Seq::size_type size_type;
+    typedef typename sequence::const_iterator const_iterator;
+
+    static PyObject *from(const sequence& seq) {
+#ifdef SWIG_PYTHON_EXTRA_NATIVE_CONTAINERS
+      swig_type_info *desc = swig::type_info<sequence>();
+      if (desc && desc->clientdata) {
+	return SWIG_NewPointerObj(new sequence(seq), desc, SWIG_POINTER_OWN);
+      }
+#endif
+      size_type size = seq.size();
+      if (size <= (size_type)INT_MAX) {
+	PyObject *obj = PyTuple_New((Py_ssize_t)size);
+	Py_ssize_t i = 0;
+	for (const_iterator it = seq.begin(); it != seq.end(); ++it, ++i) {
+	  PyTuple_SetItem(obj,i,swig::from<value_type>(*it));
+	}
+	return obj;
+      } else {
+	PyErr_SetString(PyExc_OverflowError,"sequence size not valid in python");
+	return NULL;
+      }
+    }
+  };
+}
+
+
+  namespace swig {
+    template <class T>
+    struct traits_asptr<std::vector<T> >  {
+      static int asptr(PyObject *obj, std::vector<T> **vec) {
+	return traits_asptr_stdseq<std::vector<T> >::asptr(obj, vec);
+      }
+    };
+    
+    template <class T>
+    struct traits_from<std::vector<T> > {
+      static PyObject *from(const std::vector<T>& vec) {
+	return traits_from_stdseq<std::vector<T> >::from(vec);
+      }
+    };
+  }
+
+
+      namespace swig {
+	template <>  struct traits<std::vector< int, std::allocator< int > > > {
+	  typedef pointer_category category;
+	  static const char* type_name() {
+	    return "std::vector<" "int" "," "std::allocator< int >" " >";
+	  }
+	};
+      }
+    
 
 SWIGINTERNINLINE int
 SWIG_AsVal_size_t (PyObject * obj, size_t *val)
@@ -4855,103 +4993,6 @@ namespace swig {
 }
 
 
-namespace swig {
-  template <class SwigPySeq, class Seq>
-  inline void
-  assign(const SwigPySeq& swigpyseq, Seq* seq) {
-    // seq->assign(swigpyseq.begin(), swigpyseq.end()); // not used as not always implemented
-    typedef typename SwigPySeq::value_type value_type;
-    typename SwigPySeq::const_iterator it = swigpyseq.begin();
-    for (;it != swigpyseq.end(); ++it) {
-      seq->insert(seq->end(),(value_type)(*it));
-    }
-  }
-
-  template <class Seq, class T = typename Seq::value_type >
-  struct traits_asptr_stdseq {
-    typedef Seq sequence;
-    typedef T value_type;
-
-    static int asptr(PyObject *obj, sequence **seq) {
-      if (obj == Py_None || SWIG_Python_GetSwigThis(obj)) {
-	sequence *p;
-	if (::SWIG_ConvertPtr(obj,(void**)&p,
-			      swig::type_info<sequence>(),0) == SWIG_OK) {
-	  if (seq) *seq = p;
-	  return SWIG_OLDOBJ;
-	}
-      } else if (PySequence_Check(obj)) {
-	try {
-	  SwigPySequence_Cont<value_type> swigpyseq(obj);
-	  if (seq) {
-	    sequence *pseq = new sequence();
-	    assign(swigpyseq, pseq);
-	    *seq = pseq;
-	    return SWIG_NEWOBJ;
-	  } else {
-	    return swigpyseq.check() ? SWIG_OK : SWIG_ERROR;
-	  }
-	} catch (std::exception& e) {
-	  if (seq) {
-	    if (!PyErr_Occurred()) {
-	      PyErr_SetString(PyExc_TypeError, e.what());
-	    }
-	  }
-	  return SWIG_ERROR;
-	}
-      }
-      return SWIG_ERROR;
-    }
-  };
-
-  template <class Seq, class T = typename Seq::value_type >
-  struct traits_from_stdseq {
-    typedef Seq sequence;
-    typedef T value_type;
-    typedef typename Seq::size_type size_type;
-    typedef typename sequence::const_iterator const_iterator;
-
-    static PyObject *from(const sequence& seq) {
-#ifdef SWIG_PYTHON_EXTRA_NATIVE_CONTAINERS
-      swig_type_info *desc = swig::type_info<sequence>();
-      if (desc && desc->clientdata) {
-	return SWIG_NewPointerObj(new sequence(seq), desc, SWIG_POINTER_OWN);
-      }
-#endif
-      size_type size = seq.size();
-      if (size <= (size_type)INT_MAX) {
-	PyObject *obj = PyTuple_New((Py_ssize_t)size);
-	Py_ssize_t i = 0;
-	for (const_iterator it = seq.begin(); it != seq.end(); ++it, ++i) {
-	  PyTuple_SetItem(obj,i,swig::from<value_type>(*it));
-	}
-	return obj;
-      } else {
-	PyErr_SetString(PyExc_OverflowError,"sequence size not valid in python");
-	return NULL;
-      }
-    }
-  };
-}
-
-
-  namespace swig {
-    template <class T>
-    struct traits_asptr<std::vector<T> >  {
-      static int asptr(PyObject *obj, std::vector<T> **vec) {
-	return traits_asptr_stdseq<std::vector<T> >::asptr(obj, vec);
-      }
-    };
-    
-    template <class T>
-    struct traits_from<std::vector<T> > {
-      static PyObject *from(const std::vector<T>& vec) {
-	return traits_from_stdseq<std::vector<T> >::from(vec);
-      }
-    };
-  }
-
-
       namespace swig {
 	template <>  struct traits<std::vector< std::complex< float >, std::allocator< std::complex< float > > > > {
 	  typedef pointer_category category;
@@ -4999,43 +5040,6 @@ SWIG_AsVal_bool (PyObject *obj, bool *val)
   return SWIG_OK;
 }
 
-
-SWIGINTERNINLINE PyObject*
-  SWIG_From_int  (int value)
-{
-  return PyInt_FromLong((long) value);
-}
-
-
-namespace swig {
-  template <> struct traits< int > {
-    typedef value_category category;
-    static const char* type_name() { return"int"; }
-  };
-  template <>  struct traits_asval< int > {
-    typedef int value_type;
-    static int asval(PyObject *obj, value_type *val) {
-      return SWIG_AsVal_int (obj, val);
-    }
-  };
-  template <>  struct traits_from< int > {
-    typedef int value_type;
-    static PyObject *from(const value_type& val) {
-      return SWIG_From_int  (val);
-    }
-  };
-}
-
-
-      namespace swig {
-	template <>  struct traits<std::vector< int, std::allocator< int > > > {
-	  typedef pointer_category category;
-	  static const char* type_name() {
-	    return "std::vector<" "int" "," "std::allocator< int >" " >";
-	  }
-	};
-      }
-    
 
   #define SWIG_From_double   PyFloat_FromDouble 
 
@@ -5258,15 +5262,13 @@ fail:
 SWIGINTERN PyObject *_wrap_packet_encoder_make(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
   PyObject *resultobj = 0;
   unsigned int arg1 ;
-  int arg2 ;
+  std::vector< int,std::allocator< int > > arg2 ;
   SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > arg3 ;
   SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > arg4 ;
   size_t arg5 ;
   std::string *arg6 = 0 ;
   unsigned int val1 ;
   int ecode1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
   void *argp3 ;
   int res3 = 0 ;
   void *argp4 ;
@@ -5291,11 +5293,15 @@ SWIGINTERN PyObject *_wrap_packet_encoder_make(PyObject *SWIGUNUSEDPARM(self), P
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "packet_encoder_make" "', argument " "1"" of type '" "unsigned int""'");
   } 
   arg1 = static_cast< unsigned int >(val1);
-  ecode2 = SWIG_AsVal_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "packet_encoder_make" "', argument " "2"" of type '" "int""'");
-  } 
-  arg2 = static_cast< int >(val2);
+  {
+    std::vector< int,std::allocator< int > > *ptr = (std::vector< int,std::allocator< int > > *)0;
+    int res = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "packet_encoder_make" "', argument " "2"" of type '" "std::vector< int,std::allocator< int > > const""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
   {
     res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_t,  0  | 0);
     if (!SWIG_IsOK(res3)) {
@@ -8704,6 +8710,1899 @@ SWIGINTERN PyObject *firdes_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObjec
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_new_pfb_arb_resampler_ccf(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  float arg1 ;
+  std::vector< float,std::allocator< float > > *arg2 = 0 ;
+  unsigned int arg3 ;
+  float val1 ;
+  int ecode1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  unsigned int val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "rate",(char *) "taps",(char *) "filter_size", NULL 
+  };
+  gr::filter::kernel::pfb_arb_resampler_ccf *result = 0 ;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:new_pfb_arb_resampler_ccf",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  ecode1 = SWIG_AsVal_float(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_pfb_arb_resampler_ccf" "', argument " "1"" of type '" "float""'");
+  } 
+  arg1 = static_cast< float >(val1);
+  {
+    std::vector< float,std::allocator< float > > *ptr = (std::vector< float,std::allocator< float > > *)0;
+    res2 = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_pfb_arb_resampler_ccf" "', argument " "2"" of type '" "std::vector< float,std::allocator< float > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_pfb_arb_resampler_ccf" "', argument " "2"" of type '" "std::vector< float,std::allocator< float > > const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  ecode3 = SWIG_AsVal_unsigned_SS_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_pfb_arb_resampler_ccf" "', argument " "3"" of type '" "unsigned int""'");
+  } 
+  arg3 = static_cast< unsigned int >(val3);
+  {
+    try {
+      result = (gr::filter::kernel::pfb_arb_resampler_ccf *)new gr::filter::kernel::pfb_arb_resampler_ccf(arg1,(std::vector< float,std::allocator< float > > const &)*arg2,arg3);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccf, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_pfb_arb_resampler_ccf(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccf *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccf *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"delete_pfb_arb_resampler_ccf",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccf, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_pfb_arb_resampler_ccf" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccf *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccf * >(argp1);
+  {
+    try {
+      delete arg1;
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccf_set_taps(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccf *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccf *) 0 ;
+  std::vector< float,std::allocator< float > > *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "taps", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:pfb_arb_resampler_ccf_set_taps",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccf, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccf_set_taps" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccf *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccf * >(argp1);
+  {
+    std::vector< float,std::allocator< float > > *ptr = (std::vector< float,std::allocator< float > > *)0;
+    res2 = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "pfb_arb_resampler_ccf_set_taps" "', argument " "2"" of type '" "std::vector< float,std::allocator< float > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "pfb_arb_resampler_ccf_set_taps" "', argument " "2"" of type '" "std::vector< float,std::allocator< float > > const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    try {
+      (arg1)->set_taps((std::vector< float,std::allocator< float > > const &)*arg2);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccf_taps(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccf *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccf *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< std::vector< float,std::allocator< float > >,std::allocator< std::vector< float,std::allocator< float > > > > result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_ccf_taps",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccf, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccf_taps" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccf const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccf * >(argp1);
+  {
+    try {
+      result = ((gr::filter::kernel::pfb_arb_resampler_ccf const *)arg1)->taps();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< std::vector< float,std::allocator< float > >,std::allocator< std::vector< float,std::allocator< float > > > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccf_print_taps(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccf *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccf *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_ccf_print_taps",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccf, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccf_print_taps" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccf *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccf * >(argp1);
+  {
+    try {
+      (arg1)->print_taps();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccf_set_rate(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccf *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccf *) 0 ;
+  float arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "rate", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:pfb_arb_resampler_ccf_set_rate",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccf, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccf_set_rate" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccf *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccf * >(argp1);
+  ecode2 = SWIG_AsVal_float(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "pfb_arb_resampler_ccf_set_rate" "', argument " "2"" of type '" "float""'");
+  } 
+  arg2 = static_cast< float >(val2);
+  {
+    try {
+      (arg1)->set_rate(arg2);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccf_set_phase(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccf *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccf *) 0 ;
+  float arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "ph", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:pfb_arb_resampler_ccf_set_phase",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccf, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccf_set_phase" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccf *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccf * >(argp1);
+  ecode2 = SWIG_AsVal_float(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "pfb_arb_resampler_ccf_set_phase" "', argument " "2"" of type '" "float""'");
+  } 
+  arg2 = static_cast< float >(val2);
+  {
+    try {
+      (arg1)->set_phase(arg2);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccf_phase(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccf *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccf *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  float result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_ccf_phase",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccf, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccf_phase" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccf const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccf * >(argp1);
+  {
+    try {
+      result = (float)((gr::filter::kernel::pfb_arb_resampler_ccf const *)arg1)->phase();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_float(static_cast< float >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccf_taps_per_filter(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccf *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccf *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned int result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_ccf_taps_per_filter",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccf, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccf_taps_per_filter" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccf const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccf * >(argp1);
+  {
+    try {
+      result = (unsigned int)((gr::filter::kernel::pfb_arb_resampler_ccf const *)arg1)->taps_per_filter();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccf_interpolation_rate(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccf *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccf *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned int result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_ccf_interpolation_rate",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccf, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccf_interpolation_rate" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccf const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccf * >(argp1);
+  {
+    try {
+      result = (unsigned int)((gr::filter::kernel::pfb_arb_resampler_ccf const *)arg1)->interpolation_rate();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccf_decimation_rate(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccf *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccf *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned int result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_ccf_decimation_rate",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccf, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccf_decimation_rate" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccf const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccf * >(argp1);
+  {
+    try {
+      result = (unsigned int)((gr::filter::kernel::pfb_arb_resampler_ccf const *)arg1)->decimation_rate();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccf_fractional_rate(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccf *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccf *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  float result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_ccf_fractional_rate",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccf, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccf_fractional_rate" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccf const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccf * >(argp1);
+  {
+    try {
+      result = (float)((gr::filter::kernel::pfb_arb_resampler_ccf const *)arg1)->fractional_rate();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_float(static_cast< float >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccf_group_delay(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccf *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccf *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_ccf_group_delay",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccf, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccf_group_delay" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccf const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccf * >(argp1);
+  {
+    try {
+      result = (int)((gr::filter::kernel::pfb_arb_resampler_ccf const *)arg1)->group_delay();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccf_phase_offset(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccf *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccf *) 0 ;
+  float arg2 ;
+  float arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  float val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "freq",(char *) "fs", NULL 
+  };
+  float result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:pfb_arb_resampler_ccf_phase_offset",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccf, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccf_phase_offset" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccf *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccf * >(argp1);
+  ecode2 = SWIG_AsVal_float(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "pfb_arb_resampler_ccf_phase_offset" "', argument " "2"" of type '" "float""'");
+  } 
+  arg2 = static_cast< float >(val2);
+  ecode3 = SWIG_AsVal_float(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "pfb_arb_resampler_ccf_phase_offset" "', argument " "3"" of type '" "float""'");
+  } 
+  arg3 = static_cast< float >(val3);
+  {
+    try {
+      result = (float)(arg1)->phase_offset(arg2,arg3);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_float(static_cast< float >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccf_filter(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccf *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccf *) 0 ;
+  gr_complex *arg2 = (gr_complex *) 0 ;
+  gr_complex *arg3 = (gr_complex *) 0 ;
+  int arg4 ;
+  int *arg5 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  int val4 ;
+  int ecode4 = 0 ;
+  void *argp5 = 0 ;
+  int res5 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "output",(char *) "input",(char *) "n_to_read",(char *) "n_read", NULL 
+  };
+  int result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOO:pfb_arb_resampler_ccf_filter",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccf, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccf_filter" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccf *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccf * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_std__complexT_float_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "pfb_arb_resampler_ccf_filter" "', argument " "2"" of type '" "gr_complex *""'"); 
+  }
+  arg2 = reinterpret_cast< gr_complex * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3,SWIGTYPE_p_std__complexT_float_t, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "pfb_arb_resampler_ccf_filter" "', argument " "3"" of type '" "gr_complex *""'"); 
+  }
+  arg3 = reinterpret_cast< gr_complex * >(argp3);
+  ecode4 = SWIG_AsVal_int(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "pfb_arb_resampler_ccf_filter" "', argument " "4"" of type '" "int""'");
+  } 
+  arg4 = static_cast< int >(val4);
+  res5 = SWIG_ConvertPtr(obj4, &argp5, SWIGTYPE_p_int,  0 );
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "pfb_arb_resampler_ccf_filter" "', argument " "5"" of type '" "int &""'"); 
+  }
+  if (!argp5) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "pfb_arb_resampler_ccf_filter" "', argument " "5"" of type '" "int &""'"); 
+  }
+  arg5 = reinterpret_cast< int * >(argp5);
+  {
+    try {
+      result = (int)(arg1)->filter(arg2,arg3,arg4,*arg5);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *pfb_arb_resampler_ccf_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccf, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_new_pfb_arb_resampler_ccc(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  float arg1 ;
+  std::vector< gr_complex,std::allocator< gr_complex > > *arg2 = 0 ;
+  unsigned int arg3 ;
+  float val1 ;
+  int ecode1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  unsigned int val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "rate",(char *) "taps",(char *) "filter_size", NULL 
+  };
+  gr::filter::kernel::pfb_arb_resampler_ccc *result = 0 ;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:new_pfb_arb_resampler_ccc",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  ecode1 = SWIG_AsVal_float(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_pfb_arb_resampler_ccc" "', argument " "1"" of type '" "float""'");
+  } 
+  arg1 = static_cast< float >(val1);
+  {
+    std::vector< std::complex< float >,std::allocator< std::complex< float > > > *ptr = (std::vector< std::complex< float >,std::allocator< std::complex< float > > > *)0;
+    res2 = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_pfb_arb_resampler_ccc" "', argument " "2"" of type '" "std::vector< gr_complex,std::allocator< gr_complex > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_pfb_arb_resampler_ccc" "', argument " "2"" of type '" "std::vector< gr_complex,std::allocator< gr_complex > > const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  ecode3 = SWIG_AsVal_unsigned_SS_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_pfb_arb_resampler_ccc" "', argument " "3"" of type '" "unsigned int""'");
+  } 
+  arg3 = static_cast< unsigned int >(val3);
+  {
+    try {
+      result = (gr::filter::kernel::pfb_arb_resampler_ccc *)new gr::filter::kernel::pfb_arb_resampler_ccc(arg1,(std::vector< gr_complex,std::allocator< gr_complex > > const &)*arg2,arg3);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccc, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_pfb_arb_resampler_ccc(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccc *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccc *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"delete_pfb_arb_resampler_ccc",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccc, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_pfb_arb_resampler_ccc" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccc *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccc * >(argp1);
+  {
+    try {
+      delete arg1;
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccc_set_taps(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccc *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccc *) 0 ;
+  std::vector< gr_complex,std::allocator< gr_complex > > *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "taps", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:pfb_arb_resampler_ccc_set_taps",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccc, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccc_set_taps" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccc *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccc * >(argp1);
+  {
+    std::vector< std::complex< float >,std::allocator< std::complex< float > > > *ptr = (std::vector< std::complex< float >,std::allocator< std::complex< float > > > *)0;
+    res2 = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "pfb_arb_resampler_ccc_set_taps" "', argument " "2"" of type '" "std::vector< gr_complex,std::allocator< gr_complex > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "pfb_arb_resampler_ccc_set_taps" "', argument " "2"" of type '" "std::vector< gr_complex,std::allocator< gr_complex > > const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    try {
+      (arg1)->set_taps((std::vector< gr_complex,std::allocator< gr_complex > > const &)*arg2);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccc_taps(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccc *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccc *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< std::vector< gr_complex,std::allocator< gr_complex > >,std::allocator< std::vector< gr_complex,std::allocator< gr_complex > > > > result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_ccc_taps",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccc, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccc_taps" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccc const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccc * >(argp1);
+  {
+    try {
+      result = ((gr::filter::kernel::pfb_arb_resampler_ccc const *)arg1)->taps();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< std::vector< std::complex< float >,std::allocator< std::complex< float > > >,std::allocator< std::vector< std::complex< float >,std::allocator< std::complex< float > > > > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccc_print_taps(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccc *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccc *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_ccc_print_taps",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccc, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccc_print_taps" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccc *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccc * >(argp1);
+  {
+    try {
+      (arg1)->print_taps();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccc_set_rate(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccc *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccc *) 0 ;
+  float arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "rate", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:pfb_arb_resampler_ccc_set_rate",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccc, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccc_set_rate" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccc *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccc * >(argp1);
+  ecode2 = SWIG_AsVal_float(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "pfb_arb_resampler_ccc_set_rate" "', argument " "2"" of type '" "float""'");
+  } 
+  arg2 = static_cast< float >(val2);
+  {
+    try {
+      (arg1)->set_rate(arg2);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccc_set_phase(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccc *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccc *) 0 ;
+  float arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "ph", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:pfb_arb_resampler_ccc_set_phase",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccc, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccc_set_phase" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccc *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccc * >(argp1);
+  ecode2 = SWIG_AsVal_float(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "pfb_arb_resampler_ccc_set_phase" "', argument " "2"" of type '" "float""'");
+  } 
+  arg2 = static_cast< float >(val2);
+  {
+    try {
+      (arg1)->set_phase(arg2);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccc_phase(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccc *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccc *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  float result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_ccc_phase",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccc, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccc_phase" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccc const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccc * >(argp1);
+  {
+    try {
+      result = (float)((gr::filter::kernel::pfb_arb_resampler_ccc const *)arg1)->phase();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_float(static_cast< float >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccc_taps_per_filter(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccc *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccc *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned int result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_ccc_taps_per_filter",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccc, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccc_taps_per_filter" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccc const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccc * >(argp1);
+  {
+    try {
+      result = (unsigned int)((gr::filter::kernel::pfb_arb_resampler_ccc const *)arg1)->taps_per_filter();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccc_interpolation_rate(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccc *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccc *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned int result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_ccc_interpolation_rate",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccc, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccc_interpolation_rate" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccc const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccc * >(argp1);
+  {
+    try {
+      result = (unsigned int)((gr::filter::kernel::pfb_arb_resampler_ccc const *)arg1)->interpolation_rate();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccc_decimation_rate(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccc *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccc *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned int result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_ccc_decimation_rate",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccc, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccc_decimation_rate" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccc const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccc * >(argp1);
+  {
+    try {
+      result = (unsigned int)((gr::filter::kernel::pfb_arb_resampler_ccc const *)arg1)->decimation_rate();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccc_fractional_rate(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccc *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccc *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  float result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_ccc_fractional_rate",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccc, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccc_fractional_rate" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccc const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccc * >(argp1);
+  {
+    try {
+      result = (float)((gr::filter::kernel::pfb_arb_resampler_ccc const *)arg1)->fractional_rate();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_float(static_cast< float >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccc_group_delay(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccc *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccc *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_ccc_group_delay",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccc, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccc_group_delay" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccc const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccc * >(argp1);
+  {
+    try {
+      result = (int)((gr::filter::kernel::pfb_arb_resampler_ccc const *)arg1)->group_delay();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccc_phase_offset(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccc *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccc *) 0 ;
+  float arg2 ;
+  float arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  float val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "freq",(char *) "fs", NULL 
+  };
+  float result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:pfb_arb_resampler_ccc_phase_offset",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccc, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccc_phase_offset" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccc *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccc * >(argp1);
+  ecode2 = SWIG_AsVal_float(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "pfb_arb_resampler_ccc_phase_offset" "', argument " "2"" of type '" "float""'");
+  } 
+  arg2 = static_cast< float >(val2);
+  ecode3 = SWIG_AsVal_float(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "pfb_arb_resampler_ccc_phase_offset" "', argument " "3"" of type '" "float""'");
+  } 
+  arg3 = static_cast< float >(val3);
+  {
+    try {
+      result = (float)(arg1)->phase_offset(arg2,arg3);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_float(static_cast< float >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_ccc_filter(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_ccc *arg1 = (gr::filter::kernel::pfb_arb_resampler_ccc *) 0 ;
+  gr_complex *arg2 = (gr_complex *) 0 ;
+  gr_complex *arg3 = (gr_complex *) 0 ;
+  int arg4 ;
+  int *arg5 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  int val4 ;
+  int ecode4 = 0 ;
+  void *argp5 = 0 ;
+  int res5 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "output",(char *) "input",(char *) "n_to_read",(char *) "n_read", NULL 
+  };
+  int result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOO:pfb_arb_resampler_ccc_filter",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccc, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_ccc_filter" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_ccc *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_ccc * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_std__complexT_float_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "pfb_arb_resampler_ccc_filter" "', argument " "2"" of type '" "gr_complex *""'"); 
+  }
+  arg2 = reinterpret_cast< gr_complex * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3,SWIGTYPE_p_std__complexT_float_t, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "pfb_arb_resampler_ccc_filter" "', argument " "3"" of type '" "gr_complex *""'"); 
+  }
+  arg3 = reinterpret_cast< gr_complex * >(argp3);
+  ecode4 = SWIG_AsVal_int(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "pfb_arb_resampler_ccc_filter" "', argument " "4"" of type '" "int""'");
+  } 
+  arg4 = static_cast< int >(val4);
+  res5 = SWIG_ConvertPtr(obj4, &argp5, SWIGTYPE_p_int,  0 );
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "pfb_arb_resampler_ccc_filter" "', argument " "5"" of type '" "int &""'"); 
+  }
+  if (!argp5) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "pfb_arb_resampler_ccc_filter" "', argument " "5"" of type '" "int &""'"); 
+  }
+  arg5 = reinterpret_cast< int * >(argp5);
+  {
+    try {
+      result = (int)(arg1)->filter(arg2,arg3,arg4,*arg5);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *pfb_arb_resampler_ccc_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccc, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_new_pfb_arb_resampler_fff(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  float arg1 ;
+  std::vector< float,std::allocator< float > > *arg2 = 0 ;
+  unsigned int arg3 ;
+  float val1 ;
+  int ecode1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  unsigned int val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "rate",(char *) "taps",(char *) "filter_size", NULL 
+  };
+  gr::filter::kernel::pfb_arb_resampler_fff *result = 0 ;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:new_pfb_arb_resampler_fff",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  ecode1 = SWIG_AsVal_float(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_pfb_arb_resampler_fff" "', argument " "1"" of type '" "float""'");
+  } 
+  arg1 = static_cast< float >(val1);
+  {
+    std::vector< float,std::allocator< float > > *ptr = (std::vector< float,std::allocator< float > > *)0;
+    res2 = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_pfb_arb_resampler_fff" "', argument " "2"" of type '" "std::vector< float,std::allocator< float > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_pfb_arb_resampler_fff" "', argument " "2"" of type '" "std::vector< float,std::allocator< float > > const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  ecode3 = SWIG_AsVal_unsigned_SS_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_pfb_arb_resampler_fff" "', argument " "3"" of type '" "unsigned int""'");
+  } 
+  arg3 = static_cast< unsigned int >(val3);
+  {
+    try {
+      result = (gr::filter::kernel::pfb_arb_resampler_fff *)new gr::filter::kernel::pfb_arb_resampler_fff(arg1,(std::vector< float,std::allocator< float > > const &)*arg2,arg3);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_fff, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_pfb_arb_resampler_fff(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_fff *arg1 = (gr::filter::kernel::pfb_arb_resampler_fff *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"delete_pfb_arb_resampler_fff",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_fff, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_pfb_arb_resampler_fff" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_fff *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_fff * >(argp1);
+  {
+    try {
+      delete arg1;
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_fff_set_taps(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_fff *arg1 = (gr::filter::kernel::pfb_arb_resampler_fff *) 0 ;
+  std::vector< float,std::allocator< float > > *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "taps", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:pfb_arb_resampler_fff_set_taps",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_fff, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_fff_set_taps" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_fff *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_fff * >(argp1);
+  {
+    std::vector< float,std::allocator< float > > *ptr = (std::vector< float,std::allocator< float > > *)0;
+    res2 = swig::asptr(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "pfb_arb_resampler_fff_set_taps" "', argument " "2"" of type '" "std::vector< float,std::allocator< float > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "pfb_arb_resampler_fff_set_taps" "', argument " "2"" of type '" "std::vector< float,std::allocator< float > > const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  {
+    try {
+      (arg1)->set_taps((std::vector< float,std::allocator< float > > const &)*arg2);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_fff_taps(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_fff *arg1 = (gr::filter::kernel::pfb_arb_resampler_fff *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< std::vector< float,std::allocator< float > >,std::allocator< std::vector< float,std::allocator< float > > > > result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_fff_taps",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_fff, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_fff_taps" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_fff const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_fff * >(argp1);
+  {
+    try {
+      result = ((gr::filter::kernel::pfb_arb_resampler_fff const *)arg1)->taps();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = swig::from(static_cast< std::vector< std::vector< float,std::allocator< float > >,std::allocator< std::vector< float,std::allocator< float > > > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_fff_print_taps(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_fff *arg1 = (gr::filter::kernel::pfb_arb_resampler_fff *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_fff_print_taps",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_fff, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_fff_print_taps" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_fff *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_fff * >(argp1);
+  {
+    try {
+      (arg1)->print_taps();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_fff_set_rate(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_fff *arg1 = (gr::filter::kernel::pfb_arb_resampler_fff *) 0 ;
+  float arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "rate", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:pfb_arb_resampler_fff_set_rate",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_fff, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_fff_set_rate" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_fff *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_fff * >(argp1);
+  ecode2 = SWIG_AsVal_float(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "pfb_arb_resampler_fff_set_rate" "', argument " "2"" of type '" "float""'");
+  } 
+  arg2 = static_cast< float >(val2);
+  {
+    try {
+      (arg1)->set_rate(arg2);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_fff_set_phase(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_fff *arg1 = (gr::filter::kernel::pfb_arb_resampler_fff *) 0 ;
+  float arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "ph", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:pfb_arb_resampler_fff_set_phase",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_fff, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_fff_set_phase" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_fff *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_fff * >(argp1);
+  ecode2 = SWIG_AsVal_float(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "pfb_arb_resampler_fff_set_phase" "', argument " "2"" of type '" "float""'");
+  } 
+  arg2 = static_cast< float >(val2);
+  {
+    try {
+      (arg1)->set_phase(arg2);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_fff_phase(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_fff *arg1 = (gr::filter::kernel::pfb_arb_resampler_fff *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  float result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_fff_phase",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_fff, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_fff_phase" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_fff const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_fff * >(argp1);
+  {
+    try {
+      result = (float)((gr::filter::kernel::pfb_arb_resampler_fff const *)arg1)->phase();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_float(static_cast< float >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_fff_taps_per_filter(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_fff *arg1 = (gr::filter::kernel::pfb_arb_resampler_fff *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned int result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_fff_taps_per_filter",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_fff, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_fff_taps_per_filter" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_fff const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_fff * >(argp1);
+  {
+    try {
+      result = (unsigned int)((gr::filter::kernel::pfb_arb_resampler_fff const *)arg1)->taps_per_filter();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_fff_interpolation_rate(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_fff *arg1 = (gr::filter::kernel::pfb_arb_resampler_fff *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned int result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_fff_interpolation_rate",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_fff, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_fff_interpolation_rate" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_fff const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_fff * >(argp1);
+  {
+    try {
+      result = (unsigned int)((gr::filter::kernel::pfb_arb_resampler_fff const *)arg1)->interpolation_rate();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_fff_decimation_rate(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_fff *arg1 = (gr::filter::kernel::pfb_arb_resampler_fff *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned int result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_fff_decimation_rate",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_fff, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_fff_decimation_rate" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_fff const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_fff * >(argp1);
+  {
+    try {
+      result = (unsigned int)((gr::filter::kernel::pfb_arb_resampler_fff const *)arg1)->decimation_rate();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_fff_fractional_rate(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_fff *arg1 = (gr::filter::kernel::pfb_arb_resampler_fff *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  float result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_fff_fractional_rate",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_fff, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_fff_fractional_rate" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_fff const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_fff * >(argp1);
+  {
+    try {
+      result = (float)((gr::filter::kernel::pfb_arb_resampler_fff const *)arg1)->fractional_rate();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_float(static_cast< float >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_fff_group_delay(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_fff *arg1 = (gr::filter::kernel::pfb_arb_resampler_fff *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"pfb_arb_resampler_fff_group_delay",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_fff, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_fff_group_delay" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_fff const *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_fff * >(argp1);
+  {
+    try {
+      result = (int)((gr::filter::kernel::pfb_arb_resampler_fff const *)arg1)->group_delay();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_fff_phase_offset(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_fff *arg1 = (gr::filter::kernel::pfb_arb_resampler_fff *) 0 ;
+  float arg2 ;
+  float arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  float val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "freq",(char *) "fs", NULL 
+  };
+  float result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:pfb_arb_resampler_fff_phase_offset",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_fff, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_fff_phase_offset" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_fff *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_fff * >(argp1);
+  ecode2 = SWIG_AsVal_float(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "pfb_arb_resampler_fff_phase_offset" "', argument " "2"" of type '" "float""'");
+  } 
+  arg2 = static_cast< float >(val2);
+  ecode3 = SWIG_AsVal_float(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "pfb_arb_resampler_fff_phase_offset" "', argument " "3"" of type '" "float""'");
+  } 
+  arg3 = static_cast< float >(val3);
+  {
+    try {
+      result = (float)(arg1)->phase_offset(arg2,arg3);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_float(static_cast< float >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_pfb_arb_resampler_fff_filter(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::filter::kernel::pfb_arb_resampler_fff *arg1 = (gr::filter::kernel::pfb_arb_resampler_fff *) 0 ;
+  float *arg2 = (float *) 0 ;
+  float *arg3 = (float *) 0 ;
+  int arg4 ;
+  int *arg5 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  int val4 ;
+  int ecode4 = 0 ;
+  void *argp5 = 0 ;
+  int res5 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "output",(char *) "input",(char *) "n_to_read",(char *) "n_read", NULL 
+  };
+  int result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOO:pfb_arb_resampler_fff_filter",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_fff, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "pfb_arb_resampler_fff_filter" "', argument " "1"" of type '" "gr::filter::kernel::pfb_arb_resampler_fff *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::filter::kernel::pfb_arb_resampler_fff * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_float, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "pfb_arb_resampler_fff_filter" "', argument " "2"" of type '" "float *""'"); 
+  }
+  arg2 = reinterpret_cast< float * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3,SWIGTYPE_p_float, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "pfb_arb_resampler_fff_filter" "', argument " "3"" of type '" "float *""'"); 
+  }
+  arg3 = reinterpret_cast< float * >(argp3);
+  ecode4 = SWIG_AsVal_int(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "pfb_arb_resampler_fff_filter" "', argument " "4"" of type '" "int""'");
+  } 
+  arg4 = static_cast< int >(val4);
+  res5 = SWIG_ConvertPtr(obj4, &argp5, SWIGTYPE_p_int,  0 );
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "pfb_arb_resampler_fff_filter" "', argument " "5"" of type '" "int &""'"); 
+  }
+  if (!argp5) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "pfb_arb_resampler_fff_filter" "', argument " "5"" of type '" "int &""'"); 
+  }
+  arg5 = reinterpret_cast< int * >(argp5);
+  {
+    try {
+      result = (int)(arg1)->filter(arg2,arg3,arg4,*arg5);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *pfb_arb_resampler_fff_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_fff, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
 SWIGINTERN PyObject *_wrap_new_packet_encoder_sptr__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   boost::shared_ptr< gr::packetizr::packet_encoder > *result = 0 ;
@@ -8864,7 +10763,7 @@ SWIGINTERN PyObject *_wrap_packet_encoder_sptr_make(PyObject *SWIGUNUSEDPARM(sel
   PyObject *resultobj = 0;
   boost::shared_ptr< gr::packetizr::packet_encoder > *arg1 = (boost::shared_ptr< gr::packetizr::packet_encoder > *) 0 ;
   unsigned int arg2 ;
-  int arg3 ;
+  std::vector< int,std::allocator< int > > arg3 ;
   SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > arg4 ;
   SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > arg5 ;
   size_t arg6 ;
@@ -8873,8 +10772,6 @@ SWIGINTERN PyObject *_wrap_packet_encoder_sptr_make(PyObject *SWIGUNUSEDPARM(sel
   int res1 = 0 ;
   unsigned int val2 ;
   int ecode2 = 0 ;
-  int val3 ;
-  int ecode3 = 0 ;
   void *argp4 ;
   int res4 = 0 ;
   void *argp5 ;
@@ -8905,11 +10802,15 @@ SWIGINTERN PyObject *_wrap_packet_encoder_sptr_make(PyObject *SWIGUNUSEDPARM(sel
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "packet_encoder_sptr_make" "', argument " "2"" of type '" "unsigned int""'");
   } 
   arg2 = static_cast< unsigned int >(val2);
-  ecode3 = SWIG_AsVal_int(obj2, &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "packet_encoder_sptr_make" "', argument " "3"" of type '" "int""'");
-  } 
-  arg3 = static_cast< int >(val3);
+  {
+    std::vector< int,std::allocator< int > > *ptr = (std::vector< int,std::allocator< int > > *)0;
+    int res = swig::asptr(obj2, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "packet_encoder_sptr_make" "', argument " "3"" of type '" "std::vector< int,std::allocator< int > > const""'"); 
+    }
+    arg3 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
   {
     res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_t,  0  | 0);
     if (!SWIG_IsOK(res4)) {
@@ -11878,7 +13779,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"high_res_timer_tps", _wrap_high_res_timer_tps, METH_VARARGS, (char *)"high_res_timer_tps() -> gr::high_res_timer_type"},
 	 { (char *)"high_res_timer_epoch", _wrap_high_res_timer_epoch, METH_VARARGS, (char *)"high_res_timer_epoch() -> gr::high_res_timer_type"},
 	 { (char *)"packet_encoder_make", (PyCFunction) _wrap_packet_encoder_make, METH_VARARGS | METH_KEYWORDS, (char *)"\n"
-		"packet_encoder_make(unsigned int sps, int preamble, gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr\n"
+		"packet_encoder_make(unsigned int sps, std::vector< int,std::allocator< int > > const preamble, gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr\n"
 		"\n"
 		"Return a shared_ptr to a new instance of packetizr::packet_encoder.\n"
 		"\n"
@@ -11965,6 +13866,54 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"new_firdes", _wrap_new_firdes, METH_VARARGS, (char *)"new_firdes() -> firdes"},
 	 { (char *)"delete_firdes", _wrap_delete_firdes, METH_VARARGS, (char *)"delete_firdes(firdes self)"},
 	 { (char *)"firdes_swigregister", firdes_swigregister, METH_VARARGS, NULL},
+	 { (char *)"new_pfb_arb_resampler_ccf", (PyCFunction) _wrap_new_pfb_arb_resampler_ccf, METH_VARARGS | METH_KEYWORDS, (char *)"new_pfb_arb_resampler_ccf(float rate, pmt_vector_float taps, unsigned int filter_size) -> pfb_arb_resampler_ccf"},
+	 { (char *)"delete_pfb_arb_resampler_ccf", _wrap_delete_pfb_arb_resampler_ccf, METH_VARARGS, (char *)"delete_pfb_arb_resampler_ccf(pfb_arb_resampler_ccf self)"},
+	 { (char *)"pfb_arb_resampler_ccf_set_taps", (PyCFunction) _wrap_pfb_arb_resampler_ccf_set_taps, METH_VARARGS | METH_KEYWORDS, (char *)"pfb_arb_resampler_ccf_set_taps(pfb_arb_resampler_ccf self, pmt_vector_float taps)"},
+	 { (char *)"pfb_arb_resampler_ccf_taps", _wrap_pfb_arb_resampler_ccf_taps, METH_VARARGS, (char *)"pfb_arb_resampler_ccf_taps(pfb_arb_resampler_ccf self) -> std::vector< std::vector< float,std::allocator< float > >,std::allocator< std::vector< float,std::allocator< float > > > >"},
+	 { (char *)"pfb_arb_resampler_ccf_print_taps", _wrap_pfb_arb_resampler_ccf_print_taps, METH_VARARGS, (char *)"pfb_arb_resampler_ccf_print_taps(pfb_arb_resampler_ccf self)"},
+	 { (char *)"pfb_arb_resampler_ccf_set_rate", (PyCFunction) _wrap_pfb_arb_resampler_ccf_set_rate, METH_VARARGS | METH_KEYWORDS, (char *)"pfb_arb_resampler_ccf_set_rate(pfb_arb_resampler_ccf self, float rate)"},
+	 { (char *)"pfb_arb_resampler_ccf_set_phase", (PyCFunction) _wrap_pfb_arb_resampler_ccf_set_phase, METH_VARARGS | METH_KEYWORDS, (char *)"pfb_arb_resampler_ccf_set_phase(pfb_arb_resampler_ccf self, float ph)"},
+	 { (char *)"pfb_arb_resampler_ccf_phase", _wrap_pfb_arb_resampler_ccf_phase, METH_VARARGS, (char *)"pfb_arb_resampler_ccf_phase(pfb_arb_resampler_ccf self) -> float"},
+	 { (char *)"pfb_arb_resampler_ccf_taps_per_filter", _wrap_pfb_arb_resampler_ccf_taps_per_filter, METH_VARARGS, (char *)"pfb_arb_resampler_ccf_taps_per_filter(pfb_arb_resampler_ccf self) -> unsigned int"},
+	 { (char *)"pfb_arb_resampler_ccf_interpolation_rate", _wrap_pfb_arb_resampler_ccf_interpolation_rate, METH_VARARGS, (char *)"pfb_arb_resampler_ccf_interpolation_rate(pfb_arb_resampler_ccf self) -> unsigned int"},
+	 { (char *)"pfb_arb_resampler_ccf_decimation_rate", _wrap_pfb_arb_resampler_ccf_decimation_rate, METH_VARARGS, (char *)"pfb_arb_resampler_ccf_decimation_rate(pfb_arb_resampler_ccf self) -> unsigned int"},
+	 { (char *)"pfb_arb_resampler_ccf_fractional_rate", _wrap_pfb_arb_resampler_ccf_fractional_rate, METH_VARARGS, (char *)"pfb_arb_resampler_ccf_fractional_rate(pfb_arb_resampler_ccf self) -> float"},
+	 { (char *)"pfb_arb_resampler_ccf_group_delay", _wrap_pfb_arb_resampler_ccf_group_delay, METH_VARARGS, (char *)"pfb_arb_resampler_ccf_group_delay(pfb_arb_resampler_ccf self) -> int"},
+	 { (char *)"pfb_arb_resampler_ccf_phase_offset", (PyCFunction) _wrap_pfb_arb_resampler_ccf_phase_offset, METH_VARARGS | METH_KEYWORDS, (char *)"pfb_arb_resampler_ccf_phase_offset(pfb_arb_resampler_ccf self, float freq, float fs) -> float"},
+	 { (char *)"pfb_arb_resampler_ccf_filter", (PyCFunction) _wrap_pfb_arb_resampler_ccf_filter, METH_VARARGS | METH_KEYWORDS, (char *)"pfb_arb_resampler_ccf_filter(pfb_arb_resampler_ccf self, gr_complex * output, gr_complex * input, int n_to_read, int & n_read) -> int"},
+	 { (char *)"pfb_arb_resampler_ccf_swigregister", pfb_arb_resampler_ccf_swigregister, METH_VARARGS, NULL},
+	 { (char *)"new_pfb_arb_resampler_ccc", (PyCFunction) _wrap_new_pfb_arb_resampler_ccc, METH_VARARGS | METH_KEYWORDS, (char *)"new_pfb_arb_resampler_ccc(float rate, pmt_vector_cfloat taps, unsigned int filter_size) -> pfb_arb_resampler_ccc"},
+	 { (char *)"delete_pfb_arb_resampler_ccc", _wrap_delete_pfb_arb_resampler_ccc, METH_VARARGS, (char *)"delete_pfb_arb_resampler_ccc(pfb_arb_resampler_ccc self)"},
+	 { (char *)"pfb_arb_resampler_ccc_set_taps", (PyCFunction) _wrap_pfb_arb_resampler_ccc_set_taps, METH_VARARGS | METH_KEYWORDS, (char *)"pfb_arb_resampler_ccc_set_taps(pfb_arb_resampler_ccc self, pmt_vector_cfloat taps)"},
+	 { (char *)"pfb_arb_resampler_ccc_taps", _wrap_pfb_arb_resampler_ccc_taps, METH_VARARGS, (char *)"pfb_arb_resampler_ccc_taps(pfb_arb_resampler_ccc self) -> gr_vector_vector_complexf"},
+	 { (char *)"pfb_arb_resampler_ccc_print_taps", _wrap_pfb_arb_resampler_ccc_print_taps, METH_VARARGS, (char *)"pfb_arb_resampler_ccc_print_taps(pfb_arb_resampler_ccc self)"},
+	 { (char *)"pfb_arb_resampler_ccc_set_rate", (PyCFunction) _wrap_pfb_arb_resampler_ccc_set_rate, METH_VARARGS | METH_KEYWORDS, (char *)"pfb_arb_resampler_ccc_set_rate(pfb_arb_resampler_ccc self, float rate)"},
+	 { (char *)"pfb_arb_resampler_ccc_set_phase", (PyCFunction) _wrap_pfb_arb_resampler_ccc_set_phase, METH_VARARGS | METH_KEYWORDS, (char *)"pfb_arb_resampler_ccc_set_phase(pfb_arb_resampler_ccc self, float ph)"},
+	 { (char *)"pfb_arb_resampler_ccc_phase", _wrap_pfb_arb_resampler_ccc_phase, METH_VARARGS, (char *)"pfb_arb_resampler_ccc_phase(pfb_arb_resampler_ccc self) -> float"},
+	 { (char *)"pfb_arb_resampler_ccc_taps_per_filter", _wrap_pfb_arb_resampler_ccc_taps_per_filter, METH_VARARGS, (char *)"pfb_arb_resampler_ccc_taps_per_filter(pfb_arb_resampler_ccc self) -> unsigned int"},
+	 { (char *)"pfb_arb_resampler_ccc_interpolation_rate", _wrap_pfb_arb_resampler_ccc_interpolation_rate, METH_VARARGS, (char *)"pfb_arb_resampler_ccc_interpolation_rate(pfb_arb_resampler_ccc self) -> unsigned int"},
+	 { (char *)"pfb_arb_resampler_ccc_decimation_rate", _wrap_pfb_arb_resampler_ccc_decimation_rate, METH_VARARGS, (char *)"pfb_arb_resampler_ccc_decimation_rate(pfb_arb_resampler_ccc self) -> unsigned int"},
+	 { (char *)"pfb_arb_resampler_ccc_fractional_rate", _wrap_pfb_arb_resampler_ccc_fractional_rate, METH_VARARGS, (char *)"pfb_arb_resampler_ccc_fractional_rate(pfb_arb_resampler_ccc self) -> float"},
+	 { (char *)"pfb_arb_resampler_ccc_group_delay", _wrap_pfb_arb_resampler_ccc_group_delay, METH_VARARGS, (char *)"pfb_arb_resampler_ccc_group_delay(pfb_arb_resampler_ccc self) -> int"},
+	 { (char *)"pfb_arb_resampler_ccc_phase_offset", (PyCFunction) _wrap_pfb_arb_resampler_ccc_phase_offset, METH_VARARGS | METH_KEYWORDS, (char *)"pfb_arb_resampler_ccc_phase_offset(pfb_arb_resampler_ccc self, float freq, float fs) -> float"},
+	 { (char *)"pfb_arb_resampler_ccc_filter", (PyCFunction) _wrap_pfb_arb_resampler_ccc_filter, METH_VARARGS | METH_KEYWORDS, (char *)"pfb_arb_resampler_ccc_filter(pfb_arb_resampler_ccc self, gr_complex * output, gr_complex * input, int n_to_read, int & n_read) -> int"},
+	 { (char *)"pfb_arb_resampler_ccc_swigregister", pfb_arb_resampler_ccc_swigregister, METH_VARARGS, NULL},
+	 { (char *)"new_pfb_arb_resampler_fff", (PyCFunction) _wrap_new_pfb_arb_resampler_fff, METH_VARARGS | METH_KEYWORDS, (char *)"new_pfb_arb_resampler_fff(float rate, pmt_vector_float taps, unsigned int filter_size) -> pfb_arb_resampler_fff"},
+	 { (char *)"delete_pfb_arb_resampler_fff", _wrap_delete_pfb_arb_resampler_fff, METH_VARARGS, (char *)"delete_pfb_arb_resampler_fff(pfb_arb_resampler_fff self)"},
+	 { (char *)"pfb_arb_resampler_fff_set_taps", (PyCFunction) _wrap_pfb_arb_resampler_fff_set_taps, METH_VARARGS | METH_KEYWORDS, (char *)"pfb_arb_resampler_fff_set_taps(pfb_arb_resampler_fff self, pmt_vector_float taps)"},
+	 { (char *)"pfb_arb_resampler_fff_taps", _wrap_pfb_arb_resampler_fff_taps, METH_VARARGS, (char *)"pfb_arb_resampler_fff_taps(pfb_arb_resampler_fff self) -> std::vector< std::vector< float,std::allocator< float > >,std::allocator< std::vector< float,std::allocator< float > > > >"},
+	 { (char *)"pfb_arb_resampler_fff_print_taps", _wrap_pfb_arb_resampler_fff_print_taps, METH_VARARGS, (char *)"pfb_arb_resampler_fff_print_taps(pfb_arb_resampler_fff self)"},
+	 { (char *)"pfb_arb_resampler_fff_set_rate", (PyCFunction) _wrap_pfb_arb_resampler_fff_set_rate, METH_VARARGS | METH_KEYWORDS, (char *)"pfb_arb_resampler_fff_set_rate(pfb_arb_resampler_fff self, float rate)"},
+	 { (char *)"pfb_arb_resampler_fff_set_phase", (PyCFunction) _wrap_pfb_arb_resampler_fff_set_phase, METH_VARARGS | METH_KEYWORDS, (char *)"pfb_arb_resampler_fff_set_phase(pfb_arb_resampler_fff self, float ph)"},
+	 { (char *)"pfb_arb_resampler_fff_phase", _wrap_pfb_arb_resampler_fff_phase, METH_VARARGS, (char *)"pfb_arb_resampler_fff_phase(pfb_arb_resampler_fff self) -> float"},
+	 { (char *)"pfb_arb_resampler_fff_taps_per_filter", _wrap_pfb_arb_resampler_fff_taps_per_filter, METH_VARARGS, (char *)"pfb_arb_resampler_fff_taps_per_filter(pfb_arb_resampler_fff self) -> unsigned int"},
+	 { (char *)"pfb_arb_resampler_fff_interpolation_rate", _wrap_pfb_arb_resampler_fff_interpolation_rate, METH_VARARGS, (char *)"pfb_arb_resampler_fff_interpolation_rate(pfb_arb_resampler_fff self) -> unsigned int"},
+	 { (char *)"pfb_arb_resampler_fff_decimation_rate", _wrap_pfb_arb_resampler_fff_decimation_rate, METH_VARARGS, (char *)"pfb_arb_resampler_fff_decimation_rate(pfb_arb_resampler_fff self) -> unsigned int"},
+	 { (char *)"pfb_arb_resampler_fff_fractional_rate", _wrap_pfb_arb_resampler_fff_fractional_rate, METH_VARARGS, (char *)"pfb_arb_resampler_fff_fractional_rate(pfb_arb_resampler_fff self) -> float"},
+	 { (char *)"pfb_arb_resampler_fff_group_delay", _wrap_pfb_arb_resampler_fff_group_delay, METH_VARARGS, (char *)"pfb_arb_resampler_fff_group_delay(pfb_arb_resampler_fff self) -> int"},
+	 { (char *)"pfb_arb_resampler_fff_phase_offset", (PyCFunction) _wrap_pfb_arb_resampler_fff_phase_offset, METH_VARARGS | METH_KEYWORDS, (char *)"pfb_arb_resampler_fff_phase_offset(pfb_arb_resampler_fff self, float freq, float fs) -> float"},
+	 { (char *)"pfb_arb_resampler_fff_filter", (PyCFunction) _wrap_pfb_arb_resampler_fff_filter, METH_VARARGS | METH_KEYWORDS, (char *)"pfb_arb_resampler_fff_filter(pfb_arb_resampler_fff self, float * output, float * input, int n_to_read, int & n_read) -> int"},
+	 { (char *)"pfb_arb_resampler_fff_swigregister", pfb_arb_resampler_fff_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_packet_encoder_sptr", _wrap_new_packet_encoder_sptr, METH_VARARGS, (char *)"\n"
 		"packet_encoder_sptr()\n"
 		"new_packet_encoder_sptr(packet_encoder p) -> packet_encoder_sptr\n"
@@ -11972,7 +13921,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"packet_encoder_sptr___deref__", _wrap_packet_encoder_sptr___deref__, METH_VARARGS, (char *)"packet_encoder_sptr___deref__(packet_encoder_sptr self) -> packet_encoder"},
 	 { (char *)"delete_packet_encoder_sptr", _wrap_delete_packet_encoder_sptr, METH_VARARGS, (char *)"delete_packet_encoder_sptr(packet_encoder_sptr self)"},
 	 { (char *)"packet_encoder_sptr_make", (PyCFunction) _wrap_packet_encoder_sptr_make, METH_VARARGS | METH_KEYWORDS, (char *)"\n"
-		"packet_encoder_sptr_make(packet_encoder_sptr self, unsigned int sps, int preamble, gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr\n"
+		"packet_encoder_sptr_make(packet_encoder_sptr self, unsigned int sps, std::vector< int,std::allocator< int > > const preamble, gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr\n"
 		"\n"
 		"Return a shared_ptr to a new instance of packetizr::packet_encoder.\n"
 		"\n"
@@ -12213,6 +14162,9 @@ static swig_type_info _swigt__p_gr__digital__constellation_sector = {"_p_gr__dig
 static swig_type_info _swigt__p_gr__digital__trellis_metric_type_t = {"_p_gr__digital__trellis_metric_type_t", "gr::digital::trellis_metric_type_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_gr__endianness_t = {"_p_gr__endianness_t", "enum gr::endianness_t *|gr::endianness_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_gr__filter__firdes = {"_p_gr__filter__firdes", "gr::filter::firdes *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_gr__filter__kernel__pfb_arb_resampler_ccc = {"_p_gr__filter__kernel__pfb_arb_resampler_ccc", "gr::filter::kernel::pfb_arb_resampler_ccc *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_gr__filter__kernel__pfb_arb_resampler_ccf = {"_p_gr__filter__kernel__pfb_arb_resampler_ccf", "gr::filter::kernel::pfb_arb_resampler_ccf *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_gr__filter__kernel__pfb_arb_resampler_fff = {"_p_gr__filter__kernel__pfb_arb_resampler_fff", "gr::filter::kernel::pfb_arb_resampler_fff *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_gr__packetizr__packet_encoder = {"_p_gr__packetizr__packet_encoder", "gr::packetizr::packet_encoder *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_gr__rt_status_t = {"_p_gr__rt_status_t", "enum gr::rt_status_t *|gr::rt_status_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_gr__tagged_stream_block = {"_p_gr__tagged_stream_block", "gr::tagged_stream_block *", 0, 0, (void*)0, 0};
@@ -12278,6 +14230,9 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_gr__digital__trellis_metric_type_t,
   &_swigt__p_gr__endianness_t,
   &_swigt__p_gr__filter__firdes,
+  &_swigt__p_gr__filter__kernel__pfb_arb_resampler_ccc,
+  &_swigt__p_gr__filter__kernel__pfb_arb_resampler_ccf,
+  &_swigt__p_gr__filter__kernel__pfb_arb_resampler_fff,
   &_swigt__p_gr__hier_block2,
   &_swigt__p_gr__packetizr__packet_encoder,
   &_swigt__p_gr__rt_status_t,
@@ -12353,6 +14308,9 @@ static swig_cast_info _swigc__p_gr__digital__constellation_sector[] = {  {&_swig
 static swig_cast_info _swigc__p_gr__digital__trellis_metric_type_t[] = {  {&_swigt__p_gr__digital__trellis_metric_type_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_gr__endianness_t[] = {  {&_swigt__p_gr__endianness_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_gr__filter__firdes[] = {  {&_swigt__p_gr__filter__firdes, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_gr__filter__kernel__pfb_arb_resampler_ccc[] = {  {&_swigt__p_gr__filter__kernel__pfb_arb_resampler_ccc, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_gr__filter__kernel__pfb_arb_resampler_ccf[] = {  {&_swigt__p_gr__filter__kernel__pfb_arb_resampler_ccf, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_gr__filter__kernel__pfb_arb_resampler_fff[] = {  {&_swigt__p_gr__filter__kernel__pfb_arb_resampler_fff, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_gr__packetizr__packet_encoder[] = {  {&_swigt__p_gr__packetizr__packet_encoder, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_gr__rt_status_t[] = {  {&_swigt__p_gr__rt_status_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_gr__tagged_stream_block[] = {  {&_swigt__p_gr__packetizr__packet_encoder, _p_gr__packetizr__packet_encoderTo_p_gr__tagged_stream_block, 0, 0},  {&_swigt__p_gr__tagged_stream_block, 0, 0, 0},{0, 0, 0, 0}};
@@ -12418,6 +14376,9 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_gr__digital__trellis_metric_type_t,
   _swigc__p_gr__endianness_t,
   _swigc__p_gr__filter__firdes,
+  _swigc__p_gr__filter__kernel__pfb_arb_resampler_ccc,
+  _swigc__p_gr__filter__kernel__pfb_arb_resampler_ccf,
+  _swigc__p_gr__filter__kernel__pfb_arb_resampler_fff,
   _swigc__p_gr__hier_block2,
   _swigc__p_gr__packetizr__packet_encoder,
   _swigc__p_gr__rt_status_t,

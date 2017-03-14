@@ -22,6 +22,7 @@
 from gnuradio import gr, gr_unittest
 from gnuradio import blocks
 from gnuradio import digital
+import ctypes
 #from gnuradio import digital_swig as digital
 import packetizr_swig as packetizr
 
@@ -37,15 +38,19 @@ class qa_packet_encoder (gr_unittest.TestCase):
         header_formatter = digital.packet_header_default(4, "packet_len", "packet_num", 8)
         constel = digital.constellation_calcdist(([-1-1j, -1+1j, 1+1j, 1-1j]), ([0, 1, 3, 2]), 4, 1).base()
         
-        src_data = (200,127,97,244,123,200,127,97,244)
-        expected_result = (3,4)
+
+        src_data = tuple()
+        for i in range(0, 10000):
+            src_data += (200,127,97,244)
+        expected_result = ()
         src = blocks.vector_source_b (src_data, repeat=False)
-        tagger = blocks.stream_to_tagged_stream(1, 1, 4, "packet_len")
+        tagger = blocks.stream_to_tagged_stream(1, 1, 400, "packet_len")
         unpack0= blocks.packed_to_unpacked_bb(8, gr.GR_MSB_FIRST)
         header_gen = digital.packet_headergenerator_bb(header_formatter, "packet_len")
-        penc = packetizr.packet_encoder (1, 0, constel, constel, 1, "packet_len") #itemsize is in bytes
+        preamble = ()
+        penc = packetizr.packet_encoder (1, preamble, constel, constel, 1, "packet_len") #itemsize is in bytes
 
-        snk = blocks.vector_sink_f (1)
+        snk = blocks.vector_sink_c(1)
         self.tb.connect (src, unpack0)
         self.tb.connect (unpack0, tagger)
         self.tb.connect (tagger, header_gen)
@@ -54,7 +59,7 @@ class qa_packet_encoder (gr_unittest.TestCase):
         self.tb.connect (penc, snk)
         self.tb.run ()
         result_data = snk.data ()
-        print "\n RESULT DATA",result_data,"\n"
+        #print "\n RESULT DATA",result_data,"\n"
         
         #self.assertFloatTuplesAlmostEqual (expected_result, result_data, 6)   
 
