@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1packetizer_1_1packet__encoder__bc__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::packetizer::packet_encoder_bc_impl</compoundname>
+    <basecompoundref refid="classgr_1_1packetizer_1_1packet__encoder__bc" prot="public" virt="non-virtual">gr::packetizer::packet_encoder_bc</basecompoundref>
+    <includes refid="packet__encoder__bc__impl_8h" local="no">packet_encoder_bc_impl.h</includes>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classgr_1_1packetizer_1_1packet__encoder__bc__impl_1a6cd1fa9312ffa3d0150f8293de717d41" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::packetizer::packet_encoder_bc_impl::calculate_output_stream_length</definition>
+        <argsstring>(const gr_vector_int &amp;ninput_items)</argsstring>
+        <name>calculate_output_stream_length</name>
+        <param>
+          <type>const gr_vector_int &amp;</type>
+          <declname>ninput_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomas/gr/gr-packetizer/lib/packet_encoder_bc_impl.h" line="35" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1packetizer_1_1packet__encoder__bc__impl_1a756a6386740d720267a946e7267f3573" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::packetizer::packet_encoder_bc_impl::packet_encoder_bc_impl</definition>
+        <argsstring>(int sps, int header_constel, int payload_constel, int preamble, char *length_tag_key)</argsstring>
+        <name>packet_encoder_bc_impl</name>
+        <param>
+          <type>int</type>
+          <declname>sps</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>header_constel</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>payload_constel</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>preamble</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>length_tag_key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomas/gr/gr-packetizer/lib/packet_encoder_bc_impl.h" line="38" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1packetizer_1_1packet__encoder__bc__impl_1ad94cb510b47b9bafdcad5cc33d26e1a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::packetizer::packet_encoder_bc_impl::~packet_encoder_bc_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~packet_encoder_bc_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomas/gr/gr-packetizer/lib/packet_encoder_bc_impl.h" line="39" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1packetizer_1_1packet__encoder__bc__impl_1a1e8a4c55e32f39d969eab5b8262331fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::packetizer::packet_encoder_bc_impl::work</definition>
+        <argsstring>(int noutput_items, gr_vector_int &amp;ninput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_int &amp;</type>
+          <declname>ninput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/thomas/gr/gr-packetizer/lib/packet_encoder_bc_impl.h" line="42" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="6">
+        <label>gr::packetizer::packet_encoder_bc</label>
+        <link refid="classgr_1_1packetizer_1_1packet__encoder__bc"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>gr::tagged_stream_block</label>
+      </node>
+      <node id="5">
+        <label>gr::packetizer::packet_encoder_bc_impl</label>
+        <link refid="classgr_1_1packetizer_1_1packet__encoder__bc__impl"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="9">
+        <label>gr::packetizer::packet_encoder_bc</label>
+        <link refid="classgr_1_1packetizer_1_1packet__encoder__bc"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>gr::tagged_stream_block</label>
+      </node>
+      <node id="8">
+        <label>gr::packetizer::packet_encoder_bc_impl</label>
+        <link refid="classgr_1_1packetizer_1_1packet__encoder__bc__impl"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/thomas/gr/gr-packetizer/lib/packet_encoder_bc_impl.h" line="30" column="1" bodyfile="/home/thomas/gr/gr-packetizer/lib/packet_encoder_bc_impl.h" bodystart="29" bodyend="46"/>
+    <listofallmembers>
+      <member refid="classgr_1_1packetizer_1_1packet__encoder__bc__impl_1a6cd1fa9312ffa3d0150f8293de717d41" prot="protected" virt="non-virtual"><scope>gr::packetizer::packet_encoder_bc_impl</scope><name>calculate_output_stream_length</name></member>
+      <member refid="classgr_1_1packetizer_1_1packet__encoder__bc_1a0a2efa97b672c9640956ea7a9f63022d" prot="public" virt="non-virtual"><scope>gr::packetizer::packet_encoder_bc_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1packetizer_1_1packet__encoder__bc__impl_1a756a6386740d720267a946e7267f3573" prot="public" virt="non-virtual"><scope>gr::packetizer::packet_encoder_bc_impl</scope><name>packet_encoder_bc_impl</name></member>
+      <member refid="classgr_1_1packetizer_1_1packet__encoder__bc_1a154a732ef756997628990d3556fced41" prot="public" virt="non-virtual"><scope>gr::packetizer::packet_encoder_bc_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1packetizer_1_1packet__encoder__bc__impl_1a1e8a4c55e32f39d969eab5b8262331fe" prot="public" virt="non-virtual"><scope>gr::packetizer::packet_encoder_bc_impl</scope><name>work</name></member>
+      <member refid="classgr_1_1packetizer_1_1packet__encoder__bc__impl_1ad94cb510b47b9bafdcad5cc33d26e1a6" prot="public" virt="non-virtual"><scope>gr::packetizer::packet_encoder_bc_impl</scope><name>~packet_encoder_bc_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

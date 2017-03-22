@@ -145,7 +145,8 @@ packet_encoder_impl::work (int noutput_items,
   gr_complex *preamble_symbols = new gr_complex[d_preamble.size()];
   for (unsigned int i = 0; i < d_preamble.size(); i++) {
     //cout << "PREAMBLE VAR "<<i<<" "<<d_preamble[i];
-    preamble_symbols[i] = (1 - d_preamble[i] * 2); // TODO cleanup
+    //preamble_symbols[i] = (1 - d_preamble[i] * 2); // TODO cleanup
+    preamble_symbols[i] = d_preamble[i]; // TODO cleanup
   }
 
 
@@ -268,13 +269,12 @@ packet_encoder_impl::work (int noutput_items,
 
 
   /* MODULATION OF PREAMBLE + HEADER + PAYLOAD */
-  unsigned int os_length = total_length * d_sps;
+  unsigned int os_length = total_length;
   gr_complex *signal_mod = new gr_complex[os_length];
 
   // TODO should be defined outside of work function for speed reasons
-   gr::filter::kernel::pfb_arb_resampler_ccf rrc_filter = gr::filter::kernel::pfb_arb_resampler_ccf(d_sps, d_rrc_taps, d_nfilts);
-   int n_read = 0;
-   rrc_filter.filter(signal_mod, signal_symbols, total_length, (int&) n_read);
+  // gr::filter::kernel::pfb_arb_resampler_ccf rrc_filter = gr::filter::kernel::pfb_arb_resampler_ccf(d_sps, d_rrc_taps, d_nfilts);
+  //// rrc_filter.filter(signal_mod, signal_symbols, total_length, (int&) n_read);
   //interpolate(signal_symbols, signal_mod, total_length, d_sps);
   delete [] signal_symbols;
 
@@ -291,7 +291,7 @@ packet_encoder_impl::work (int noutput_items,
 
   //memcpy((void *) out, (const void *) signal_mod, os_length);
   for (unsigned int j = 0; j < os_length; j++) {
-    *out =  signal_mod[j] ;
+    *out =  signal_symbols[j] ;
     out += 1;
   }
   delete [] signal_mod;

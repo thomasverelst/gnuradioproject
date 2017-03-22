@@ -47,7 +47,7 @@ class qa_packet_encoder (gr_unittest.TestCase):
         tagger = blocks.stream_to_tagged_stream(1, 1, 400, "packet_len")
         unpack0= blocks.packed_to_unpacked_bb(8, gr.GR_MSB_FIRST)
         header_gen = digital.packet_headergenerator_bb(header_formatter, "packet_len")
-        preamble = ()
+        preamble = (1,-1,-1,1,-1)
         penc = packetizr.packet_encoder (1, preamble, constel, constel, 1, "packet_len") #itemsize is in bytes
 
         snk = blocks.vector_sink_c(1)
@@ -59,7 +59,7 @@ class qa_packet_encoder (gr_unittest.TestCase):
         self.tb.connect (penc, snk)
         self.tb.run ()
         result_data = snk.data ()
-        #print "\n RESULT DATA",result_data,"\n"
+        print "\n RESULT DATA",result_data,"\n"
         
         #self.assertFloatTuplesAlmostEqual (expected_result, result_data, 6)   
 
