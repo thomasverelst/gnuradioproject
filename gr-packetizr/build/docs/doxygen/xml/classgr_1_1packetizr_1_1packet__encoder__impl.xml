@@ -5,37 +5,11 @@
     <basecompoundref refid="classgr_1_1packetizr_1_1packet__encoder" prot="public" virt="non-virtual">gr::packetizr::packet_encoder</basecompoundref>
     <includes refid="packet__encoder__impl_8h" local="no">packet_encoder_impl.h</includes>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classgr_1_1packetizr_1_1packet__encoder__impl_1aeb0d9445bddb8099dc2209e5f0e52900" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classgr_1_1packetizr_1_1packet__encoder__impl_1a4aee0964b7561b9653857335dd01d575" prot="private" static="no" mutable="no">
         <type>gr::digital::constellation_sptr</type>
-        <definition>gr::digital::constellation_sptr gr::packetizr::packet_encoder_impl::d_header_constel</definition>
+        <definition>gr::digital::constellation_sptr gr::packetizr::packet_encoder_impl::d_constel_preamble</definition>
         <argsstring></argsstring>
-        <name>d_header_constel</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" line="35" column="1" bodyfile="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" bodystart="35" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classgr_1_1packetizr_1_1packet__encoder__impl_1a4b8803f1e3e11865decd21bcaafe9e72" prot="private" static="no" mutable="no">
-        <type>gr::digital::constellation_sptr</type>
-        <definition>gr::digital::constellation_sptr gr::packetizr::packet_encoder_impl::d_payload_constel</definition>
-        <argsstring></argsstring>
-        <name>d_payload_constel</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" line="36" column="1" bodyfile="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" bodystart="36" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classgr_1_1packetizr_1_1packet__encoder__impl_1a0e66d35608d3943155847202fb711a57" prot="private" static="no" mutable="no">
-        <type>unsigned int</type>
-        <definition>unsigned int gr::packetizr::packet_encoder_impl::d_sps</definition>
-        <argsstring></argsstring>
-        <name>d_sps</name>
+        <name>d_constel_preamble</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -44,11 +18,11 @@
         </inbodydescription>
         <location file="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" line="37" column="1" bodyfile="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" bodystart="37" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classgr_1_1packetizr_1_1packet__encoder__impl_1a2b8207b607609b089e190b86f7cc595d" prot="private" static="no" mutable="no">
-        <type>size_t</type>
-        <definition>size_t gr::packetizr::packet_encoder_impl::d_itemsize</definition>
+      <memberdef kind="variable" id="classgr_1_1packetizr_1_1packet__encoder__impl_1a6439389911245ebfa78a2b1d2c98c7e4" prot="private" static="no" mutable="no">
+        <type>gr::digital::constellation_sptr</type>
+        <definition>gr::digital::constellation_sptr gr::packetizr::packet_encoder_impl::d_constel_header</definition>
         <argsstring></argsstring>
-        <name>d_itemsize</name>
+        <name>d_constel_header</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -57,11 +31,11 @@
         </inbodydescription>
         <location file="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" line="38" column="1" bodyfile="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" bodystart="38" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classgr_1_1packetizr_1_1packet__encoder__impl_1a97fc165f7d6b54c482e0ec342eb689a9" prot="private" static="no" mutable="no">
-        <type>unsigned int</type>
-        <definition>unsigned int gr::packetizr::packet_encoder_impl::d_tag_preserve_head_pos</definition>
+      <memberdef kind="variable" id="classgr_1_1packetizr_1_1packet__encoder__impl_1abba84b54315c2f280c138cde74fecd8f" prot="private" static="no" mutable="no">
+        <type>gr::digital::constellation_sptr</type>
+        <definition>gr::digital::constellation_sptr gr::packetizr::packet_encoder_impl::d_constel_payload</definition>
         <argsstring></argsstring>
-        <name>d_tag_preserve_head_pos</name>
+        <name>d_constel_payload</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -70,11 +44,11 @@
         </inbodydescription>
         <location file="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" line="39" column="1" bodyfile="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" bodystart="39" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classgr_1_1packetizr_1_1packet__encoder__impl_1a3f3fa7d37df60f28a2fb160a58b22166" prot="private" static="no" mutable="no">
-        <type>unsigned int</type>
-        <definition>unsigned int gr::packetizr::packet_encoder_impl::d_nfilts</definition>
+      <memberdef kind="variable" id="classgr_1_1packetizr_1_1packet__encoder__impl_1a84c596abf1ea09cd59ab2785b6d99ae6" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; gr::packetizr::packet_encoder_impl::d_preamble</definition>
         <argsstring></argsstring>
-        <name>d_nfilts</name>
+        <name>d_preamble</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -83,11 +57,11 @@
         </inbodydescription>
         <location file="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" line="40" column="1" bodyfile="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" bodystart="40" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classgr_1_1packetizr_1_1packet__encoder__impl_1a52863e5b07ba6aa2d31af1991e652a9a" prot="private" static="no" mutable="no">
-        <type>unsigned int</type>
-        <definition>unsigned int gr::packetizr::packet_encoder_impl::d_ntaps</definition>
+      <memberdef kind="variable" id="classgr_1_1packetizr_1_1packet__encoder__impl_1a0450d6cf91654f9ff1d47309ce64e838" prot="private" static="no" mutable="no">
+        <type>gr::digital::packet_header_default::sptr</type>
+        <definition>gr::digital::packet_header_default::sptr gr::packetizr::packet_encoder_impl::d_header_formatter</definition>
         <argsstring></argsstring>
-        <name>d_ntaps</name>
+        <name>d_header_formatter</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -96,11 +70,11 @@
         </inbodydescription>
         <location file="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" line="41" column="1" bodyfile="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" bodystart="41" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classgr_1_1packetizr_1_1packet__encoder__impl_1adc3f5fbf8fe19657b56089b4d9db0ec4" prot="private" static="no" mutable="no">
-        <type>std::vector&lt; float &gt;</type>
-        <definition>std::vector&lt;float&gt; gr::packetizr::packet_encoder_impl::d_rrc_taps</definition>
+      <memberdef kind="variable" id="classgr_1_1packetizr_1_1packet__encoder__impl_1a2b8207b607609b089e190b86f7cc595d" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t gr::packetizr::packet_encoder_impl::d_itemsize</definition>
         <argsstring></argsstring>
-        <name>d_rrc_taps</name>
+        <name>d_itemsize</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -126,35 +100,38 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" line="46" column="1"/>
+        <location file="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" line="45" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="classgr_1_1packetizr_1_1packet__encoder__impl_1ada21eececdbfd738107fe47f34febb32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classgr_1_1packetizr_1_1packet__encoder__impl_1a2e96706cd32672e40bbd9654fafab175" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>gr::packetizr::packet_encoder_impl::packet_encoder_impl</definition>
-        <argsstring>(unsigned int sps, int preamble[], gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, const std::string &amp;lengthtagname)</argsstring>
+        <argsstring>(const std::vector&lt; int &gt; preamble, digital::constellation_sptr constel_preamble, digital::constellation_sptr constel_header, digital::constellation_sptr constel_payload, size_t itemsize, const digital::packet_header_default::sptr &amp;header_formatter, const std::string &amp;lengthtagname)</argsstring>
         <name>packet_encoder_impl</name>
         <param>
-          <type>unsigned int</type>
-          <declname>sps</declname>
-        </param>
-        <param>
-          <type>int</type>
+          <type>const std::vector&lt; int &gt;</type>
           <declname>preamble</declname>
-          <array>[]</array>
         </param>
         <param>
-          <type>gr::digital::constellation_sptr</type>
-          <declname>header_constel</declname>
+          <type>digital::constellation_sptr</type>
+          <declname>constel_preamble</declname>
         </param>
         <param>
-          <type>gr::digital::constellation_sptr</type>
-          <declname>payload_constel</declname>
+          <type>digital::constellation_sptr</type>
+          <declname>constel_header</declname>
+        </param>
+        <param>
+          <type>digital::constellation_sptr</type>
+          <declname>constel_payload</declname>
         </param>
         <param>
           <type>size_t</type>
           <declname>itemsize</declname>
+        </param>
+        <param>
+          <type>const digital::packet_header_default::sptr &amp;</type>
+          <declname>header_formatter</declname>
         </param>
         <param>
           <type>const std::string &amp;</type>
@@ -166,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" line="49" column="1"/>
+        <location file="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" line="48" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1packetizr_1_1packet__encoder__impl_1a9cd40d2f0225d34fe4d460f6e173cea1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -179,7 +156,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" line="50" column="1"/>
+        <location file="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" line="49" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1packetizr_1_1packet__encoder__impl_1acd94578e6847ab2736ce2d175c8da88a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -208,7 +185,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" line="53" column="1"/>
+        <location file="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" line="52" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -249,19 +226,17 @@
         <label>gr::tagged_stream_block</label>
       </node>
     </collaborationgraph>
-    <location file="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" line="33" column="1" bodyfile="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" bodystart="32" bodyend="57"/>
+    <location file="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" line="34" column="1" bodyfile="/home/thomas/gr/gr-packetizr/lib/packet_encoder_impl.h" bodystart="33" bodyend="56"/>
     <listofallmembers>
       <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a1b62cca2666d2009522eb4c83e54dae0" prot="protected" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>calculate_output_stream_length</name></member>
-      <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1aeb0d9445bddb8099dc2209e5f0e52900" prot="private" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>d_header_constel</name></member>
+      <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a6439389911245ebfa78a2b1d2c98c7e4" prot="private" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>d_constel_header</name></member>
+      <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1abba84b54315c2f280c138cde74fecd8f" prot="private" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>d_constel_payload</name></member>
+      <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a4aee0964b7561b9653857335dd01d575" prot="private" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>d_constel_preamble</name></member>
+      <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a0450d6cf91654f9ff1d47309ce64e838" prot="private" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>d_header_formatter</name></member>
       <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a2b8207b607609b089e190b86f7cc595d" prot="private" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>d_itemsize</name></member>
-      <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a3f3fa7d37df60f28a2fb160a58b22166" prot="private" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>d_nfilts</name></member>
-      <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a52863e5b07ba6aa2d31af1991e652a9a" prot="private" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>d_ntaps</name></member>
-      <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a4b8803f1e3e11865decd21bcaafe9e72" prot="private" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>d_payload_constel</name></member>
-      <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1adc3f5fbf8fe19657b56089b4d9db0ec4" prot="private" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>d_rrc_taps</name></member>
-      <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a0e66d35608d3943155847202fb711a57" prot="private" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>d_sps</name></member>
-      <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a97fc165f7d6b54c482e0ec342eb689a9" prot="private" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>d_tag_preserve_head_pos</name></member>
-      <member refid="classgr_1_1packetizr_1_1packet__encoder_1aaab22bd08a5397f8243e93b3e0baa238" prot="public" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>make</name></member>
-      <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1ada21eececdbfd738107fe47f34febb32" prot="public" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>packet_encoder_impl</name></member>
+      <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a84c596abf1ea09cd59ab2785b6d99ae6" prot="private" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>d_preamble</name></member>
+      <member refid="classgr_1_1packetizr_1_1packet__encoder_1acda279ce2753386c0b3ab7cec0b814c8" prot="public" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a2e96706cd32672e40bbd9654fafab175" prot="public" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>packet_encoder_impl</name></member>
       <member refid="classgr_1_1packetizr_1_1packet__encoder_1a637ee1f077bdc36cbebcc0b9898f2ce5" prot="public" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>sptr</name></member>
       <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1acd94578e6847ab2736ce2d175c8da88a" prot="public" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>work</name></member>
       <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a9cd40d2f0225d34fe4d460f6e173cea1" prot="public" virt="non-virtual"><scope>gr::packetizr::packet_encoder_impl</scope><name>~packet_encoder_impl</name></member>

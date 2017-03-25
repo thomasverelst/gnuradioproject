@@ -19,6 +19,8 @@ gnuradio/tagged_stream_block.h
 -
 gnuradio/digital/constellation.h
 -
+gnuradio/digital/packet_header_default.h
+-
 gnuradio/block.h
 -
 
@@ -71,6 +73,8 @@ packetizr/packet_encoder.h
 /home/thomas/gr/gr-packetizr/build/swig/packetizr/packet_encoder.h
 gnuradio/digital/constellation.h
 /home/thomas/gr/gr-packetizr/build/swig/gnuradio/digital/constellation.h
+gnuradio/digital/packet_header_default.h
+/home/thomas/gr/gr-packetizr/build/swig/gnuradio/digital/packet_header_default.h
 gnuradio/digital/api.h
 -
 gnuradio/tagged_stream_block.h
@@ -82,6 +86,8 @@ gnuradio/block.h
 gnuradio/filter/firdes.h
 -
 gnuradio/filter/pfb_arb_resampler.h
+-
+gnuradio/digital/packet_header_default.h
 -
 float.h
 -

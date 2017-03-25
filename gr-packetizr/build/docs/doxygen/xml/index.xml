@@ -2,19 +2,17 @@
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.11">
   <compound refid="classgr_1_1packetizr_1_1packet__encoder" kind="class"><name>gr::packetizr::packet_encoder</name>
     <member refid="classgr_1_1packetizr_1_1packet__encoder_1a637ee1f077bdc36cbebcc0b9898f2ce5" kind="typedef"><name>sptr</name></member>
-    <member refid="classgr_1_1packetizr_1_1packet__encoder_1aaab22bd08a5397f8243e93b3e0baa238" kind="function"><name>make</name></member>
+    <member refid="classgr_1_1packetizr_1_1packet__encoder_1acda279ce2753386c0b3ab7cec0b814c8" kind="function"><name>make</name></member>
   </compound>
   <compound refid="classgr_1_1packetizr_1_1packet__encoder__impl" kind="class"><name>gr::packetizr::packet_encoder_impl</name>
-    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1aeb0d9445bddb8099dc2209e5f0e52900" kind="variable"><name>d_header_constel</name></member>
-    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a4b8803f1e3e11865decd21bcaafe9e72" kind="variable"><name>d_payload_constel</name></member>
-    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a0e66d35608d3943155847202fb711a57" kind="variable"><name>d_sps</name></member>
+    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a4aee0964b7561b9653857335dd01d575" kind="variable"><name>d_constel_preamble</name></member>
+    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a6439389911245ebfa78a2b1d2c98c7e4" kind="variable"><name>d_constel_header</name></member>
+    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1abba84b54315c2f280c138cde74fecd8f" kind="variable"><name>d_constel_payload</name></member>
+    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a84c596abf1ea09cd59ab2785b6d99ae6" kind="variable"><name>d_preamble</name></member>
+    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a0450d6cf91654f9ff1d47309ce64e838" kind="variable"><name>d_header_formatter</name></member>
     <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a2b8207b607609b089e190b86f7cc595d" kind="variable"><name>d_itemsize</name></member>
-    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a97fc165f7d6b54c482e0ec342eb689a9" kind="variable"><name>d_tag_preserve_head_pos</name></member>
-    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a3f3fa7d37df60f28a2fb160a58b22166" kind="variable"><name>d_nfilts</name></member>
-    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a52863e5b07ba6aa2d31af1991e652a9a" kind="variable"><name>d_ntaps</name></member>
-    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1adc3f5fbf8fe19657b56089b4d9db0ec4" kind="variable"><name>d_rrc_taps</name></member>
     <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a1b62cca2666d2009522eb4c83e54dae0" kind="function"><name>calculate_output_stream_length</name></member>
-    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1ada21eececdbfd738107fe47f34febb32" kind="function"><name>packet_encoder_impl</name></member>
+    <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a2e96706cd32672e40bbd9654fafab175" kind="function"><name>packet_encoder_impl</name></member>
     <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1a9cd40d2f0225d34fe4d460f6e173cea1" kind="function"><name>~packet_encoder_impl</name></member>
     <member refid="classgr_1_1packetizr_1_1packet__encoder__impl_1acd94578e6847ab2736ce2d175c8da88a" kind="function"><name>work</name></member>
   </compound>

@@ -19,6 +19,8 @@ gnuradio/tagged_stream_block.h
 -
 gnuradio/digital/constellation.h
 -
+gnuradio/digital/packet_header_default.h
+-
 gnuradio/block.h
 -
 
@@ -28,6 +30,8 @@ config.h
 gnuradio/io_signature.h
 -
 gnuradio/digital/constellation.h
+-
+gnuradio/digital/packet_header_default.h
 -
 gnuradio/filter/firdes.h
 -
@@ -44,6 +48,8 @@ iostream
 packetizr/packet_encoder.h
 -
 gnuradio/digital/constellation.h
+-
+gnuradio/digital/packet_header_default.h
 -
 gnuradio/filter/firdes.h
 -

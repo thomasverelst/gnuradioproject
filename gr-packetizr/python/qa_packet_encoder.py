@@ -35,31 +35,113 @@ class qa_packet_encoder (gr_unittest.TestCase):
         self.tb = None
 
     def test_001_t (self):
+        preamble = (1,-1,-1,1)
+        #preamble = tuple();
+        packet_len = 4
+        src_data = (200,127,97,244)
+
         header_formatter = digital.packet_header_default(4, "packet_len", "packet_num", 8)
-        constel = digital.constellation_calcdist(([-1-1j, -1+1j, 1+1j, 1-1j]), ([0, 1, 3, 2]), 4, 1).base()
+        # constel_preamble = digital.constellation_calcdist(([-1-1j, -1+1j, 1+1j, 1-1j]), ([0, 1, 3, 2]), 4, 1).base()
+        # constel_header = digital.constellation_calcdist(([-1-1j, -1+1j, 1+1j, 1-1j]), ([0, 1, 3, 2]), 4, 1).base()
+        # constel_payload = digital.constellation_calcdist(([-1-1j, -1+1j, 1+1j, 1-1j]), ([0, 1, 3, 2]), 4, 1).base()
+        constel_preamble = digital.constellation_calcdist(([1,-1]), ([0, 1]), 2, 1).base()
+        constel_header = digital.constellation_calcdist(([1,-1]), ([0, 1]), 2, 1).base()
+        constel_payload = digital.constellation_calcdist(([1,-1]), ([0, 1]), 2, 1).base()
         
 
-        src_data = tuple()
-        for i in range(0, 10000):
-            src_data += (200,127,97,244)
-        expected_result = ()
+        src_data = (200,127,97,244)
+        
+        expected_result = preamble + ()
+
+        #
+        # PREAMBLE: ( 1+0j), (-1+0j), (-1+0j), ( 1+0j), 
+        # HEADER  : ( 1+0j), ( 1+0j), (-1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), 
+        #           ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j),
+        # which is 00100000|00000000|00000000|00000000 (packet length of 4)
+        #
+        # PAYLOAD : ( 1+0j), ( 1+0j), ( 1+0j), (-1+0j), ( 1+0j), ( 1+0j), (-1+0j), (-1+0j), (-1+0j), (-1+0j), (-1+0j), (-1+0j), (-1+0j), (-1+0j), (-1+0j), ( 1+0j), 
+        #           (-1+0j), ( 1+0j), ( 1+0j), ( 1+0j), ( 1+0j), (-1+0j), (-1+0j), ( 1+0j), ( 1+0j), ( 1+0j), (-1+0j), ( 1+0j), (-1+0j), (-1+0j), (-1+0j), (-1+0j))
+        # which is 00010011|11111110|10000110|00101111
+
+        # because 200 = 11001000
+        #         127 = 01111111
+        #         97  = 01100001
+        #         244 = 11110100
+        #reversed!
+
+
         src = blocks.vector_source_b (src_data, repeat=False)
-        tagger = blocks.stream_to_tagged_stream(1, 1, 400, "packet_len")
-        unpack0= blocks.packed_to_unpacked_bb(8, gr.GR_MSB_FIRST)
-        header_gen = digital.packet_headergenerator_bb(header_formatter, "packet_len")
-        preamble = (1,-1,-1,1,-1)
-        penc = packetizr.packet_encoder (1, preamble, constel, constel, 1, "packet_len") #itemsize is in bytes
+        tagger = blocks.stream_to_tagged_stream(1, 1, packet_len, "packet_len")
+        penc = packetizr.packet_encoder (preamble, constel_preamble, constel_header, constel_payload, 1, header_formatter, "packet_len") #itemsize is in bytes
 
         snk = blocks.vector_sink_c(1)
-        self.tb.connect (src, unpack0)
-        self.tb.connect (unpack0, tagger)
-        self.tb.connect (tagger, header_gen)
-        self.tb.connect (header_gen, (penc, 0))
-        self.tb.connect (tagger, (penc, 1))
+        #self.tb.connect (src, unpack0)
+        self.tb.connect (src, tagger)
+        self.tb.connect (tagger, penc)
         self.tb.connect (penc, snk)
         self.tb.run ()
         result_data = snk.data ()
         print "\n RESULT DATA",result_data,"\n"
+        
+        #self.assertFloatTuplesAlmostEqual (expected_result, result_data, 6)   
+    def test_002_t (self):
+        preamble = (1,-1,-1,1)
+        #preamble = tuple();
+        packet_len = 2
+        src_data = (200,127,97,244)
+
+        header_formatter = digital.packet_header_default(4, "packet_len", "packet_num", 8)
+        constel_preamble = digital.constellation_bpsk().base()
+        constel_header = digital.constellation_qpsk().base() # QPSK: 00 maps to -1-j, 01 to -1+j, 10 to 1-j, 11 to 1+j
+        constel_payload = digital.constellation_qpsk().base()
+        
+        # constel_preamble = digital.constellation_calcdist(([-1-1j, -1+1j, 1+1j, 1-1j]), ([3, 2, 1, 0]), 4, 1).base()
+        # constel_header = digital.constellation_calcdist(([-1-1j, -1+1j, 1+1j, 1-1j]), ([3, 2, 1, 0]), 4, 1).base()
+        # constel_payload = digital.constellation_calcdist(([-1-1j, -1+1j, 1+1j, 1-1j]), ([3, 2, 1, 0]), 4, 1).base()
+        # constel_preamble = digital.constellation_calcdist(([1,-1]), ([0, 1]), 2, 1).base()
+        # constel_header = digital.constellation_calcdist(([1,-1]), ([0, 1]), 2, 1).base()
+        #constel_payload = digital.constellation_calcdist(([1,-1]), ([1, 0]), 2, 1).base()
+        
+
+        src_data = (200,127,97,244)
+        
+        expected_result = preamble + ()
+
+        #
+        # PREAMBLE: ( 1+0j), (-1+0j), (-1+0j), ( 1+0j), 
+        # HEADER  : (-0.707+0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), 
+         #          (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j),
+        # which is 01000000|00000000|00000000|00000000 (packet length of 4)
+        # which is 1 0 0 0 | .....
+        #
+        # PAYLOAD :  (-0.707-0.707j), (-0.707+0.707j), (-0.707-0.707j), (0.707-0.707j), (0.707-0.707j), (0.707-0.707j), (0.707-0.707j), (0.707+0.707j)
+        #             0                 1               0               2               2               2               2               3
+        # which is 00,01,00,11|11,11,11,10|10,00,01,10|00,10,11,11
+        # which is 0  1  0  3 |3  3  3  2 |2  0  1  1 |0  2  3  3
+
+        # because 200 = 11001000
+        #         127 = 01111111
+        #         97  = 01100001
+        #         244 = 11110100
+        #reversed, which is good!
+
+
+
+        #QPSK RESULT DATA (-0.707+0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707+0.707j), (-0.707-0.707j), (0.707-0.707j), (0.707-0.707j), (0.707-0.707j), (0.707-0.707j), (0.707+0.707j), (1+0j), (-1+0j), (-1+0j), (1+0j), (-0.707+0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (0.707+0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (-0.707-0.707j), (0.707+0.707j), (-0.707-0.707j), (-0.707+0.707j), (0.707+0.707j), (-0.707-0.707j), (0.707+0.707j), (0.707-0.707j), (0.707-0.707j)) 
+
+
+        src = blocks.vector_source_b (src_data, repeat=False)
+        tagger = blocks.stream_to_tagged_stream(1, 1, packet_len, "packet_len")
+        penc = packetizr.packet_encoder (preamble, constel_preamble, constel_header, constel_payload, 1, header_formatter, "packet_len") #itemsize is in bytes
+
+        snk = blocks.vector_sink_c(1)
+        #self.tb.connect (src, unpack0)
+        self.tb.connect (src, tagger)
+        self.tb.connect (tagger, penc)
+        self.tb.connect (penc, snk)
+        self.tb.run ()
+        result_data = snk.data ()
+        print "\n QPSK RESULT DATA",(result_data),"\n"
         
         #self.assertFloatTuplesAlmostEqual (expected_result, result_data, 6)   
 

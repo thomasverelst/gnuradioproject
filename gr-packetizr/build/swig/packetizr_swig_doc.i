@@ -14,4 +14,4 @@
 
 To avoid accidental use of raw pointers, packetizr::packet_encoder's constructor is in a private implementation class. packetizr::packet_encoder::make is the public interface for creating new instances.
 
-Params: (sps, preamble, header_constel, payload_constel, itemsize, lengthtagname)"
+Params: (preamble, constel_preamble, constel_header, constel_payload, itemsize, header_formatter, lengthtagname)"

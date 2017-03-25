@@ -23,6 +23,7 @@
 
 #include <packetizr/packet_encoder.h>
 #include <gnuradio/digital/constellation.h>
+#include <gnuradio/digital/packet_header_default.h>
 #include <gnuradio/filter/firdes.h>
 #include <gnuradio/filter/pfb_arb_resampler.h>
 
@@ -32,22 +33,19 @@ namespace gr {
     class packet_encoder_impl : public packet_encoder
     {
     private:
-      gr::digital::constellation_sptr d_header_constel;
-      gr::digital::constellation_sptr d_payload_constel;
-      unsigned int d_sps;
+      
+      gr::digital::constellation_sptr d_constel_preamble;
+      gr::digital::constellation_sptr d_constel_header;
+      gr::digital::constellation_sptr d_constel_payload;
       std::vector<int> d_preamble;
+      gr::digital::packet_header_default::sptr d_header_formatter;
       size_t d_itemsize;
-      unsigned int d_tag_preserve_head_pos;
-      unsigned int d_nfilts;
-      unsigned int d_ntaps;
-      std::vector<float> d_rrc_taps;
-      //gr::filter::kernel::pfb_arb_resampler_ccf d_rrc_filter;
 
      protected:
       int calculate_output_stream_length(const gr_vector_int &ninput_items);
 
      public:
-      packet_encoder_impl(unsigned int sps,  const std::vector<int> preamble, gr::digital::constellation_sptr  header_constel, gr::digital::constellation_sptr  payload_constel, size_t itemsize, const std::string &lengthtagname);
+      packet_encoder_impl(const std::vector<int> preamble, digital::constellation_sptr constel_preamble, digital::constellation_sptr constel_header, digital::constellation_sptr  constel_payload, size_t itemsize, const digital::packet_header_default::sptr &header_formatter, const std::string &lengthtagname);
       ~packet_encoder_impl();
 
       // Where all the action really happens

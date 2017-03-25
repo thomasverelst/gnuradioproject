@@ -6,9 +6,13 @@
     <includes local="no">gnuradio/digital/api.h</includes>
     <includes local="no">gnuradio/tagged_stream_block.h</includes>
     <includes local="no">gnuradio/digital/constellation.h</includes>
+    <includes local="no">gnuradio/digital/packet_header_default.h</includes>
     <includes local="no">gnuradio/block.h</includes>
     <includedby refid="packet__encoder__impl_8h" local="no">packet_encoder_impl.h</includedby>
     <incdepgraph>
+      <node id="15">
+        <label>gnuradio/digital/packet_header_default.h</label>
+      </node>
       <node id="14">
         <label>gnuradio/digital/constellation.h</label>
       </node>
@@ -28,11 +32,13 @@
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
       </node>
       <node id="12">
         <label>gnuradio/digital/api.h</label>
       </node>
-      <node id="15">
+      <node id="16">
         <label>gnuradio/block.h</label>
       </node>
       <node id="10">
@@ -46,14 +52,14 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="17">
+      <node id="18">
         <label>packet_encoder_impl.h</label>
         <link refid="packet__encoder__impl_8h"/>
       </node>
-      <node id="16">
+      <node id="17">
         <label>packet_encoder.h</label>
         <link refid="packet_encoder.h"/>
-        <childnode refid="17" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
     </invincdepgraph>

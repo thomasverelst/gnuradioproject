@@ -1,5 +1,6 @@
-<testsuite errors="0" failures="0" name="unittest.suite.TestSuite" tests="1" time="0.887">
-  <testcase classname="__main__.qa_packet_encoder" name="test_001_t" time="0.8866"></testcase>
+<testsuite errors="0" failures="0" name="unittest.suite.TestSuite" tests="2" time="0.004">
+  <testcase classname="__main__.qa_packet_encoder" name="test_001_t" time="0.0020"></testcase>
+  <testcase classname="__main__.qa_packet_encoder" name="test_002_t" time="0.0022"></testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

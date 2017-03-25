@@ -3027,61 +3027,64 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 #define SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_qpsk_t swig_types[15]
 #define SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_rect_t swig_types[16]
 #define SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_t swig_types[17]
-#define SWIGTYPE_p_boost__shared_ptrT_gr__flat_flowgraph_t swig_types[18]
-#define SWIGTYPE_p_boost__shared_ptrT_gr__flowgraph_t swig_types[19]
-#define SWIGTYPE_p_boost__shared_ptrT_gr__hier_block2_t swig_types[20]
-#define SWIGTYPE_p_boost__shared_ptrT_gr__io_signature_t swig_types[21]
-#define SWIGTYPE_p_boost__shared_ptrT_gr__packetizr__packet_encoder_t swig_types[22]
-#define SWIGTYPE_p_boost__shared_ptrT_gr__top_block_t swig_types[23]
-#define SWIGTYPE_p_char swig_types[24]
-#define SWIGTYPE_p_const_reference swig_types[25]
-#define SWIGTYPE_p_difference_type swig_types[26]
-#define SWIGTYPE_p_float swig_types[27]
-#define SWIGTYPE_p_gr__basic_block swig_types[28]
-#define SWIGTYPE_p_gr__block swig_types[29]
-#define SWIGTYPE_p_gr__block_gateway swig_types[30]
-#define SWIGTYPE_p_gr__digital__constellation swig_types[31]
-#define SWIGTYPE_p_gr__digital__constellation_16qam swig_types[32]
-#define SWIGTYPE_p_gr__digital__constellation_8psk swig_types[33]
-#define SWIGTYPE_p_gr__digital__constellation_8psk_natural swig_types[34]
-#define SWIGTYPE_p_gr__digital__constellation_bpsk swig_types[35]
-#define SWIGTYPE_p_gr__digital__constellation_calcdist swig_types[36]
-#define SWIGTYPE_p_gr__digital__constellation_dqpsk swig_types[37]
-#define SWIGTYPE_p_gr__digital__constellation_expl_rect swig_types[38]
-#define SWIGTYPE_p_gr__digital__constellation_psk swig_types[39]
-#define SWIGTYPE_p_gr__digital__constellation_qpsk swig_types[40]
-#define SWIGTYPE_p_gr__digital__constellation_rect swig_types[41]
-#define SWIGTYPE_p_gr__digital__constellation_sector swig_types[42]
-#define SWIGTYPE_p_gr__digital__trellis_metric_type_t swig_types[43]
-#define SWIGTYPE_p_gr__endianness_t swig_types[44]
-#define SWIGTYPE_p_gr__filter__firdes swig_types[45]
-#define SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccc swig_types[46]
-#define SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccf swig_types[47]
-#define SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_fff swig_types[48]
-#define SWIGTYPE_p_gr__hier_block2 swig_types[49]
-#define SWIGTYPE_p_gr__packetizr__packet_encoder swig_types[50]
-#define SWIGTYPE_p_gr__rt_status_t swig_types[51]
-#define SWIGTYPE_p_gr__sync_block swig_types[52]
-#define SWIGTYPE_p_gr__sync_decimator swig_types[53]
-#define SWIGTYPE_p_gr__sync_interpolator swig_types[54]
-#define SWIGTYPE_p_gr__tagged_stream_block swig_types[55]
-#define SWIGTYPE_p_gr__top_block swig_types[56]
-#define SWIGTYPE_p_int swig_types[57]
-#define SWIGTYPE_p_long_long swig_types[58]
-#define SWIGTYPE_p_reference swig_types[59]
-#define SWIGTYPE_p_short swig_types[60]
-#define SWIGTYPE_p_signed_char swig_types[61]
-#define SWIGTYPE_p_size_type swig_types[62]
-#define SWIGTYPE_p_sptr swig_types[63]
-#define SWIGTYPE_p_std__complexT_double_t swig_types[64]
-#define SWIGTYPE_p_std__complexT_float_t swig_types[65]
-#define SWIGTYPE_p_unsigned_char swig_types[66]
-#define SWIGTYPE_p_unsigned_int swig_types[67]
-#define SWIGTYPE_p_unsigned_long_long swig_types[68]
-#define SWIGTYPE_p_unsigned_short swig_types[69]
-#define SWIGTYPE_p_value_type swig_types[70]
-static swig_type_info *swig_types[72];
-static swig_module_info swig_module = {swig_types, 71, 0, 0, 0, 0};
+#define SWIGTYPE_p_boost__shared_ptrT_gr__digital__packet_header_default_t swig_types[18]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__flat_flowgraph_t swig_types[19]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__flowgraph_t swig_types[20]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__hier_block2_t swig_types[21]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__io_signature_t swig_types[22]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__packetizr__packet_encoder_t swig_types[23]
+#define SWIGTYPE_p_boost__shared_ptrT_gr__top_block_t swig_types[24]
+#define SWIGTYPE_p_char swig_types[25]
+#define SWIGTYPE_p_const_reference swig_types[26]
+#define SWIGTYPE_p_difference_type swig_types[27]
+#define SWIGTYPE_p_float swig_types[28]
+#define SWIGTYPE_p_gr__basic_block swig_types[29]
+#define SWIGTYPE_p_gr__block swig_types[30]
+#define SWIGTYPE_p_gr__block_gateway swig_types[31]
+#define SWIGTYPE_p_gr__digital__constellation swig_types[32]
+#define SWIGTYPE_p_gr__digital__constellation_16qam swig_types[33]
+#define SWIGTYPE_p_gr__digital__constellation_8psk swig_types[34]
+#define SWIGTYPE_p_gr__digital__constellation_8psk_natural swig_types[35]
+#define SWIGTYPE_p_gr__digital__constellation_bpsk swig_types[36]
+#define SWIGTYPE_p_gr__digital__constellation_calcdist swig_types[37]
+#define SWIGTYPE_p_gr__digital__constellation_dqpsk swig_types[38]
+#define SWIGTYPE_p_gr__digital__constellation_expl_rect swig_types[39]
+#define SWIGTYPE_p_gr__digital__constellation_psk swig_types[40]
+#define SWIGTYPE_p_gr__digital__constellation_qpsk swig_types[41]
+#define SWIGTYPE_p_gr__digital__constellation_rect swig_types[42]
+#define SWIGTYPE_p_gr__digital__constellation_sector swig_types[43]
+#define SWIGTYPE_p_gr__digital__packet_header_default swig_types[44]
+#define SWIGTYPE_p_gr__digital__trellis_metric_type_t swig_types[45]
+#define SWIGTYPE_p_gr__endianness_t swig_types[46]
+#define SWIGTYPE_p_gr__filter__firdes swig_types[47]
+#define SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccc swig_types[48]
+#define SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_ccf swig_types[49]
+#define SWIGTYPE_p_gr__filter__kernel__pfb_arb_resampler_fff swig_types[50]
+#define SWIGTYPE_p_gr__hier_block2 swig_types[51]
+#define SWIGTYPE_p_gr__packetizr__packet_encoder swig_types[52]
+#define SWIGTYPE_p_gr__rt_status_t swig_types[53]
+#define SWIGTYPE_p_gr__sync_block swig_types[54]
+#define SWIGTYPE_p_gr__sync_decimator swig_types[55]
+#define SWIGTYPE_p_gr__sync_interpolator swig_types[56]
+#define SWIGTYPE_p_gr__tagged_stream_block swig_types[57]
+#define SWIGTYPE_p_gr__top_block swig_types[58]
+#define SWIGTYPE_p_int swig_types[59]
+#define SWIGTYPE_p_long_long swig_types[60]
+#define SWIGTYPE_p_reference swig_types[61]
+#define SWIGTYPE_p_short swig_types[62]
+#define SWIGTYPE_p_signed_char swig_types[63]
+#define SWIGTYPE_p_size_type swig_types[64]
+#define SWIGTYPE_p_sptr swig_types[65]
+#define SWIGTYPE_p_std__complexT_double_t swig_types[66]
+#define SWIGTYPE_p_std__complexT_float_t swig_types[67]
+#define SWIGTYPE_p_std__vectorT_gr__tag_t_std__allocatorT_gr__tag_t_t_t swig_types[68]
+#define SWIGTYPE_p_unsigned_char swig_types[69]
+#define SWIGTYPE_p_unsigned_int swig_types[70]
+#define SWIGTYPE_p_unsigned_long_long swig_types[71]
+#define SWIGTYPE_p_unsigned_short swig_types[72]
+#define SWIGTYPE_p_value_type swig_types[73]
+static swig_type_info *swig_types[75];
+static swig_module_info swig_module = {swig_types, 74, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -4398,12 +4401,14 @@ SWIG_From_long_SS_long  (long long value)
 
 #include "packetizr/packet_encoder.h"
 #include "gnuradio/digital/constellation.h"
+#include "gnuradio/digital/packet_header_default.h"
 #include <gnuradio/digital/api.h>
 #include <gnuradio/tagged_stream_block.h>
 #include <gnuradio/digital/constellation.h>
 #include <gnuradio/block.h>
 #include <gnuradio/filter/firdes.h>
 #include <gnuradio/filter/pfb_arb_resampler.h>
+#include <gnuradio/digital/packet_header_default.h>
 
 
 SWIGINTERN int
@@ -4485,70 +4490,6 @@ SWIG_CanCastAsInteger(double *d, double min, double max) {
    }
   }
   return 0;
-}
-
-
-SWIGINTERN int
-SWIG_AsVal_unsigned_SS_long (PyObject *obj, unsigned long *val) 
-{
-#if PY_VERSION_HEX < 0x03000000
-  if (PyInt_Check(obj)) {
-    long v = PyInt_AsLong(obj);
-    if (v >= 0) {
-      if (val) *val = v;
-      return SWIG_OK;
-    } else {
-      return SWIG_OverflowError;
-    }
-  } else
-#endif
-  if (PyLong_Check(obj)) {
-    unsigned long v = PyLong_AsUnsignedLong(obj);
-    if (!PyErr_Occurred()) {
-      if (val) *val = v;
-      return SWIG_OK;
-    } else {
-      PyErr_Clear();
-      return SWIG_OverflowError;
-    }
-  }
-#ifdef SWIG_PYTHON_CAST_MODE
-  {
-    int dispatch = 0;
-    unsigned long v = PyLong_AsUnsignedLong(obj);
-    if (!PyErr_Occurred()) {
-      if (val) *val = v;
-      return SWIG_AddCast(SWIG_OK);
-    } else {
-      PyErr_Clear();
-    }
-    if (!dispatch) {
-      double d;
-      int res = SWIG_AddCast(SWIG_AsVal_double (obj,&d));
-      if (SWIG_IsOK(res) && SWIG_CanCastAsInteger(&d, 0, ULONG_MAX)) {
-	if (val) *val = (unsigned long)(d);
-	return res;
-      }
-    }
-  }
-#endif
-  return SWIG_TypeError;
-}
-
-
-SWIGINTERN int
-SWIG_AsVal_unsigned_SS_int (PyObject * obj, unsigned int *val)
-{
-  unsigned long v;
-  int res = SWIG_AsVal_unsigned_SS_long (obj, &v);
-  if (SWIG_IsOK(res)) {
-    if ((v > UINT_MAX)) {
-      return SWIG_OverflowError;
-    } else {
-      if (val) *val = static_cast< unsigned int >(v);
-    }
-  }  
-  return res;
 }
 
 
@@ -4745,6 +4686,54 @@ namespace swig {
       }
     
 
+SWIGINTERN int
+SWIG_AsVal_unsigned_SS_long (PyObject *obj, unsigned long *val) 
+{
+#if PY_VERSION_HEX < 0x03000000
+  if (PyInt_Check(obj)) {
+    long v = PyInt_AsLong(obj);
+    if (v >= 0) {
+      if (val) *val = v;
+      return SWIG_OK;
+    } else {
+      return SWIG_OverflowError;
+    }
+  } else
+#endif
+  if (PyLong_Check(obj)) {
+    unsigned long v = PyLong_AsUnsignedLong(obj);
+    if (!PyErr_Occurred()) {
+      if (val) *val = v;
+      return SWIG_OK;
+    } else {
+      PyErr_Clear();
+      return SWIG_OverflowError;
+    }
+  }
+#ifdef SWIG_PYTHON_CAST_MODE
+  {
+    int dispatch = 0;
+    unsigned long v = PyLong_AsUnsignedLong(obj);
+    if (!PyErr_Occurred()) {
+      if (val) *val = v;
+      return SWIG_AddCast(SWIG_OK);
+    } else {
+      PyErr_Clear();
+    }
+    if (!dispatch) {
+      double d;
+      int res = SWIG_AddCast(SWIG_AsVal_double (obj,&d));
+      if (SWIG_IsOK(res) && SWIG_CanCastAsInteger(&d, 0, ULONG_MAX)) {
+	if (val) *val = (unsigned long)(d);
+	return res;
+      }
+    }
+  }
+#endif
+  return SWIG_TypeError;
+}
+
+
 SWIGINTERNINLINE int
 SWIG_AsVal_size_t (PyObject * obj, size_t *val)
 {
@@ -4895,6 +4884,22 @@ SWIG_AsPtr_std_string (PyObject * obj, std::string **val)
     }
   }
   return SWIG_ERROR;
+}
+
+
+SWIGINTERN int
+SWIG_AsVal_unsigned_SS_int (PyObject * obj, unsigned int *val)
+{
+  unsigned long v;
+  int res = SWIG_AsVal_unsigned_SS_long (obj, &v);
+  if (SWIG_IsOK(res)) {
+    if ((v > UINT_MAX)) {
+      return SWIG_OverflowError;
+    } else {
+      if (val) *val = static_cast< unsigned int >(v);
+    }
+  }  
+  return res;
 }
 
 
@@ -5121,6 +5126,24 @@ namespace swig {
       }
     
 
+  namespace swig {
+    template <>  struct traits< gr::tag_t > {
+      typedef pointer_category category;
+      static const char* type_name() { return"gr::tag_t"; }
+    };
+  }
+
+
+      namespace swig {
+	template <>  struct traits<std::vector< gr::tag_t, std::allocator< gr::tag_t > > > {
+	  typedef pointer_category category;
+	  static const char* type_name() {
+	    return "std::vector<" "gr::tag_t" "," "std::allocator< gr::tag_t >" " >";
+	  }
+	};
+      }
+    
+
 SWIGINTERNINLINE PyObject* 
 SWIG_From_unsigned_SS_long_SS_long  (unsigned long long value)
 {
@@ -5261,46 +5284,58 @@ fail:
 
 SWIGINTERN PyObject *_wrap_packet_encoder_make(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
   PyObject *resultobj = 0;
-  unsigned int arg1 ;
-  std::vector< int,std::allocator< int > > arg2 ;
+  std::vector< int,std::allocator< int > > arg1 ;
+  SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > arg2 ;
   SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > arg3 ;
   SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > arg4 ;
   size_t arg5 ;
-  std::string *arg6 = 0 ;
-  unsigned int val1 ;
-  int ecode1 = 0 ;
+  gr::digital::packet_header_default::sptr *arg6 = 0 ;
+  std::string *arg7 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
   void *argp3 ;
   int res3 = 0 ;
   void *argp4 ;
   int res4 = 0 ;
   size_t val5 ;
   int ecode5 = 0 ;
-  int res6 = SWIG_OLDOBJ ;
+  void *argp6 = 0 ;
+  int res6 = 0 ;
+  int res7 = SWIG_OLDOBJ ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
   PyObject * obj3 = 0 ;
   PyObject * obj4 = 0 ;
   PyObject * obj5 = 0 ;
+  PyObject * obj6 = 0 ;
   char *  kwnames[] = {
-    (char *) "sps",(char *) "preamble",(char *) "header_constel",(char *) "payload_constel",(char *) "itemsize",(char *) "lengthtagname", NULL 
+    (char *) "preamble",(char *) "constel_preamble",(char *) "constel_header",(char *) "constel_payload",(char *) "itemsize",(char *) "header_formatter",(char *) "lengthtagname", NULL 
   };
   gr::packetizr::packet_encoder::sptr result;
   
-  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOO:packet_encoder_make",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5)) SWIG_fail;
-  ecode1 = SWIG_AsVal_unsigned_SS_int(obj0, &val1);
-  if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "packet_encoder_make" "', argument " "1"" of type '" "unsigned int""'");
-  } 
-  arg1 = static_cast< unsigned int >(val1);
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOOO:packet_encoder_make",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6)) SWIG_fail;
   {
     std::vector< int,std::allocator< int > > *ptr = (std::vector< int,std::allocator< int > > *)0;
-    int res = swig::asptr(obj1, &ptr);
+    int res = swig::asptr(obj0, &ptr);
     if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "packet_encoder_make" "', argument " "2"" of type '" "std::vector< int,std::allocator< int > > const""'"); 
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "packet_encoder_make" "', argument " "1"" of type '" "std::vector< int,std::allocator< int > > const""'"); 
     }
-    arg2 = *ptr;
+    arg1 = *ptr;
     if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_t,  0  | 0);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "packet_encoder_make" "', argument " "2"" of type '" "gr::digital::constellation_sptr""'"); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_make" "', argument " "2"" of type '" "gr::digital::constellation_sptr""'");
+    } else {
+      gr::digital::constellation_sptr * temp = reinterpret_cast< gr::digital::constellation_sptr * >(argp2);
+      arg2 = *temp;
+      if (SWIG_IsNewObj(res2)) delete temp;
+    }
   }
   {
     res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_t,  0  | 0);
@@ -5333,20 +5368,28 @@ SWIGINTERN PyObject *_wrap_packet_encoder_make(PyObject *SWIGUNUSEDPARM(self), P
     SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "packet_encoder_make" "', argument " "5"" of type '" "size_t""'");
   } 
   arg5 = static_cast< size_t >(val5);
+  res6 = SWIG_ConvertPtr(obj5, &argp6, SWIGTYPE_p_boost__shared_ptrT_gr__digital__packet_header_default_t,  0  | 0);
+  if (!SWIG_IsOK(res6)) {
+    SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "packet_encoder_make" "', argument " "6"" of type '" "gr::digital::packet_header_default::sptr const &""'"); 
+  }
+  if (!argp6) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_make" "', argument " "6"" of type '" "gr::digital::packet_header_default::sptr const &""'"); 
+  }
+  arg6 = reinterpret_cast< gr::digital::packet_header_default::sptr * >(argp6);
   {
     std::string *ptr = (std::string *)0;
-    res6 = SWIG_AsPtr_std_string(obj5, &ptr);
-    if (!SWIG_IsOK(res6)) {
-      SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "packet_encoder_make" "', argument " "6"" of type '" "std::string const &""'"); 
+    res7 = SWIG_AsPtr_std_string(obj6, &ptr);
+    if (!SWIG_IsOK(res7)) {
+      SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "packet_encoder_make" "', argument " "7"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_make" "', argument " "6"" of type '" "std::string const &""'"); 
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_make" "', argument " "7"" of type '" "std::string const &""'"); 
     }
-    arg6 = ptr;
+    arg7 = ptr;
   }
   {
     try {
-      result = gr::packetizr::packet_encoder::make(arg1,arg2,arg3,arg4,arg5,(std::string const &)*arg6);
+      result = gr::packetizr::packet_encoder::make(arg1,arg2,arg3,arg4,arg5,(boost::shared_ptr< gr::digital::packet_header_default > const &)*arg6,(std::string const &)*arg7);
     }
     catch(std::exception &e) {
       SWIG_exception(SWIG_RuntimeError, e.what());
@@ -5357,10 +5400,10 @@ SWIGINTERN PyObject *_wrap_packet_encoder_make(PyObject *SWIGUNUSEDPARM(self), P
     
   }
   resultobj = SWIG_NewPointerObj((new gr::packetizr::packet_encoder::sptr(static_cast< const gr::packetizr::packet_encoder::sptr& >(result))), SWIGTYPE_p_boost__shared_ptrT_gr__packetizr__packet_encoder_t, SWIG_POINTER_OWN |  0 );
-  if (SWIG_IsNewObj(res6)) delete arg6;
+  if (SWIG_IsNewObj(res7)) delete arg7;
   return resultobj;
 fail:
-  if (SWIG_IsNewObj(res6)) delete arg6;
+  if (SWIG_IsNewObj(res7)) delete arg7;
   return NULL;
 }
 
@@ -10603,6 +10646,521 @@ SWIGINTERN PyObject *pfb_arb_resampler_fff_swigregister(PyObject *SWIGUNUSEDPARM
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_new_packet_header_default(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  long arg1 ;
+  std::string const &arg2_defvalue = "packet_len" ;
+  std::string *arg2 = (std::string *) &arg2_defvalue ;
+  std::string const &arg3_defvalue = "packet_num" ;
+  std::string *arg3 = (std::string *) &arg3_defvalue ;
+  int arg4 = (int) 1 ;
+  long val1 ;
+  int ecode1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  int res3 = SWIG_OLDOBJ ;
+  int val4 ;
+  int ecode4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  char *  kwnames[] = {
+    (char *) "header_len",(char *) "len_tag_key",(char *) "num_tag_key",(char *) "bits_per_byte", NULL 
+  };
+  gr::digital::packet_header_default *result = 0 ;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"O|OOO:new_packet_header_default",kwnames,&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  ecode1 = SWIG_AsVal_long(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_packet_header_default" "', argument " "1"" of type '" "long""'");
+  } 
+  arg1 = static_cast< long >(val1);
+  if (obj1) {
+    {
+      std::string *ptr = (std::string *)0;
+      res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+      if (!SWIG_IsOK(res2)) {
+        SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_packet_header_default" "', argument " "2"" of type '" "std::string const &""'"); 
+      }
+      if (!ptr) {
+        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_packet_header_default" "', argument " "2"" of type '" "std::string const &""'"); 
+      }
+      arg2 = ptr;
+    }
+  }
+  if (obj2) {
+    {
+      std::string *ptr = (std::string *)0;
+      res3 = SWIG_AsPtr_std_string(obj2, &ptr);
+      if (!SWIG_IsOK(res3)) {
+        SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "new_packet_header_default" "', argument " "3"" of type '" "std::string const &""'"); 
+      }
+      if (!ptr) {
+        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_packet_header_default" "', argument " "3"" of type '" "std::string const &""'"); 
+      }
+      arg3 = ptr;
+    }
+  }
+  if (obj3) {
+    ecode4 = SWIG_AsVal_int(obj3, &val4);
+    if (!SWIG_IsOK(ecode4)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "new_packet_header_default" "', argument " "4"" of type '" "int""'");
+    } 
+    arg4 = static_cast< int >(val4);
+  }
+  {
+    try {
+      result = (gr::digital::packet_header_default *)new gr::digital::packet_header_default(arg1,(std::string const &)*arg2,(std::string const &)*arg3,arg4);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_gr__digital__packet_header_default, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_packet_header_default(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::packet_header_default *arg1 = (gr::digital::packet_header_default *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"delete_packet_header_default",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__packet_header_default, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_packet_header_default" "', argument " "1"" of type '" "gr::digital::packet_header_default *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::packet_header_default * >(argp1);
+  {
+    try {
+      delete arg1;
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packet_header_default_base(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::packet_header_default *arg1 = (gr::digital::packet_header_default *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  SwigValueWrapper< boost::shared_ptr< gr::digital::packet_header_default > > result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"packet_header_default_base",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__packet_header_default, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packet_header_default_base" "', argument " "1"" of type '" "gr::digital::packet_header_default *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::packet_header_default * >(argp1);
+  {
+    try {
+      result = (arg1)->base();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj((new gr::digital::packet_header_default::sptr(static_cast< const gr::digital::packet_header_default::sptr& >(result))), SWIGTYPE_p_boost__shared_ptrT_gr__digital__packet_header_default_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packet_header_default_formatter(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::packet_header_default *arg1 = (gr::digital::packet_header_default *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  SwigValueWrapper< boost::shared_ptr< gr::digital::packet_header_default > > result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"packet_header_default_formatter",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__packet_header_default, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packet_header_default_formatter" "', argument " "1"" of type '" "gr::digital::packet_header_default *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::packet_header_default * >(argp1);
+  {
+    try {
+      result = (arg1)->formatter();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj((new gr::digital::packet_header_default::sptr(static_cast< const gr::digital::packet_header_default::sptr& >(result))), SWIGTYPE_p_boost__shared_ptrT_gr__digital__packet_header_default_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packet_header_default_set_header_num(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::digital::packet_header_default *arg1 = (gr::digital::packet_header_default *) 0 ;
+  unsigned int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "header_num", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:packet_header_default_set_header_num",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__packet_header_default, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packet_header_default_set_header_num" "', argument " "1"" of type '" "gr::digital::packet_header_default *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::packet_header_default * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "packet_header_default_set_header_num" "', argument " "2"" of type '" "unsigned int""'");
+  } 
+  arg2 = static_cast< unsigned int >(val2);
+  {
+    try {
+      (arg1)->set_header_num(arg2);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packet_header_default_header_len(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::packet_header_default *arg1 = (gr::digital::packet_header_default *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  long result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"packet_header_default_header_len",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__packet_header_default, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packet_header_default_header_len" "', argument " "1"" of type '" "gr::digital::packet_header_default *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::packet_header_default * >(argp1);
+  {
+    try {
+      result = (long)(arg1)->header_len();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_long(static_cast< long >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packet_header_default_len_tag_key(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  gr::digital::packet_header_default *arg1 = (gr::digital::packet_header_default *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  pmt::pmt_t result;
+  
+  if(!PyArg_UnpackTuple(args,(char *)"packet_header_default_len_tag_key",1,1,&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__packet_header_default, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packet_header_default_len_tag_key" "', argument " "1"" of type '" "gr::digital::packet_header_default *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::packet_header_default * >(argp1);
+  {
+    try {
+      result = (arg1)->len_tag_key();
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj((new pmt::pmt_t(static_cast< const pmt::pmt_t& >(result))), SWIGTYPE_p_boost__intrusive_ptrT_pmt__pmt_base_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packet_header_default_header_formatter(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::digital::packet_header_default *arg1 = (gr::digital::packet_header_default *) 0 ;
+  long arg2 ;
+  unsigned char *arg3 = (unsigned char *) 0 ;
+  std::vector< gr::tag_t,std::allocator< gr::tag_t > > const &arg4_defvalue = std::vector< gr::tag_t >() ;
+  std::vector< gr::tag_t,std::allocator< gr::tag_t > > *arg4 = (std::vector< gr::tag_t,std::allocator< gr::tag_t > > *) &arg4_defvalue ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  long val2 ;
+  int ecode2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  int res4 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "packet_len",(char *) "out",(char *) "tags", NULL 
+  };
+  bool result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO|O:packet_header_default_header_formatter",kwnames,&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__packet_header_default, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packet_header_default_header_formatter" "', argument " "1"" of type '" "gr::digital::packet_header_default *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::packet_header_default * >(argp1);
+  ecode2 = SWIG_AsVal_long(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "packet_header_default_header_formatter" "', argument " "2"" of type '" "long""'");
+  } 
+  arg2 = static_cast< long >(val2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3,SWIGTYPE_p_unsigned_char, 0 |  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "packet_header_default_header_formatter" "', argument " "3"" of type '" "unsigned char *""'"); 
+  }
+  arg3 = reinterpret_cast< unsigned char * >(argp3);
+  if (obj3) {
+    {
+      std::vector< gr::tag_t,std::allocator< gr::tag_t > > *ptr = (std::vector< gr::tag_t,std::allocator< gr::tag_t > > *)0;
+      res4 = swig::asptr(obj3, &ptr);
+      if (!SWIG_IsOK(res4)) {
+        SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "packet_header_default_header_formatter" "', argument " "4"" of type '" "std::vector< gr::tag_t,std::allocator< gr::tag_t > > const &""'"); 
+      }
+      if (!ptr) {
+        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_header_default_header_formatter" "', argument " "4"" of type '" "std::vector< gr::tag_t,std::allocator< gr::tag_t > > const &""'"); 
+      }
+      arg4 = ptr;
+    }
+  }
+  {
+    try {
+      result = (bool)(arg1)->header_formatter(arg2,arg3,(std::vector< gr::tag_t,std::allocator< gr::tag_t > > const &)*arg4);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packet_header_default_header_parser(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  gr::digital::packet_header_default *arg1 = (gr::digital::packet_header_default *) 0 ;
+  unsigned char *arg2 = (unsigned char *) 0 ;
+  std::vector< gr::tag_t,std::allocator< gr::tag_t > > *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "header",(char *) "tags", NULL 
+  };
+  bool result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:packet_header_default_header_parser",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_gr__digital__packet_header_default, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packet_header_default_header_parser" "', argument " "1"" of type '" "gr::digital::packet_header_default *""'"); 
+  }
+  arg1 = reinterpret_cast< gr::digital::packet_header_default * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_unsigned_char, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "packet_header_default_header_parser" "', argument " "2"" of type '" "unsigned char const *""'"); 
+  }
+  arg2 = reinterpret_cast< unsigned char * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_std__vectorT_gr__tag_t_std__allocatorT_gr__tag_t_t_t,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "packet_header_default_header_parser" "', argument " "3"" of type '" "std::vector< gr::tag_t,std::allocator< gr::tag_t > > &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_header_default_header_parser" "', argument " "3"" of type '" "std::vector< gr::tag_t,std::allocator< gr::tag_t > > &""'"); 
+  }
+  arg3 = reinterpret_cast< std::vector< gr::tag_t,std::allocator< gr::tag_t > > * >(argp3);
+  {
+    try {
+      result = (bool)(arg1)->header_parser((unsigned char const *)arg2,*arg3);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_packet_header_default_make(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  long arg1 ;
+  std::string const &arg2_defvalue = "packet_len" ;
+  std::string *arg2 = (std::string *) &arg2_defvalue ;
+  std::string const &arg3_defvalue = "packet_num" ;
+  std::string *arg3 = (std::string *) &arg3_defvalue ;
+  int arg4 = (int) 1 ;
+  long val1 ;
+  int ecode1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  int res3 = SWIG_OLDOBJ ;
+  int val4 ;
+  int ecode4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  char *  kwnames[] = {
+    (char *) "header_len",(char *) "len_tag_key",(char *) "num_tag_key",(char *) "bits_per_byte", NULL 
+  };
+  SwigValueWrapper< boost::shared_ptr< gr::digital::packet_header_default > > result;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"O|OOO:packet_header_default_make",kwnames,&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  ecode1 = SWIG_AsVal_long(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "packet_header_default_make" "', argument " "1"" of type '" "long""'");
+  } 
+  arg1 = static_cast< long >(val1);
+  if (obj1) {
+    {
+      std::string *ptr = (std::string *)0;
+      res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+      if (!SWIG_IsOK(res2)) {
+        SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "packet_header_default_make" "', argument " "2"" of type '" "std::string const &""'"); 
+      }
+      if (!ptr) {
+        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_header_default_make" "', argument " "2"" of type '" "std::string const &""'"); 
+      }
+      arg2 = ptr;
+    }
+  }
+  if (obj2) {
+    {
+      std::string *ptr = (std::string *)0;
+      res3 = SWIG_AsPtr_std_string(obj2, &ptr);
+      if (!SWIG_IsOK(res3)) {
+        SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "packet_header_default_make" "', argument " "3"" of type '" "std::string const &""'"); 
+      }
+      if (!ptr) {
+        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_header_default_make" "', argument " "3"" of type '" "std::string const &""'"); 
+      }
+      arg3 = ptr;
+    }
+  }
+  if (obj3) {
+    ecode4 = SWIG_AsVal_int(obj3, &val4);
+    if (!SWIG_IsOK(ecode4)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "packet_header_default_make" "', argument " "4"" of type '" "int""'");
+    } 
+    arg4 = static_cast< int >(val4);
+  }
+  {
+    try {
+      result = gr::digital::packet_header_default::make(arg1,(std::string const &)*arg2,(std::string const &)*arg3,arg4);
+    }
+    catch(std::exception &e) {
+      SWIG_exception(SWIG_RuntimeError, e.what());
+    }
+    catch(...) {
+      SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+    }
+    
+  }
+  resultobj = SWIG_NewPointerObj((new gr::digital::packet_header_default::sptr(static_cast< const gr::digital::packet_header_default::sptr& >(result))), SWIGTYPE_p_boost__shared_ptrT_gr__digital__packet_header_default_t, SWIG_POINTER_OWN |  0 );
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *packet_header_default_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_gr__digital__packet_header_default, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
 SWIGINTERN PyObject *_wrap_new_packet_encoder_sptr__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   boost::shared_ptr< gr::packetizr::packet_encoder > *result = 0 ;
@@ -10762,23 +11320,26 @@ fail:
 SWIGINTERN PyObject *_wrap_packet_encoder_sptr_make(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
   PyObject *resultobj = 0;
   boost::shared_ptr< gr::packetizr::packet_encoder > *arg1 = (boost::shared_ptr< gr::packetizr::packet_encoder > *) 0 ;
-  unsigned int arg2 ;
-  std::vector< int,std::allocator< int > > arg3 ;
+  std::vector< int,std::allocator< int > > arg2 ;
+  SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > arg3 ;
   SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > arg4 ;
   SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > arg5 ;
   size_t arg6 ;
-  std::string *arg7 = 0 ;
+  gr::digital::packet_header_default::sptr *arg7 = 0 ;
+  std::string *arg8 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  unsigned int val2 ;
-  int ecode2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
   void *argp4 ;
   int res4 = 0 ;
   void *argp5 ;
   int res5 = 0 ;
   size_t val6 ;
   int ecode6 = 0 ;
-  int res7 = SWIG_OLDOBJ ;
+  void *argp7 = 0 ;
+  int res7 = 0 ;
+  int res8 = SWIG_OLDOBJ ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
@@ -10786,30 +11347,39 @@ SWIGINTERN PyObject *_wrap_packet_encoder_sptr_make(PyObject *SWIGUNUSEDPARM(sel
   PyObject * obj4 = 0 ;
   PyObject * obj5 = 0 ;
   PyObject * obj6 = 0 ;
+  PyObject * obj7 = 0 ;
   char *  kwnames[] = {
-    (char *) "self",(char *) "sps",(char *) "preamble",(char *) "header_constel",(char *) "payload_constel",(char *) "itemsize",(char *) "lengthtagname", NULL 
+    (char *) "self",(char *) "preamble",(char *) "constel_preamble",(char *) "constel_header",(char *) "constel_payload",(char *) "itemsize",(char *) "header_formatter",(char *) "lengthtagname", NULL 
   };
   gr::packetizr::packet_encoder::sptr result;
   
-  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOOO:packet_encoder_sptr_make",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6)) SWIG_fail;
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOOOO:packet_encoder_sptr_make",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_boost__shared_ptrT_gr__packetizr__packet_encoder_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packet_encoder_sptr_make" "', argument " "1"" of type '" "boost::shared_ptr< gr::packetizr::packet_encoder > *""'"); 
   }
   arg1 = reinterpret_cast< boost::shared_ptr< gr::packetizr::packet_encoder > * >(argp1);
-  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "packet_encoder_sptr_make" "', argument " "2"" of type '" "unsigned int""'");
-  } 
-  arg2 = static_cast< unsigned int >(val2);
   {
     std::vector< int,std::allocator< int > > *ptr = (std::vector< int,std::allocator< int > > *)0;
-    int res = swig::asptr(obj2, &ptr);
+    int res = swig::asptr(obj1, &ptr);
     if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "packet_encoder_sptr_make" "', argument " "3"" of type '" "std::vector< int,std::allocator< int > > const""'"); 
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "packet_encoder_sptr_make" "', argument " "2"" of type '" "std::vector< int,std::allocator< int > > const""'"); 
     }
-    arg3 = *ptr;
+    arg2 = *ptr;
     if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  {
+    res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_t,  0  | 0);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "packet_encoder_sptr_make" "', argument " "3"" of type '" "gr::digital::constellation_sptr""'"); 
+    }  
+    if (!argp3) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_sptr_make" "', argument " "3"" of type '" "gr::digital::constellation_sptr""'");
+    } else {
+      gr::digital::constellation_sptr * temp = reinterpret_cast< gr::digital::constellation_sptr * >(argp3);
+      arg3 = *temp;
+      if (SWIG_IsNewObj(res3)) delete temp;
+    }
   }
   {
     res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_t,  0  | 0);
@@ -10842,20 +11412,28 @@ SWIGINTERN PyObject *_wrap_packet_encoder_sptr_make(PyObject *SWIGUNUSEDPARM(sel
     SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "packet_encoder_sptr_make" "', argument " "6"" of type '" "size_t""'");
   } 
   arg6 = static_cast< size_t >(val6);
+  res7 = SWIG_ConvertPtr(obj6, &argp7, SWIGTYPE_p_boost__shared_ptrT_gr__digital__packet_header_default_t,  0  | 0);
+  if (!SWIG_IsOK(res7)) {
+    SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "packet_encoder_sptr_make" "', argument " "7"" of type '" "gr::digital::packet_header_default::sptr const &""'"); 
+  }
+  if (!argp7) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_sptr_make" "', argument " "7"" of type '" "gr::digital::packet_header_default::sptr const &""'"); 
+  }
+  arg7 = reinterpret_cast< gr::digital::packet_header_default::sptr * >(argp7);
   {
     std::string *ptr = (std::string *)0;
-    res7 = SWIG_AsPtr_std_string(obj6, &ptr);
-    if (!SWIG_IsOK(res7)) {
-      SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "packet_encoder_sptr_make" "', argument " "7"" of type '" "std::string const &""'"); 
+    res8 = SWIG_AsPtr_std_string(obj7, &ptr);
+    if (!SWIG_IsOK(res8)) {
+      SWIG_exception_fail(SWIG_ArgError(res8), "in method '" "packet_encoder_sptr_make" "', argument " "8"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_sptr_make" "', argument " "7"" of type '" "std::string const &""'"); 
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_sptr_make" "', argument " "8"" of type '" "std::string const &""'"); 
     }
-    arg7 = ptr;
+    arg8 = ptr;
   }
   {
     try {
-      result = (*arg1)->make(arg2,arg3,arg4,arg5,arg6,(std::string const &)*arg7);
+      result = (*arg1)->make(arg2,arg3,arg4,arg5,arg6,(gr::digital::packet_header_default::sptr const &)*arg7,(std::string const &)*arg8);
     }
     catch(std::exception &e) {
       SWIG_exception(SWIG_RuntimeError, e.what());
@@ -10866,10 +11444,10 @@ SWIGINTERN PyObject *_wrap_packet_encoder_sptr_make(PyObject *SWIGUNUSEDPARM(sel
     
   }
   resultobj = SWIG_NewPointerObj((new gr::packetizr::packet_encoder::sptr(static_cast< const gr::packetizr::packet_encoder::sptr& >(result))), SWIGTYPE_p_boost__shared_ptrT_gr__packetizr__packet_encoder_t, SWIG_POINTER_OWN |  0 );
-  if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res8)) delete arg8;
   return resultobj;
 fail:
-  if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res8)) delete arg8;
   return NULL;
 }
 
@@ -13779,13 +14357,13 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"high_res_timer_tps", _wrap_high_res_timer_tps, METH_VARARGS, (char *)"high_res_timer_tps() -> gr::high_res_timer_type"},
 	 { (char *)"high_res_timer_epoch", _wrap_high_res_timer_epoch, METH_VARARGS, (char *)"high_res_timer_epoch() -> gr::high_res_timer_type"},
 	 { (char *)"packet_encoder_make", (PyCFunction) _wrap_packet_encoder_make, METH_VARARGS | METH_KEYWORDS, (char *)"\n"
-		"packet_encoder_make(unsigned int sps, std::vector< int,std::allocator< int > > const preamble, gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr\n"
+		"packet_encoder_make(std::vector< int,std::allocator< int > > const preamble, gr::digital::constellation_sptr constel_preamble, gr::digital::constellation_sptr constel_header, gr::digital::constellation_sptr constel_payload, size_t itemsize, gr::digital::packet_header_default::sptr const & header_formatter, std::string const & lengthtagname) -> packet_encoder_sptr\n"
 		"\n"
 		"Return a shared_ptr to a new instance of packetizr::packet_encoder.\n"
 		"\n"
 		"To avoid accidental use of raw pointers, packetizr::packet_encoder's constructor is in a private implementation class. packetizr::packet_encoder::make is the public interface for creating new instances.\n"
 		"\n"
-		"Params: (sps, preamble, header_constel, payload_constel, itemsize, lengthtagname)\n"
+		"Params: (preamble, constel_preamble, constel_header, constel_payload, itemsize, header_formatter, lengthtagname)\n"
 		""},
 	 { (char *)"delete_packet_encoder", _wrap_delete_packet_encoder, METH_VARARGS, (char *)"delete_packet_encoder(packet_encoder self)"},
 	 { (char *)"packet_encoder_swigregister", packet_encoder_swigregister, METH_VARARGS, NULL},
@@ -13914,6 +14492,17 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"pfb_arb_resampler_fff_phase_offset", (PyCFunction) _wrap_pfb_arb_resampler_fff_phase_offset, METH_VARARGS | METH_KEYWORDS, (char *)"pfb_arb_resampler_fff_phase_offset(pfb_arb_resampler_fff self, float freq, float fs) -> float"},
 	 { (char *)"pfb_arb_resampler_fff_filter", (PyCFunction) _wrap_pfb_arb_resampler_fff_filter, METH_VARARGS | METH_KEYWORDS, (char *)"pfb_arb_resampler_fff_filter(pfb_arb_resampler_fff self, float * output, float * input, int n_to_read, int & n_read) -> int"},
 	 { (char *)"pfb_arb_resampler_fff_swigregister", pfb_arb_resampler_fff_swigregister, METH_VARARGS, NULL},
+	 { (char *)"new_packet_header_default", (PyCFunction) _wrap_new_packet_header_default, METH_VARARGS | METH_KEYWORDS, (char *)"new_packet_header_default(long header_len, std::string const & len_tag_key, std::string const & num_tag_key, int bits_per_byte=1) -> packet_header_default"},
+	 { (char *)"delete_packet_header_default", _wrap_delete_packet_header_default, METH_VARARGS, (char *)"delete_packet_header_default(packet_header_default self)"},
+	 { (char *)"packet_header_default_base", _wrap_packet_header_default_base, METH_VARARGS, (char *)"packet_header_default_base(packet_header_default self) -> gr::digital::packet_header_default::sptr"},
+	 { (char *)"packet_header_default_formatter", _wrap_packet_header_default_formatter, METH_VARARGS, (char *)"packet_header_default_formatter(packet_header_default self) -> gr::digital::packet_header_default::sptr"},
+	 { (char *)"packet_header_default_set_header_num", (PyCFunction) _wrap_packet_header_default_set_header_num, METH_VARARGS | METH_KEYWORDS, (char *)"packet_header_default_set_header_num(packet_header_default self, unsigned int header_num)"},
+	 { (char *)"packet_header_default_header_len", _wrap_packet_header_default_header_len, METH_VARARGS, (char *)"packet_header_default_header_len(packet_header_default self) -> long"},
+	 { (char *)"packet_header_default_len_tag_key", _wrap_packet_header_default_len_tag_key, METH_VARARGS, (char *)"packet_header_default_len_tag_key(packet_header_default self) -> swig_int_ptr"},
+	 { (char *)"packet_header_default_header_formatter", (PyCFunction) _wrap_packet_header_default_header_formatter, METH_VARARGS | METH_KEYWORDS, (char *)"packet_header_default_header_formatter(packet_header_default self, long packet_len, unsigned char * out, tags_vector_t tags) -> bool"},
+	 { (char *)"packet_header_default_header_parser", (PyCFunction) _wrap_packet_header_default_header_parser, METH_VARARGS | METH_KEYWORDS, (char *)"packet_header_default_header_parser(packet_header_default self, unsigned char const * header, tags_vector_t tags) -> bool"},
+	 { (char *)"packet_header_default_make", (PyCFunction) _wrap_packet_header_default_make, METH_VARARGS | METH_KEYWORDS, (char *)"packet_header_default_make(long header_len, std::string const & len_tag_key, std::string const & num_tag_key, int bits_per_byte=1) -> gr::digital::packet_header_default::sptr"},
+	 { (char *)"packet_header_default_swigregister", packet_header_default_swigregister, METH_VARARGS, NULL},
 	 { (char *)"new_packet_encoder_sptr", _wrap_new_packet_encoder_sptr, METH_VARARGS, (char *)"\n"
 		"packet_encoder_sptr()\n"
 		"new_packet_encoder_sptr(packet_encoder p) -> packet_encoder_sptr\n"
@@ -13921,13 +14510,13 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"packet_encoder_sptr___deref__", _wrap_packet_encoder_sptr___deref__, METH_VARARGS, (char *)"packet_encoder_sptr___deref__(packet_encoder_sptr self) -> packet_encoder"},
 	 { (char *)"delete_packet_encoder_sptr", _wrap_delete_packet_encoder_sptr, METH_VARARGS, (char *)"delete_packet_encoder_sptr(packet_encoder_sptr self)"},
 	 { (char *)"packet_encoder_sptr_make", (PyCFunction) _wrap_packet_encoder_sptr_make, METH_VARARGS | METH_KEYWORDS, (char *)"\n"
-		"packet_encoder_sptr_make(packet_encoder_sptr self, unsigned int sps, std::vector< int,std::allocator< int > > const preamble, gr::digital::constellation_sptr header_constel, gr::digital::constellation_sptr payload_constel, size_t itemsize, std::string const & lengthtagname) -> packet_encoder_sptr\n"
+		"packet_encoder_sptr_make(packet_encoder_sptr self, std::vector< int,std::allocator< int > > const preamble, gr::digital::constellation_sptr constel_preamble, gr::digital::constellation_sptr constel_header, gr::digital::constellation_sptr constel_payload, size_t itemsize, gr::digital::packet_header_default::sptr const & header_formatter, std::string const & lengthtagname) -> packet_encoder_sptr\n"
 		"\n"
 		"Return a shared_ptr to a new instance of packetizr::packet_encoder.\n"
 		"\n"
 		"To avoid accidental use of raw pointers, packetizr::packet_encoder's constructor is in a private implementation class. packetizr::packet_encoder::make is the public interface for creating new instances.\n"
 		"\n"
-		"Params: (sps, preamble, header_constel, payload_constel, itemsize, lengthtagname)\n"
+		"Params: (preamble, constel_preamble, constel_header, constel_payload, itemsize, header_formatter, lengthtagname)\n"
 		""},
 	 { (char *)"packet_encoder_sptr_history", _wrap_packet_encoder_sptr_history, METH_VARARGS, (char *)"packet_encoder_sptr_history(packet_encoder_sptr self) -> unsigned int"},
 	 { (char *)"packet_encoder_sptr_declare_sample_delay", _wrap_packet_encoder_sptr_declare_sample_delay, METH_VARARGS, (char *)"\n"
@@ -14129,6 +14718,7 @@ static swig_type_info _swigt__p_boost__shared_ptrT_gr__digital__constellation_ps
 static swig_type_info _swigt__p_boost__shared_ptrT_gr__digital__constellation_qpsk_t = {"_p_boost__shared_ptrT_gr__digital__constellation_qpsk_t", "gr::digital::constellation_qpsk::sptr *|boost::shared_ptr< gr::digital::constellation_qpsk > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_boost__shared_ptrT_gr__digital__constellation_rect_t = {"_p_boost__shared_ptrT_gr__digital__constellation_rect_t", "gr::digital::constellation_rect::sptr *|boost::shared_ptr< gr::digital::constellation_rect > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_boost__shared_ptrT_gr__digital__constellation_t = {"_p_boost__shared_ptrT_gr__digital__constellation_t", "boost::shared_ptr< gr::digital::constellation > *|gr::digital::constellation_sptr *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_boost__shared_ptrT_gr__digital__packet_header_default_t = {"_p_boost__shared_ptrT_gr__digital__packet_header_default_t", "gr::digital::packet_header_default::sptr *|boost::shared_ptr< gr::digital::packet_header_default > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_boost__shared_ptrT_gr__flat_flowgraph_t = {"_p_boost__shared_ptrT_gr__flat_flowgraph_t", "boost::shared_ptr< gr::flat_flowgraph > *|gr::flat_flowgraph_sptr *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_boost__shared_ptrT_gr__flowgraph_t = {"_p_boost__shared_ptrT_gr__flowgraph_t", "boost::shared_ptr< gr::flowgraph > *|gr::flowgraph_sptr *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_boost__shared_ptrT_gr__hier_block2_t = {"_p_boost__shared_ptrT_gr__hier_block2_t", "boost::shared_ptr< gr::hier_block2 > *|gr::hier_block2_sptr *", 0, 0, (void*)0, 0};
@@ -14159,6 +14749,7 @@ static swig_type_info _swigt__p_gr__digital__constellation_psk = {"_p_gr__digita
 static swig_type_info _swigt__p_gr__digital__constellation_qpsk = {"_p_gr__digital__constellation_qpsk", "gr::digital::constellation_qpsk *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_gr__digital__constellation_rect = {"_p_gr__digital__constellation_rect", "gr::digital::constellation_rect *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_gr__digital__constellation_sector = {"_p_gr__digital__constellation_sector", "gr::digital::constellation_sector *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_gr__digital__packet_header_default = {"_p_gr__digital__packet_header_default", "gr::digital::packet_header_default *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_gr__digital__trellis_metric_type_t = {"_p_gr__digital__trellis_metric_type_t", "gr::digital::trellis_metric_type_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_gr__endianness_t = {"_p_gr__endianness_t", "enum gr::endianness_t *|gr::endianness_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_gr__filter__firdes = {"_p_gr__filter__firdes", "gr::filter::firdes *", 0, 0, (void*)0, 0};
@@ -14177,6 +14768,7 @@ static swig_type_info _swigt__p_size_type = {"_p_size_type", "size_type *", 0, 0
 static swig_type_info _swigt__p_sptr = {"_p_sptr", "sptr *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__complexT_double_t = {"_p_std__complexT_double_t", "gr_complexd *|std::complex< double > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__complexT_float_t = {"_p_std__complexT_float_t", "std::complex< float > *|gr_complex *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vectorT_gr__tag_t_std__allocatorT_gr__tag_t_t_t = {"_p_std__vectorT_gr__tag_t_std__allocatorT_gr__tag_t_t_t", "std::vector< gr::tag_t,std::allocator< gr::tag_t > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_char = {"_p_unsigned_char", "unsigned char *|uint_least8_t *|uint_fast8_t *|uint8_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_int = {"_p_unsigned_int", "uintptr_t *|uint_least32_t *|uint_fast32_t *|uint32_t *|unsigned int *|uint_fast16_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_long_long = {"_p_unsigned_long_long", "uint_least64_t *|uint_fast64_t *|uint64_t *|unsigned long long *|uintmax_t *", 0, 0, (void*)0, 0};
@@ -14202,6 +14794,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_boost__shared_ptrT_gr__digital__constellation_qpsk_t,
   &_swigt__p_boost__shared_ptrT_gr__digital__constellation_rect_t,
   &_swigt__p_boost__shared_ptrT_gr__digital__constellation_t,
+  &_swigt__p_boost__shared_ptrT_gr__digital__packet_header_default_t,
   &_swigt__p_boost__shared_ptrT_gr__flat_flowgraph_t,
   &_swigt__p_boost__shared_ptrT_gr__flowgraph_t,
   &_swigt__p_boost__shared_ptrT_gr__hier_block2_t,
@@ -14227,6 +14820,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_gr__digital__constellation_qpsk,
   &_swigt__p_gr__digital__constellation_rect,
   &_swigt__p_gr__digital__constellation_sector,
+  &_swigt__p_gr__digital__packet_header_default,
   &_swigt__p_gr__digital__trellis_metric_type_t,
   &_swigt__p_gr__endianness_t,
   &_swigt__p_gr__filter__firdes,
@@ -14250,6 +14844,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_sptr,
   &_swigt__p_std__complexT_double_t,
   &_swigt__p_std__complexT_float_t,
+  &_swigt__p_std__vectorT_gr__tag_t_std__allocatorT_gr__tag_t_t_t,
   &_swigt__p_unsigned_char,
   &_swigt__p_unsigned_int,
   &_swigt__p_unsigned_long_long,
@@ -14275,6 +14870,7 @@ static swig_cast_info _swigc__p_boost__shared_ptrT_gr__digital__constellation_ps
 static swig_cast_info _swigc__p_boost__shared_ptrT_gr__digital__constellation_qpsk_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__digital__constellation_qpsk_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_boost__shared_ptrT_gr__digital__constellation_rect_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__digital__constellation_rect_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_boost__shared_ptrT_gr__digital__constellation_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__digital__constellation_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_boost__shared_ptrT_gr__digital__packet_header_default_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__digital__packet_header_default_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_boost__shared_ptrT_gr__flat_flowgraph_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__flat_flowgraph_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_boost__shared_ptrT_gr__flowgraph_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__flowgraph_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_boost__shared_ptrT_gr__hier_block2_t[] = {  {&_swigt__p_boost__shared_ptrT_gr__hier_block2_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -14305,6 +14901,7 @@ static swig_cast_info _swigc__p_gr__digital__constellation_psk[] = {  {&_swigt__
 static swig_cast_info _swigc__p_gr__digital__constellation_qpsk[] = {  {&_swigt__p_gr__digital__constellation_qpsk, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_gr__digital__constellation_rect[] = {  {&_swigt__p_gr__digital__constellation_expl_rect, _p_gr__digital__constellation_expl_rectTo_p_gr__digital__constellation_rect, 0, 0},  {&_swigt__p_gr__digital__constellation_rect, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_gr__digital__constellation_sector[] = {  {&_swigt__p_gr__digital__constellation_sector, 0, 0, 0},  {&_swigt__p_gr__digital__constellation_expl_rect, _p_gr__digital__constellation_expl_rectTo_p_gr__digital__constellation_sector, 0, 0},  {&_swigt__p_gr__digital__constellation_rect, _p_gr__digital__constellation_rectTo_p_gr__digital__constellation_sector, 0, 0},  {&_swigt__p_gr__digital__constellation_psk, _p_gr__digital__constellation_pskTo_p_gr__digital__constellation_sector, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_gr__digital__packet_header_default[] = {  {&_swigt__p_gr__digital__packet_header_default, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_gr__digital__trellis_metric_type_t[] = {  {&_swigt__p_gr__digital__trellis_metric_type_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_gr__endianness_t[] = {  {&_swigt__p_gr__endianness_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_gr__filter__firdes[] = {  {&_swigt__p_gr__filter__firdes, 0, 0, 0},{0, 0, 0, 0}};
@@ -14323,6 +14920,7 @@ static swig_cast_info _swigc__p_size_type[] = {  {&_swigt__p_size_type, 0, 0, 0}
 static swig_cast_info _swigc__p_sptr[] = {  {&_swigt__p_sptr, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__complexT_double_t[] = {  {&_swigt__p_std__complexT_double_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__complexT_float_t[] = {  {&_swigt__p_std__complexT_float_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vectorT_gr__tag_t_std__allocatorT_gr__tag_t_t_t[] = {  {&_swigt__p_std__vectorT_gr__tag_t_std__allocatorT_gr__tag_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_char[] = {  {&_swigt__p_unsigned_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_int[] = {  {&_swigt__p_unsigned_int, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_long_long[] = {  {&_swigt__p_unsigned_long_long, 0, 0, 0},{0, 0, 0, 0}};
@@ -14348,6 +14946,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_boost__shared_ptrT_gr__digital__constellation_qpsk_t,
   _swigc__p_boost__shared_ptrT_gr__digital__constellation_rect_t,
   _swigc__p_boost__shared_ptrT_gr__digital__constellation_t,
+  _swigc__p_boost__shared_ptrT_gr__digital__packet_header_default_t,
   _swigc__p_boost__shared_ptrT_gr__flat_flowgraph_t,
   _swigc__p_boost__shared_ptrT_gr__flowgraph_t,
   _swigc__p_boost__shared_ptrT_gr__hier_block2_t,
@@ -14373,6 +14972,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_gr__digital__constellation_qpsk,
   _swigc__p_gr__digital__constellation_rect,
   _swigc__p_gr__digital__constellation_sector,
+  _swigc__p_gr__digital__packet_header_default,
   _swigc__p_gr__digital__trellis_metric_type_t,
   _swigc__p_gr__endianness_t,
   _swigc__p_gr__filter__firdes,
@@ -14396,6 +14996,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_sptr,
   _swigc__p_std__complexT_double_t,
   _swigc__p_std__complexT_float_t,
+  _swigc__p_std__vectorT_gr__tag_t_std__allocatorT_gr__tag_t_t_t,
   _swigc__p_unsigned_char,
   _swigc__p_unsigned_int,
   _swigc__p_unsigned_long_long,

@@ -26,6 +26,7 @@
 #include <gnuradio/digital/api.h>
 #include <gnuradio/tagged_stream_block.h>
 #include <gnuradio/digital/constellation.h>
+#include <gnuradio/digital/packet_header_default.h>
 #include <gnuradio/block.h>
 
 namespace gr {
@@ -49,7 +50,9 @@ namespace gr {
        * class. packetizr::packet_encoder::make is the public interface for
        * creating new instances.
        */
-      static sptr make(unsigned int sps,  const std::vector<int> preamble, gr::digital::constellation_sptr  header_constel, gr::digital::constellation_sptr  payload_constel, size_t itemsize, const std::string &lengthtagname);
+      static sptr make(const std::vector<int> preamble, gr::digital::constellation_sptr constel_preamble, gr::digital::constellation_sptr constel_header, gr::digital::constellation_sptr  constel_payload, size_t itemsize, const gr::digital::packet_header_default::sptr &header_formatter, const std::string &lengthtagname);
+
+
     };
 
   } // namespace packetizr
