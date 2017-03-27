@@ -31,7 +31,7 @@ endif()
 GR_PYTHON_INSTALL(
     FILES
     __init__.py
-    DESTINATION ${GR_PYTHON_DIR}/packetizr
+    packet_decoder.py DESTINATION ${GR_PYTHON_DIR}/packetizr
 )
 
 ########################################################################
@@ -42,3 +42,5 @@ include(GrTest)
 set(GR_TEST_TARGET_DEPS gnuradio-packetizr)
 set(GR_TEST_PYTHON_DIRS ${CMAKE_BINARY_DIR}/swig)
 GR_ADD_TEST(qa_packet_encoder ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_packet_encoder.py)
+GR_ADD_TEST(qa_packet_decoder ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_packet_decoder.py)
+GR_ADD_TEST(qa_tagged_stream_demux_xx ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_tagged_stream_demux_xx.py)

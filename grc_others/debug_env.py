@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Debug Env
-# Generated: Sat Mar 25 19:26:48 2017
+# Generated: Sat Mar 25 23:33:11 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -57,6 +57,8 @@ class debug_env(gr.top_block, Qt.QWidget):
         # Variables
         ##################################################
         self.samp_rate = samp_rate = 2
+        self.constel_payload = constel_payload = digital.constellation_bpsk()
+        self.constel_header = constel_header = digital.constellation_bpsk()
 
         ##################################################
         # Blocks
@@ -131,8 +133,20 @@ class debug_env(gr.top_block, Qt.QWidget):
 
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
-        self.qtgui_time_sink_x_0.set_samp_rate(self.samp_rate)
         self.blocks_throttle_0.set_sample_rate(self.samp_rate)
+        self.qtgui_time_sink_x_0.set_samp_rate(self.samp_rate)
+
+    def get_constel_payload(self):
+        return self.constel_payload
+
+    def set_constel_payload(self, constel_payload):
+        self.constel_payload = constel_payload
+
+    def get_constel_header(self):
+        return self.constel_header
+
+    def set_constel_header(self, constel_header):
+        self.constel_header = constel_header
 
 
 def main(top_block_cls=debug_env, options=None):

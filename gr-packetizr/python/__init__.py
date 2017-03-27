@@ -31,4 +31,5 @@ except ImportError:
 	pass
 
 # import any pure python here
+from packet_decoder import packet_decoder
 #

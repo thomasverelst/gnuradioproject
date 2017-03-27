@@ -22,5 +22,6 @@
 ########################################################################
 install(FILES
     api.h
-    packet_encoder.h DESTINATION include/packetizr
+    packet_encoder.h
+    tagged_stream_demux_xx.h DESTINATION include/packetizr
 )

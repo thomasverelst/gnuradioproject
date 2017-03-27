@@ -20,6 +20,7 @@
 #include <gnuradio/filter/firdes.h>
 #include <gnuradio/filter/pfb_arb_resampler.h>
 #include <gnuradio/digital/packet_header_default.h>
+#include "packetizr/tagged_stream_demux_xx.h"
 %}
 
 
@@ -29,3 +30,5 @@
 %include "gnuradio/filter/pfb_arb_resampler.h"
 %include "gnuradio/digital/packet_header_default.h"
 GR_SWIG_BLOCK_MAGIC2(packetizr, packet_encoder);
+%include "packetizr/tagged_stream_demux_xx.h"
+GR_SWIG_BLOCK_MAGIC2(packetizr, tagged_stream_demux_xx);

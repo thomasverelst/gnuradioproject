@@ -124,17 +124,17 @@ class packet_encoder(object):
         raise AttributeError("No constructor defined")
     __repr__ = _swig_repr
 
-    def make(preamble, constel_preamble, constel_header, constel_payload, itemsize, header_formatter, lengthtagname):
+    def make(preamble, constel_header, constel_payload, header_formatter, lengthtagname, itemsize):
         """
-        make(std::vector< int,std::allocator< int > > const preamble, gr::digital::constellation_sptr constel_preamble, gr::digital::constellation_sptr constel_header, gr::digital::constellation_sptr constel_payload, size_t itemsize, gr::digital::packet_header_default::sptr const & header_formatter, std::string const & lengthtagname) -> packet_encoder_sptr
+        make(std::vector< int,std::allocator< int > > const preamble, gr::digital::constellation_sptr constel_header, gr::digital::constellation_sptr constel_payload, gr::digital::packet_header_default::sptr const & header_formatter, std::string const & lengthtagname, size_t itemsize) -> packet_encoder_sptr
 
         Return a shared_ptr to a new instance of packetizr::packet_encoder.
 
         To avoid accidental use of raw pointers, packetizr::packet_encoder's constructor is in a private implementation class. packetizr::packet_encoder::make is the public interface for creating new instances.
 
-        Params: (preamble, constel_preamble, constel_header, constel_payload, itemsize, header_formatter, lengthtagname)
+        Params: (preamble, constel_header, constel_payload, header_formatter, lengthtagname, itemsize)
         """
-        return _packetizr_swig.packet_encoder_make(preamble, constel_preamble, constel_header, constel_payload, itemsize, header_formatter, lengthtagname)
+        return _packetizr_swig.packet_encoder_make(preamble, constel_header, constel_payload, header_formatter, lengthtagname, itemsize)
 
     make = staticmethod(make)
     __swig_destroy__ = _packetizr_swig.delete_packet_encoder
@@ -142,17 +142,17 @@ class packet_encoder(object):
 packet_encoder_swigregister = _packetizr_swig.packet_encoder_swigregister
 packet_encoder_swigregister(packet_encoder)
 
-def packet_encoder_make(preamble, constel_preamble, constel_header, constel_payload, itemsize, header_formatter, lengthtagname):
+def packet_encoder_make(preamble, constel_header, constel_payload, header_formatter, lengthtagname, itemsize):
     """
-    packet_encoder_make(std::vector< int,std::allocator< int > > const preamble, gr::digital::constellation_sptr constel_preamble, gr::digital::constellation_sptr constel_header, gr::digital::constellation_sptr constel_payload, size_t itemsize, gr::digital::packet_header_default::sptr const & header_formatter, std::string const & lengthtagname) -> packet_encoder_sptr
+    packet_encoder_make(std::vector< int,std::allocator< int > > const preamble, gr::digital::constellation_sptr constel_header, gr::digital::constellation_sptr constel_payload, gr::digital::packet_header_default::sptr const & header_formatter, std::string const & lengthtagname, size_t itemsize) -> packet_encoder_sptr
 
     Return a shared_ptr to a new instance of packetizr::packet_encoder.
 
     To avoid accidental use of raw pointers, packetizr::packet_encoder's constructor is in a private implementation class. packetizr::packet_encoder::make is the public interface for creating new instances.
 
-    Params: (preamble, constel_preamble, constel_header, constel_payload, itemsize, header_formatter, lengthtagname)
+    Params: (preamble, constel_header, constel_payload, header_formatter, lengthtagname, itemsize)
     """
-    return _packetizr_swig.packet_encoder_make(preamble, constel_preamble, constel_header, constel_payload, itemsize, header_formatter, lengthtagname)
+    return _packetizr_swig.packet_encoder_make(preamble, constel_header, constel_payload, header_formatter, lengthtagname, itemsize)
 
 class constellation(object):
     """Proxy of C++ gr::digital::constellation class."""
@@ -1044,17 +1044,17 @@ class packet_encoder_sptr(object):
     __swig_destroy__ = _packetizr_swig.delete_packet_encoder_sptr
     __del__ = lambda self: None
 
-    def make(self, preamble, constel_preamble, constel_header, constel_payload, itemsize, header_formatter, lengthtagname):
+    def make(self, preamble, constel_header, constel_payload, header_formatter, lengthtagname, itemsize):
         """
-        make(packet_encoder_sptr self, std::vector< int,std::allocator< int > > const preamble, gr::digital::constellation_sptr constel_preamble, gr::digital::constellation_sptr constel_header, gr::digital::constellation_sptr constel_payload, size_t itemsize, gr::digital::packet_header_default::sptr const & header_formatter, std::string const & lengthtagname) -> packet_encoder_sptr
+        make(packet_encoder_sptr self, std::vector< int,std::allocator< int > > const preamble, gr::digital::constellation_sptr constel_header, gr::digital::constellation_sptr constel_payload, gr::digital::packet_header_default::sptr const & header_formatter, std::string const & lengthtagname, size_t itemsize) -> packet_encoder_sptr
 
         Return a shared_ptr to a new instance of packetizr::packet_encoder.
 
         To avoid accidental use of raw pointers, packetizr::packet_encoder's constructor is in a private implementation class. packetizr::packet_encoder::make is the public interface for creating new instances.
 
-        Params: (preamble, constel_preamble, constel_header, constel_payload, itemsize, header_formatter, lengthtagname)
+        Params: (preamble, constel_header, constel_payload, header_formatter, lengthtagname, itemsize)
         """
-        return _packetizr_swig.packet_encoder_sptr_make(self, preamble, constel_preamble, constel_header, constel_payload, itemsize, header_formatter, lengthtagname)
+        return _packetizr_swig.packet_encoder_sptr_make(self, preamble, constel_header, constel_payload, header_formatter, lengthtagname, itemsize)
 
 
     def history(self):

@@ -4686,64 +4686,6 @@ namespace swig {
       }
     
 
-SWIGINTERN int
-SWIG_AsVal_unsigned_SS_long (PyObject *obj, unsigned long *val) 
-{
-#if PY_VERSION_HEX < 0x03000000
-  if (PyInt_Check(obj)) {
-    long v = PyInt_AsLong(obj);
-    if (v >= 0) {
-      if (val) *val = v;
-      return SWIG_OK;
-    } else {
-      return SWIG_OverflowError;
-    }
-  } else
-#endif
-  if (PyLong_Check(obj)) {
-    unsigned long v = PyLong_AsUnsignedLong(obj);
-    if (!PyErr_Occurred()) {
-      if (val) *val = v;
-      return SWIG_OK;
-    } else {
-      PyErr_Clear();
-      return SWIG_OverflowError;
-    }
-  }
-#ifdef SWIG_PYTHON_CAST_MODE
-  {
-    int dispatch = 0;
-    unsigned long v = PyLong_AsUnsignedLong(obj);
-    if (!PyErr_Occurred()) {
-      if (val) *val = v;
-      return SWIG_AddCast(SWIG_OK);
-    } else {
-      PyErr_Clear();
-    }
-    if (!dispatch) {
-      double d;
-      int res = SWIG_AddCast(SWIG_AsVal_double (obj,&d));
-      if (SWIG_IsOK(res) && SWIG_CanCastAsInteger(&d, 0, ULONG_MAX)) {
-	if (val) *val = (unsigned long)(d);
-	return res;
-      }
-    }
-  }
-#endif
-  return SWIG_TypeError;
-}
-
-
-SWIGINTERNINLINE int
-SWIG_AsVal_size_t (PyObject * obj, size_t *val)
-{
-  unsigned long v;
-  int res = SWIG_AsVal_unsigned_SS_long (obj, val ? &v : 0);
-  if (SWIG_IsOK(res) && val) *val = static_cast< size_t >(v);
-  return res;
-}
-
-
 SWIGINTERN swig_type_info*
 SWIG_pchar_descriptor(void)
 {
@@ -4884,6 +4826,64 @@ SWIG_AsPtr_std_string (PyObject * obj, std::string **val)
     }
   }
   return SWIG_ERROR;
+}
+
+
+SWIGINTERN int
+SWIG_AsVal_unsigned_SS_long (PyObject *obj, unsigned long *val) 
+{
+#if PY_VERSION_HEX < 0x03000000
+  if (PyInt_Check(obj)) {
+    long v = PyInt_AsLong(obj);
+    if (v >= 0) {
+      if (val) *val = v;
+      return SWIG_OK;
+    } else {
+      return SWIG_OverflowError;
+    }
+  } else
+#endif
+  if (PyLong_Check(obj)) {
+    unsigned long v = PyLong_AsUnsignedLong(obj);
+    if (!PyErr_Occurred()) {
+      if (val) *val = v;
+      return SWIG_OK;
+    } else {
+      PyErr_Clear();
+      return SWIG_OverflowError;
+    }
+  }
+#ifdef SWIG_PYTHON_CAST_MODE
+  {
+    int dispatch = 0;
+    unsigned long v = PyLong_AsUnsignedLong(obj);
+    if (!PyErr_Occurred()) {
+      if (val) *val = v;
+      return SWIG_AddCast(SWIG_OK);
+    } else {
+      PyErr_Clear();
+    }
+    if (!dispatch) {
+      double d;
+      int res = SWIG_AddCast(SWIG_AsVal_double (obj,&d));
+      if (SWIG_IsOK(res) && SWIG_CanCastAsInteger(&d, 0, ULONG_MAX)) {
+	if (val) *val = (unsigned long)(d);
+	return res;
+      }
+    }
+  }
+#endif
+  return SWIG_TypeError;
+}
+
+
+SWIGINTERNINLINE int
+SWIG_AsVal_size_t (PyObject * obj, size_t *val)
+{
+  unsigned long v;
+  int res = SWIG_AsVal_unsigned_SS_long (obj, val ? &v : 0);
+  if (SWIG_IsOK(res) && val) *val = static_cast< size_t >(v);
+  return res;
 }
 
 
@@ -5287,34 +5287,30 @@ SWIGINTERN PyObject *_wrap_packet_encoder_make(PyObject *SWIGUNUSEDPARM(self), P
   std::vector< int,std::allocator< int > > arg1 ;
   SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > arg2 ;
   SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > arg3 ;
-  SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > arg4 ;
-  size_t arg5 ;
-  gr::digital::packet_header_default::sptr *arg6 = 0 ;
-  std::string *arg7 = 0 ;
+  gr::digital::packet_header_default::sptr *arg4 = 0 ;
+  std::string *arg5 = 0 ;
+  size_t arg6 ;
   void *argp2 ;
   int res2 = 0 ;
   void *argp3 ;
   int res3 = 0 ;
-  void *argp4 ;
+  void *argp4 = 0 ;
   int res4 = 0 ;
-  size_t val5 ;
-  int ecode5 = 0 ;
-  void *argp6 = 0 ;
-  int res6 = 0 ;
-  int res7 = SWIG_OLDOBJ ;
+  int res5 = SWIG_OLDOBJ ;
+  size_t val6 ;
+  int ecode6 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
   PyObject * obj3 = 0 ;
   PyObject * obj4 = 0 ;
   PyObject * obj5 = 0 ;
-  PyObject * obj6 = 0 ;
   char *  kwnames[] = {
-    (char *) "preamble",(char *) "constel_preamble",(char *) "constel_header",(char *) "constel_payload",(char *) "itemsize",(char *) "header_formatter",(char *) "lengthtagname", NULL 
+    (char *) "preamble",(char *) "constel_header",(char *) "constel_payload",(char *) "header_formatter",(char *) "lengthtagname",(char *) "itemsize", NULL 
   };
   gr::packetizr::packet_encoder::sptr result;
   
-  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOOO:packet_encoder_make",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6)) SWIG_fail;
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOO:packet_encoder_make",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5)) SWIG_fail;
   {
     std::vector< int,std::allocator< int > > *ptr = (std::vector< int,std::allocator< int > > *)0;
     int res = swig::asptr(obj0, &ptr);
@@ -5350,46 +5346,33 @@ SWIGINTERN PyObject *_wrap_packet_encoder_make(PyObject *SWIGUNUSEDPARM(self), P
       if (SWIG_IsNewObj(res3)) delete temp;
     }
   }
-  {
-    res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_t,  0  | 0);
-    if (!SWIG_IsOK(res4)) {
-      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "packet_encoder_make" "', argument " "4"" of type '" "gr::digital::constellation_sptr""'"); 
-    }  
-    if (!argp4) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_make" "', argument " "4"" of type '" "gr::digital::constellation_sptr""'");
-    } else {
-      gr::digital::constellation_sptr * temp = reinterpret_cast< gr::digital::constellation_sptr * >(argp4);
-      arg4 = *temp;
-      if (SWIG_IsNewObj(res4)) delete temp;
-    }
+  res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_boost__shared_ptrT_gr__digital__packet_header_default_t,  0  | 0);
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "packet_encoder_make" "', argument " "4"" of type '" "gr::digital::packet_header_default::sptr const &""'"); 
   }
-  ecode5 = SWIG_AsVal_size_t(obj4, &val5);
-  if (!SWIG_IsOK(ecode5)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "packet_encoder_make" "', argument " "5"" of type '" "size_t""'");
-  } 
-  arg5 = static_cast< size_t >(val5);
-  res6 = SWIG_ConvertPtr(obj5, &argp6, SWIGTYPE_p_boost__shared_ptrT_gr__digital__packet_header_default_t,  0  | 0);
-  if (!SWIG_IsOK(res6)) {
-    SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "packet_encoder_make" "', argument " "6"" of type '" "gr::digital::packet_header_default::sptr const &""'"); 
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_make" "', argument " "4"" of type '" "gr::digital::packet_header_default::sptr const &""'"); 
   }
-  if (!argp6) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_make" "', argument " "6"" of type '" "gr::digital::packet_header_default::sptr const &""'"); 
-  }
-  arg6 = reinterpret_cast< gr::digital::packet_header_default::sptr * >(argp6);
+  arg4 = reinterpret_cast< gr::digital::packet_header_default::sptr * >(argp4);
   {
     std::string *ptr = (std::string *)0;
-    res7 = SWIG_AsPtr_std_string(obj6, &ptr);
-    if (!SWIG_IsOK(res7)) {
-      SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "packet_encoder_make" "', argument " "7"" of type '" "std::string const &""'"); 
+    res5 = SWIG_AsPtr_std_string(obj4, &ptr);
+    if (!SWIG_IsOK(res5)) {
+      SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "packet_encoder_make" "', argument " "5"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_make" "', argument " "7"" of type '" "std::string const &""'"); 
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_make" "', argument " "5"" of type '" "std::string const &""'"); 
     }
-    arg7 = ptr;
+    arg5 = ptr;
   }
+  ecode6 = SWIG_AsVal_size_t(obj5, &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "packet_encoder_make" "', argument " "6"" of type '" "size_t""'");
+  } 
+  arg6 = static_cast< size_t >(val6);
   {
     try {
-      result = gr::packetizr::packet_encoder::make(arg1,arg2,arg3,arg4,arg5,(boost::shared_ptr< gr::digital::packet_header_default > const &)*arg6,(std::string const &)*arg7);
+      result = gr::packetizr::packet_encoder::make(arg1,arg2,arg3,(boost::shared_ptr< gr::digital::packet_header_default > const &)*arg4,(std::string const &)*arg5,arg6);
     }
     catch(std::exception &e) {
       SWIG_exception(SWIG_RuntimeError, e.what());
@@ -5400,10 +5383,10 @@ SWIGINTERN PyObject *_wrap_packet_encoder_make(PyObject *SWIGUNUSEDPARM(self), P
     
   }
   resultobj = SWIG_NewPointerObj((new gr::packetizr::packet_encoder::sptr(static_cast< const gr::packetizr::packet_encoder::sptr& >(result))), SWIGTYPE_p_boost__shared_ptrT_gr__packetizr__packet_encoder_t, SWIG_POINTER_OWN |  0 );
-  if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res5)) delete arg5;
   return resultobj;
 fail:
-  if (SWIG_IsNewObj(res7)) delete arg7;
+  if (SWIG_IsNewObj(res5)) delete arg5;
   return NULL;
 }
 
@@ -11323,23 +11306,20 @@ SWIGINTERN PyObject *_wrap_packet_encoder_sptr_make(PyObject *SWIGUNUSEDPARM(sel
   std::vector< int,std::allocator< int > > arg2 ;
   SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > arg3 ;
   SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > arg4 ;
-  SwigValueWrapper< boost::shared_ptr< gr::digital::constellation > > arg5 ;
-  size_t arg6 ;
-  gr::digital::packet_header_default::sptr *arg7 = 0 ;
-  std::string *arg8 = 0 ;
+  gr::digital::packet_header_default::sptr *arg5 = 0 ;
+  std::string *arg6 = 0 ;
+  size_t arg7 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   void *argp3 ;
   int res3 = 0 ;
   void *argp4 ;
   int res4 = 0 ;
-  void *argp5 ;
+  void *argp5 = 0 ;
   int res5 = 0 ;
-  size_t val6 ;
-  int ecode6 = 0 ;
-  void *argp7 = 0 ;
-  int res7 = 0 ;
-  int res8 = SWIG_OLDOBJ ;
+  int res6 = SWIG_OLDOBJ ;
+  size_t val7 ;
+  int ecode7 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
@@ -11347,13 +11327,12 @@ SWIGINTERN PyObject *_wrap_packet_encoder_sptr_make(PyObject *SWIGUNUSEDPARM(sel
   PyObject * obj4 = 0 ;
   PyObject * obj5 = 0 ;
   PyObject * obj6 = 0 ;
-  PyObject * obj7 = 0 ;
   char *  kwnames[] = {
-    (char *) "self",(char *) "preamble",(char *) "constel_preamble",(char *) "constel_header",(char *) "constel_payload",(char *) "itemsize",(char *) "header_formatter",(char *) "lengthtagname", NULL 
+    (char *) "self",(char *) "preamble",(char *) "constel_header",(char *) "constel_payload",(char *) "header_formatter",(char *) "lengthtagname",(char *) "itemsize", NULL 
   };
   gr::packetizr::packet_encoder::sptr result;
   
-  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOOOO:packet_encoder_sptr_make",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6,&obj7)) SWIG_fail;
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOOOOOO:packet_encoder_sptr_make",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6)) SWIG_fail;
   res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_boost__shared_ptrT_gr__packetizr__packet_encoder_t, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "packet_encoder_sptr_make" "', argument " "1"" of type '" "boost::shared_ptr< gr::packetizr::packet_encoder > *""'"); 
@@ -11394,46 +11373,33 @@ SWIGINTERN PyObject *_wrap_packet_encoder_sptr_make(PyObject *SWIGUNUSEDPARM(sel
       if (SWIG_IsNewObj(res4)) delete temp;
     }
   }
-  {
-    res5 = SWIG_ConvertPtr(obj4, &argp5, SWIGTYPE_p_boost__shared_ptrT_gr__digital__constellation_t,  0  | 0);
-    if (!SWIG_IsOK(res5)) {
-      SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "packet_encoder_sptr_make" "', argument " "5"" of type '" "gr::digital::constellation_sptr""'"); 
-    }  
-    if (!argp5) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_sptr_make" "', argument " "5"" of type '" "gr::digital::constellation_sptr""'");
-    } else {
-      gr::digital::constellation_sptr * temp = reinterpret_cast< gr::digital::constellation_sptr * >(argp5);
-      arg5 = *temp;
-      if (SWIG_IsNewObj(res5)) delete temp;
-    }
+  res5 = SWIG_ConvertPtr(obj4, &argp5, SWIGTYPE_p_boost__shared_ptrT_gr__digital__packet_header_default_t,  0  | 0);
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "packet_encoder_sptr_make" "', argument " "5"" of type '" "gr::digital::packet_header_default::sptr const &""'"); 
   }
-  ecode6 = SWIG_AsVal_size_t(obj5, &val6);
-  if (!SWIG_IsOK(ecode6)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "packet_encoder_sptr_make" "', argument " "6"" of type '" "size_t""'");
-  } 
-  arg6 = static_cast< size_t >(val6);
-  res7 = SWIG_ConvertPtr(obj6, &argp7, SWIGTYPE_p_boost__shared_ptrT_gr__digital__packet_header_default_t,  0  | 0);
-  if (!SWIG_IsOK(res7)) {
-    SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "packet_encoder_sptr_make" "', argument " "7"" of type '" "gr::digital::packet_header_default::sptr const &""'"); 
+  if (!argp5) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_sptr_make" "', argument " "5"" of type '" "gr::digital::packet_header_default::sptr const &""'"); 
   }
-  if (!argp7) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_sptr_make" "', argument " "7"" of type '" "gr::digital::packet_header_default::sptr const &""'"); 
-  }
-  arg7 = reinterpret_cast< gr::digital::packet_header_default::sptr * >(argp7);
+  arg5 = reinterpret_cast< gr::digital::packet_header_default::sptr * >(argp5);
   {
     std::string *ptr = (std::string *)0;
-    res8 = SWIG_AsPtr_std_string(obj7, &ptr);
-    if (!SWIG_IsOK(res8)) {
-      SWIG_exception_fail(SWIG_ArgError(res8), "in method '" "packet_encoder_sptr_make" "', argument " "8"" of type '" "std::string const &""'"); 
+    res6 = SWIG_AsPtr_std_string(obj5, &ptr);
+    if (!SWIG_IsOK(res6)) {
+      SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "packet_encoder_sptr_make" "', argument " "6"" of type '" "std::string const &""'"); 
     }
     if (!ptr) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_sptr_make" "', argument " "8"" of type '" "std::string const &""'"); 
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "packet_encoder_sptr_make" "', argument " "6"" of type '" "std::string const &""'"); 
     }
-    arg8 = ptr;
+    arg6 = ptr;
   }
+  ecode7 = SWIG_AsVal_size_t(obj6, &val7);
+  if (!SWIG_IsOK(ecode7)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "packet_encoder_sptr_make" "', argument " "7"" of type '" "size_t""'");
+  } 
+  arg7 = static_cast< size_t >(val7);
   {
     try {
-      result = (*arg1)->make(arg2,arg3,arg4,arg5,arg6,(gr::digital::packet_header_default::sptr const &)*arg7,(std::string const &)*arg8);
+      result = (*arg1)->make(arg2,arg3,arg4,(gr::digital::packet_header_default::sptr const &)*arg5,(std::string const &)*arg6,arg7);
     }
     catch(std::exception &e) {
       SWIG_exception(SWIG_RuntimeError, e.what());
@@ -11444,10 +11410,10 @@ SWIGINTERN PyObject *_wrap_packet_encoder_sptr_make(PyObject *SWIGUNUSEDPARM(sel
     
   }
   resultobj = SWIG_NewPointerObj((new gr::packetizr::packet_encoder::sptr(static_cast< const gr::packetizr::packet_encoder::sptr& >(result))), SWIGTYPE_p_boost__shared_ptrT_gr__packetizr__packet_encoder_t, SWIG_POINTER_OWN |  0 );
-  if (SWIG_IsNewObj(res8)) delete arg8;
+  if (SWIG_IsNewObj(res6)) delete arg6;
   return resultobj;
 fail:
-  if (SWIG_IsNewObj(res8)) delete arg8;
+  if (SWIG_IsNewObj(res6)) delete arg6;
   return NULL;
 }
 
@@ -14357,13 +14323,13 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"high_res_timer_tps", _wrap_high_res_timer_tps, METH_VARARGS, (char *)"high_res_timer_tps() -> gr::high_res_timer_type"},
 	 { (char *)"high_res_timer_epoch", _wrap_high_res_timer_epoch, METH_VARARGS, (char *)"high_res_timer_epoch() -> gr::high_res_timer_type"},
 	 { (char *)"packet_encoder_make", (PyCFunction) _wrap_packet_encoder_make, METH_VARARGS | METH_KEYWORDS, (char *)"\n"
-		"packet_encoder_make(std::vector< int,std::allocator< int > > const preamble, gr::digital::constellation_sptr constel_preamble, gr::digital::constellation_sptr constel_header, gr::digital::constellation_sptr constel_payload, size_t itemsize, gr::digital::packet_header_default::sptr const & header_formatter, std::string const & lengthtagname) -> packet_encoder_sptr\n"
+		"packet_encoder_make(std::vector< int,std::allocator< int > > const preamble, gr::digital::constellation_sptr constel_header, gr::digital::constellation_sptr constel_payload, gr::digital::packet_header_default::sptr const & header_formatter, std::string const & lengthtagname, size_t itemsize) -> packet_encoder_sptr\n"
 		"\n"
 		"Return a shared_ptr to a new instance of packetizr::packet_encoder.\n"
 		"\n"
 		"To avoid accidental use of raw pointers, packetizr::packet_encoder's constructor is in a private implementation class. packetizr::packet_encoder::make is the public interface for creating new instances.\n"
 		"\n"
-		"Params: (preamble, constel_preamble, constel_header, constel_payload, itemsize, header_formatter, lengthtagname)\n"
+		"Params: (preamble, constel_header, constel_payload, header_formatter, lengthtagname, itemsize)\n"
 		""},
 	 { (char *)"delete_packet_encoder", _wrap_delete_packet_encoder, METH_VARARGS, (char *)"delete_packet_encoder(packet_encoder self)"},
 	 { (char *)"packet_encoder_swigregister", packet_encoder_swigregister, METH_VARARGS, NULL},
@@ -14510,13 +14476,13 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"packet_encoder_sptr___deref__", _wrap_packet_encoder_sptr___deref__, METH_VARARGS, (char *)"packet_encoder_sptr___deref__(packet_encoder_sptr self) -> packet_encoder"},
 	 { (char *)"delete_packet_encoder_sptr", _wrap_delete_packet_encoder_sptr, METH_VARARGS, (char *)"delete_packet_encoder_sptr(packet_encoder_sptr self)"},
 	 { (char *)"packet_encoder_sptr_make", (PyCFunction) _wrap_packet_encoder_sptr_make, METH_VARARGS | METH_KEYWORDS, (char *)"\n"
-		"packet_encoder_sptr_make(packet_encoder_sptr self, std::vector< int,std::allocator< int > > const preamble, gr::digital::constellation_sptr constel_preamble, gr::digital::constellation_sptr constel_header, gr::digital::constellation_sptr constel_payload, size_t itemsize, gr::digital::packet_header_default::sptr const & header_formatter, std::string const & lengthtagname) -> packet_encoder_sptr\n"
+		"packet_encoder_sptr_make(packet_encoder_sptr self, std::vector< int,std::allocator< int > > const preamble, gr::digital::constellation_sptr constel_header, gr::digital::constellation_sptr constel_payload, gr::digital::packet_header_default::sptr const & header_formatter, std::string const & lengthtagname, size_t itemsize) -> packet_encoder_sptr\n"
 		"\n"
 		"Return a shared_ptr to a new instance of packetizr::packet_encoder.\n"
 		"\n"
 		"To avoid accidental use of raw pointers, packetizr::packet_encoder's constructor is in a private implementation class. packetizr::packet_encoder::make is the public interface for creating new instances.\n"
 		"\n"
-		"Params: (preamble, constel_preamble, constel_header, constel_payload, itemsize, header_formatter, lengthtagname)\n"
+		"Params: (preamble, constel_header, constel_payload, header_formatter, lengthtagname, itemsize)\n"
 		""},
 	 { (char *)"packet_encoder_sptr_history", _wrap_packet_encoder_sptr_history, METH_VARARGS, (char *)"packet_encoder_sptr_history(packet_encoder_sptr self) -> unsigned int"},
 	 { (char *)"packet_encoder_sptr_declare_sample_delay", _wrap_packet_encoder_sptr_declare_sample_delay, METH_VARARGS, (char *)"\n"

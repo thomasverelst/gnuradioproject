@@ -19,15 +19,11 @@
  */
 
 
-#ifndef INCLUDED_PACKETIZR_PACKET_ENCODER_H
-#define INCLUDED_PACKETIZR_PACKET_ENCODER_H
+#ifndef INCLUDED_PACKETIZR_TAGGED_STREAM_DEMUX_XX_H
+#define INCLUDED_PACKETIZR_TAGGED_STREAM_DEMUX_XX_H
 
 #include <packetizr/api.h>
-#include <gnuradio/digital/api.h>
 #include <gnuradio/tagged_stream_block.h>
-#include <gnuradio/digital/constellation.h>
-#include <gnuradio/digital/packet_header_default.h>
-#include <gnuradio/block.h>
 
 namespace gr {
   namespace packetizr {
@@ -37,26 +33,24 @@ namespace gr {
      * \ingroup packetizr
      *
      */
-    class PACKETIZR_API packet_encoder : virtual public gr::tagged_stream_block
+    class PACKETIZR_API tagged_stream_demux_xx : virtual public gr::tagged_stream_block
     {
      public:
-      typedef boost::shared_ptr<packet_encoder> sptr;
+      typedef boost::shared_ptr<tagged_stream_demux_xx> sptr;
 
       /*!
-       * \brief Return a shared_ptr to a new instance of packetizr::packet_encoder.
+       * \brief Return a shared_ptr to a new instance of packetizr::tagged_stream_demux_xx.
        *
-       * To avoid accidental use of raw pointers, packetizr::packet_encoder's
+       * To avoid accidental use of raw pointers, packetizr::tagged_stream_demux_xx's
        * constructor is in a private implementation
-       * class. packetizr::packet_encoder::make is the public interface for
+       * class. packetizr::tagged_stream_demux_xx::make is the public interface for
        * creating new instances.
        */
-      static sptr make(const std::vector<int> preamble, gr::digital::constellation_sptr constel_header, gr::digital::constellation_sptr  constel_payload, const gr::digital::packet_header_default::sptr &header_formatter, const std::string &lengthtagname, size_t itemsize);
-
-
+      static sptr make(size_t itemsize, const std::string &lengthtagname);
     };
 
   } // namespace packetizr
 } // namespace gr
 
-#endif /* INCLUDED_PACKETIZR_PACKET_ENCODER_H */
+#endif /* INCLUDED_PACKETIZR_TAGGED_STREAM_DEMUX_XX_H */
 

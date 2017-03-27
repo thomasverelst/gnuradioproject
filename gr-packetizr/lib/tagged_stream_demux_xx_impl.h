@@ -18,34 +18,25 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_PACKETIZR_PACKET_ENCODER_IMPL_H
-#define INCLUDED_PACKETIZR_PACKET_ENCODER_IMPL_H
+#ifndef INCLUDED_PACKETIZR_TAGGED_STREAM_DEMUX_XX_IMPL_H
+#define INCLUDED_PACKETIZR_TAGGED_STREAM_DEMUX_XX_IMPL_H
 
-#include <packetizr/packet_encoder.h>
-#include <gnuradio/digital/constellation.h>
-#include <gnuradio/digital/packet_header_default.h>
-#include <gnuradio/filter/firdes.h>
-#include <gnuradio/filter/pfb_arb_resampler.h>
+#include <packetizr/tagged_stream_demux_xx.h>
 
 namespace gr {
   namespace packetizr {
 
-    class packet_encoder_impl : public packet_encoder
+    class tagged_stream_demux_xx_impl : public tagged_stream_demux_xx
     {
-    private:
-      
-      gr::digital::constellation_sptr d_constel_header;
-      gr::digital::constellation_sptr d_constel_payload;
-      std::vector<int> d_preamble;
-      gr::digital::packet_header_default::sptr d_header_formatter;
-      size_t d_itemsize;
+     private:
+      // Nothing to declare in this block.
 
      protected:
       int calculate_output_stream_length(const gr_vector_int &ninput_items);
 
      public:
-      packet_encoder_impl(const std::vector<int> preamble, digital::constellation_sptr constel_header, digital::constellation_sptr  constel_payload, const digital::packet_header_default::sptr &header_formatter, const std::string &lengthtagname, size_t itemsize);
-      ~packet_encoder_impl();
+      tagged_stream_demux_xx_impl(size_t itemsize, const std::string &lengthtagname);
+      ~tagged_stream_demux_xx_impl();
 
       // Where all the action really happens
       int work(int noutput_items,
@@ -57,5 +48,5 @@ namespace gr {
   } // namespace packetizr
 } // namespace gr
 
-#endif /* INCLUDED_PACKETIZR_PACKET_ENCODER_IMPL_H */
+#endif /* INCLUDED_PACKETIZR_TAGGED_STREAM_DEMUX_XX_IMPL_H */
 

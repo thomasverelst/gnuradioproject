@@ -1,33 +1,27 @@
 <?xml version="1.0"?>
 <block>
-  <name>Packet Encoder 2</name>
-  <key>packetizr_packet_encoder</key>
+  <name>Packet Decoder 2</name>
+  <key>packetizr_packet_decoder</key>
   <category>Packetizr</category>
   <import>import packetizr</import>
-  <make>packetizr.packet_encoder($preamble, $constel_header, $constel_payload, $header_formatter, $lengthtagname, $itemsize)</make>
+  <make>packetizr.packet_decoder($preamble, $constel_header, $constel_payload, $header_formatter, $lengthtagname, $tag_pos, $samp_rate, $itemsize)</make>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
        * name
        * key (makes the value accessible as $keyname, e.g. in the make node)
        * type -->
-<!--   <param>
-    <name>Length tag names</name>
-    <key>lengthtagname</key>
-    <type>string</type>
-  </param> -->
-
-<param>
+  <param>
     <name>Preamble (sequence of 1 and -1)</name>
     <key>preamble</key>
     <value>(1, -1, -1, 1, -1, 1)</value>
     <type>int_vector</type>
   </param>
 
- <param>
+   <param>
     <name>Header Constellation</name>
     <key>constel_header</key>
     <type>raw</type>
-  </param>
+   </param>
 
 <param>
     <name>Payload Constellation</name>
@@ -42,32 +36,42 @@
   </param>
 
 <param>
-   <name>Length Tag Name</name>
+  <name>Length Tag Name</name>
     <key>lengthtagname</key>
     <value>"packet_len"</value>
     <type>string</type>
   </param>
-  
+
+<param>
+  <name>Tag position</name>
+    <key>tag_pos</key>
+    <value>"front"</value>
+    <type>string</type>
+  </param>
+
+<param>
+  <name>Sample rate</name>
+    <key>samp_rate</key>
+    <value>samp_rate</value>
+    <type>int</type>
+  </param>
+
 <param>
  <name>Itemsize</name>
     <key>itemsize</key>
     <value>1</value>
     <type>int</type>
   </param>
- 
+
 
   <!-- Make one 'sink' node per input. Sub-nodes:
        * name (an identifier for the GUI)
        * type
        * vlen
        * optional (set to 1 for optional inputs) -->
-  <!--<sink>
-    <name>header_data</name>
-    <type>byte</type>
-  </sink>-->
   <sink>
-    <name>data_bytes</name>
-    <type>byte</type>
+   <name>symbols_in</name>
+    <type>complex</type>
   </sink>
 
   <!-- Make one 'source' node per output. Sub-nodes:
@@ -76,7 +80,7 @@
        * vlen
        * optional (set to 1 for optional inputs) -->
   <source>
-    <name>symbols_out</name>
-    <type>complex</type>
+    <name>data_bytes</name>
+    <type>byte</type>
   </source>
 </block>

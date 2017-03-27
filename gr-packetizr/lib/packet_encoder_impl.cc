@@ -37,21 +37,20 @@ namespace gr {
 namespace packetizr {
 
 packet_encoder::sptr
-packet_encoder::make(const std::vector<int> preamble, digital::constellation_sptr constel_preamble, digital::constellation_sptr constel_header, digital::constellation_sptr  constel_payload, size_t itemsize, const digital::packet_header_default::sptr &header_formatter, const std::string &lengthtagname)
+packet_encoder::make(const std::vector<int> preamble, digital::constellation_sptr constel_header, digital::constellation_sptr  constel_payload, const digital::packet_header_default::sptr &header_formatter, const std::string &lengthtagname, size_t itemsize)
 {
   return gnuradio::get_initial_sptr
-         (new packet_encoder_impl(preamble, constel_preamble, constel_header, constel_payload, itemsize, header_formatter, lengthtagname));
+         (new packet_encoder_impl(preamble, constel_header, constel_payload, header_formatter, lengthtagname, itemsize));
 }
 
 /*
  * The private constructor
  */
-packet_encoder_impl::packet_encoder_impl(const std::vector<int> preamble, digital::constellation_sptr constel_preamble, digital::constellation_sptr constel_header, digital::constellation_sptr  constel_payload, size_t itemsize, const digital::packet_header_default::sptr &header_formatter, const std::string &lengthtagname)
+packet_encoder_impl::packet_encoder_impl(const std::vector<int> preamble, digital::constellation_sptr constel_header, digital::constellation_sptr  constel_payload, const digital::packet_header_default::sptr &header_formatter, const std::string &lengthtagname, size_t itemsize)
   : gr::tagged_stream_block("packet_encoder",
                             gr::io_signature::make(1, 1, sizeof(char)),
                             gr::io_signature::make(1, 1, sizeof(gr_complex)), lengthtagname),
     d_preamble(preamble),
-  d_constel_preamble(constel_preamble),
   d_constel_header(constel_header),
   d_constel_payload(constel_payload),
   d_itemsize(1),
@@ -60,6 +59,7 @@ packet_encoder_impl::packet_encoder_impl(const std::vector<int> preamble, digita
 {
   //set_min_output_buffer(128000);
   //set_tag_propagation_policy(TPP_DONT);
+  set_tag_propagation_policy(TPP_DONT);
 }
 
 /*
@@ -76,7 +76,7 @@ packet_encoder_impl::calculate_output_stream_length(const gr_vector_int &ninput_
   nout += d_preamble.size();
   nout += d_header_formatter->header_len()* (8/ d_constel_header->bits_per_symbol());
   nout += ninput_items[0] * (8 / d_constel_payload->bits_per_symbol());
-  cout << "EXPECTED LENGTH" << nout << "\n";
+  //cout << "EXPECTED LENGTH" << nout << "\n";
   return nout;
 }
 
@@ -86,13 +86,17 @@ unpack_bits(const unsigned char* packed, unsigned char* unpacked, unsigned int n
   unsigned short tempindex = 1;
   unsigned short newindex = 0;
 
+  // LSB FiRST for both (start extracting with LSB first, start filling with LSB first)
+  // 00011010|10011011 with bits_n = 2
+  // will become 01|01|10|00|11|01|10|01
+
   // for every incoming byte
   for (unsigned int i = 0; i < n; i++) {
     char val = packed[i];
 
     // for every bit of incoming byte
     for (unsigned int j = 0; j < 8; j++) { // TODO hardcoded char length
-      newval = (newval << 1) | (val & 0b1);
+      newval = newval | ((val & 0b1) << (tempindex-1));
       if (tempindex == bits_n) {
         unpacked[newindex] = newval;
         newindex++;
@@ -146,8 +150,23 @@ packet_encoder_impl::work (int noutput_items,
 {
   gr_complex *out = (gr_complex *) output_items[0]; // set pointer where to put output data
 
+  
+
   // approximated input/output rate
-  set_relative_rate( 8 / d_constel_payload->bits_per_symbol()); // assuming payload is much longer than preamble + header
+  int nout = 0;
+  nout += d_preamble.size();
+  nout += d_header_formatter->header_len()* (8/ d_constel_header->bits_per_symbol());
+  nout += ninput_items[0] * (8 / d_constel_payload->bits_per_symbol());
+
+
+  unsigned int header_bps = d_constel_header->bits_per_symbol();
+  unsigned int header_length = d_header_formatter->header_len()*8/header_bps; // TODO bytes, bits, symbols?
+
+  unsigned int payload_bps = d_constel_payload->bits_per_symbol();
+  unsigned int payload_length = ninput_items[0] * 8 / payload_bps; // Payload length in bytes
+
+
+  set_relative_rate( nout/ninput_items[0]); // assuming payload is much longer than preamble + header
 
 
   /************* PREAMBLE **************/
@@ -161,15 +180,14 @@ packet_encoder_impl::work (int noutput_items,
   }
 
 
-  /************* HEADER **************/
 
-  unsigned int header_bps = d_constel_header->bits_per_symbol();
-  unsigned int header_length = d_header_formatter->header_len()*8/header_bps; // TODO bytes, bits, symbols?
-  cout << "HEADER LENGTH" << header_length;
+  /************* HEADER **************/
+  //cout << "HEADER LENGTH" << header_length;
 
   /* Generate header */
   unsigned char *header_in = new unsigned char [header_length];
-  if (!d_header_formatter->header_formatter(ninput_items[0], header_in)) {
+  //cout <<"HEADER_LENGTH" << ninput_items[0]*8/payload_bps;
+  if (!d_header_formatter->header_formatter(ninput_items[0]*8/payload_bps, header_in)) {
     GR_LOG_FATAL(d_logger, boost::format("header_formatter() returned false (this shouldn't happen). Offending header started at %1%") % nitems_read(0));
     throw std::runtime_error("header formatter returned false.");
   }
@@ -200,8 +218,7 @@ packet_encoder_impl::work (int noutput_items,
   /************* PAYLOAD **************/
 
   const unsigned char *payload_in = (const unsigned char *) input_items[0];
-  unsigned int payload_bps = d_constel_payload->bits_per_symbol();
-  unsigned int payload_length = ninput_items[0] * 8 / payload_bps; // Payload length in bytes
+  
 
 
   /* Unpack payload data */
@@ -229,7 +246,7 @@ packet_encoder_impl::work (int noutput_items,
   /* CONCATENATE PREAMBLE + HEADER + PAYLOAD */
   unsigned int total_length = d_preamble.size() + header_length + payload_length;
   //cout << "TOTAL_LENGTH in complex samples, before oversampling "<<total_length<<"\n";
-  cout << "PREAMBLE LENGTH " << d_preamble.size() << " HEADER LENGTH "<<header_length << " PAYLOAD_LENGTH" << payload_length << "\n";
+  //cout << "PREAMBLE LENGTH " << d_preamble.size() << " HEADER LENGTH "<<header_length << " PAYLOAD_LENGTH" << payload_length << "\n";
   gr_complex *signal_symbols = new gr_complex[total_length];
   unsigned int index = 0;
   for (unsigned int i = 0; i < d_preamble.size(); i++) {
@@ -268,6 +285,7 @@ packet_encoder_impl::work (int noutput_items,
   //out += os_length; // Update pointer
   int n_produced = total_length; // Update produced of item amount
 
+  //cout << "n_produced" << n_produced;
   // return
   return n_produced;
 

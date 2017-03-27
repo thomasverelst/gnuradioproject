@@ -33,13 +33,18 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/packetizr" TYPE FILE FILES "/home/thomas/gr/gr-packetizr/python/__init__.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/packetizr" TYPE FILE FILES
+    "/home/thomas/gr/gr-packetizr/python/__init__.py"
+    "/home/thomas/gr/gr-packetizr/python/packet_decoder.py"
+    )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/packetizr" TYPE FILE FILES
     "/home/thomas/gr/gr-packetizr/build/python/__init__.pyc"
+    "/home/thomas/gr/gr-packetizr/build/python/packet_decoder.pyc"
     "/home/thomas/gr/gr-packetizr/build/python/__init__.pyo"
+    "/home/thomas/gr/gr-packetizr/build/python/packet_decoder.pyo"
     )
 endif()
 

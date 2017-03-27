@@ -18,5 +18,7 @@
 # Boston, MA 02110-1301, USA.
 
 install(FILES
-    packetizr_packet_encoder.xml DESTINATION share/gnuradio/grc/blocks
+    packetizr_packet_encoder.xml
+    packetizr_packet_decoder.xml
+    packetizr_tagged_stream_demux_xx.xml DESTINATION share/gnuradio/grc/blocks
 )

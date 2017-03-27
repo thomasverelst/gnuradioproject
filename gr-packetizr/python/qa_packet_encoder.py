@@ -72,7 +72,7 @@ class qa_packet_encoder (gr_unittest.TestCase):
 
         src = blocks.vector_source_b (src_data, repeat=False)
         tagger = blocks.stream_to_tagged_stream(1, 1, packet_len, "packet_len")
-        penc = packetizr.packet_encoder (preamble, constel_preamble, constel_header, constel_payload, 1, header_formatter, "packet_len") #itemsize is in bytes
+        penc = packetizr.packet_encoder (preamble, constel_header, constel_payload, header_formatter, "packet_len",1) #itemsize is in bytes
 
         snk = blocks.vector_sink_c(1)
         #self.tb.connect (src, unpack0)
@@ -132,7 +132,7 @@ class qa_packet_encoder (gr_unittest.TestCase):
 
         src = blocks.vector_source_b (src_data, repeat=False)
         tagger = blocks.stream_to_tagged_stream(1, 1, packet_len, "packet_len")
-        penc = packetizr.packet_encoder (preamble, constel_preamble, constel_header, constel_payload, 1, header_formatter, "packet_len") #itemsize is in bytes
+        penc = packetizr.packet_encoder (preamble, constel_header, constel_payload,  header_formatter, "packet_len", 1) #itemsize is in bytes
 
         snk = blocks.vector_sink_c(1)
         #self.tb.connect (src, unpack0)
