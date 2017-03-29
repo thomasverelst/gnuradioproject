@@ -1,38 +1,81 @@
 <?xml version="1.0"?>
 <block>
-  <name>tagged_stream_demux_xx</name>
+  <name>Tagged Stream Demux</name>
   <key>packetizr_tagged_stream_demux_xx</key>
   <category>packetizr</category>
   <import>import packetizr</import>
-  <make>packetizr.tagged_stream_demux_xx($itemsize, $&lengthtagname)</make>
-  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
-       Sub-nodes:
-       * name
-       * key (makes the value accessible as $keyname, e.g. in the make node)
-       * type -->
+  <make>packetizr.tagged_stream_demux_xx($type.size*$vlen, $lengthtagname, $splitsize)</make>
+  
   <param>
-    <name>...</name>
-    <key>...</key>
-    <type>...</type>
+    <name>IO Type</name>
+    <key>type</key>
+    <type>enum</type>
+    <option>
+      <name>Complex</name>
+      <key>complex</key>
+      <opt>size:gr.sizeof_gr_complex</opt>
+    </option>
+    <option>
+      <name>Float</name>
+      <key>float</key>
+      <opt>size:gr.sizeof_float</opt>
+    </option>
+    <option>
+      <name>Int</name>
+      <key>int</key>
+      <opt>size:gr.sizeof_int</opt>
+    </option>
+    <option>
+      <name>Short</name>
+      <key>short</key>
+      <opt>size:gr.sizeof_short</opt>
+    </option>
+    <option>
+      <name>Byte</name>
+      <key>byte</key>
+      <opt>size:gr.sizeof_char</opt>
+    </option>
+  </param>
+  <param>
+    <name>Length tag names</name>
+    <key>lengthtagname</key>
+    <value>"packet_len"</value>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Number of outputs</name>
+    <key>noutputs</key>
+    <value>3</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Vector Length</name>
+    <key>vlen</key>
+    <value>1</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Split size</name>
+    <key>splitsize</key>
+    <value>(2,2)</value>
+    <type>int_vector</type>
   </param>
 
-  <!-- Make one 'sink' node per input. Sub-nodes:
-       * name (an identifier for the GUI)
-       * type
-       * vlen
-       * optional (set to 1 for optional inputs) -->
-  <sink>
-    <name>in</name>
-    <type><!-- e.g. int, float, complex, byte, short, xxx_vector, ...--></type>
-  </sink>
 
-  <!-- Make one 'source' node per output. Sub-nodes:
-       * name (an identifier for the GUI)
-       * type
-       * vlen
-       * optional (set to 1 for optional inputs) -->
+
+ 
+
+   <sink>
+    <name>in</name>
+    <type>$type</type>
+    <vlen>$vlen</vlen>
+  </sink>
   <source>
     <name>out</name>
-    <type><!-- e.g. int, float, complex, byte, short, xxx_vector, ...--></type>
+    <type>$type</type>
+    <vlen>$vlen</vlen>
+    <nports>$noutputs</nports>
   </source>
+
+
 </block>

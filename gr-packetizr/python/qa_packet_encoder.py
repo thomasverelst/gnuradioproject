@@ -34,7 +34,7 @@ class qa_packet_encoder (gr_unittest.TestCase):
     def tearDown (self):
         self.tb = None
 
-    def test_001_t (self):
+    def test_packet_encoder_1 (self):
         preamble = (1,-1,-1,1)
         #preamble = tuple();
         packet_len = 4
@@ -84,7 +84,7 @@ class qa_packet_encoder (gr_unittest.TestCase):
         print "\n RESULT DATA",result_data,"\n"
         
         #self.assertFloatTuplesAlmostEqual (expected_result, result_data, 6)   
-    def test_002_t (self):
+    def test_packet_encoder_2 (self):
         preamble = (1,-1,-1,1)
         #preamble = tuple();
         packet_len = 2

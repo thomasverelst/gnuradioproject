@@ -31,7 +31,7 @@ class qa_packet_decoder (gr_unittest.TestCase):
     def tearDown (self):
         self.tb = None
 
-    def test_001_t (self):
+    def test_packet_decoder_1 (self):
         # set up fg
         self.tb.run ()
         # check data

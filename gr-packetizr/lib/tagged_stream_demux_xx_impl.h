@@ -29,13 +29,14 @@ namespace gr {
     class tagged_stream_demux_xx_impl : public tagged_stream_demux_xx
     {
      private:
-      // Nothing to declare in this block.
+      size_t d_itemsize;
+      std::vector<int> d_splitsize;
 
      protected:
       int calculate_output_stream_length(const gr_vector_int &ninput_items);
 
      public:
-      tagged_stream_demux_xx_impl(size_t itemsize, const std::string &lengthtagname);
+      tagged_stream_demux_xx_impl(size_t itemsize, const std::string &lengthtagname, const std::vector<int> splitsize);
       ~tagged_stream_demux_xx_impl();
 
       // Where all the action really happens

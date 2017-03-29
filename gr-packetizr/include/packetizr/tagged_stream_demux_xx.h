@@ -46,7 +46,7 @@ namespace gr {
        * class. packetizr::tagged_stream_demux_xx::make is the public interface for
        * creating new instances.
        */
-      static sptr make(size_t itemsize, const std::string &lengthtagname);
+      static sptr make(size_t itemsize, const std::string &lengthtagname, const std::vector<int> splitsize);
     };
 
   } // namespace packetizr
