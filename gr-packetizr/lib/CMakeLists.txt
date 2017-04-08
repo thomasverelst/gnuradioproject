@@ -28,6 +28,7 @@ link_directories(${Boost_LIBRARY_DIRS})
 list(APPEND packetizr_sources
     packet_encoder_impl.cc
     tagged_stream_demux_xx_impl.cc
+    preamble_header_payload_demux_impl.cc
 )
 
 set(packetizr_sources "${packetizr_sources}" PARENT_SCOPE)

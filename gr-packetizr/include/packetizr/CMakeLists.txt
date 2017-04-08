@@ -23,5 +23,6 @@
 install(FILES
     api.h
     packet_encoder.h
-    tagged_stream_demux_xx.h DESTINATION include/packetizr
+    tagged_stream_demux_xx.h
+    preamble_header_payload_demux.h DESTINATION include/packetizr
 )

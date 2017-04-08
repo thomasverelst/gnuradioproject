@@ -32,4 +32,5 @@ except ImportError:
 
 # import any pure python here
 from packet_decoder import packet_decoder
+from modulate_vector_cc import modulate_vector_cc
 #
