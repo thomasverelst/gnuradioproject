@@ -29,7 +29,8 @@ namespace gr {
     class preamble_header_payload_demux_impl : public preamble_header_payload_demux
     {
      private:
-      int d_header_len; //!< Number of bytes per header
+      int d_header_len; //!< Number of bytes per 
+      int d_preamble_len;
       const int d_header_padding_symbols; //!< Symbols header padding
       const int d_header_padding_items; //!< Items header padding
       const int d_header_padding_total_items; //!< Items header padding
@@ -102,6 +103,7 @@ namespace gr {
      public:
       preamble_header_payload_demux_impl(
         const int header_len,
+        const int preamble_len,
         const int items_per_symbol,
         const int guard_interval,
         const std::string &length_tag_key,

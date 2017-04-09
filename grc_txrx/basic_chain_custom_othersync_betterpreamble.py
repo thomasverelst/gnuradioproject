@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 ##################################################
 # GNU Radio Python Flow Graph
-# Title: Basic Chain Custom Othersync
-# Generated: Sun Apr  9 13:00:53 2017
+# Title: Basic Chain Custom Othersync Betterpreamble
+# Generated: Sun Apr  9 13:48:12 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -37,12 +37,12 @@ import sys
 from gnuradio import qtgui
 
 
-class basic_chain_custom_othersync(gr.top_block, Qt.QWidget):
+class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
 
     def __init__(self):
-        gr.top_block.__init__(self, "Basic Chain Custom Othersync")
+        gr.top_block.__init__(self, "Basic Chain Custom Othersync Betterpreamble")
         Qt.QWidget.__init__(self)
-        self.setWindowTitle("Basic Chain Custom Othersync")
+        self.setWindowTitle("Basic Chain Custom Othersync Betterpreamble")
         qtgui.util.check_set_qss()
         try:
             self.setWindowIcon(Qt.QIcon.fromTheme('gnuradio-grc'))
@@ -60,7 +60,7 @@ class basic_chain_custom_othersync(gr.top_block, Qt.QWidget):
         self.top_grid_layout = Qt.QGridLayout()
         self.top_layout.addLayout(self.top_grid_layout)
 
-        self.settings = Qt.QSettings("GNU Radio", "basic_chain_custom_othersync")
+        self.settings = Qt.QSettings("GNU Radio", "basic_chain_custom_othersync_betterpreamble")
         self.restoreGeometry(self.settings.value("geometry").toByteArray())
 
         ##################################################
@@ -76,13 +76,10 @@ class basic_chain_custom_othersync(gr.top_block, Qt.QWidget):
         self.rrc_taps = rrc_taps = firdes.root_raised_cosine(nfilts, nfilts, 1.0/float(sps), eb, 5*sps*nfilts)
         self.modulated_sync_word = modulated_sync_word = packetizr.modulate_vector_cc(rxmod .to_basic_block(), preamble)
         self.matched_filter = matched_filter = firdes.root_raised_cosine(nfilts, nfilts, 1.0, eb, 11*sps*nfilts)
-        self.header_formatter = header_formatter = digital.packet_header_default(8, "packet_len", "packet_num", 8)
+        self.header_formatter = header_formatter = digital.packet_header_default(4, "packet_len", "packet_num", 8)
         self.constel_preamble = constel_preamble = digital.constellation_bpsk()
         self.constel_payload = constel_payload = digital.constellation_qpsk()
         self.constel_header = constel_header = digital.constellation_bpsk()
-
-        self.constel_0 = constel_0 = digital.constellation_calcdist(([1,- 1]), ([0,1]), 2, 1).base()
-
 
         self.constel = constel = digital.constellation_calcdist(([1,- 1]), ([0,1]), 2, 1).base()
 
@@ -588,23 +585,7 @@ class basic_chain_custom_othersync(gr.top_block, Qt.QWidget):
         	  flt_size=32)
         self.pfb_arb_resampler_xxx_0.declare_sample_delay(40)
 
-        self.packetizr_preamble_header_payload_demux_0 = Template error:
-            packetizr.preamble_header_payload_demux(
-            $header_len,
-            $preamble_len,
-            $items_per_symbol,
-            $guard_interval,
-            $length_tag_key,
-            $trigger_tag_key,
-            $output_symbols,
-            $itemsize,
-            $timing_tag_key,
-            $samp_rate,
-            $special_tags,
-            $header_padding
-            )
-
-            cannot find 'itemsize'
+        self.packetizr_preamble_header_payload_demux_0 =  packetizr.preamble_header_payload_demux(32/constel_header.bits_per_symbol(), 64, 1, 0, "packet_len", "corr_est", True, gr.sizeof_gr_complex, "rx_time", samp_rate, (), 0)
         self.packetizr_packet_encoder_0 = packetizr.packet_encoder((preamble), constel_header.base(), constel_payload.base(), header_formatter, "packet_len", 1)
         self.digital_pfb_clock_sync_xxx_0_0_0 = digital.pfb_clock_sync_ccf(sps, 3.14*2/100, (rrc_taps), 32, 0, 1.5, 1)
         self.digital_packet_headerparser_b_0 = digital.packet_headerparser_b(header_formatter.base())
@@ -627,7 +608,6 @@ class basic_chain_custom_othersync(gr.top_block, Qt.QWidget):
         self.blocks_repack_bits_bb_2 = blocks.repack_bits_bb(constel_header.bits_per_symbol(), 8, "", False, gr.GR_LSB_FIRST)
         self.blocks_repack_bits_bb_0_1_0 = blocks.repack_bits_bb(8, constel_payload.bits_per_symbol(), '', False, gr.GR_LSB_FIRST)
         self.blocks_null_source_0 = blocks.null_source(gr.sizeof_gr_complex*1)
-        self.blocks_message_debug_0 = blocks.message_debug()
         self.blocks_delay_0 = blocks.delay(gr.sizeof_float*1, ber_delay_slider)
         self.blocks_complex_to_real_0_0 = blocks.complex_to_real(1)
         self.blocks_complex_to_imag_0_0 = blocks.complex_to_imag(1)
@@ -640,7 +620,6 @@ class basic_chain_custom_othersync(gr.top_block, Qt.QWidget):
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.digital_packet_headerparser_b_0, 'header_data'), (self.blocks_message_debug_0, 'print'))
         self.msg_connect((self.digital_packet_headerparser_b_0, 'header_data'), (self.packetizr_preamble_header_payload_demux_0, 'header_data'))
         self.connect((self.analog_agc2_xx_0_0_0, 0), (self.digital_pfb_clock_sync_xxx_0_0_0, 0))
         self.connect((self.analog_agc2_xx_0_0_0, 0), (self.qtgui_time_sink_x_0_1_0_0_0_1, 0))
@@ -672,11 +651,13 @@ class basic_chain_custom_othersync(gr.top_block, Qt.QWidget):
         self.connect((self.packetizr_packet_encoder_0, 0), (self.blocks_tagged_stream_mux_0, 0))
         self.connect((self.packetizr_preamble_header_payload_demux_0, 0), (self.digital_constellation_decoder_cb_0, 0))
         self.connect((self.packetizr_preamble_header_payload_demux_0, 1), (self.digital_constellation_decoder_cb_0_0, 0))
+        self.connect((self.packetizr_preamble_header_payload_demux_0, 0), (self.qtgui_const_sink_x_0_0, 0))
         self.connect((self.packetizr_preamble_header_payload_demux_0, 0), (self.qtgui_time_sink_x_0_1_0_0_1, 0))
+        self.connect((self.packetizr_preamble_header_payload_demux_0, 1), (self.qtgui_time_sink_x_0_1_0_0_1_0, 0))
         self.connect((self.pfb_arb_resampler_xxx_0, 0), (self.blocks_tag_gate_0, 0))
 
     def closeEvent(self, event):
-        self.settings = Qt.QSettings("GNU Radio", "basic_chain_custom_othersync")
+        self.settings = Qt.QSettings("GNU Radio", "basic_chain_custom_othersync_betterpreamble")
         self.settings.setValue("geometry", self.saveGeometry())
         event.accept()
 
@@ -788,12 +769,6 @@ class basic_chain_custom_othersync(gr.top_block, Qt.QWidget):
     def set_constel_header(self, constel_header):
         self.constel_header = constel_header
 
-    def get_constel_0(self):
-        return self.constel_0
-
-    def set_constel_0(self, constel_0):
-        self.constel_0 = constel_0
-
     def get_constel(self):
         return self.constel
 
@@ -808,7 +783,7 @@ class basic_chain_custom_othersync(gr.top_block, Qt.QWidget):
         self.blocks_delay_0.set_dly(self.ber_delay_slider)
 
 
-def main(top_block_cls=basic_chain_custom_othersync, options=None):
+def main(top_block_cls=basic_chain_custom_othersync_betterpreamble, options=None):
 
     from distutils.version import StrictVersion
     if StrictVersion(Qt.qVersion()) >= StrictVersion("4.5.0"):

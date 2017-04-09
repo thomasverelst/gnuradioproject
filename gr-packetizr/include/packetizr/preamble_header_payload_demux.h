@@ -177,7 +177,8 @@ namespace gr {
        * \param header_padding A number of items that is appended and prepended to the header.
        */
       static sptr make(
-        const int header_len,
+          const int header_len,
+          const int preamble_len,
           const int items_per_symbol=1,
           const int guard_interval=0,
           const std::string &length_tag_key="frame_len",

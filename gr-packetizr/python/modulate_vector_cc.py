@@ -48,6 +48,6 @@ def modulate_vector_cc(modulator, data):
 
     tb.run ()
     result_data = snk.data ()
-    print "\n MODULATED DATA",result_data,"\n"
+    #print "\n MODULATED DATA",result_data,"\n"
     return result_data
    

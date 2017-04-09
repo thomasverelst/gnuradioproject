@@ -27,6 +27,7 @@
 #include <boost/format.hpp>
 #include <climits>
 
+using namespace std;
 
 namespace gr {
   namespace packetizr {
@@ -47,6 +48,7 @@ namespace gr {
 
     enum demux_states_t {
       STATE_FIND_TRIGGER,       // "Idle" state (waiting for burst)
+      STATE_PREAMBLE,
       STATE_HEADER,             // Copy header
       STATE_WAIT_FOR_MSG,       // Null state (wait until msg from header demod)
       STATE_HEADER_RX_SUCCESS,  // Header processing
@@ -68,6 +70,7 @@ namespace gr {
     preamble_header_payload_demux::sptr
     preamble_header_payload_demux::make(
       int header_len,
+      int preamble_len,
       int items_per_symbol,
       int guard_interval,
       const std::string &length_tag_key,
@@ -83,6 +86,7 @@ namespace gr {
       return gnuradio::get_initial_sptr
         (new preamble_header_payload_demux_impl(
           header_len, 
+          preamble_len,
           items_per_symbol, 
           guard_interval, 
           length_tag_key, 
@@ -101,11 +105,13 @@ namespace gr {
      */
     preamble_header_payload_demux_impl::preamble_header_payload_demux_impl(
       int header_len,
+      int preamble_len,
       int items_per_symbol,
       int guard_interval,
       const std::string &length_tag_key,
       const std::string &trigger_tag_key,
-      bool output_symbols, size_t itemsize,
+      bool output_symbols, 
+      size_t itemsize,
       const std::string &timing_tag_key, 
       const double samp_rate, 
       const std::vector<std::string> &special_tags,
@@ -115,6 +121,7 @@ namespace gr {
              io_signature::make2(1, 2, itemsize, sizeof(char)),
           io_signature::make(2, 2, (output_symbols ? itemsize * items_per_symbol : itemsize))),
       d_header_len(header_len),
+      d_preamble_len(preamble_len),
       d_header_padding_symbols(header_padding / items_per_symbol),
       d_header_padding_items(header_padding % items_per_symbol),
       d_header_padding_total_items(header_padding),
@@ -137,6 +144,7 @@ namespace gr {
       d_last_time(pmt::make_tuple(pmt::from_uint64(0L), pmt::from_double(0.0))),
       d_sampling_time(1.0/samp_rate)
     {
+      //cout << "PREAMBLE HEADER PAYLOAD DEMUX SAYS HELLO WORLD";
       if (d_header_len < 1) {
         throw std::invalid_argument("Header length must be at least 1 symbol.");
       }
@@ -175,6 +183,7 @@ namespace gr {
     }
 
     // forecast() depends on state:
+    // - When waiting for the preamble, we require at least the preamble length
     // - When waiting for a header, we require at least the header length
     // - when waiting for a payload, we require at least the payload length
     // - Otherwise, pretend this is a sync block with a decimation/interpolation
@@ -185,7 +194,9 @@ namespace gr {
         gr_vector_int &ninput_items_required
     ) {
       int n_items_reqd = 0;
-      if (d_state == STATE_HEADER) {
+      if(d_state  == STATE_PREAMBLE){
+        n_items_reqd = d_preamble_len * (d_items_per_symbol + d_gi);
+      } else if (d_state == STATE_HEADER) {
         n_items_reqd = d_header_len * (d_items_per_symbol + d_gi)
                        + 2*d_header_padding_total_items;
       } else if (d_state == STATE_PAYLOAD) {
@@ -274,6 +285,7 @@ namespace gr {
           break;
 
         case STATE_FIND_TRIGGER: {
+          cout << "GENERAL WORK: STATE_FIND_TRIGGER\n";
           // Assumptions going into this state:
           // - No other state was active for this call to general_work()
           //   - i.e. n_items_read == 0
@@ -289,7 +301,8 @@ namespace gr {
                   ((const unsigned char *) input_items[PORT_TRIGGER]) + n_items_read : NULL
           );
           if (trigger_offset < max_rel_offset) {
-            d_state = STATE_HEADER;
+            cout << "GENERAL WORK: TRIGGER FOUND\n";
+            d_state = STATE_PREAMBLE;
           }
           // If we're using padding, don't consume everything, or we might
           // end up with not enough items before the trigger
@@ -297,8 +310,16 @@ namespace gr {
           CONSUME_ITEMS(items_to_consume);
           break;
         } /* case STATE_FIND_TRIGGER */
+        case STATE_PREAMBLE: 
+          cout << "GENERAL_WORK: Preamble state\n";
+          CONSUME_ITEMS(d_preamble_len * (d_items_per_symbol + d_gi));
+          d_state = STATE_HEADER;
+
+
+
 
         case STATE_HEADER:
+          cout << "GENERAL WORK: Header state\n";
           // Assumptions going into this state:
           // - The first items on `in' are the header samples (including padding)
           //   - So we can just copy from the beginning of `in'
