@@ -16,11 +16,11 @@
 # along with GNU Radio; see the file COPYING.  If not, write to
 # the Free Software Foundation, Inc., 51 Franklin Street,
 # Boston, MA 02110-1301, USA.
-
 install(FILES
     packetizr_packet_encoder.xml
     packetizr_packet_decoder.xml
     packetizr_modulate_vector.xml
-    packetizr_tagged_stream_demux_xx.xml
+    packetizr_tagged_stream_demux.xml
+    packetizr_preamble_header_payload_demux.xml
     packetizr_preamble_header_payload_demux.xml DESTINATION share/gnuradio/grc/blocks
 )

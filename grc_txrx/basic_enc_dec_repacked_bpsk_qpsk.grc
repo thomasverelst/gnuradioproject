@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<?grc format='1' created='3.7.9'?>
+<?grc format='1' created='3.7.11'?>
 <flow_graph>
   <timestamp>Sat Mar 18 20:26:41 2017</timestamp>
   <block>
@@ -26,7 +26,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -93,7 +93,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -153,6 +153,10 @@
     <param>
       <key>const_points</key>
       <value>[1,-1]</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>calcdist</value>
     </param>
     <param>
       <key>dims</key>
@@ -227,6 +231,10 @@
     <param>
       <key>const_points</key>
       <value>[-1-1j, -1+1j, 1+1j, 1-1j]</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>calcdist</value>
     </param>
     <param>
       <key>dims</key>
@@ -331,6 +339,33 @@
     </param>
     <param>
       <key>_coordinate</key>
+      <value>(752, 1764)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>eb</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>0.35</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
       <value>(704, 5)</value>
     </param>
     <param>
@@ -347,6 +382,37 @@
     </param>
   </block>
   <block>
+    <key>variable_modulate_vector3</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>data</key>
+      <value>preamble</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(256, 1740)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>modulated_sync_word</value>
+    </param>
+    <param>
+      <key>mod</key>
+      <value>rxmod</value>
+    </param>
+  </block>
+  <block>
     <key>variable</key>
     <param>
       <key>comment</key>
@@ -355,6 +421,33 @@
     <param>
       <key>_enabled</key>
       <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1032, 1700)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>nfilts</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>32</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -374,6 +467,87 @@
     </param>
   </block>
   <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(224, 1572)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>preamble_0</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>[1,-1,1,-1,1,1,-1,-1,1,1,-1,1,1,1,-1,1,1,-1,1,-1,-1,1,-1,-1,1,1,1,-1,-1,-1,1,-1,1,1,1,1,-1,-1,1,-1,1,-1,-1,-1,1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,-1,1,1,1,1,1,1,-1,-1]</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(856, 1764)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>rrc_taps_enc</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>firdes.root_raised_cosine(nfilts, nfilts, 1.0, eb, 11*sps*nfilts)</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(480, 1756)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>rxmod</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>filter.pfb_arb_resampler_ccf(sps,  rrc_taps_enc , 32) </value>
+    </param>
+  </block>
+  <block>
     <key>variable_qtgui_range</key>
     <param>
       <key>comment</key>
@@ -385,7 +559,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -461,6 +635,33 @@
     <param>
       <key>value</key>
       <value>32000</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(752, 1700)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>sps</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>4</value>
     </param>
   </block>
   <block>
@@ -1477,7 +1678,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -1621,6 +1822,10 @@
       <value>16</value>
     </param>
     <param>
+      <key>header_padding</key>
+      <value>0</value>
+    </param>
+    <param>
       <key>id</key>
       <value>digital_header_payload_demux_0</value>
     </param>
@@ -1756,10 +1961,45 @@
     </param>
   </block>
   <block>
+    <key>import</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(368, 1640)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>import_0</value>
+    </param>
+    <param>
+      <key>import</key>
+      <value>from gnuradio import filter</value>
+    </param>
+  </block>
+  <block>
     <key>qtgui_const_sink_x</key>
     <param>
       <key>autoscale</key>
       <value>False</value>
+    </param>
+    <param>
+      <key>axislabels</key>
+      <value>True</value>
     </param>
     <param>
       <key>alias</key>
@@ -2103,6 +2343,10 @@
     <param>
       <key>autoscale</key>
       <value>False</value>
+    </param>
+    <param>
+      <key>axislabels</key>
+      <value>True</value>
     </param>
     <param>
       <key>alias</key>
@@ -2464,6 +2708,10 @@
       <value>False</value>
     </param>
     <param>
+      <key>axislabels</key>
+      <value>True</value>
+    </param>
+    <param>
       <key>alias</key>
       <value></value>
     </param>
@@ -2821,6 +3069,10 @@
     <param>
       <key>autoscale</key>
       <value>False</value>
+    </param>
+    <param>
+      <key>axislabels</key>
+      <value>True</value>
     </param>
     <param>
       <key>alias</key>
@@ -3182,6 +3434,10 @@
       <value>False</value>
     </param>
     <param>
+      <key>axislabels</key>
+      <value>True</value>
+    </param>
+    <param>
       <key>alias</key>
       <value></value>
     </param>
@@ -3541,6 +3797,10 @@
       <value>False</value>
     </param>
     <param>
+      <key>axislabels</key>
+      <value>True</value>
+    </param>
+    <param>
       <key>alias</key>
       <value></value>
     </param>
@@ -3898,6 +4158,10 @@
     <param>
       <key>autoscale</key>
       <value>False</value>
+    </param>
+    <param>
+      <key>axislabels</key>
+      <value>True</value>
     </param>
     <param>
       <key>alias</key>
@@ -4368,7 +4632,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -4449,7 +4713,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>

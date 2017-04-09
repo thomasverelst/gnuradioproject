@@ -27,8 +27,6 @@
 
 namespace gr {
   namespace packetizr {
-    
-
     /*!
      * \brief Header/Payload demuxer (HPD).
      * \ingroup packet_operators_blk
@@ -179,10 +177,9 @@ namespace gr {
        * \param header_padding A number of items that is appended and prepended to the header.
        */
       static sptr make(
-          const int header_len,
+        const int header_len,
           const int items_per_symbol=1,
           const int guard_interval=0,
-          const int preamble_length=0,
           const std::string &length_tag_key="frame_len",
           const std::string &trigger_tag_key="",
           const bool output_symbols=false,
@@ -191,8 +188,9 @@ namespace gr {
           const double samp_rate=1.0,
           const std::vector<std::string> &special_tags=std::vector<std::string>(),
           const size_t header_padding=0
-      );
+          );
     };
+
   } // namespace packetizr
 } // namespace gr
 

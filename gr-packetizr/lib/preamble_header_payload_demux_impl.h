@@ -28,14 +28,13 @@ namespace gr {
 
     class preamble_header_payload_demux_impl : public preamble_header_payload_demux
     {
-    private:      
+     private:
       int d_header_len; //!< Number of bytes per header
       const int d_header_padding_symbols; //!< Symbols header padding
       const int d_header_padding_items; //!< Items header padding
       const int d_header_padding_total_items; //!< Items header padding
       int d_items_per_symbol; //!< Bytes per symbol
       int d_gi; //!< Bytes per guard interval
-      int d_preamble_length; //!< Length of preamble (0 if none)
       pmt::pmt_t d_len_tag_key; //!< Key of length tag
       pmt::pmt_t d_trigger_tag_key; //!< Key of trigger tag (if used)
       bool d_output_symbols; //!< If true, output is symbols, not items
@@ -54,9 +53,6 @@ namespace gr {
       double d_sampling_time; //!< Inverse sampling rate
       std::vector<pmt::pmt_t> d_special_tags; //!< List of special tags
       std::vector<pmt::pmt_t> d_special_tags_last_value; //!< The current value of the special tags
-
-
-
 
       // Helper functions to make the state machine more readable
 
@@ -102,29 +98,30 @@ namespace gr {
       //! Adds all tags in d_special_tags and timing info to the first item of the header.
       void add_special_tags();
 
-    public:
+
+     public:
       preamble_header_payload_demux_impl(
         const int header_len,
-          const int items_per_symbol,
-          const int guard_interval,
-           const int preamble_length,
-          const std::string &length_tag_key,
-          const std::string &trigger_tag_key,
-          const bool output_symbols,
-          const size_t itemsize,
-          const std::string &timing_tag_key,
-          const double samp_rate,
-          const std::vector<std::string> &special_tags,
-          const size_t header_padding
+        const int items_per_symbol,
+        const int guard_interval,
+        const std::string &length_tag_key,
+        const std::string &trigger_tag_key,
+        const bool output_symbols, 
+        const size_t itemsize,
+        const std::string &timing_tag_key, 
+        const double samp_rate, 
+        const std::vector<std::string> &special_tags,
+        const size_t header_padding
+        );
       ~preamble_header_payload_demux_impl();
 
       // Where all the action really happens
       void forecast (int noutput_items, gr_vector_int &ninput_items_required);
 
       int general_work(int noutput_items,
-       gr_vector_int &ninput_items,
-       gr_vector_const_void_star &input_items,
-       gr_vector_void_star &output_items);
+           gr_vector_int &ninput_items,
+           gr_vector_const_void_star &input_items,
+           gr_vector_void_star &output_items);
     };
 
   } // namespace packetizr

@@ -36,5 +36,6 @@
 GR_SWIG_BLOCK_MAGIC2(packetizr, packet_encoder);
 %include "packetizr/tagged_stream_demux_xx.h"
 GR_SWIG_BLOCK_MAGIC2(packetizr, tagged_stream_demux_xx);
+
 %include "packetizr/preamble_header_payload_demux.h"
 GR_SWIG_BLOCK_MAGIC2(packetizr, preamble_header_payload_demux);

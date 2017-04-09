@@ -2,23 +2,23 @@
 <block>
   <name>Preamble/Header/Payload Demux</name>
   <key>packetizr_preamble_header_payload_demux</key>
-  <category>packetizr</category>
+  <category>[packetizr]</category>
   <import>import packetizr</import>
-  <make>packetizr.preamble_header_payload_demux(
+  <make>
+    packetizr.preamble_header_payload_demux(
     $header_len, 
     $items_per_symbol, 
     $guard_interval, 
-    $preamble_size, 
     $length_tag_key, 
     $trigger_tag_key, 
     $output_symbols, 
-    $(type.itemsize),
-    $timing_tag_key,
-    $samp_rate,
-    $special_tags,
-    $header_padding)
+    $itemsize, 
+    $samp_rate, 
+    $special_tags, 
+    $header_padding
+    )
   </make>
-<param>
+ <param>
     <name>Header Length (Symbols)</name>
     <key>header_len</key>
     <type>int</type>
@@ -40,12 +40,6 @@
     <value>0</value>
     <type>int</type>
     <hide>#if $guard_interval then 'none' else 'part'#</hide>
-  </param>
-  <param>
-    <name>Preamble length</name>
-    <key>preamble_length</key>
-    <value>0</value>
-    <type>int</type>
   </param>
   <param>
     <name>Length tag key</name>

@@ -24,12 +24,11 @@ include(GrPlatform) #define LIB_SUFFIX
 
 include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
-
 list(APPEND packetizr_sources
     packet_encoder_impl.cc
     tagged_stream_demux_xx_impl.cc
     preamble_header_payload_demux_impl.cc
-)
+    preamble_header_payload_demux_impl.cc )
 
 set(packetizr_sources "${packetizr_sources}" PARENT_SCOPE)
 if(NOT packetizr_sources)
