@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Basic Chain Custom Othersync Betterpreamble
-# Generated: Sun Apr  9 13:48:12 2017
+# Generated: Fri Apr 14 13:59:13 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -78,7 +78,7 @@ class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
         self.matched_filter = matched_filter = firdes.root_raised_cosine(nfilts, nfilts, 1.0, eb, 11*sps*nfilts)
         self.header_formatter = header_formatter = digital.packet_header_default(4, "packet_len", "packet_num", 8)
         self.constel_preamble = constel_preamble = digital.constellation_bpsk()
-        self.constel_payload = constel_payload = digital.constellation_qpsk()
+        self.constel_payload = constel_payload = digital.constellation_bpsk()
         self.constel_header = constel_header = digital.constellation_bpsk()
 
         self.constel = constel = digital.constellation_calcdist(([1,- 1]), ([0,1]), 2, 1).base()
@@ -538,6 +538,88 @@ class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
 
         self._qtgui_time_sink_x_0_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0_0.pyqwidget(), Qt.QWidget)
         self.top_layout.addWidget(self._qtgui_time_sink_x_0_0_win)
+        self.qtgui_const_sink_x_0_0_0_0 = qtgui.const_sink_c(
+        	1024, #size
+        	"RX  Constellations", #name
+        	1 #number of inputs
+        )
+        self.qtgui_const_sink_x_0_0_0_0.set_update_time(0.10)
+        self.qtgui_const_sink_x_0_0_0_0.set_y_axis(-2, 2)
+        self.qtgui_const_sink_x_0_0_0_0.set_x_axis(-2, 2)
+        self.qtgui_const_sink_x_0_0_0_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, "")
+        self.qtgui_const_sink_x_0_0_0_0.enable_autoscale(False)
+        self.qtgui_const_sink_x_0_0_0_0.enable_grid(False)
+        self.qtgui_const_sink_x_0_0_0_0.enable_axis_labels(True)
+
+        if not True:
+          self.qtgui_const_sink_x_0_0_0_0.disable_legend()
+
+        labels = ['', '', '', '', '',
+                  '', '', '', '', '']
+        widths = [1, 1, 1, 1, 1,
+                  1, 1, 1, 1, 1]
+        colors = ["blue", "red", "red", "red", "red",
+                  "red", "red", "red", "red", "red"]
+        styles = [0, 0, 0, 0, 0,
+                  0, 0, 0, 0, 0]
+        markers = [0, 0, 0, 0, 0,
+                   0, 0, 0, 0, 0]
+        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
+                  1.0, 1.0, 1.0, 1.0, 1.0]
+        for i in xrange(1):
+            if len(labels[i]) == 0:
+                self.qtgui_const_sink_x_0_0_0_0.set_line_label(i, "Data {0}".format(i))
+            else:
+                self.qtgui_const_sink_x_0_0_0_0.set_line_label(i, labels[i])
+            self.qtgui_const_sink_x_0_0_0_0.set_line_width(i, widths[i])
+            self.qtgui_const_sink_x_0_0_0_0.set_line_color(i, colors[i])
+            self.qtgui_const_sink_x_0_0_0_0.set_line_style(i, styles[i])
+            self.qtgui_const_sink_x_0_0_0_0.set_line_marker(i, markers[i])
+            self.qtgui_const_sink_x_0_0_0_0.set_line_alpha(i, alphas[i])
+
+        self._qtgui_const_sink_x_0_0_0_0_win = sip.wrapinstance(self.qtgui_const_sink_x_0_0_0_0.pyqwidget(), Qt.QWidget)
+        self.top_layout.addWidget(self._qtgui_const_sink_x_0_0_0_0_win)
+        self.qtgui_const_sink_x_0_0_0 = qtgui.const_sink_c(
+        	1024, #size
+        	"RX  Payload Constellations", #name
+        	1 #number of inputs
+        )
+        self.qtgui_const_sink_x_0_0_0.set_update_time(0.10)
+        self.qtgui_const_sink_x_0_0_0.set_y_axis(-2, 2)
+        self.qtgui_const_sink_x_0_0_0.set_x_axis(-2, 2)
+        self.qtgui_const_sink_x_0_0_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, "")
+        self.qtgui_const_sink_x_0_0_0.enable_autoscale(False)
+        self.qtgui_const_sink_x_0_0_0.enable_grid(False)
+        self.qtgui_const_sink_x_0_0_0.enable_axis_labels(True)
+
+        if not True:
+          self.qtgui_const_sink_x_0_0_0.disable_legend()
+
+        labels = ['', '', '', '', '',
+                  '', '', '', '', '']
+        widths = [1, 1, 1, 1, 1,
+                  1, 1, 1, 1, 1]
+        colors = ["blue", "red", "red", "red", "red",
+                  "red", "red", "red", "red", "red"]
+        styles = [0, 0, 0, 0, 0,
+                  0, 0, 0, 0, 0]
+        markers = [0, 0, 0, 0, 0,
+                   0, 0, 0, 0, 0]
+        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
+                  1.0, 1.0, 1.0, 1.0, 1.0]
+        for i in xrange(1):
+            if len(labels[i]) == 0:
+                self.qtgui_const_sink_x_0_0_0.set_line_label(i, "Data {0}".format(i))
+            else:
+                self.qtgui_const_sink_x_0_0_0.set_line_label(i, labels[i])
+            self.qtgui_const_sink_x_0_0_0.set_line_width(i, widths[i])
+            self.qtgui_const_sink_x_0_0_0.set_line_color(i, colors[i])
+            self.qtgui_const_sink_x_0_0_0.set_line_style(i, styles[i])
+            self.qtgui_const_sink_x_0_0_0.set_line_marker(i, markers[i])
+            self.qtgui_const_sink_x_0_0_0.set_line_alpha(i, alphas[i])
+
+        self._qtgui_const_sink_x_0_0_0_win = sip.wrapinstance(self.qtgui_const_sink_x_0_0_0.pyqwidget(), Qt.QWidget)
+        self.top_layout.addWidget(self._qtgui_const_sink_x_0_0_0_win)
         self.qtgui_const_sink_x_0_0 = qtgui.const_sink_c(
         	1024, #size
         	"RX  Header Constellations", #name
@@ -585,16 +667,18 @@ class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
         	  flt_size=32)
         self.pfb_arb_resampler_xxx_0.declare_sample_delay(40)
 
-        self.packetizr_preamble_header_payload_demux_0 =  packetizr.preamble_header_payload_demux(32/constel_header.bits_per_symbol(), 64, 1, 0, "packet_len", "corr_est", True, gr.sizeof_gr_complex, "rx_time", samp_rate, (), 0)
+        self.packetizr_preamble_header_payload_demux_0 =  packetizr.preamble_header_payload_demux(32/constel_header.bits_per_symbol(), 64, 1, 0, "packet_len", "corr_est", True, gr.sizeof_gr_complex, "rx_time", samp_rate, ("phase_est", "time_est"), 0)
         self.packetizr_packet_encoder_0 = packetizr.packet_encoder((preamble), constel_header.base(), constel_payload.base(), header_formatter, "packet_len", 1)
         self.digital_pfb_clock_sync_xxx_0_0_0 = digital.pfb_clock_sync_ccf(sps, 3.14*2/100, (rrc_taps), 32, 0, 1.5, 1)
         self.digital_packet_headerparser_b_0 = digital.packet_headerparser_b(header_formatter.base())
-        self.digital_corr_est_cc_0 = digital.corr_est_cc((preamble), 1, 1, 0.999)
+        self.digital_costas_loop_cc_1_0 = digital.costas_loop_cc(3.14*2/1000, 2, False)
+        self.digital_costas_loop_cc_1 = digital.costas_loop_cc(3.14*2/1000, 2, False)
+        self.digital_corr_est_cc_0 = digital.corr_est_cc((preamble), 1, 98, 0.999)
         self.digital_constellation_decoder_cb_0_0 = digital.constellation_decoder_cb(constel_payload.base())
         self.digital_constellation_decoder_cb_0 = digital.constellation_decoder_cb(constel_header.base())
         self.channels_channel_model_0 = channels.channel_model(
-        	noise_voltage=0,
-        	frequency_offset=0.0,
+        	noise_voltage=0.2,
+        	frequency_offset=0,
         	epsilon=1.0,
         	taps=(1, ),
         	noise_seed=0,
@@ -621,7 +705,7 @@ class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
         # Connections
         ##################################################
         self.msg_connect((self.digital_packet_headerparser_b_0, 'header_data'), (self.packetizr_preamble_header_payload_demux_0, 'header_data'))
-        self.connect((self.analog_agc2_xx_0_0_0, 0), (self.digital_pfb_clock_sync_xxx_0_0_0, 0))
+        self.connect((self.analog_agc2_xx_0_0_0, 0), (self.digital_corr_est_cc_0, 0))
         self.connect((self.analog_agc2_xx_0_0_0, 0), (self.qtgui_time_sink_x_0_1_0_0_0_1, 0))
         self.connect((self.analog_random_source_x_0_0, 0), (self.blocks_stream_to_tagged_stream_0_1, 0))
         self.connect((self.blocks_char_to_float_0, 0), (self.qtgui_time_sink_x_1, 0))
@@ -643,15 +727,18 @@ class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
         self.connect((self.digital_constellation_decoder_cb_0_0, 0), (self.blocks_char_to_float_1, 0))
         self.connect((self.digital_corr_est_cc_0, 1), (self.blocks_complex_to_imag_0_0, 0))
         self.connect((self.digital_corr_est_cc_0, 1), (self.blocks_complex_to_real_0_0, 0))
-        self.connect((self.digital_corr_est_cc_0, 0), (self.packetizr_preamble_header_payload_demux_0, 0))
-        self.connect((self.digital_corr_est_cc_0, 0), (self.qtgui_time_sink_x_0_0, 0))
+        self.connect((self.digital_corr_est_cc_0, 0), (self.digital_pfb_clock_sync_xxx_0_0_0, 0))
         self.connect((self.digital_corr_est_cc_0, 0), (self.qtgui_time_sink_x_0_1_0_0_0_0_0, 0))
-        self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.digital_corr_est_cc_0, 0))
-        self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.qtgui_time_sink_x_0_1_0_0_2_0, 0))
+        self.connect((self.digital_costas_loop_cc_1, 0), (self.digital_constellation_decoder_cb_0_0, 0))
+        self.connect((self.digital_costas_loop_cc_1, 0), (self.qtgui_const_sink_x_0_0_0, 0))
+        self.connect((self.digital_costas_loop_cc_1_0, 0), (self.digital_constellation_decoder_cb_0, 0))
+        self.connect((self.digital_costas_loop_cc_1_0, 0), (self.qtgui_const_sink_x_0_0, 0))
+        self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.packetizr_preamble_header_payload_demux_0, 0))
+        self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.qtgui_const_sink_x_0_0_0_0, 0))
+        self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.qtgui_time_sink_x_0_0, 0))
         self.connect((self.packetizr_packet_encoder_0, 0), (self.blocks_tagged_stream_mux_0, 0))
-        self.connect((self.packetizr_preamble_header_payload_demux_0, 0), (self.digital_constellation_decoder_cb_0, 0))
-        self.connect((self.packetizr_preamble_header_payload_demux_0, 1), (self.digital_constellation_decoder_cb_0_0, 0))
-        self.connect((self.packetizr_preamble_header_payload_demux_0, 0), (self.qtgui_const_sink_x_0_0, 0))
+        self.connect((self.packetizr_preamble_header_payload_demux_0, 1), (self.digital_costas_loop_cc_1, 0))
+        self.connect((self.packetizr_preamble_header_payload_demux_0, 0), (self.digital_costas_loop_cc_1_0, 0))
         self.connect((self.packetizr_preamble_header_payload_demux_0, 0), (self.qtgui_time_sink_x_0_1_0_0_1, 0))
         self.connect((self.packetizr_preamble_header_payload_demux_0, 1), (self.qtgui_time_sink_x_0_1_0_0_1_0, 0))
         self.connect((self.pfb_arb_resampler_xxx_0, 0), (self.blocks_tag_gate_0, 0))

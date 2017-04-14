@@ -1963,7 +1963,7 @@
     </param>
     <param>
       <key>noise_voltage</key>
-      <value>0.4</value>
+      <value>0.2</value>
     </param>
     <param>
       <key>seed</key>
@@ -2162,7 +2162,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(656, 424)</value>
+      <value>(424, 352)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2190,7 +2190,7 @@
     </param>
     <param>
       <key>mark_delay</key>
-      <value>1</value>
+      <value>98</value>
     </param>
     <param>
       <key>threshold</key>
@@ -2421,7 +2421,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(928, 560)</value>
+      <value>(920, 592)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2590,7 +2590,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(392, 416)</value>
+      <value>(496, 472)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5903,7 +5903,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(960, 360)</value>
+      <value>(760, 336)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -8807,7 +8807,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(680, 543)</value>
+      <value>(656, 560)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -11069,7 +11069,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1208, 548)</value>
+      <value>(1192, 516)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -11395,7 +11395,7 @@
   </connection>
   <connection>
     <source_block_id>analog_agc2_xx_0_0_0</source_block_id>
-    <sink_block_id>digital_pfb_clock_sync_xxx_0_0_0</sink_block_id>
+    <sink_block_id>digital_corr_est_cc_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -11587,13 +11587,13 @@
   </connection>
   <connection>
     <source_block_id>digital_corr_est_cc_0</source_block_id>
-    <sink_block_id>qtgui_time_sink_x_0_1_0_0_0_0_0</sink_block_id>
+    <sink_block_id>digital_pfb_clock_sync_xxx_0_0_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>digital_corr_est_cc_0</source_block_id>
-    <sink_block_id>virtual_sink_1_0_0_0_0</sink_block_id>
+    <sink_block_id>qtgui_time_sink_x_0_1_0_0_0_0_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -11689,13 +11689,7 @@
   </connection>
   <connection>
     <source_block_id>digital_pfb_clock_sync_xxx_0_0_0</source_block_id>
-    <sink_block_id>digital_corr_est_cc_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>digital_pfb_clock_sync_xxx_0_0_0</source_block_id>
-    <sink_block_id>qtgui_time_sink_x_0_1_0_0_2_0</sink_block_id>
+    <sink_block_id>virtual_sink_1_0_0_0_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

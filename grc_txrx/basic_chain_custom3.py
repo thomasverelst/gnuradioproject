@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Basic Chain Custom3
-# Generated: Sun Apr  9 12:09:28 2017
+# Generated: Fri Apr 14 13:50:57 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -72,11 +72,11 @@ class basic_chain_custom3(gr.top_block, Qt.QWidget):
         self.rrc_taps_enc = rrc_taps_enc = firdes.root_raised_cosine(nfilts, nfilts, 1.0, eb, 11*sps*nfilts)
         self.rxmod = rxmod = filter.pfb_arb_resampler_ccf(sps,  rrc_taps_enc , 32)
         self.preamble = preamble = [1,-1,1,-1,1,1,-1,-1,1,1,-1,1,1,1,-1,1,1,-1,1,-1,-1,1,-1,-1,1,1,1,-1,-1,-1,1,-1,1,1,1,1,-1,-1,1,-1,1,-1,-1,-1,1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,-1,1,1,1,1,1,1,-1,-1]
-        self.samp_rate = samp_rate = 32000
+        self.samp_rate = samp_rate = 3200
         self.rrc_taps = rrc_taps = firdes.root_raised_cosine(nfilts, nfilts, 1.0/float(sps), eb, 5*sps*nfilts)
         self.modulated_sync_word = modulated_sync_word = packetizr.modulate_vector_cc(rxmod .to_basic_block(), preamble)
         self.matched_filter = matched_filter = firdes.root_raised_cosine(nfilts, nfilts, 1.0, eb, 11*sps*nfilts)
-        self.header_formatter = header_formatter = digital.packet_header_default(8, "packet_len", "packet_num", 8)
+        self.header_formatter = header_formatter = digital.packet_header_default(4, "packet_len", "packet_num", 8)
         self.constel_preamble = constel_preamble = digital.constellation_bpsk()
         self.constel_payload = constel_payload = digital.constellation_bpsk()
         self.constel_header = constel_header = digital.constellation_bpsk()
@@ -91,7 +91,7 @@ class basic_chain_custom3(gr.top_block, Qt.QWidget):
         ##################################################
         # Blocks
         ##################################################
-        self._samp_rate_range = Range(1, 256000, 10, 32000, 100)
+        self._samp_rate_range = Range(1, 256000, 10, 3200, 100)
         self._samp_rate_win = RangeWidget(self._samp_rate_range, self.set_samp_rate, 'Sample rate', "slider", int)
         self.top_grid_layout.addWidget(self._samp_rate_win, 3,1,1,1)
         self._ber_delay_slider_range = Range(0, 10000, 1, 0, 100)
@@ -291,106 +291,6 @@ class basic_chain_custom3(gr.top_block, Qt.QWidget):
 
         self._qtgui_time_sink_x_0_1_0_0_2_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0_1_0_0_2_0.pyqwidget(), Qt.QWidget)
         self.top_layout.addWidget(self._qtgui_time_sink_x_0_1_0_0_2_0_win)
-        self.qtgui_time_sink_x_0_1_0_0_1_2_0 = qtgui.time_sink_c(
-        	1024, #size
-        	samp_rate, #samp_rate
-        	"Preamble Stream", #name
-        	1 #number of inputs
-        )
-        self.qtgui_time_sink_x_0_1_0_0_1_2_0.set_update_time(0.10)
-        self.qtgui_time_sink_x_0_1_0_0_1_2_0.set_y_axis(-100, 100)
-
-        self.qtgui_time_sink_x_0_1_0_0_1_2_0.set_y_label('Amplitude', "")
-
-        self.qtgui_time_sink_x_0_1_0_0_1_2_0.enable_tags(-1, True)
-        self.qtgui_time_sink_x_0_1_0_0_1_2_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, 0, "")
-        self.qtgui_time_sink_x_0_1_0_0_1_2_0.enable_autoscale(False)
-        self.qtgui_time_sink_x_0_1_0_0_1_2_0.enable_grid(False)
-        self.qtgui_time_sink_x_0_1_0_0_1_2_0.enable_axis_labels(True)
-        self.qtgui_time_sink_x_0_1_0_0_1_2_0.enable_control_panel(False)
-
-        if not True:
-          self.qtgui_time_sink_x_0_1_0_0_1_2_0.disable_legend()
-
-        labels = ['', '', '', '', '',
-                  '', '', '', '', '']
-        widths = [1, 1, 1, 1, 1,
-                  1, 1, 1, 1, 1]
-        colors = ["blue", "red", "green", "black", "cyan",
-                  "magenta", "yellow", "dark red", "dark green", "blue"]
-        styles = [1, 1, 1, 1, 1,
-                  1, 1, 1, 1, 1]
-        markers = [-1, -1, -1, -1, -1,
-                   -1, -1, -1, -1, -1]
-        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
-                  1.0, 1.0, 1.0, 1.0, 1.0]
-
-        for i in xrange(2):
-            if len(labels[i]) == 0:
-                if(i % 2 == 0):
-                    self.qtgui_time_sink_x_0_1_0_0_1_2_0.set_line_label(i, "Re{{Data {0}}}".format(i/2))
-                else:
-                    self.qtgui_time_sink_x_0_1_0_0_1_2_0.set_line_label(i, "Im{{Data {0}}}".format(i/2))
-            else:
-                self.qtgui_time_sink_x_0_1_0_0_1_2_0.set_line_label(i, labels[i])
-            self.qtgui_time_sink_x_0_1_0_0_1_2_0.set_line_width(i, widths[i])
-            self.qtgui_time_sink_x_0_1_0_0_1_2_0.set_line_color(i, colors[i])
-            self.qtgui_time_sink_x_0_1_0_0_1_2_0.set_line_style(i, styles[i])
-            self.qtgui_time_sink_x_0_1_0_0_1_2_0.set_line_marker(i, markers[i])
-            self.qtgui_time_sink_x_0_1_0_0_1_2_0.set_line_alpha(i, alphas[i])
-
-        self._qtgui_time_sink_x_0_1_0_0_1_2_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0_1_0_0_1_2_0.pyqwidget(), Qt.QWidget)
-        self.top_layout.addWidget(self._qtgui_time_sink_x_0_1_0_0_1_2_0_win)
-        self.qtgui_time_sink_x_0_1_0_0_1_2 = qtgui.time_sink_c(
-        	1024, #size
-        	samp_rate, #samp_rate
-        	"Header Stream", #name
-        	1 #number of inputs
-        )
-        self.qtgui_time_sink_x_0_1_0_0_1_2.set_update_time(0.10)
-        self.qtgui_time_sink_x_0_1_0_0_1_2.set_y_axis(-100, 100)
-
-        self.qtgui_time_sink_x_0_1_0_0_1_2.set_y_label('Amplitude', "")
-
-        self.qtgui_time_sink_x_0_1_0_0_1_2.enable_tags(-1, True)
-        self.qtgui_time_sink_x_0_1_0_0_1_2.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, 0, "")
-        self.qtgui_time_sink_x_0_1_0_0_1_2.enable_autoscale(False)
-        self.qtgui_time_sink_x_0_1_0_0_1_2.enable_grid(False)
-        self.qtgui_time_sink_x_0_1_0_0_1_2.enable_axis_labels(True)
-        self.qtgui_time_sink_x_0_1_0_0_1_2.enable_control_panel(False)
-
-        if not True:
-          self.qtgui_time_sink_x_0_1_0_0_1_2.disable_legend()
-
-        labels = ['', '', '', '', '',
-                  '', '', '', '', '']
-        widths = [1, 1, 1, 1, 1,
-                  1, 1, 1, 1, 1]
-        colors = ["blue", "red", "green", "black", "cyan",
-                  "magenta", "yellow", "dark red", "dark green", "blue"]
-        styles = [1, 1, 1, 1, 1,
-                  1, 1, 1, 1, 1]
-        markers = [-1, -1, -1, -1, -1,
-                   -1, -1, -1, -1, -1]
-        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
-                  1.0, 1.0, 1.0, 1.0, 1.0]
-
-        for i in xrange(2):
-            if len(labels[i]) == 0:
-                if(i % 2 == 0):
-                    self.qtgui_time_sink_x_0_1_0_0_1_2.set_line_label(i, "Re{{Data {0}}}".format(i/2))
-                else:
-                    self.qtgui_time_sink_x_0_1_0_0_1_2.set_line_label(i, "Im{{Data {0}}}".format(i/2))
-            else:
-                self.qtgui_time_sink_x_0_1_0_0_1_2.set_line_label(i, labels[i])
-            self.qtgui_time_sink_x_0_1_0_0_1_2.set_line_width(i, widths[i])
-            self.qtgui_time_sink_x_0_1_0_0_1_2.set_line_color(i, colors[i])
-            self.qtgui_time_sink_x_0_1_0_0_1_2.set_line_style(i, styles[i])
-            self.qtgui_time_sink_x_0_1_0_0_1_2.set_line_marker(i, markers[i])
-            self.qtgui_time_sink_x_0_1_0_0_1_2.set_line_alpha(i, alphas[i])
-
-        self._qtgui_time_sink_x_0_1_0_0_1_2_win = sip.wrapinstance(self.qtgui_time_sink_x_0_1_0_0_1_2.pyqwidget(), Qt.QWidget)
-        self.top_layout.addWidget(self._qtgui_time_sink_x_0_1_0_0_1_2_win)
         self.qtgui_time_sink_x_0_1_0_0_1_0 = qtgui.time_sink_c(
         	1024, #size
         	samp_rate, #samp_rate
@@ -738,29 +638,19 @@ class basic_chain_custom3(gr.top_block, Qt.QWidget):
         	  flt_size=32)
         self.pfb_arb_resampler_xxx_0.declare_sample_delay(40)
 
+        self.packetizr_preamble_header_payload_demux_0 =  packetizr.preamble_header_payload_demux(32/constel_header.bits_per_symbol(), len(preamble), 1, 0, "packet_len", "corr_est", True, gr.sizeof_gr_complex, '', samp_rate, ("phase_est", "time_est"), 0)
         self.packetizr_packet_encoder_0 = packetizr.packet_encoder((preamble), constel_header.base(), constel_payload.base(), header_formatter, "packet_len", 1)
         self.digital_pfb_clock_sync_xxx_0_0_0 = digital.pfb_clock_sync_ccf(sps, 3.14*2/100, (rrc_taps), 32, 0, 1.5, 1)
         self.digital_packet_headerparser_b_0 = digital.packet_headerparser_b(header_formatter.base())
-        self.digital_header_payload_demux_0 = digital.header_payload_demux(
-        	  64/constel_header.bits_per_symbol(),
-        	  1,
-        	  0,
-        	  "packet_len",
-        	  "corr_est",
-        	  True,
-        	  gr.sizeof_gr_complex,
-        	  '',
-                  samp_rate,
-                  (),
-                  0,
-            )
-        self.digital_corr_est_cc_0 = digital.corr_est_cc((modulated_sync_word), sps, 109, 0.9)
+        self.digital_costas_loop_cc_2 = digital.costas_loop_cc(3.14*2/1000, 4, False)
+        self.digital_costas_loop_cc_1 = digital.costas_loop_cc(3.14*2/1000, 2, False)
+        self.digital_corr_est_cc_0 = digital.corr_est_cc((modulated_sync_word), sps, 100, 0.999999)
         self.digital_constellation_decoder_cb_0_0 = digital.constellation_decoder_cb(constel_payload.base())
         self.digital_constellation_decoder_cb_0 = digital.constellation_decoder_cb(constel_header.base())
         self.channels_channel_model_0 = channels.channel_model(
-        	noise_voltage=0.0,
+        	noise_voltage=0.1,
         	frequency_offset=0.0,
-        	epsilon=1.0,
+        	epsilon=1.01,
         	taps=(1, ),
         	noise_seed=0,
         	block_tags=True
@@ -768,8 +658,7 @@ class basic_chain_custom3(gr.top_block, Qt.QWidget):
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate/2,True)
         self.blocks_tagged_stream_mux_0 = blocks.tagged_stream_mux(gr.sizeof_gr_complex*1, "packet_len", 0)
         self.blocks_tag_gate_0 = blocks.tag_gate(gr.sizeof_gr_complex * 1, False)
-        self.blocks_stream_to_tagged_stream_1 = blocks.stream_to_tagged_stream(gr.sizeof_gr_complex, 1, 64/constel_header.bits_per_symbol()+len(preamble), "header_len")
-        self.blocks_stream_to_tagged_stream_0_1 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 1, "packet_len")
+        self.blocks_stream_to_tagged_stream_0_1 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 17, "packet_len")
         self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_gr_complex, 1, 100, "packet_len")
         self.blocks_repack_bits_bb_2 = blocks.repack_bits_bb(constel_header.bits_per_symbol(), 8, "", False, gr.GR_LSB_FIRST)
         self.blocks_repack_bits_bb_0_1_0 = blocks.repack_bits_bb(8, constel_payload.bits_per_symbol(), '', False, gr.GR_LSB_FIRST)
@@ -782,13 +671,13 @@ class basic_chain_custom3(gr.top_block, Qt.QWidget):
         self.blocks_char_to_float_0 = blocks.char_to_float(1, 1)
         self.analog_random_source_x_0_0 = blocks.vector_source_b(map(int, numpy.random.randint(0, 256, 1000)), True)
         self.analog_agc2_xx_0_0_0 = analog.agc2_cc(1e-1, 1e-2, 1.0, 1.0)
-        self.analog_agc2_xx_0_0_0.set_max_gain(5)
+        self.analog_agc2_xx_0_0_0.set_max_gain(1.5)
 
         ##################################################
         # Connections
         ##################################################
         self.msg_connect((self.digital_packet_headerparser_b_0, 'header_data'), (self.blocks_message_debug_0, 'print'))
-        self.msg_connect((self.digital_packet_headerparser_b_0, 'header_data'), (self.digital_header_payload_demux_0, 'header_data'))
+        self.msg_connect((self.digital_packet_headerparser_b_0, 'header_data'), (self.packetizr_preamble_header_payload_demux_0, 'header_data'))
         self.connect((self.analog_agc2_xx_0_0_0, 0), (self.digital_corr_est_cc_0, 0))
         self.connect((self.analog_agc2_xx_0_0_0, 0), (self.qtgui_time_sink_x_0_1_0_0_0_1, 0))
         self.connect((self.analog_random_source_x_0_0, 0), (self.blocks_stream_to_tagged_stream_0_1, 0))
@@ -803,9 +692,6 @@ class basic_chain_custom3(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_tagged_stream_mux_0, 1))
         self.connect((self.blocks_stream_to_tagged_stream_0_1, 0), (self.blocks_repack_bits_bb_0_1_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0_1, 0), (self.packetizr_packet_encoder_0, 0))
-        self.connect((self.blocks_stream_to_tagged_stream_1, 0), (self.digital_constellation_decoder_cb_0, 0))
-        self.connect((self.blocks_stream_to_tagged_stream_1, 0), (self.qtgui_const_sink_x_0_0, 0))
-        self.connect((self.blocks_stream_to_tagged_stream_1, 0), (self.qtgui_time_sink_x_0_1_0_0_1, 0))
         self.connect((self.blocks_tag_gate_0, 0), (self.blocks_throttle_0, 0))
         self.connect((self.blocks_tagged_stream_mux_0, 0), (self.pfb_arb_resampler_xxx_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.channels_channel_model_0, 0))
@@ -816,13 +702,15 @@ class basic_chain_custom3(gr.top_block, Qt.QWidget):
         self.connect((self.digital_corr_est_cc_0, 1), (self.blocks_complex_to_real_0_0, 0))
         self.connect((self.digital_corr_est_cc_0, 0), (self.digital_pfb_clock_sync_xxx_0_0_0, 0))
         self.connect((self.digital_corr_est_cc_0, 0), (self.qtgui_time_sink_x_0_1_0_0_0_0_0, 0))
-        self.connect((self.digital_header_payload_demux_0, 0), (self.blocks_stream_to_tagged_stream_1, 0))
-        self.connect((self.digital_header_payload_demux_0, 1), (self.digital_constellation_decoder_cb_0_0, 0))
-        self.connect((self.digital_header_payload_demux_0, 1), (self.qtgui_time_sink_x_0_1_0_0_1_0, 0))
-        self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.digital_header_payload_demux_0, 0))
+        self.connect((self.digital_costas_loop_cc_1, 0), (self.digital_constellation_decoder_cb_0, 0))
+        self.connect((self.digital_costas_loop_cc_2, 0), (self.digital_constellation_decoder_cb_0_0, 0))
+        self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.packetizr_preamble_header_payload_demux_0, 0))
+        self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.qtgui_const_sink_x_0_0, 0))
         self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.qtgui_time_sink_x_0_0, 0))
         self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.qtgui_time_sink_x_0_1_0_0_2_0, 0))
         self.connect((self.packetizr_packet_encoder_0, 0), (self.blocks_tagged_stream_mux_0, 0))
+        self.connect((self.packetizr_preamble_header_payload_demux_0, 0), (self.digital_costas_loop_cc_1, 0))
+        self.connect((self.packetizr_preamble_header_payload_demux_0, 1), (self.digital_costas_loop_cc_2, 0))
         self.connect((self.pfb_arb_resampler_xxx_0, 0), (self.blocks_tag_gate_0, 0))
         self.connect((self.pfb_arb_resampler_xxx_0, 0), (self.qtgui_time_sink_x_0_1_0, 0))
 
@@ -879,8 +767,6 @@ class basic_chain_custom3(gr.top_block, Qt.QWidget):
 
     def set_preamble(self, preamble):
         self.preamble = preamble
-        self.blocks_stream_to_tagged_stream_1.set_packet_len(64/constel_header.bits_per_symbol()+len(self.preamble))
-        self.blocks_stream_to_tagged_stream_1.set_packet_len_pmt(64/constel_header.bits_per_symbol()+len(self.preamble))
 
     def get_samp_rate(self):
         return self.samp_rate
@@ -891,8 +777,6 @@ class basic_chain_custom3(gr.top_block, Qt.QWidget):
         self.qtgui_time_sink_x_0_2_0_0.set_samp_rate(self.samp_rate*2)
         self.qtgui_time_sink_x_0_1_0_0_3.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_0_1_0_0_2_0.set_samp_rate(self.samp_rate)
-        self.qtgui_time_sink_x_0_1_0_0_1_2_0.set_samp_rate(self.samp_rate)
-        self.qtgui_time_sink_x_0_1_0_0_1_2.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_0_1_0_0_1_0.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_0_1_0_0_1.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_0_1_0_0_0_1.set_samp_rate(self.samp_rate)

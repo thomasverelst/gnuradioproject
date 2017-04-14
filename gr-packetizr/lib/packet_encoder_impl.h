@@ -38,13 +38,24 @@ namespace gr {
       gr::digital::constellation_sptr d_constel_payload;
       std::vector<int> d_preamble;
       gr::digital::packet_header_default::sptr d_header_formatter;
+      int d_zero_padding;
+      bool d_whiten;
       size_t d_itemsize;
 
      protected:
       int calculate_output_stream_length(const gr_vector_int &ninput_items);
 
      public:
-      packet_encoder_impl(const std::vector<int> preamble, digital::constellation_sptr constel_header, digital::constellation_sptr  constel_payload, const digital::packet_header_default::sptr &header_formatter, const std::string &lengthtagname, size_t itemsize);
+      packet_encoder_impl(
+        const std::vector<int> preamble, 
+        digital::constellation_sptr constel_header, 
+        digital::constellation_sptr constel_payload, 
+        const digital::packet_header_default::sptr &header_formatter, 
+        const std::string &lengthtagname, 
+        int zero_padding, 
+        bool whiten,
+        size_t itemsize
+      );
       ~packet_encoder_impl();
 
       // Where all the action really happens

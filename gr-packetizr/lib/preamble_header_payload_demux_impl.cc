@@ -285,7 +285,7 @@ namespace gr {
           break;
 
         case STATE_FIND_TRIGGER: {
-          cout << "GENERAL WORK: STATE_FIND_TRIGGER\n";
+          //cout << "GENERAL WORK: STATE_FIND_TRIGGER\n";
           // Assumptions going into this state:
           // - No other state was active for this call to general_work()
           //   - i.e. n_items_read == 0
@@ -301,7 +301,7 @@ namespace gr {
                   ((const unsigned char *) input_items[PORT_TRIGGER]) + n_items_read : NULL
           );
           if (trigger_offset < max_rel_offset) {
-            cout << "GENERAL WORK: TRIGGER FOUND\n";
+            //cout << "GENERAL WORK: TRIGGER FOUND\n";
             d_state = STATE_PREAMBLE;
           }
           // If we're using padding, don't consume everything, or we might
@@ -311,7 +311,7 @@ namespace gr {
           break;
         } /* case STATE_FIND_TRIGGER */
         case STATE_PREAMBLE: 
-          cout << "GENERAL_WORK: Preamble state\n";
+          //cout << "GENERAL_WORK: Preamble state\n";
           CONSUME_ITEMS(d_preamble_len * (d_items_per_symbol + d_gi));
           d_state = STATE_HEADER;
 
@@ -319,7 +319,7 @@ namespace gr {
 
 
         case STATE_HEADER:
-          cout << "GENERAL WORK: Header state\n";
+          //cout << "GENERAL WORK: Header state\n";
           // Assumptions going into this state:
           // - The first items on `in' are the header samples (including padding)
           //   - So we can just copy from the beginning of `in'
