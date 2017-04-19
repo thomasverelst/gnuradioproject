@@ -65,7 +65,7 @@ namespace gr {
         const std::string &lengthtagname = "packet_len", 
         const int zero_padding = 0,
         const bool whiten = 0,
-        const size_t itemsize
+        const size_t itemsize = 1
         );
 
 

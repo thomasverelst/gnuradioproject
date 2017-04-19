@@ -18,47 +18,36 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_PACKETIZR_PACKET_ENCODER_IMPL_H
-#define INCLUDED_PACKETIZR_PACKET_ENCODER_IMPL_H
+#ifndef INCLUDED_PACKETIZR_TAGGED_WHITEN_IMPL_H
+#define INCLUDED_PACKETIZR_TAGGED_WHITEN_IMPL_H
 
-#include <packetizr/packet_encoder.h>
-#include <gnuradio/digital/constellation.h>
-#include <gnuradio/digital/packet_header_default.h>
-#include <gnuradio/filter/firdes.h>
-#include <gnuradio/filter/pfb_arb_resampler.h>
+#include <packetizr/tagged_whiten.h>
 
 namespace gr {
   namespace packetizr {
 
-    class packet_encoder_impl : public packet_encoder
+    class tagged_whiten_impl : public tagged_whiten
     {
-    private:
-      
-      gr::digital::constellation_sptr d_constel_header;
-      gr::digital::constellation_sptr d_constel_payload;
-      std::vector<int> d_preamble;
-      gr::digital::packet_header_default::sptr d_header_formatter;
-      int d_zero_padding;
-      bool d_whiten;
-      size_t d_itemsize;
-      
+     private:
+      bool d_use_lfsr;
+      unsigned char* d_random_mask;
+      unsigned int d_random_mask_length;
+      int d_bits_per_byte;
+      blocks::lfsr_15_1_0 d_lfsr;
+      unsigned char d_lsb_mask;
+
 
      protected:
       int calculate_output_stream_length(const gr_vector_int &ninput_items);
 
      public:
-
-      packet_encoder_impl(
-        const std::vector<int> preamble, 
-        digital::constellation_sptr constel_header, 
-        digital::constellation_sptr constel_payload, 
-        const digital::packet_header_default::sptr &header_formatter, 
-        const std::string &lengthtagname, 
-        int zero_padding, 
-        bool whiten,
-        size_t itemsize
+      tagged_whiten_impl(
+        bool use_lfsr, 
+        std::vector<unsigned char> random_mask, 
+        int bits_per_byte,
+        const std::string &lengthtagname
       );
-      ~packet_encoder_impl();
+      ~tagged_whiten_impl();
 
       // Where all the action really happens
       int work(int noutput_items,
@@ -66,11 +55,13 @@ namespace gr {
            gr_vector_const_void_star &input_items,
            gr_vector_void_star &output_items);
 
-      const static unsigned char random_mask[4096];
+      void do_whitening_lfsr(const unsigned char* data_in, unsigned char* data_out, unsigned int n, unsigned int whitening_offset);
+
+      static unsigned char default_random_mask[4096];
     };
 
   } // namespace packetizr
 } // namespace gr
 
-#endif /* INCLUDED_PACKETIZR_PACKET_ENCODER_IMPL_H */
+#endif /* INCLUDED_PACKETIZR_TAGGED_WHITEN_IMPL_H */
 

@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 ##################################################
 # GNU Radio Python Flow Graph
-# Title: Basic Chain Custom Othersync Betterpreamble
-# Generated: Wed Apr 19 15:22:14 2017
+# Title: Basic Chain Custom Goodsync
+# Generated: Wed Apr 19 16:34:23 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -37,12 +37,12 @@ import sys
 from gnuradio import qtgui
 
 
-class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
+class basic_chain_custom_goodsync(gr.top_block, Qt.QWidget):
 
     def __init__(self):
-        gr.top_block.__init__(self, "Basic Chain Custom Othersync Betterpreamble")
+        gr.top_block.__init__(self, "Basic Chain Custom Goodsync")
         Qt.QWidget.__init__(self)
-        self.setWindowTitle("Basic Chain Custom Othersync Betterpreamble")
+        self.setWindowTitle("Basic Chain Custom Goodsync")
         qtgui.util.check_set_qss()
         try:
             self.setWindowIcon(Qt.QIcon.fromTheme('gnuradio-grc'))
@@ -60,7 +60,7 @@ class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
         self.top_grid_layout = Qt.QGridLayout()
         self.top_layout.addLayout(self.top_grid_layout)
 
-        self.settings = Qt.QSettings("GNU Radio", "basic_chain_custom_othersync_betterpreamble")
+        self.settings = Qt.QSettings("GNU Radio", "basic_chain_custom_goodsync")
         self.restoreGeometry(self.settings.value("geometry").toByteArray())
 
         ##################################################
@@ -748,7 +748,7 @@ class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
         self.connect((self.pfb_arb_resampler_xxx_0, 0), (self.blocks_tag_gate_0, 0))
 
     def closeEvent(self, event):
-        self.settings = Qt.QSettings("GNU Radio", "basic_chain_custom_othersync_betterpreamble")
+        self.settings = Qt.QSettings("GNU Radio", "basic_chain_custom_goodsync")
         self.settings.setValue("geometry", self.saveGeometry())
         event.accept()
 
@@ -874,7 +874,7 @@ class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
         self.blocks_delay_0.set_dly(self.ber_delay_slider)
 
 
-def main(top_block_cls=basic_chain_custom_othersync_betterpreamble, options=None):
+def main(top_block_cls=basic_chain_custom_goodsync, options=None):
 
     from distutils.version import StrictVersion
     if StrictVersion(Qt.qVersion()) >= StrictVersion("4.5.0"):

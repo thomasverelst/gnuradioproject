@@ -35,7 +35,24 @@ class packet_decoder(gr.hier_block2):
             gr.io_signature(1, 1, gr.sizeof_char))    # Output signature
 
         #Demux
-        header_payload_demux = digital.header_payload_demux(header_formatter.header_len()*8/constel_header.bits_per_symbol(), 1, 0, "packet_len", "packet_len", True, 
+        preamble_header_payload_demux = packetizr.preamble_header_payload_demux(
+            32/constel_header.bits_per_symbol(), 
+            64, 
+            1, 
+            0, 
+            "packet_len", 
+            "corr_est", 
+            True, 
+            gr.sizeof_gr_complex, 
+            "rx_time", 
+            samp_rate, 
+            ("phase_est", "time_est"), 
+            0)
+
+
+
+
+        header_payload_demux = digital.eader_payload_demux(header_formatter.header_len()*8/constel_header.bits_per_symbol(), 1, 0, "packet_len", "packet_len", True, 
             gr.sizeof_gr_complex, "", samp_rate,()
         )
 

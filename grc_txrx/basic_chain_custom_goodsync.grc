@@ -46,7 +46,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>basic_chain_custom_othersync_betterpreamble</value>
+      <value>basic_chain_custom_goodsync</value>
     </param>
     <param>
       <key>max_nouts</key>
@@ -1542,7 +1542,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>endianness</key>
@@ -1550,7 +1550,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1152, 1885)</value>
+      <value>(1232, 1876)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1990,11 +1990,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1016, 1880)</value>
+      <value>(1144, 1880)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2076,7 +2076,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -2119,11 +2119,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>0</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(776, 1876)</value>
+      <value>(944, 1876)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2800,6 +2800,14 @@
     <param>
       <key>preamble</key>
       <value>preamble</value>
+    </param>
+    <param>
+      <key>whiten</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>zero_padding</key>
+      <value>0</value>
     </param>
   </block>
   <block>
@@ -11636,6 +11644,12 @@
   <connection>
     <source_block_id>digital_costas_loop_cc_1</source_block_id>
     <sink_block_id>digital_constellation_decoder_cb_0_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>digital_costas_loop_cc_1</source_block_id>
+    <sink_block_id>digital_constellation_soft_decoder_cf_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

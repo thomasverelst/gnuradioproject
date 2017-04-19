@@ -22,5 +22,5 @@ install(FILES
     packetizr_modulate_vector.xml
     packetizr_tagged_stream_demux.xml
     packetizr_preamble_header_payload_demux.xml
-    packetizr_preamble_header_payload_demux.xml DESTINATION share/gnuradio/grc/blocks
+    packetizr_tagged_whiten.xml DESTINATION share/gnuradio/grc/blocks
 )
