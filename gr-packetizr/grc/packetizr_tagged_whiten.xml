@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <block>
   <name>Tagged Stream Whitener</name>
-  <key>packetizr_tagged_whitener</key>
+  <key>packetizr_tagged_whiten</key>
   <category>[packetizr]</category>
   <import>import packetizr</import>
-  <make>packetizr.tagged_whitener($use_lfsr, $random_mask, $bits_per_byte, $lengthtagname)</make>
+  <make>packetizr.tagged_whiten($use_lfsr, $random_mask, $bits_per_byte, $lengthtagname)</make>
   <!-- Make one 'param' node for every Parameter you want settable from the GUI.
        Sub-nodes:
        * name
