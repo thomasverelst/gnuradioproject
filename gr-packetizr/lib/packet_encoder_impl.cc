@@ -136,15 +136,15 @@ namespace packetizr {
         }
     }
 
-    void whiten(unsigned char* data, unsigned int n, unsigned int whitening_offset)
-    {
-        // TODO check if whitening mask is long enough! 4096 chars
-        cout << "doing whitening! /n";
-        // for every incoming byte
-        for (unsigned int i = 0; i < n; i++) {
-          data[i] = data[i] ^ packet_encoder_impl::random_mask[i+whitening_offset];
-        }
-    }
+    // void whiten(unsigned char* data, unsigned int n, unsigned int whitening_offset)
+    // {
+    //     // TODO check if whitening mask is long enough! 4096 chars
+    //     cout << "doing whitening! /n";
+    //     // for every incoming byte
+    //     for (unsigned int i = 0; i < n; i++) {
+    //       data[i] = data[i] ^ packet_encoder_impl::random_mask[i+whitening_offset];
+    //     }
+    // }
 
     int
     packet_encoder_impl::work(int noutput_items,

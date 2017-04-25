@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Tagged Stream Whiten Test
-# Generated: Wed Apr 19 20:07:25 2017
+# Generated: Tue Apr 25 16:28:36 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -120,7 +120,7 @@ class tagged_stream_whiten_test(gr.top_block, Qt.QWidget):
         	2 #number of inputs
         )
         self.qtgui_time_sink_x_0.set_update_time(0.10)
-        self.qtgui_time_sink_x_0.set_y_axis(255, 0)
+        self.qtgui_time_sink_x_0.set_y_axis(0, 255)
 
         self.qtgui_time_sink_x_0.set_y_label('Amplitude', "")
 
@@ -167,17 +167,21 @@ class tagged_stream_whiten_test(gr.top_block, Qt.QWidget):
         self.blocks_uchar_to_float_0 = blocks.uchar_to_float()
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_char*1, samp_rate,True)
         self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 100, "packet_len")
+        self.blocks_stream_mux_0 = blocks.stream_mux(gr.sizeof_char*1, (10, 50))
         self.blocks_repack_bits_bb_0_1 = blocks.repack_bits_bb(8, bpb, "packet_len", False, gr.GR_LSB_FIRST)
         self.blocks_repack_bits_bb_0_0 = blocks.repack_bits_bb(bpb, 1, "", False, gr.GR_LSB_FIRST)
+        self.blocks_null_source_0 = blocks.null_source(gr.sizeof_char*1)
         self.analog_random_source_x_0 = blocks.vector_source_b(map(int, numpy.random.randint(0, 256, 1000)), True)
 
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.analog_random_source_x_0, 0), (self.blocks_throttle_0, 0))
+        self.connect((self.analog_random_source_x_0, 0), (self.blocks_stream_mux_0, 0))
+        self.connect((self.blocks_null_source_0, 0), (self.blocks_stream_mux_0, 1))
         self.connect((self.blocks_repack_bits_bb_0_0, 0), (self.blocks_uchar_to_float_0_0, 0))
         self.connect((self.blocks_repack_bits_bb_0_1, 0), (self.blocks_uchar_to_float_0_1, 0))
         self.connect((self.blocks_repack_bits_bb_0_1, 0), (self.packetizr_tagged_whiten_0, 0))
+        self.connect((self.blocks_stream_mux_0, 0), (self.blocks_throttle_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_repack_bits_bb_0_1, 0))
         self.connect((self.blocks_throttle_0, 0), (self.blocks_stream_to_tagged_stream_0, 0))
         self.connect((self.blocks_uchar_to_float_0, 0), (self.qtgui_time_sink_x_0, 1))
