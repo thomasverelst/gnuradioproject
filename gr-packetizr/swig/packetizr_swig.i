@@ -18,20 +18,16 @@
 #include <gnuradio/tagged_stream_block.h>
 #include <gnuradio/digital/constellation.h>
 #include <gnuradio/block.h>
-#include <gnuradio/filter/firdes.h>
-#include <gnuradio/filter/pfb_arb_resampler.h>
 #include <gnuradio/digital/packet_header_default.h>
 #include "packetizr/tagged_stream_demux_xx.h"
-#include <gnuradio/top_block.h>
 #include "packetizr/preamble_header_payload_demux.h"
-#include "packetizr/tagged_whiten.h"
+#include "packetizr/tagged_whitener.h"
+#include "packetizr/whitener.h"
 %}
 
 
 %include "packetizr/packet_encoder.h"
 %include "gnuradio/digital/constellation.h"
-%include "gnuradio/filter/firdes.h"
-%include "gnuradio/filter/pfb_arb_resampler.h"
 %include "gnuradio/digital/packet_header_default.h"
 %include "gnuradio/top_block.h"
 GR_SWIG_BLOCK_MAGIC2(packetizr, packet_encoder);
@@ -41,5 +37,7 @@ GR_SWIG_BLOCK_MAGIC2(packetizr, tagged_stream_demux_xx);
 %include "packetizr/preamble_header_payload_demux.h"
 GR_SWIG_BLOCK_MAGIC2(packetizr, preamble_header_payload_demux);
 
-%include "packetizr/tagged_whiten.h"
-GR_SWIG_BLOCK_MAGIC2(packetizr, tagged_whiten);
+%include "packetizr/tagged_whitener.h"
+GR_SWIG_BLOCK_MAGIC2(packetizr, tagged_whitener);
+%include "packetizr/whitener.h"
+//GR_SWIG_BLOCK_MAGIC2(packetizr, whitener);

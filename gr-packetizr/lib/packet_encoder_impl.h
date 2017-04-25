@@ -22,10 +22,9 @@
 #define INCLUDED_PACKETIZR_PACKET_ENCODER_IMPL_H
 
 #include <packetizr/packet_encoder.h>
+#include <packetizr/whitener.h>
 #include <gnuradio/digital/constellation.h>
 #include <gnuradio/digital/packet_header_default.h>
-#include <gnuradio/filter/firdes.h>
-#include <gnuradio/filter/pfb_arb_resampler.h>
 
 namespace gr {
   namespace packetizr {
@@ -41,6 +40,7 @@ namespace gr {
       int d_zero_padding;
       bool d_whiten;
       size_t d_itemsize;
+      kernel::whitener d_whitener;
       
 
      protected:

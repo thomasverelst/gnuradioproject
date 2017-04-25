@@ -28,8 +28,8 @@ list(APPEND packetizr_sources
     packet_encoder_impl.cc
     tagged_stream_demux_xx_impl.cc
     preamble_header_payload_demux_impl.cc
-    preamble_header_payload_demux_impl.cc
-    tagged_whiten_impl.cc )
+    tagged_whitener_impl.cc 
+	whitener.cc )
 
 set(packetizr_sources "${packetizr_sources}" PARENT_SCOPE)
 if(NOT packetizr_sources)
