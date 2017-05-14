@@ -24,7 +24,8 @@
 #include "packetizr/tagged_stream_demux_xx.h"
 #include <gnuradio/top_block.h>
 #include "packetizr/preamble_header_payload_demux.h"
-#include "packetizr/tagged_whiten.h"
+#include "packetizr/tagged_whitener.h"
+#include "packetizr/whitener.h"
 %}
 
 
@@ -41,5 +42,6 @@ GR_SWIG_BLOCK_MAGIC2(packetizr, tagged_stream_demux_xx);
 %include "packetizr/preamble_header_payload_demux.h"
 GR_SWIG_BLOCK_MAGIC2(packetizr, preamble_header_payload_demux);
 
-%include "packetizr/tagged_whiten.h"
-GR_SWIG_BLOCK_MAGIC2(packetizr, tagged_whiten);
+%include "packetizr/tagged_whitener.h"
+GR_SWIG_BLOCK_MAGIC2(packetizr, tagged_whitener);
+%include "packetizr/whitener.h"

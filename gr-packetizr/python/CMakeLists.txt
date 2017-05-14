@@ -46,5 +46,4 @@ GR_ADD_TEST(qa_packet_encoder ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/q
 GR_ADD_TEST(qa_packet_decoder ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_packet_decoder.py)
 GR_ADD_TEST(qa_tagged_stream_demux_xx ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_tagged_stream_demux_xx.py)
 GR_ADD_TEST(qa_preamble_header_payload_demux ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_preamble_header_payload_demux.py)
-GR_ADD_TEST(qa_preamble_header_payload_demux ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_preamble_header_payload_demux.py)
-GR_ADD_TEST(qa_tagged_whiten ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_tagged_whiten.py)
+GR_ADD_TEST(qa_tagged_whitener ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_tagged_whitener.py)

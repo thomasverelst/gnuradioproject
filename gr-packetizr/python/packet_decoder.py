@@ -23,55 +23,81 @@ import pmt
 from gnuradio import gr
 from gnuradio import digital
 from gnuradio import blocks
+import packetizr
 
 class packet_decoder(gr.hier_block2):
     """
     docstring for block packet_decoder
     """
-    def __init__(self, preamble, constel_header, constel_payload, header_formatter, lengthtagname, tag_pos, samp_rate, itemsize):
+    def __init__(self, preamble, constel_header, constel_payload, header_formatter, triggertagname, do_costas, soft_output, do_whiten, samp_rate, itemsize):
         gr.hier_block2.__init__(self,
             "packet_decoder",
             gr.io_signature(1, 1, gr.sizeof_gr_complex),  # Input signature
-            gr.io_signature(1, 1, gr.sizeof_char))    # Output signature
+            gr.io_signature(1, 1, gr.sizeof_float if soft_output else gr.sizeof_char))    # Output signature
 
         #Demux
-        preamble_header_payload_demux = packetizr.preamble_header_payload_demux(
-            32/constel_header.bits_per_symbol(), 
-            64, 
-            1, 
-            0, 
-            "packet_len", 
-            "corr_est", 
-            True, 
-            gr.sizeof_gr_complex, 
-            "rx_time", 
-            samp_rate, 
-            ("phase_est", "time_est"), 
-            0)
-
-
-
-
-        header_payload_demux = digital.eader_payload_demux(header_formatter.header_len()*8/constel_header.bits_per_symbol(), 1, 0, "packet_len", "packet_len", True, 
-            gr.sizeof_gr_complex, "", samp_rate,()
-        )
+        header_payload_demux = packetizr.preamble_header_payload_demux(header_formatter.header_len()*8/constel_header.bits_per_symbol(), len(preamble), 1, 0, "packet_len", triggertagname, True, gr.sizeof_gr_complex, "rx_time", samp_rate, ("phase_est", "time_est"), 0)
 
         # Feedback loop for payload length
-        repack_header_bits = blocks.repack_bits_bb(constel_header.bits_per_symbol(), 8, "", False, gr.GR_LSB_FIRST)
-        constel_decoder_header = digital.constellation_decoder_cb(constel_header)
-        headerparser = digital.packet_headerparser_b(header_formatter.base())
+        if(do_costas):
+            header_costas = digital.costas_loop_cc(3.14*2/1000, constel_header.bits_per_symbol(), False)
+        header_repack_bits = blocks.repack_bits_bb(constel_header.bits_per_symbol(), 8, "", False, gr.GR_LSB_FIRST)
+        header_constel_decoder = digital.constellation_decoder_cb(constel_header)
+        header_headerparser = digital.packet_headerparser_b(header_formatter.base())
 
         # Output
-        constel_decoder_payload = digital.constellation_decoder_cb(constel_payload)
-
-        #Connect
-        self.connect(self, (header_payload_demux, 0))
+        if(do_costas):
+            payload_costas = digital.costas_loop_cc(3.14*2/1000, constel_header.bits_per_symbol(), False)
         
 
-        self.connect((header_payload_demux, 0), constel_decoder_header)
-        self.connect(constel_decoder_header, repack_header_bits)
-        self.connect(repack_header_bits, headerparser)
-        self.msg_connect((headerparser, "header_data"), (header_payload_demux, "header_data"))
+        if(do_whiten):
+            payload_tagged_whitener = packetizr.tagged_whitener(False, (), 8, "packet_len")
 
-        self.connect((header_payload_demux, 1), constel_decoder_payload)
-        self.connect(constel_decoder_payload, self)
+        if(soft_output):
+            payload_constel_soft_decoder = digital.constellation_soft_decoder_cf(constel_payload.base())
+        else:
+            payload_constel_decoder = digital.constellation_decoder_cb(constel_payload)
+            #payload_repack_symbols = blocks.repack_bits_bb(8,8, "", False, gr.GR_LSB_FIRST)
+            payload_repack_bits = blocks.repack_bits_bb(constel_payload.bits_per_symbol(), 8, "packet_len", False, gr.GR_LSB_FIRST)
+        #Connect
+
+        #Input
+        self.connect(self, (header_payload_demux, 0))
+        
+        #Header chain
+        if(do_costas):
+            self.connect((header_payload_demux, 0), header_costas)
+            self.connect(header_costas, header_constel_decoder)
+        else:
+            self.connect((header_payload_demux, 0), header_constel_decoder)
+        self.connect(header_constel_decoder, header_repack_bits)
+        self.connect(header_repack_bits, header_headerparser)
+        self.msg_connect((header_headerparser, "header_data"), (header_payload_demux, "header_data"))
+
+        #Payload chain
+        
+        if(soft_output):
+            if(do_costas):
+                self.connect((header_payload_demux, 1), payload_costas)
+                self.connect(payload_costas, payload_constel_soft_decoder)
+            else:
+                self.connect((header_payload_demux, 1), payload_constel_soft_decoder) 
+            
+            self.connect(payload_constel_soft_decoder, self)
+
+        else:
+            if(do_costas):
+                self.connect((header_payload_demux, 1), payload_costas)
+                self.connect(payload_costas, payload_constel_decoder)
+            else:
+                self.connect((header_payload_demux, 1), payload_constel_decoder)        
+
+
+            self.connect(payload_constel_decoder, payload_repack_bits)
+            #self.connect(payload_repack_symbols, payload_repack_bits)
+
+            if(do_whiten):
+                self.connect(payload_repack_bits, payload_tagged_whitener)
+                self.connect(payload_tagged_whitener, self)
+            else:
+                self.connect(payload_repack_bits, self)

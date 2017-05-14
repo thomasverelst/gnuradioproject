@@ -23,7 +23,7 @@ from gnuradio import gr, gr_unittest
 from gnuradio import blocks
 import packetizr_swig as packetizr
 
-class qa_tagged_whiten (gr_unittest.TestCase):
+class qa_tagged_whitener (gr_unittest.TestCase):
 
     def setUp (self):
         self.tb = gr.top_block ()
@@ -38,4 +38,4 @@ class qa_tagged_whiten (gr_unittest.TestCase):
 
 
 if __name__ == '__main__':
-    gr_unittest.run(qa_tagged_whiten, "qa_tagged_whiten.xml")
+    gr_unittest.run(qa_tagged_whitener, "qa_tagged_whitener.xml")

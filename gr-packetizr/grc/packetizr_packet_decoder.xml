@@ -4,16 +4,12 @@
   <key>packetizr_packet_decoder</key>
   <category>[packetizr]</category>
   <import>import packetizr</import>
-  <make>packetizr.packet_decoder($preamble, $constel_header, $constel_payload, $header_formatter, $lengthtagname, $tag_pos, $samp_rate, $itemsize)</make>
-  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
-       Sub-nodes:
-       * name
-       * key (makes the value accessible as $keyname, e.g. in the make node)
-       * type -->
+  <make>packetizr.packet_decoder($preamble, $constel_header, $constel_payload, $header_formatter, $triggertagname, $do_costas, $soft_output, $whiten, $samp_rate, $itemsize)</make>
+
   <param>
     <name>Preamble (sequence of 1 and -1)</name>
     <key>preamble</key>
-    <value>(1, -1, -1, 1, -1, 1)</value>
+    <value>(1,-1,1,-1,1,1,-1,-1,1,1,-1,1,1,1,-1,1,1,-1,1,-1,-1,1,-1,-1,1,1,1,-1,-1,-1,1,-1,1,1,1,1,-1,-1,1,-1,1,-1,-1,-1,1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,-1,1,1,1,1,1,1,-1,-1)</value>
     <type>int_vector</type>
   </param>
 
@@ -36,17 +32,54 @@
   </param>
 
 <param>
-  <name>Length Tag Name</name>
-    <key>lengthtagname</key>
+  <name>Trigger Tag Name</name>
+    <key>triggertagname</key>
     <value>"packet_len"</value>
     <type>string</type>
   </param>
 
-<param>
-  <name>Tag position</name>
-    <key>tag_pos</key>
-    <value>"front"</value>
-    <type>string</type>
+ <param>
+    <name>Apply Costas Loop</name>
+    <key>do_costas</key>
+    <type>enum</type>
+    <option>
+      <name>True</name>
+      <key>True</key>
+    </option>
+     <option>
+      <name>False</name>
+      <key>False</key>
+    </option>
+  </param>
+
+ <param>
+    <name>Soft decoding</name>
+    <key>soft_output</key>
+    <type>enum</type>
+    <option>
+      <name>False</name>
+      <key>False</key>
+      <opt>ot:byte</opt>
+    </option>
+    <option>
+      <name>True</name>
+      <key>True</key>
+      <opt>ot:float</opt>
+    </option>
+  </param>
+
+   <param>
+    <name>Whiten</name>
+    <key>whiten</key>
+    <type>enum</type>
+    <option>
+      <name>False</name>
+      <key>False</key>
+    </option>
+    <option>
+      <name>True</name>
+      <key>True</key>
+    </option>
   </param>
 
 <param>
@@ -81,6 +114,6 @@
        * optional (set to 1 for optional inputs) -->
   <source>
     <name>data_bytes</name>
-    <type>byte</type>
+    <type>$soft_output.ot</type>
   </source>
 </block>

@@ -19,8 +19,8 @@
  */
 
 
-#ifndef INCLUDED_PACKETIZR_TAGGED_WHITEN_H
-#define INCLUDED_PACKETIZR_TAGGED_WHITEN_H
+#ifndef INCLUDED_PACKETIZR_TAGGED_WHITENER_H
+#define INCLUDED_PACKETIZR_TAGGED_WHITENER_H
 
 #include <packetizr/api.h>
 #include <gnuradio/tagged_stream_block.h>
@@ -34,17 +34,17 @@ namespace gr {
      * \ingroup packetizr
      *
      */
-    class PACKETIZR_API tagged_whiten : virtual public gr::tagged_stream_block
+    class PACKETIZR_API tagged_whitener : virtual public gr::tagged_stream_block
     {
      public:
-      typedef boost::shared_ptr<tagged_whiten> sptr;
+      typedef boost::shared_ptr<tagged_whitener> sptr;
 
       /*!
-       * \brief Return a shared_ptr to a new instance of packetizr::tagged_whiten.
+       * \brief Return a shared_ptr to a new instance of packetizr::tagged_whitener.
        *
-       * To avoid accidental use of raw pointers, packetizr::tagged_whiten's
+       * To avoid accidental use of raw pointers, packetizr::tagged_whitener's
        * constructor is in a private implementation
-       * class. packetizr::tagged_whiten::make is the public interface for
+       * class. packetizr::tagged_whitener::make is the public interface for
        * creating new instances.
        */
       static sptr make(
@@ -57,5 +57,5 @@ namespace gr {
   } // namespace packetizr
 } // namespace gr
 
-#endif /* INCLUDED_PACKETIZR_TAGGED_WHITEN_H */
+#endif /* INCLUDED_PACKETIZR_TAGGED_WHITENER_H */
 

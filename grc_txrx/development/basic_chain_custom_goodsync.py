@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 ##################################################
 # GNU Radio Python Flow Graph
-# Title: Basic Chain Custom Othersync Betterpreamble
-# Generated: Wed Apr 19 15:22:14 2017
+# Title: Basic Chain Custom Goodsync
+# Generated: Sat Apr 29 12:24:04 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -37,12 +37,12 @@ import sys
 from gnuradio import qtgui
 
 
-class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
+class basic_chain_custom_goodsync(gr.top_block, Qt.QWidget):
 
     def __init__(self):
-        gr.top_block.__init__(self, "Basic Chain Custom Othersync Betterpreamble")
+        gr.top_block.__init__(self, "Basic Chain Custom Goodsync")
         Qt.QWidget.__init__(self)
-        self.setWindowTitle("Basic Chain Custom Othersync Betterpreamble")
+        self.setWindowTitle("Basic Chain Custom Goodsync")
         qtgui.util.check_set_qss()
         try:
             self.setWindowIcon(Qt.QIcon.fromTheme('gnuradio-grc'))
@@ -60,7 +60,7 @@ class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
         self.top_grid_layout = Qt.QGridLayout()
         self.top_layout.addLayout(self.top_grid_layout)
 
-        self.settings = Qt.QSettings("GNU Radio", "basic_chain_custom_othersync_betterpreamble")
+        self.settings = Qt.QSettings("GNU Radio", "basic_chain_custom_goodsync")
         self.restoreGeometry(self.settings.value("geometry").toByteArray())
 
         ##################################################
@@ -288,6 +288,106 @@ class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
 
         self._qtgui_time_sink_x_0_1_0_0_2_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0_1_0_0_2_0.pyqwidget(), Qt.QWidget)
         self.top_layout.addWidget(self._qtgui_time_sink_x_0_1_0_0_2_0_win)
+        self.qtgui_time_sink_x_0_1_0_0_2 = qtgui.time_sink_c(
+        	1024, #size
+        	samp_rate, #samp_rate
+        	"RX  Polyphased Stream", #name
+        	1 #number of inputs
+        )
+        self.qtgui_time_sink_x_0_1_0_0_2.set_update_time(0.10)
+        self.qtgui_time_sink_x_0_1_0_0_2.set_y_axis(-100, 100)
+
+        self.qtgui_time_sink_x_0_1_0_0_2.set_y_label('Amplitude', "")
+
+        self.qtgui_time_sink_x_0_1_0_0_2.enable_tags(-1, True)
+        self.qtgui_time_sink_x_0_1_0_0_2.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, 0, "")
+        self.qtgui_time_sink_x_0_1_0_0_2.enable_autoscale(False)
+        self.qtgui_time_sink_x_0_1_0_0_2.enable_grid(False)
+        self.qtgui_time_sink_x_0_1_0_0_2.enable_axis_labels(True)
+        self.qtgui_time_sink_x_0_1_0_0_2.enable_control_panel(False)
+
+        if not True:
+          self.qtgui_time_sink_x_0_1_0_0_2.disable_legend()
+
+        labels = ['', '', '', '', '',
+                  '', '', '', '', '']
+        widths = [1, 1, 1, 1, 1,
+                  1, 1, 1, 1, 1]
+        colors = ["blue", "red", "green", "black", "cyan",
+                  "magenta", "yellow", "dark red", "dark green", "blue"]
+        styles = [1, 1, 1, 1, 1,
+                  1, 1, 1, 1, 1]
+        markers = [-1, -1, -1, -1, -1,
+                   -1, -1, -1, -1, -1]
+        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
+                  1.0, 1.0, 1.0, 1.0, 1.0]
+
+        for i in xrange(2):
+            if len(labels[i]) == 0:
+                if(i % 2 == 0):
+                    self.qtgui_time_sink_x_0_1_0_0_2.set_line_label(i, "Re{{Data {0}}}".format(i/2))
+                else:
+                    self.qtgui_time_sink_x_0_1_0_0_2.set_line_label(i, "Im{{Data {0}}}".format(i/2))
+            else:
+                self.qtgui_time_sink_x_0_1_0_0_2.set_line_label(i, labels[i])
+            self.qtgui_time_sink_x_0_1_0_0_2.set_line_width(i, widths[i])
+            self.qtgui_time_sink_x_0_1_0_0_2.set_line_color(i, colors[i])
+            self.qtgui_time_sink_x_0_1_0_0_2.set_line_style(i, styles[i])
+            self.qtgui_time_sink_x_0_1_0_0_2.set_line_marker(i, markers[i])
+            self.qtgui_time_sink_x_0_1_0_0_2.set_line_alpha(i, alphas[i])
+
+        self._qtgui_time_sink_x_0_1_0_0_2_win = sip.wrapinstance(self.qtgui_time_sink_x_0_1_0_0_2.pyqwidget(), Qt.QWidget)
+        self.top_layout.addWidget(self._qtgui_time_sink_x_0_1_0_0_2_win)
+        self.qtgui_time_sink_x_0_1_0_0_1_2 = qtgui.time_sink_c(
+        	1024, #size
+        	samp_rate, #samp_rate
+        	"Header Stream", #name
+        	1 #number of inputs
+        )
+        self.qtgui_time_sink_x_0_1_0_0_1_2.set_update_time(0.10)
+        self.qtgui_time_sink_x_0_1_0_0_1_2.set_y_axis(-100, 100)
+
+        self.qtgui_time_sink_x_0_1_0_0_1_2.set_y_label('Amplitude', "")
+
+        self.qtgui_time_sink_x_0_1_0_0_1_2.enable_tags(-1, True)
+        self.qtgui_time_sink_x_0_1_0_0_1_2.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, 0, "")
+        self.qtgui_time_sink_x_0_1_0_0_1_2.enable_autoscale(False)
+        self.qtgui_time_sink_x_0_1_0_0_1_2.enable_grid(False)
+        self.qtgui_time_sink_x_0_1_0_0_1_2.enable_axis_labels(True)
+        self.qtgui_time_sink_x_0_1_0_0_1_2.enable_control_panel(False)
+
+        if not True:
+          self.qtgui_time_sink_x_0_1_0_0_1_2.disable_legend()
+
+        labels = ['', '', '', '', '',
+                  '', '', '', '', '']
+        widths = [1, 1, 1, 1, 1,
+                  1, 1, 1, 1, 1]
+        colors = ["blue", "red", "green", "black", "cyan",
+                  "magenta", "yellow", "dark red", "dark green", "blue"]
+        styles = [1, 1, 1, 1, 1,
+                  1, 1, 1, 1, 1]
+        markers = [-1, -1, -1, -1, -1,
+                   -1, -1, -1, -1, -1]
+        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
+                  1.0, 1.0, 1.0, 1.0, 1.0]
+
+        for i in xrange(2):
+            if len(labels[i]) == 0:
+                if(i % 2 == 0):
+                    self.qtgui_time_sink_x_0_1_0_0_1_2.set_line_label(i, "Re{{Data {0}}}".format(i/2))
+                else:
+                    self.qtgui_time_sink_x_0_1_0_0_1_2.set_line_label(i, "Im{{Data {0}}}".format(i/2))
+            else:
+                self.qtgui_time_sink_x_0_1_0_0_1_2.set_line_label(i, labels[i])
+            self.qtgui_time_sink_x_0_1_0_0_1_2.set_line_width(i, widths[i])
+            self.qtgui_time_sink_x_0_1_0_0_1_2.set_line_color(i, colors[i])
+            self.qtgui_time_sink_x_0_1_0_0_1_2.set_line_style(i, styles[i])
+            self.qtgui_time_sink_x_0_1_0_0_1_2.set_line_marker(i, markers[i])
+            self.qtgui_time_sink_x_0_1_0_0_1_2.set_line_alpha(i, alphas[i])
+
+        self._qtgui_time_sink_x_0_1_0_0_1_2_win = sip.wrapinstance(self.qtgui_time_sink_x_0_1_0_0_1_2.pyqwidget(), Qt.QWidget)
+        self.top_layout.addWidget(self._qtgui_time_sink_x_0_1_0_0_1_2_win)
         self.qtgui_time_sink_x_0_1_0_0_1_0 = qtgui.time_sink_c(
         	1024, #size
         	samp_rate, #samp_rate
@@ -620,47 +720,6 @@ class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
 
         self._qtgui_const_sink_x_0_0_0_win = sip.wrapinstance(self.qtgui_const_sink_x_0_0_0.pyqwidget(), Qt.QWidget)
         self.top_layout.addWidget(self._qtgui_const_sink_x_0_0_0_win)
-        self.qtgui_const_sink_x_0_0 = qtgui.const_sink_c(
-        	1024, #size
-        	"RX  Header Constellations", #name
-        	1 #number of inputs
-        )
-        self.qtgui_const_sink_x_0_0.set_update_time(0.10)
-        self.qtgui_const_sink_x_0_0.set_y_axis(-2, 2)
-        self.qtgui_const_sink_x_0_0.set_x_axis(-2, 2)
-        self.qtgui_const_sink_x_0_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, "")
-        self.qtgui_const_sink_x_0_0.enable_autoscale(False)
-        self.qtgui_const_sink_x_0_0.enable_grid(False)
-        self.qtgui_const_sink_x_0_0.enable_axis_labels(True)
-
-        if not True:
-          self.qtgui_const_sink_x_0_0.disable_legend()
-
-        labels = ['', '', '', '', '',
-                  '', '', '', '', '']
-        widths = [1, 1, 1, 1, 1,
-                  1, 1, 1, 1, 1]
-        colors = ["blue", "red", "red", "red", "red",
-                  "red", "red", "red", "red", "red"]
-        styles = [0, 0, 0, 0, 0,
-                  0, 0, 0, 0, 0]
-        markers = [0, 0, 0, 0, 0,
-                   0, 0, 0, 0, 0]
-        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
-                  1.0, 1.0, 1.0, 1.0, 1.0]
-        for i in xrange(1):
-            if len(labels[i]) == 0:
-                self.qtgui_const_sink_x_0_0.set_line_label(i, "Data {0}".format(i))
-            else:
-                self.qtgui_const_sink_x_0_0.set_line_label(i, labels[i])
-            self.qtgui_const_sink_x_0_0.set_line_width(i, widths[i])
-            self.qtgui_const_sink_x_0_0.set_line_color(i, colors[i])
-            self.qtgui_const_sink_x_0_0.set_line_style(i, styles[i])
-            self.qtgui_const_sink_x_0_0.set_line_marker(i, markers[i])
-            self.qtgui_const_sink_x_0_0.set_line_alpha(i, alphas[i])
-
-        self._qtgui_const_sink_x_0_0_win = sip.wrapinstance(self.qtgui_const_sink_x_0_0.pyqwidget(), Qt.QWidget)
-        self.top_layout.addWidget(self._qtgui_const_sink_x_0_0_win)
         self.pfb_arb_resampler_xxx_0 = pfb.arb_resampler_ccf(
         	  sps,
                   taps=(rrc_taps_enc),
@@ -668,7 +727,7 @@ class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
         self.pfb_arb_resampler_xxx_0.declare_sample_delay(40)
 
         self.packetizr_preamble_header_payload_demux_0 =  packetizr.preamble_header_payload_demux(32/constel_header.bits_per_symbol(), 64, 1, 0, "packet_len", "corr_est", True, gr.sizeof_gr_complex, "rx_time", samp_rate, ("phase_est", "time_est"), 0)
-        self.packetizr_packet_encoder_0 = packetizr.packet_encoder((preamble), constel_header.base(), constel_payload.base(), header_formatter, "packet_len", 0, True, 1)
+        self.packetizr_packet_encoder_0 = packetizr.packet_encoder((preamble), constel_header.base(), constel_payload.base(), header_formatter, "packet_len", 100, False, 1)
         self.digital_pfb_clock_sync_xxx_0_0_0 = digital.pfb_clock_sync_ccf(sps, 3.14*2/100, (rrc_taps), 32, 0, 1.5, 1)
         self.digital_packet_headerparser_b_0 = digital.packet_headerparser_b(header_formatter.base())
         self.digital_costas_loop_cc_1_0 = digital.costas_loop_cc(3.14*2/1000, 2, False)
@@ -686,14 +745,13 @@ class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
         	block_tags=True
         )
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate/2,True)
-        self.blocks_tagged_stream_mux_0 = blocks.tagged_stream_mux(gr.sizeof_gr_complex*1, "packet_len", 0)
         self.blocks_tag_gate_0 = blocks.tag_gate(gr.sizeof_gr_complex * 1, False)
-        self.blocks_stream_to_tagged_stream_0_1 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 16, "packet_len")
-        self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_gr_complex, 1, 100, "packet_len")
+        self.blocks_stream_to_tagged_stream_0_1 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 4, "packet_len")
         self.blocks_repack_bits_bb_2 = blocks.repack_bits_bb(constel_header.bits_per_symbol(), 8, "", False, gr.GR_LSB_FIRST)
         self.blocks_repack_bits_bb_1 = blocks.repack_bits_bb(1, 2, "", False, gr.GR_MSB_FIRST)
-        self.blocks_repack_bits_bb_0_1_0 = blocks.repack_bits_bb(8, constel_payload.bits_per_symbol(), '', False, gr.GR_LSB_FIRST)
-        self.blocks_null_source_0 = blocks.null_source(gr.sizeof_gr_complex*1)
+        self.blocks_repack_bits_bb_0_1_0 = blocks.repack_bits_bb(8, 8, '', False, gr.GR_LSB_FIRST)
+        self.blocks_repack_bits_bb_0 = blocks.repack_bits_bb(1, 8, "packet_len", False, gr.GR_LSB_FIRST)
+        self.blocks_message_debug_0 = blocks.message_debug()
         self.blocks_delay_0 = blocks.delay(gr.sizeof_float*1, ber_delay_slider)
         self.blocks_complex_to_real_0_0 = blocks.complex_to_real(1)
         self.blocks_complex_to_imag_0_0 = blocks.complex_to_imag(1)
@@ -706,6 +764,7 @@ class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
         ##################################################
         # Connections
         ##################################################
+        self.msg_connect((self.digital_packet_headerparser_b_0, 'header_data'), (self.blocks_message_debug_0, 'print'))
         self.msg_connect((self.digital_packet_headerparser_b_0, 'header_data'), (self.packetizr_preamble_header_payload_demux_0, 'header_data'))
         self.connect((self.analog_agc2_xx_0_0_0, 0), (self.digital_corr_est_cc_0, 0))
         self.connect((self.analog_agc2_xx_0_0_0, 0), (self.qtgui_time_sink_x_0_1_0_0_0_1, 0))
@@ -715,15 +774,13 @@ class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_complex_to_imag_0_0, 0), (self.qtgui_time_sink_x_0_2_0_0, 1))
         self.connect((self.blocks_complex_to_real_0_0, 0), (self.qtgui_time_sink_x_0_2_0_0, 0))
         self.connect((self.blocks_delay_0, 0), (self.qtgui_time_sink_x_1, 1))
-        self.connect((self.blocks_null_source_0, 0), (self.blocks_stream_to_tagged_stream_0, 0))
+        self.connect((self.blocks_repack_bits_bb_0, 0), (self.blocks_char_to_float_1, 0))
         self.connect((self.blocks_repack_bits_bb_0_1_0, 0), (self.blocks_char_to_float_0, 0))
-        self.connect((self.blocks_repack_bits_bb_1, 0), (self.blocks_char_to_float_1, 0))
+        self.connect((self.blocks_repack_bits_bb_1, 0), (self.blocks_repack_bits_bb_0, 0))
         self.connect((self.blocks_repack_bits_bb_2, 0), (self.digital_packet_headerparser_b_0, 0))
-        self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_tagged_stream_mux_0, 1))
         self.connect((self.blocks_stream_to_tagged_stream_0_1, 0), (self.blocks_repack_bits_bb_0_1_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0_1, 0), (self.packetizr_packet_encoder_0, 0))
         self.connect((self.blocks_tag_gate_0, 0), (self.blocks_throttle_0, 0))
-        self.connect((self.blocks_tagged_stream_mux_0, 0), (self.pfb_arb_resampler_xxx_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.channels_channel_model_0, 0))
         self.connect((self.channels_channel_model_0, 0), (self.analog_agc2_xx_0_0_0, 0))
         self.connect((self.digital_binary_slicer_fb_0, 0), (self.blocks_repack_bits_bb_1, 0))
@@ -736,11 +793,10 @@ class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
         self.connect((self.digital_costas_loop_cc_1, 0), (self.digital_constellation_soft_decoder_cf_0, 0))
         self.connect((self.digital_costas_loop_cc_1, 0), (self.qtgui_const_sink_x_0_0_0, 0))
         self.connect((self.digital_costas_loop_cc_1_0, 0), (self.digital_constellation_decoder_cb_0, 0))
-        self.connect((self.digital_costas_loop_cc_1_0, 0), (self.qtgui_const_sink_x_0_0, 0))
         self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.packetizr_preamble_header_payload_demux_0, 0))
         self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.qtgui_const_sink_x_0_0_0_0, 0))
         self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.qtgui_time_sink_x_0_0, 0))
-        self.connect((self.packetizr_packet_encoder_0, 0), (self.blocks_tagged_stream_mux_0, 0))
+        self.connect((self.packetizr_packet_encoder_0, 0), (self.pfb_arb_resampler_xxx_0, 0))
         self.connect((self.packetizr_preamble_header_payload_demux_0, 1), (self.digital_costas_loop_cc_1, 0))
         self.connect((self.packetizr_preamble_header_payload_demux_0, 0), (self.digital_costas_loop_cc_1_0, 0))
         self.connect((self.packetizr_preamble_header_payload_demux_0, 0), (self.qtgui_time_sink_x_0_1_0_0_1, 0))
@@ -748,7 +804,7 @@ class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
         self.connect((self.pfb_arb_resampler_xxx_0, 0), (self.blocks_tag_gate_0, 0))
 
     def closeEvent(self, event):
-        self.settings = Qt.QSettings("GNU Radio", "basic_chain_custom_othersync_betterpreamble")
+        self.settings = Qt.QSettings("GNU Radio", "basic_chain_custom_goodsync")
         self.settings.setValue("geometry", self.saveGeometry())
         event.accept()
 
@@ -810,6 +866,8 @@ class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
         self.qtgui_time_sink_x_0_2_0_0.set_samp_rate(self.samp_rate*2)
         self.qtgui_time_sink_x_0_1_0_0_3.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_0_1_0_0_2_0.set_samp_rate(self.samp_rate)
+        self.qtgui_time_sink_x_0_1_0_0_2.set_samp_rate(self.samp_rate)
+        self.qtgui_time_sink_x_0_1_0_0_1_2.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_0_1_0_0_1_0.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_0_1_0_0_1.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_0_1_0_0_0_1.set_samp_rate(self.samp_rate)
@@ -874,7 +932,7 @@ class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
         self.blocks_delay_0.set_dly(self.ber_delay_slider)
 
 
-def main(top_block_cls=basic_chain_custom_othersync_betterpreamble, options=None):
+def main(top_block_cls=basic_chain_custom_goodsync, options=None):
 
     from distutils.version import StrictVersion
     if StrictVersion(Qt.qVersion()) >= StrictVersion("4.5.0"):

@@ -93,7 +93,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(408, 12)</value>
+      <value>(568, 120)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -105,7 +105,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>07</value>
+      <value>7</value>
     </param>
   </block>
   <block>
@@ -132,7 +132,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>32000</value>
+      <value>200000</value>
     </param>
   </block>
   <block>
@@ -214,11 +214,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 184)</value>
+      <value>(0, 272)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -281,7 +281,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(200, 532)</value>
+      <value>(1064, 292)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -340,7 +340,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(760, 156)</value>
+      <value>(480, 204)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -368,61 +368,6 @@
     </param>
   </block>
   <block>
-    <key>blocks_stream_mux</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(208, 152)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_stream_mux_0</value>
-    </param>
-    <param>
-      <key>lengths</key>
-      <value>20,100</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>num_inputs</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>byte</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
     <key>blocks_stream_to_tagged_stream</key>
     <param>
       <key>alias</key>
@@ -442,7 +387,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(528, 156)</value>
+      <value>(240, 204)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -497,7 +442,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(368, 164)</value>
+      <value>(72, 212)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -552,11 +497,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(248, 416)</value>
+      <value>(184, 496)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>0</value>
+      <value>180</value>
     </param>
     <param>
       <key>id</key>
@@ -591,7 +536,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(392, 544)</value>
+      <value>(1264, 304)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -630,11 +575,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(248, 464)</value>
+      <value>(120, 312)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>0</value>
+      <value>180</value>
     </param>
     <param>
       <key>id</key>
@@ -653,7 +598,7 @@
     <key>packetizr_tagged_whitener</key>
     <param>
       <key>bits_per_byte</key>
-      <value>bpb</value>
+      <value>8</value>
     </param>
     <param>
       <key>alias</key>
@@ -673,7 +618,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(208, 280)</value>
+      <value>(712, 280)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -708,7 +653,7 @@
     <key>packetizr_tagged_whitener</key>
     <param>
       <key>bits_per_byte</key>
-      <value>bpb</value>
+      <value>8</value>
     </param>
     <param>
       <key>alias</key>
@@ -728,15 +673,15 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(792, 280)</value>
+      <value>(664, 392)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>0</value>
+      <value>180</value>
     </param>
     <param>
       <key>id</key>
-      <value>packetizr_tagged_whitener_0_1</value>
+      <value>packetizr_tagged_whitener_0_0</value>
     </param>
     <param>
       <key>lengthtagname</key>
@@ -795,7 +740,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(440, 408)</value>
+      <value>(224, 376)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -1115,11 +1060,11 @@
     </param>
     <param>
       <key>ymax</key>
-      <value>255</value>
+      <value>0</value>
     </param>
     <param>
       <key>ymin</key>
-      <value>0</value>
+      <value>255</value>
     </param>
   </block>
   <block>
@@ -1158,7 +1103,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(552, 520)</value>
+      <value>(1248, 424)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -1190,7 +1135,7 @@
     </param>
     <param>
       <key>label1</key>
-      <value>"Whitened data"</value>
+      <value></value>
     </param>
     <param>
       <key>marker1</key>
@@ -1485,206 +1430,17 @@
       <value>-1</value>
     </param>
   </block>
-  <block>
-    <key>virtual_sink</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(568, 324)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>virtual_sink_0</value>
-    </param>
-    <param>
-      <key>stream_id</key>
-      <value>whitened_data</value>
-    </param>
-  </block>
-  <block>
-    <key>virtual_sink</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1120, 300)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>virtual_sink_0_0</value>
-    </param>
-    <param>
-      <key>stream_id</key>
-      <value>output_data</value>
-    </param>
-  </block>
-  <block>
-    <key>virtual_sink</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(952, 164)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>virtual_sink_1</value>
-    </param>
-    <param>
-      <key>stream_id</key>
-      <value>input_data</value>
-    </param>
-  </block>
-  <block>
-    <key>virtual_source</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(24, 300)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>virtual_source_0</value>
-    </param>
-    <param>
-      <key>stream_id</key>
-      <value>input_data</value>
-    </param>
-  </block>
-  <block>
-    <key>virtual_source</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(40, 412)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>virtual_source_0_0</value>
-    </param>
-    <param>
-      <key>stream_id</key>
-      <value>input_data</value>
-    </param>
-  </block>
-  <block>
-    <key>virtual_source</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(40, 460)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>virtual_source_0_1</value>
-    </param>
-    <param>
-      <key>stream_id</key>
-      <value>output_data</value>
-    </param>
-  </block>
-  <block>
-    <key>virtual_source</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(8, 540)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>virtual_source_0_2</value>
-    </param>
-    <param>
-      <key>stream_id</key>
-      <value>whitened_data</value>
-    </param>
-  </block>
   <connection>
     <source_block_id>analog_random_source_x_0</source_block_id>
-    <sink_block_id>blocks_stream_mux_0</sink_block_id>
+    <sink_block_id>blocks_throttle_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_null_source_0</source_block_id>
-    <sink_block_id>blocks_stream_mux_0</sink_block_id>
+    <sink_block_id>blocks_throttle_0</sink_block_id>
     <source_key>0</source_key>
-    <sink_key>1</sink_key>
+    <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_repack_bits_bb_0_0</source_block_id>
@@ -1694,13 +1450,13 @@
   </connection>
   <connection>
     <source_block_id>blocks_repack_bits_bb_0_1</source_block_id>
-    <sink_block_id>virtual_sink_1</sink_block_id>
+    <sink_block_id>blocks_uchar_to_float_0_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_stream_mux_0</source_block_id>
-    <sink_block_id>blocks_throttle_0</sink_block_id>
+    <source_block_id>blocks_repack_bits_bb_0_1</source_block_id>
+    <sink_block_id>packetizr_tagged_whitener_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -1720,7 +1476,7 @@
     <source_block_id>blocks_uchar_to_float_0</source_block_id>
     <sink_block_id>qtgui_time_sink_x_0</sink_block_id>
     <source_key>0</source_key>
-    <sink_key>0</sink_key>
+    <sink_key>1</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_uchar_to_float_0_0</source_block_id>
@@ -1732,47 +1488,23 @@
     <source_block_id>blocks_uchar_to_float_0_1</source_block_id>
     <sink_block_id>qtgui_time_sink_x_0</sink_block_id>
     <source_key>0</source_key>
-    <sink_key>1</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>packetizr_tagged_whitener_0</source_block_id>
-    <sink_block_id>packetizr_tagged_whitener_0_1</sink_block_id>
-    <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>packetizr_tagged_whitener_0</source_block_id>
-    <sink_block_id>virtual_sink_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>packetizr_tagged_whitener_0_1</source_block_id>
-    <sink_block_id>virtual_sink_0_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>virtual_source_0</source_block_id>
-    <sink_block_id>packetizr_tagged_whitener_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>virtual_source_0_0</source_block_id>
-    <sink_block_id>blocks_uchar_to_float_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>virtual_source_0_1</source_block_id>
-    <sink_block_id>blocks_uchar_to_float_0_1</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>virtual_source_0_2</source_block_id>
     <sink_block_id>blocks_repack_bits_bb_0_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>packetizr_tagged_whitener_0</source_block_id>
+    <sink_block_id>packetizr_tagged_whitener_0_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>packetizr_tagged_whitener_0_0</source_block_id>
+    <sink_block_id>blocks_uchar_to_float_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
