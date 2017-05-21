@@ -28,6 +28,7 @@
 #include "packet_encoder_impl.h"
 #include <stdio.h>
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
@@ -85,7 +86,7 @@ packet_encoder_impl::packet_encoder_impl(
   set_tag_propagation_policy(TPP_DONT); // Not very clean...
   if (whiten) {
     std::vector<unsigned char> empty_mask;
-    d_whitener = kernel::whitener(empty_mask, 8);
+    d_whitener = kernel::whitener(empty_mask, 1);
   }
 }
 
@@ -101,8 +102,8 @@ packet_encoder_impl::calculate_output_stream_length(const gr_vector_int& ninput_
 {
   int nout = 0;
   nout += d_preamble.size();
-  nout += d_header_formatter->header_len() * (8 / d_constel_header->bits_per_symbol());
-  nout += ninput_items[0] * (8 / d_constel_payload->bits_per_symbol());
+  nout += ceil((float) d_header_formatter->header_len() / d_constel_header->bits_per_symbol());
+  nout += ceil((float) ninput_items[0] / d_constel_payload->bits_per_symbol());
   nout += d_zero_padding;
   //cout << "EXPECTED LENGTH" << nout << "\n";
   return nout;
@@ -178,19 +179,19 @@ packet_encoder_impl::work(int noutput_items,
   gr_complex* out = (gr_complex*)output_items[0]; // set pointer where to put output data
 
   // approximated input/output rate
-  int nout = 0;
+  int nout = 0; // in symbols
   nout += d_preamble.size();
-  nout += d_header_formatter->header_len() * (8 / d_constel_header->bits_per_symbol());
-  nout += ninput_items[0] * (8 / d_constel_payload->bits_per_symbol());
+  nout += ceil((float) d_header_formatter->header_len() / d_constel_header->bits_per_symbol());
+  nout += ceil((float) ninput_items[0] / d_constel_payload->bits_per_symbol());
   nout += d_zero_padding;
   set_relative_rate(nout / ninput_items[0]); // assuming payload is much longer than preamble + header
 
   // Some variables
   unsigned int header_bps = d_constel_header->bits_per_symbol();
-  unsigned int header_length = d_header_formatter->header_len() * 8 / header_bps; // TODO bytes, bits, symbols?
+  unsigned int header_length = d_header_formatter->header_len(); // TODO bytes, bits, symbols?
 
   unsigned int payload_bps = d_constel_payload->bits_per_symbol();
-  unsigned int payload_length = ninput_items[0] * 8 / payload_bps; // Payload length in bytes
+  unsigned int payload_length = ceil((float) ninput_items[0] / payload_bps); // Payload length in symbols
 
 
   /************* PREAMBLE **************/
@@ -202,28 +203,27 @@ packet_encoder_impl::work(int noutput_items,
   /************* HEADER **************/
   /* Generate header */
   unsigned char* header_in = new unsigned char[header_length];
-  if (!d_header_formatter->header_formatter(ninput_items[0] * 8 / payload_bps, header_in)) {
+  if (!d_header_formatter->header_formatter(payload_length, header_in)) {
     GR_LOG_FATAL(d_logger, boost::format("header_formatter() returned false (this shouldn't happen). Offending header started at %1%") % nitems_read(0));
     throw std::runtime_error("header formatter returned false.");
   }
 
-  /* Unpack byte data */
+  /* Pack byte data to symbol */
 
-  // Unpack bits in a char to multiple chars with k significant bit (LSB)
+  // Pack 1-bit chars to a char with k significant bit (MSB first)
   // where k is the number of bits per symbol for the given constellation
-  unsigned char* header_unpacked = new unsigned char[header_length];
-  unpack_bits(header_in, header_unpacked, d_header_formatter->header_len(), header_bps);
-  delete[] header_in;
+  // unsigned char* header_packed = new unsigned char[header_length];
+  // pack_bits(header_in, header_packed, d_header_formatter->header_len(), header_bps);
+  // delete[] header_in;
 
   /* Mapping */
 
   gr_complex* header_symbols = new gr_complex[header_length];
 
   for (unsigned int i = 0; i < header_length; i++) {
-    unsigned int val = (unsigned int)header_unpacked[i];
+    unsigned int val = (unsigned int)header_in[i];
     d_constel_header->map_to_points(val, &header_symbols[i]);
   }
-  delete[] header_unpacked;
 
   /************* PAYLOAD **************/
 
@@ -235,12 +235,9 @@ packet_encoder_impl::work(int noutput_items,
     d_whitener.do_whitening(payload_in, payload_in, ninput_items[0], 0);
   }
 
-  /* Unpack payload data */
-
-  // Unpack bits in a char to multiple chars with k significant bit (LSB)
-  // where k is the number of bits per symbol for the given constellation
-  unsigned char* payload_unpacked = new unsigned char[payload_length];
-  unpack_bits(payload_in, payload_unpacked, ninput_items[0], payload_bps);
+  /* Pack payload data */
+  unsigned char* payload_packed = new unsigned char[payload_length];
+  pack_bits_msb(payload_in, payload_packed, ninput_items[0], payload_bps);
 
 
   /* Mapping */
@@ -248,10 +245,10 @@ packet_encoder_impl::work(int noutput_items,
   gr_complex* payload_symbols = new gr_complex[payload_length];
 
   for (unsigned int i = 0; i < payload_length; i++) {
-    unsigned int val = (unsigned int)payload_unpacked[i];
+    unsigned int val = (unsigned int)payload_packed[i];
     d_constel_payload->map_to_points(val, &payload_symbols[i]);
   }
-  delete[] payload_unpacked;
+  delete[] payload_packed;
 
   /************* PACKET BUILDER **************/
 

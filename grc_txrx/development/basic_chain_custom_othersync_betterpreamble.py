@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Basic Chain Custom Othersync Betterpreamble
-# Generated: Sat Apr 29 11:26:22 2017
+# Generated: Mon May 15 02:12:06 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -394,8 +394,8 @@ class basic_chain_custom_othersync_betterpreamble(gr.top_block, Qt.QWidget):
         	  flt_size=32)
         self.pfb_arb_resampler_xxx_0.declare_sample_delay(40)
 
-        self.packetizr_packet_encoder_0 = packetizr.packet_encoder((preamble), constel_header.base(), constel_payload.base(), header_formatter, "packet_len", 100, True, 1)
-        self.packetizr_packet_decoder_0 = packetizr.packet_decoder((preamble), constel_header.base(), constel_payload.base(), header_formatter.base(), "corr_est", 2, False, True, samp_rate, 1)
+        self.packetizr_packet_encoder_0 = packetizr.packet_encoder((preamble), constel_header.base(), constel_payload.base(), header_formatter, "packet_len", 100, False, 1)
+        self.packetizr_packet_decoder_0 = packetizr.packet_decoder((preamble), constel_header.base(), constel_payload.base(), header_formatter.base(), "corr_est", True, False, False, samp_rate, 1)
         self.digital_pfb_clock_sync_xxx_0_0_0 = digital.pfb_clock_sync_ccf(sps, 3.14*2/100, (rrc_taps), 32, 0, 1.5, 1)
         self.digital_corr_est_cc_0 = digital.corr_est_cc((preamble), 1, 1, 0.999)
         self.channels_channel_model_0 = channels.channel_model(

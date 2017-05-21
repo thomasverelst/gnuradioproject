@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<block>
+  <name>Message order check</name>
+  <key>packetizer_message_order_check</key>
+  <category>[Packetizer]</category>
+  <import>import packetizer</import>
+  <make>packetizer.message_order_check($num_key)</make>
+  <!-- Make one 'param' node for every Parameter you want settable from the GUI.
+       Sub-nodes:
+       * name
+       * key (makes the value accessible as $keyname, e.g. in the make node)
+       * type -->
+  <param>
+    <name>Field to check</name>
+    <key>num_key</key>
+    <value>"packet_num"</value>
+    <type>string</type>
+  </param>
+
+  <sink>
+    <name>data</name>
+    <type>message</type>
+    <optional>1</optional>
+  </sink>
+</block>

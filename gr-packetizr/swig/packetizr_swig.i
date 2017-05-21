@@ -26,6 +26,7 @@
 #include "packetizr/preamble_header_payload_demux.h"
 #include "packetizr/tagged_whitener.h"
 #include "packetizr/whitener.h"
+#include "packetizr/corr_est_cc.h"
 %}
 
 
@@ -45,3 +46,5 @@ GR_SWIG_BLOCK_MAGIC2(packetizr, preamble_header_payload_demux);
 %include "packetizr/tagged_whitener.h"
 GR_SWIG_BLOCK_MAGIC2(packetizr, tagged_whitener);
 %include "packetizr/whitener.h"
+%include "packetizr/corr_est_cc.h"
+GR_SWIG_BLOCK_MAGIC2(packetizr, corr_est_cc);

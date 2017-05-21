@@ -29,7 +29,8 @@ list(APPEND packetizr_sources
     tagged_stream_demux_xx_impl.cc
     preamble_header_payload_demux_impl.cc
     tagged_whitener_impl.cc
-    whitener.cc )
+    whitener.cc
+    corr_est_cc_impl.cc )
 
 set(packetizr_sources "${packetizr_sources}" PARENT_SCOPE)
 if(NOT packetizr_sources)

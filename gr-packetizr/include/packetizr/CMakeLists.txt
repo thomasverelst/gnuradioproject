@@ -26,5 +26,6 @@ install(FILES
     tagged_stream_demux_xx.h
     preamble_header_payload_demux.h
     tagged_whitener.h
-    whitener.h DESTINATION include/packetizr
+    whitener.h
+    corr_est_cc.h DESTINATION include/packetizr
 )

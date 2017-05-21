@@ -429,34 +429,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>digital.packet_header_default(4, "packet_len", "packet_num", 8)</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(880, 5)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>header_formatter_0</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>digital.packet_header_default(16, "packet_len", "packet_num", constel_header.bits_per_symbol())</value>
+      <value>digital.packet_header_default(32/constel_header.bits_per_symbol(), "packet_len", "packet_num", constel_header.bits_per_symbol())</value>
     </param>
   </block>
   <block>
@@ -1526,6 +1499,65 @@
     <key>blocks_repack_bits_bb</key>
     <param>
       <key>k</key>
+      <value>8</value>
+    </param>
+    <param>
+      <key>l</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>endianness</key>
+      <value>gr.GR_LSB_FIRST</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(192, 724)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_repack_bits_bb_0_1_0_0</value>
+    </param>
+    <param>
+      <key>len_tag_key</key>
+      <value></value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>align_output</key>
+      <value>False</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_repack_bits_bb</key>
+    <param>
+      <key>k</key>
       <value>1</value>
     </param>
     <param>
@@ -1684,7 +1716,7 @@
     </param>
     <param>
       <key>packet_len</key>
-      <value>4</value>
+      <value>50</value>
     </param>
     <param>
       <key>type</key>
@@ -2561,6 +2593,10 @@
   <block>
     <key>packetizr_packet_decoder</key>
     <param>
+      <key>do_costas</key>
+      <value>True</value>
+    </param>
+    <param>
       <key>alias</key>
       <value></value>
     </param>
@@ -2571,10 +2607,6 @@
     <param>
       <key>affinity</key>
       <value></value>
-    </param>
-    <param>
-      <key>costas_order</key>
-      <value>2</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -2625,7 +2657,7 @@
       <value>samp_rate</value>
     </param>
     <param>
-      <key>soft_decoding</key>
+      <key>soft_output</key>
       <value>False</value>
     </param>
     <param>
@@ -7928,7 +7960,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(656, 560)</value>
+      <value>(680, 600)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -10540,7 +10572,7 @@
   </connection>
   <connection>
     <source_block_id>analog_random_source_x_0_0</source_block_id>
-    <sink_block_id>blocks_stream_to_tagged_stream_0_1</sink_block_id>
+    <sink_block_id>blocks_repack_bits_bb_0_1_0_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -10601,6 +10633,12 @@
   <connection>
     <source_block_id>blocks_repack_bits_bb_0_1_0</source_block_id>
     <sink_block_id>virtual_sink_1_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_repack_bits_bb_0_1_0_0</source_block_id>
+    <sink_block_id>blocks_stream_to_tagged_stream_0_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -10685,12 +10723,6 @@
   <connection>
     <source_block_id>digital_corr_est_cc_0</source_block_id>
     <sink_block_id>analog_pll_carriertracking_cc_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>digital_corr_est_cc_0</source_block_id>
-    <sink_block_id>digital_costas_loop_cc_2</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

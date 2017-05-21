@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<block>
+  <name>Extended Packet Encoder</name>
+  <key>packetizer_packet_encoder</key>
+  <category>[Packetizer]</category>
+  <import>import packetizer</import>
+  <make>packetizer.packet_encoder($preamble, $constel_header, $constel_payload, $header_formatter, $lengthtagname, $zero_padding, $whiten, $itemsize)</make>
+<param>
+    <name>Preamble (sequence of 1 and -1)</name>
+    <key>preamble</key>
+    <value>(1,-1,1,-1,1,1,-1,-1,1,1,-1,1,1,1,-1,1,1,-1,1,-1,-1,1,-1,-1,1,1,1,-1,-1,-1,1,-1,1,1,1,1,-1,-1,1,-1,1,-1,-1,-1,1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,-1,1,1,1,1,1,1,-1,-1)</value>
+    <type>int_vector</type>
+  </param>
+
+ <param>
+    <name>Header Constellation</name>
+    <key>constel_header</key>
+    <type>raw</type>
+  </param>
+
+<param>
+    <name>Payload Constellation</name>
+    <key>constel_payload</key>
+    <type>raw</type>
+  </param>
+
+<param>
+    <name>Header Formatter</name>
+    <key>header_formatter</key>
+    <type>raw</type>
+  </param>
+
+<param>
+   <name>Length Tag Name</name>
+    <key>lengthtagname</key>
+    <value>"packet_len"</value>
+    <type>string</type>
+  </param>
+
+<param>
+ <name>Zero padding</name>
+    <key>zero_padding</key>
+    <value>0</value>
+    <type>int</type>
+  </param>
+
+ <param>
+    <name>Whiten</name>
+    <key>whiten</key>
+    <type>enum</type>
+    <option>
+      <name>True</name>
+      <key>True</key>
+    </option>
+    <option>
+      <name>False</name>
+      <key>False</key>
+    </option>
+  </param>
+  
+<param>
+ <name>Itemsize</name>
+    <key>itemsize</key>
+    <value>1</value>
+    <type>int</type>
+  </param>
+ 
+
+  <!-- Make one 'sink' node per input. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  <!--<sink>
+    <name>header_data</name>
+    <type>byte</type>
+  </sink>-->
+  <sink>
+    <name>data_bytes</name>
+    <type>byte</type>
+  </sink>
+
+  <!-- Make one 'source' node per output. Sub-nodes:
+       * name (an identifier for the GUI)
+       * type
+       * vlen
+       * optional (set to 1 for optional inputs) -->
+  
+  <source>
+    <name>symbols_out</name>
+    <type>complex</type>
+  </source>
+
+</block>

@@ -43,6 +43,7 @@ whitener::whitener() {
 	d_random_mask_length = 4096;
 }
 
+// Whitener with predefined mask. If random_mask is an empty bitvector  ( std::vector<unsigned char> empty_mask;), a default mask will be used
 whitener::whitener(std::vector<unsigned char> random_mask, int bits_per_byte)
 	: d_use_lfsr(false)
 {
@@ -63,6 +64,7 @@ whitener::whitener(std::vector<unsigned char> random_mask, int bits_per_byte)
 	d_use_lfsr = false;
 }
 
+// Whitener with LFSR
 whitener:: whitener(int bits_per_byte)
 	: d_use_lfsr(true)
 {

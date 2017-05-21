@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<block>
+  <name>Pulse shape vector</name>
+  <key>variable_pulseshape_vector</key>
+  <category>[Packetizer]</category>
+  <import>import packetizer</import>
+  <!--<import>from gnuradio import digital</import>-->
+  <var_make>self.$(id) = $(id) = packetizer.pulseshape_vector($pulseshaper .to_basic_block(), $data)</var_make>
+  <var_value>packetizer.pulseshape_vector($pulseshaper .to_basic_block(), $data)</var_value>
+  <!--<make>packetizr.modulate_vector_cc($mod .to_basic_block(), $data)</make>-->
+  <make></make>
+
+  <param>
+    <name>Pulse shaper</name>
+    <key>pulseshaper</key>
+    <value></value>
+    <type>raw</type>
+  </param>
+  <param>
+    <name>Data vector</name>
+    <key>data</key>
+    <value></value>
+    <type>raw</type>
+  </param>
+</block>

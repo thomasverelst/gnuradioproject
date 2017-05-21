@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Test Fec Soft
-# Generated: Sun May 14 23:06:42 2017
+# Generated: Thu May 18 23:37:04 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -193,7 +193,6 @@ class test_fec_soft(gr.top_block, Qt.QWidget):
         self.blocks_unpack_k_bits_bb_0 = blocks.unpack_k_bits_bb(8)
         self.blocks_uchar_to_float_0_1 = blocks.uchar_to_float()
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_char*1, samp_rate,True)
-        self.blocks_stream_to_tagged_stream_1 = blocks.stream_to_tagged_stream(gr.sizeof_gr_complex, 1, 16, "packet_num")
         self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 32, "packet_len")
         self.blocks_repack_bits_bb_0_1_1_0 = blocks.repack_bits_bb(1, constel.bits_per_symbol(), '', False, gr.GR_MSB_FIRST)
         self.blocks_repack_bits_bb_0 = blocks.repack_bits_bb(2, 1, "", False, gr.GR_MSB_FIRST)
@@ -218,13 +217,12 @@ class test_fec_soft(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_repack_bits_bb_0_1_1_0, 0), (self.digital_chunks_to_symbols_xx_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_uchar_to_float_0_1, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.fec_extended_tagged_encoder_0, 0))
-        self.connect((self.blocks_stream_to_tagged_stream_1, 0), (self.digital_constellation_decoder_cb_0, 0))
-        self.connect((self.blocks_stream_to_tagged_stream_1, 0), (self.digital_constellation_soft_decoder_cf_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.blocks_unpack_k_bits_bb_0, 0))
         self.connect((self.blocks_uchar_to_float_0_1, 0), (self.qtgui_time_sink_x_0, 0))
         self.connect((self.blocks_unpack_k_bits_bb_0, 0), (self.blocks_stream_to_tagged_stream_0, 0))
         self.connect((self.digital_binary_slicer_fb_0, 0), (self.blocks_char_to_float_0_0, 0))
-        self.connect((self.digital_chunks_to_symbols_xx_0, 0), (self.blocks_stream_to_tagged_stream_1, 0))
+        self.connect((self.digital_chunks_to_symbols_xx_0, 0), (self.digital_constellation_decoder_cb_0, 0))
+        self.connect((self.digital_chunks_to_symbols_xx_0, 0), (self.digital_constellation_soft_decoder_cf_0, 0))
         self.connect((self.digital_constellation_decoder_cb_0, 0), (self.blocks_repack_bits_bb_0, 0))
         self.connect((self.digital_constellation_soft_decoder_cf_0, 0), (self.digital_binary_slicer_fb_0, 0))
         self.connect((self.digital_constellation_soft_decoder_cf_0, 0), (self.fec_extended_tagged_decoder_0, 0))
