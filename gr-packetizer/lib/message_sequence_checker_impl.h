@@ -1,6 +1,6 @@
 /* -*- c++ -*- */
 /* 
- * Copyright 2017 <+YOU OR YOUR COMPANY+>.
+ * Copyright 2017 Thomas Verelst.
  * 
  * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,30 +18,28 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_PACKETIZER_MESSAGE_ORDER_CHECK_IMPL_H
-#define INCLUDED_PACKETIZER_MESSAGE_ORDER_CHECK_IMPL_H
+#ifndef INCLUDED_PACKETIZER_MESSAGE_SEQUENCE_CHECKER_IMPL_H
+#define INCLUDED_PACKETIZER_MESSAGE_SEQUENCE_CHECKER_IMPL_H
 
-#include <packetizer/message_order_check.h>
+#include <packetizer/message_sequence_checker.h>
 #include <gnuradio/block.h>
 #include <pmt/pmt.h>
 
 namespace gr {
   namespace packetizer {
 
-    class message_order_check_impl : public message_order_check
+    class message_sequence_checker_impl : public message_sequence_checker
     {
      private:
       std::string d_num_key;
       long d_prev_num;
-      // Nothing to declare in this block.
 
       void check(pmt::pmt_t msg);
 
      public:
-      message_order_check_impl(const std::string &num_key);
-      ~message_order_check_impl();
+      message_sequence_checker_impl(const std::string &num_key);
+      ~message_sequence_checker_impl();
 
-      // Where all the action really happens
       int work(int noutput_items,
          gr_vector_const_void_star &input_items,
          gr_vector_void_star &output_items);
@@ -50,5 +48,5 @@ namespace gr {
   } // namespace packetizer
 } // namespace gr
 
-#endif /* INCLUDED_PACKETIZER_MESSAGE_ORDER_CHECK_IMPL_H */
+#endif /* INCLUDED_PACKETIZER_MESSAGE_SEQUENCE_CHECKER_IMPL_H */
 

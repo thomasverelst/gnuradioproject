@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 ##################################################
 # GNU Radio Python Flow Graph
-# Title: Packet Blocks
-# Generated: Sun May 21 00:33:43 2017
+# Title: Test Whitener
+# Generated: Sun May 21 16:47:45 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -23,20 +23,21 @@ from gnuradio import gr
 from gnuradio import qtgui
 from gnuradio.eng_option import eng_option
 from gnuradio.filter import firdes
-from grc_gnuradio import blks2 as grc_blks2
+from gnuradio.qtgui import Range, RangeWidget
 from optparse import OptionParser
 import numpy
+import packetizer
 import sip
 import sys
 from gnuradio import qtgui
 
 
-class packet_blocks(gr.top_block, Qt.QWidget):
+class test_whitener(gr.top_block, Qt.QWidget):
 
     def __init__(self):
-        gr.top_block.__init__(self, "Packet Blocks")
+        gr.top_block.__init__(self, "Test Whitener")
         Qt.QWidget.__init__(self)
-        self.setWindowTitle("Packet Blocks")
+        self.setWindowTitle("Test Whitener")
         qtgui.util.check_set_qss()
         try:
             self.setWindowIcon(Qt.QIcon.fromTheme('gnuradio-grc'))
@@ -54,25 +55,29 @@ class packet_blocks(gr.top_block, Qt.QWidget):
         self.top_grid_layout = Qt.QGridLayout()
         self.top_layout.addLayout(self.top_grid_layout)
 
-        self.settings = Qt.QSettings("GNU Radio", "packet_blocks")
+        self.settings = Qt.QSettings("GNU Radio", "test_whitener")
         self.restoreGeometry(self.settings.value("geometry").toByteArray())
 
         ##################################################
         # Variables
         ##################################################
         self.samp_rate = samp_rate = 32000
+        self.bpb = bpb = 07
 
         ##################################################
         # Blocks
         ##################################################
+        self._samp_rate_range = Range(1, 256000, 10, 32000, 100)
+        self._samp_rate_win = RangeWidget(self._samp_rate_range, self.set_samp_rate, 'Sample rate', "slider", int)
+        self.top_grid_layout.addWidget(self._samp_rate_win, 0,0,1,1)
         self.qtgui_time_sink_x_0_0 = qtgui.time_sink_f(
         	1024, #size
         	samp_rate, #samp_rate
-        	"Packet encoder output", #name
+        	"Whitened data", #name
         	1 #number of inputs
         )
         self.qtgui_time_sink_x_0_0.set_update_time(0.10)
-        self.qtgui_time_sink_x_0_0.set_y_axis(-1, 1)
+        self.qtgui_time_sink_x_0_0.set_y_axis(-1.5, 1.5)
 
         self.qtgui_time_sink_x_0_0.set_y_label('Amplitude', "")
 
@@ -86,7 +91,7 @@ class packet_blocks(gr.top_block, Qt.QWidget):
         if not True:
           self.qtgui_time_sink_x_0_0.disable_legend()
 
-        labels = ['', '', '', '', '',
+        labels = ["Whitened data", '', '', '', '',
                   '', '', '', '', '']
         widths = [1, 1, 1, 1, 1,
                   1, 1, 1, 1, 1]
@@ -111,15 +116,15 @@ class packet_blocks(gr.top_block, Qt.QWidget):
             self.qtgui_time_sink_x_0_0.set_line_alpha(i, alphas[i])
 
         self._qtgui_time_sink_x_0_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0_0.pyqwidget(), Qt.QWidget)
-        self.top_layout.addWidget(self._qtgui_time_sink_x_0_0_win)
+        self.top_grid_layout.addWidget(self._qtgui_time_sink_x_0_0_win, 3,0,1,4)
         self.qtgui_time_sink_x_0 = qtgui.time_sink_f(
         	1024, #size
         	samp_rate, #samp_rate
-        	"Input/Output comparison", #name
+        	"In/out comparison", #name
         	2 #number of inputs
         )
         self.qtgui_time_sink_x_0.set_update_time(0.10)
-        self.qtgui_time_sink_x_0.set_y_axis(-1, 1)
+        self.qtgui_time_sink_x_0.set_y_axis(0, 255)
 
         self.qtgui_time_sink_x_0.set_y_label('Amplitude', "")
 
@@ -133,7 +138,7 @@ class packet_blocks(gr.top_block, Qt.QWidget):
         if not True:
           self.qtgui_time_sink_x_0.disable_legend()
 
-        labels = ["Input", "Output", '', '', '',
+        labels = ["Original data", "After whitening and dewhitening", '', '', '',
                   '', '', '', '', '']
         widths = [1, 1, 1, 1, 1,
                   1, 1, 1, 1, 1]
@@ -158,41 +163,40 @@ class packet_blocks(gr.top_block, Qt.QWidget):
             self.qtgui_time_sink_x_0.set_line_alpha(i, alphas[i])
 
         self._qtgui_time_sink_x_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0.pyqwidget(), Qt.QWidget)
-        self.top_layout.addWidget(self._qtgui_time_sink_x_0_win)
+        self.top_grid_layout.addWidget(self._qtgui_time_sink_x_0_win, 2,0,1,4)
+        self.packetizer_tagged_whitener_1 = packetizer.tagged_whitener(False, (), 7, "packet_len")
+        self.packetizer_tagged_whitener_0 = packetizer.tagged_whitener(True, (), 7, "packet_len")
+        self.blocks_uchar_to_float_0_1 = blocks.uchar_to_float()
+        self.blocks_uchar_to_float_0_0 = blocks.uchar_to_float()
+        self.blocks_uchar_to_float_0 = blocks.uchar_to_float()
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_char*1, samp_rate,True)
-        self.blocks_char_to_float_0_0 = blocks.char_to_float(1, 1)
-        self.blocks_char_to_float_0 = blocks.char_to_float(1, 1)
-        self.blks2_packet_encoder_0 = grc_blks2.packet_mod_b(grc_blks2.packet_encoder(
-        		samples_per_symbol=1,
-        		bits_per_symbol=1,
-        		preamble='',
-        		access_code='',
-        		pad_for_usrp=False,
-        	),
-        	payload_length=10,
-        )
-        self.blks2_packet_decoder_0 = grc_blks2.packet_demod_f(grc_blks2.packet_decoder(
-        		access_code='',
-        		threshold=-1,
-        		callback=lambda ok, payload: self.blks2_packet_decoder_0.recv_pkt(ok, payload),
-        	),
-        )
+        self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 100, "packet_len")
+        self.blocks_stream_mux_0 = blocks.stream_mux(gr.sizeof_char*1, (20,100))
+        self.blocks_repack_bits_bb_0_1 = blocks.repack_bits_bb(8, bpb, "packet_len", False, gr.GR_LSB_FIRST)
+        self.blocks_repack_bits_bb_0_0 = blocks.repack_bits_bb(bpb, 1, "", False, gr.GR_LSB_FIRST)
+        self.blocks_null_source_0 = blocks.null_source(gr.sizeof_char*1)
         self.analog_random_source_x_0 = blocks.vector_source_b(map(int, numpy.random.randint(0, 256, 1000)), True)
 
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.analog_random_source_x_0, 0), (self.blks2_packet_encoder_0, 0))
-        self.connect((self.analog_random_source_x_0, 0), (self.blocks_char_to_float_0_0, 0))
-        self.connect((self.blks2_packet_decoder_0, 0), (self.qtgui_time_sink_x_0, 1))
-        self.connect((self.blks2_packet_encoder_0, 0), (self.blocks_char_to_float_0, 0))
-        self.connect((self.blks2_packet_encoder_0, 0), (self.blocks_throttle_0, 0))
-        self.connect((self.blocks_char_to_float_0, 0), (self.qtgui_time_sink_x_0_0, 0))
-        self.connect((self.blocks_char_to_float_0_0, 0), (self.qtgui_time_sink_x_0, 0))
-        self.connect((self.blocks_throttle_0, 0), (self.blks2_packet_decoder_0, 0))
+        self.connect((self.analog_random_source_x_0, 0), (self.blocks_stream_mux_0, 0))
+        self.connect((self.blocks_null_source_0, 0), (self.blocks_stream_mux_0, 1))
+        self.connect((self.blocks_repack_bits_bb_0_0, 0), (self.blocks_uchar_to_float_0_0, 0))
+        self.connect((self.blocks_repack_bits_bb_0_1, 0), (self.blocks_uchar_to_float_0, 0))
+        self.connect((self.blocks_repack_bits_bb_0_1, 0), (self.packetizer_tagged_whitener_1, 0))
+        self.connect((self.blocks_stream_mux_0, 0), (self.blocks_throttle_0, 0))
+        self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_repack_bits_bb_0_1, 0))
+        self.connect((self.blocks_throttle_0, 0), (self.blocks_stream_to_tagged_stream_0, 0))
+        self.connect((self.blocks_uchar_to_float_0, 0), (self.qtgui_time_sink_x_0, 0))
+        self.connect((self.blocks_uchar_to_float_0_0, 0), (self.qtgui_time_sink_x_0_0, 0))
+        self.connect((self.blocks_uchar_to_float_0_1, 0), (self.qtgui_time_sink_x_0, 1))
+        self.connect((self.packetizer_tagged_whitener_0, 0), (self.blocks_uchar_to_float_0_1, 0))
+        self.connect((self.packetizer_tagged_whitener_1, 0), (self.blocks_repack_bits_bb_0_0, 0))
+        self.connect((self.packetizer_tagged_whitener_1, 0), (self.packetizer_tagged_whitener_0, 0))
 
     def closeEvent(self, event):
-        self.settings = Qt.QSettings("GNU Radio", "packet_blocks")
+        self.settings = Qt.QSettings("GNU Radio", "test_whitener")
         self.settings.setValue("geometry", self.saveGeometry())
         event.accept()
 
@@ -205,8 +209,16 @@ class packet_blocks(gr.top_block, Qt.QWidget):
         self.qtgui_time_sink_x_0.set_samp_rate(self.samp_rate)
         self.blocks_throttle_0.set_sample_rate(self.samp_rate)
 
+    def get_bpb(self):
+        return self.bpb
 
-def main(top_block_cls=packet_blocks, options=None):
+    def set_bpb(self, bpb):
+        self.bpb = bpb
+        self.blocks_repack_bits_bb_0_1.set_k_and_l(8,self.bpb)
+        self.blocks_repack_bits_bb_0_0.set_k_and_l(self.bpb,1)
+
+
+def main(top_block_cls=test_whitener, options=None):
 
     from distutils.version import StrictVersion
     if StrictVersion(Qt.qVersion()) >= StrictVersion("4.5.0"):

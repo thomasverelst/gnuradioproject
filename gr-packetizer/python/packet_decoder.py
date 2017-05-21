@@ -37,7 +37,7 @@ class packet_decoder(gr.hier_block2):
         self.message_port_register_hier_out("header_data")
 
         #Demux
-        header_payload_demux = packetizer.preamble_header_payload_demux(header_formatter.header_len(), len(preamble), 1, 0, "packet_len", triggertagname, True, gr.sizeof_gr_complex, "rx_time", samp_rate, ("phase_est", "time_est"), 0)
+        header_payload_demux = packetizer.preamble_header_payload_demux(header_formatter.header_len(), 1, 0, "packet_len", triggertagname, True, gr.sizeof_gr_complex, "rx_time", samp_rate, ("phase_est", "time_est"), 0, len(preamble))
 
         # Feedback loop for payload length
         if(do_costas):

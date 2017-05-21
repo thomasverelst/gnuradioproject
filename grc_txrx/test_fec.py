@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Test Fec
-# Generated: Thu May 18 23:37:19 2017
+# Generated: Sun May 21 16:50:00 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -84,13 +84,13 @@ class test_fec(gr.top_block, Qt.QWidget):
         # Blocks
         ##################################################
         self.qtgui_time_sink_x_0 = qtgui.time_sink_f(
-        	1024, #size
+        	512, #size
         	samp_rate, #samp_rate
         	"In out comparison", #name
         	2 #number of inputs
         )
         self.qtgui_time_sink_x_0.set_update_time(0.10)
-        self.qtgui_time_sink_x_0.set_y_axis(-1, 2)
+        self.qtgui_time_sink_x_0.set_y_axis(-0.5, 1.5)
 
         self.qtgui_time_sink_x_0.set_y_label('Amplitude', "")
 
@@ -104,7 +104,7 @@ class test_fec(gr.top_block, Qt.QWidget):
         if not True:
           self.qtgui_time_sink_x_0.disable_legend()
 
-        labels = ["Original data", "After whitening and dewhitening", '', '', '',
+        labels = ["Original data", "After FEC enc and dec", '', '', '',
                   '', '', '', '', '']
         widths = [1, 1, 1, 1, 1,
                   1, 1, 1, 1, 1]

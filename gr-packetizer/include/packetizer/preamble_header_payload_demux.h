@@ -175,10 +175,10 @@ namespace gr {
        * \param samp_rate Sampling rate at the input. Necessary to calculate the rx time of packets.
        * \param special_tags A vector of strings denoting tags which shall be preserved (see \ref hpd_tag_handling)
        * \param header_padding A number of items that is appended and prepended to the header.
+       * \param preamble_len Length of the preamble, in symbols
        */
       static sptr make(
           const int header_len,
-          const int preamble_len,
           const int items_per_symbol=1,
           const int guard_interval=0,
           const std::string &length_tag_key="frame_len",
@@ -188,7 +188,8 @@ namespace gr {
           const std::string &timing_tag_key="",
           const double samp_rate=1.0,
           const std::vector<std::string> &special_tags=std::vector<std::string>(),
-          const size_t header_padding=0
+          const size_t header_padding=0,
+          const int preamble_len=0
           );
     };
 

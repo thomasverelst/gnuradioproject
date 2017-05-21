@@ -24,5 +24,5 @@ install(FILES
     packetizer_packet_decoder.xml
     packetizer_pulseshape_vector.xml
     packetizer_corr_est_cc.xml
-    packetizer_message_order_check.xml DESTINATION share/gnuradio/grc/blocks
+    packetizer_message_sequence_checker.xml DESTINATION share/gnuradio/grc/blocks
 )

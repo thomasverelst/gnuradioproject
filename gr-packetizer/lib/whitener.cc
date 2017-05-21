@@ -1,6 +1,6 @@
 /* -*- c++ -*- */
 /*
- * Copyright 2017 <+YOU OR YOUR COMPANY+>.
+ * Copyright 2017 Thomas Verelst.
  *
  * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,6 +35,9 @@ whitener::~whitener()
 {
 }
 
+/*!
+  * Initiates a whitener for 8 significant bits per byte using an LFSR.
+  */
 whitener::whitener() {
   d_use_lfsr = true;
   d_lsb_mask = lsb_mask(8);
@@ -43,7 +46,13 @@ whitener::whitener() {
   d_random_mask_length = 4096;
 }
 
-// Whitener with predefined mask. If random_mask is an empty bitvector  ( std::vector<unsigned char> empty_mask;), a default mask will be used
+/*!
+  * Initiates a whitener for \p bits_per_byte significant bits per byte 
+  * using the given \p random_mask to XOR data with.
+  * If \p random_mask is an empty vector (for example 
+  * initalized as std::vector<unsigned char> empty_mask;),
+  * a precomputed random mask will be used.
+  */
 whitener::whitener(std::vector<unsigned char> random_mask, int bits_per_byte)
   : d_use_lfsr(false)
 {
@@ -64,7 +73,10 @@ whitener::whitener(std::vector<unsigned char> random_mask, int bits_per_byte)
   d_use_lfsr = false;
 }
 
-// Whitener with LFSR
+/*!
+  * Initiates a whitener for \p bits_per_byte significant bits per byte
+  * using an LFSR.
+  */
 whitener:: whitener(int bits_per_byte)
   : d_use_lfsr(true)
 {

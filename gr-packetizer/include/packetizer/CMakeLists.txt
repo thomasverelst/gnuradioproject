@@ -28,5 +28,5 @@ install(FILES
     packet_encoder.h
     packet_encoder.h
     corr_est_cc.h
-    message_order_check.h DESTINATION include/packetizer
+    message_sequence_checker.h DESTINATION include/packetizer
 )

@@ -1,6 +1,6 @@
 /* -*- c++ -*- */
 /* 
- * Copyright 2017 <+YOU OR YOUR COMPANY+>.
+ * Copyright 2017 Thoams Verelst.
  * 
  * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@
 #endif
 
 #include <gnuradio/io_signature.h>
-#include "message_order_check_impl.h"
+#include "message_sequence_checker_impl.h"
 #include <pmt/pmt.h>
 #include <boost/shared_ptr.hpp>
 #include <boost/any.hpp>
@@ -36,37 +36,37 @@
 namespace gr {
   namespace packetizer {
 
-    message_order_check::sptr
-    message_order_check::make(const std::string &num_key)
+    message_sequence_checker::sptr
+    message_sequence_checker::make(const std::string &num_key)
     {
       return gnuradio::get_initial_sptr
-        (new message_order_check_impl(num_key));
+        (new message_sequence_checker_impl(num_key));
     }
 
     /*
      * The private constructor
      */
-    message_order_check_impl::message_order_check_impl(const std::string &num_key)
-      : gr::sync_block("message_order_check",
+    message_sequence_checker_impl::message_sequence_checker_impl(const std::string &num_key)
+      : gr::sync_block("message_sequence_checker",
               gr::io_signature::make(0, 0, 0),
               gr::io_signature::make(0, 0, 0)),
       d_num_key(num_key),
       d_prev_num(d_prev_num)
     {
       message_port_register_in(pmt::mp("data"));
-      set_msg_handler(pmt::mp("data"), boost::bind(&message_order_check_impl::check, this, _1));
+      set_msg_handler(pmt::mp("data"), boost::bind(&message_sequence_checker_impl::check, this, _1));
 
     }
 
     /*
      * Our virtual destructor.
      */
-    message_order_check_impl::~message_order_check_impl()
+    message_sequence_checker_impl::~message_sequence_checker_impl()
     {
     }
 
     void
-    message_order_check_impl::check(pmt::pmt_t msg)
+    message_sequence_checker_impl::check(pmt::pmt_t msg)
     {
       // There are probably more elegant ways to achieve the same
       if(pmt::is_false(msg)){
@@ -95,7 +95,7 @@ namespace gr {
 
 
     int
-    message_order_check_impl::work(int noutput_items,
+    message_sequence_checker_impl::work(int noutput_items,
         gr_vector_const_void_star &input_items,
         gr_vector_void_star &output_items)
     {

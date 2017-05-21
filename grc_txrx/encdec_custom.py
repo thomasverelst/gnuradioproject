@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 ##################################################
 # GNU Radio Python Flow Graph
-# Title: Custom Encdec 1
-# Generated: Thu May 18 23:35:35 2017
+# Title: Encdec Custom
+# Generated: Sun May 21 18:39:14 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -28,18 +28,18 @@ from gnuradio.filter import firdes
 from gnuradio.qtgui import Range, RangeWidget
 from optparse import OptionParser
 import numpy
-import packetizr
+import packetizer
 import sip
 import sys
 from gnuradio import qtgui
 
 
-class custom_encdec_1(gr.top_block, Qt.QWidget):
+class encdec_custom(gr.top_block, Qt.QWidget):
 
     def __init__(self, frame_size=60, puncpat='11'):
-        gr.top_block.__init__(self, "Custom Encdec 1")
+        gr.top_block.__init__(self, "Encdec Custom")
         Qt.QWidget.__init__(self)
-        self.setWindowTitle("Custom Encdec 1")
+        self.setWindowTitle("Encdec Custom")
         qtgui.util.check_set_qss()
         try:
             self.setWindowIcon(Qt.QIcon.fromTheme('gnuradio-grc'))
@@ -57,7 +57,7 @@ class custom_encdec_1(gr.top_block, Qt.QWidget):
         self.top_grid_layout = Qt.QGridLayout()
         self.top_layout.addLayout(self.top_grid_layout)
 
-        self.settings = Qt.QSettings("GNU Radio", "custom_encdec_1")
+        self.settings = Qt.QSettings("GNU Radio", "encdec_custom")
         self.restoreGeometry(self.settings.value("geometry").toByteArray())
 
         ##################################################
@@ -96,9 +96,9 @@ class custom_encdec_1(gr.top_block, Qt.QWidget):
         ##################################################
         self._samp_rate_range = Range(1, 256000, 10, 32000, 100)
         self._samp_rate_win = RangeWidget(self._samp_rate_range, self.set_samp_rate, 'Sample rate', "slider", int)
-        self.top_grid_layout.addWidget(self._samp_rate_win, 3,1,1,1)
+        self.top_grid_layout.addWidget(self._samp_rate_win, 0,0,1,1)
         self.qtgui_time_sink_x_1_0 = qtgui.time_sink_f(
-        	1024, #size
+        	512, #size
         	samp_rate, #samp_rate
         	'Soft demapped bits', #name
         	1 #number of inputs
@@ -143,7 +143,7 @@ class custom_encdec_1(gr.top_block, Qt.QWidget):
             self.qtgui_time_sink_x_1_0.set_line_alpha(i, alphas[i])
 
         self._qtgui_time_sink_x_1_0_win = sip.wrapinstance(self.qtgui_time_sink_x_1_0.pyqwidget(), Qt.QWidget)
-        self.top_layout.addWidget(self._qtgui_time_sink_x_1_0_win)
+        self.top_grid_layout.addWidget(self._qtgui_time_sink_x_1_0_win, 2,1,1,1)
         self.qtgui_time_sink_x_1 = qtgui.time_sink_f(
         	1024, #size
         	samp_rate, #samp_rate
@@ -190,15 +190,15 @@ class custom_encdec_1(gr.top_block, Qt.QWidget):
             self.qtgui_time_sink_x_1.set_line_alpha(i, alphas[i])
 
         self._qtgui_time_sink_x_1_win = sip.wrapinstance(self.qtgui_time_sink_x_1.pyqwidget(), Qt.QWidget)
-        self.top_layout.addWidget(self._qtgui_time_sink_x_1_win)
+        self.top_grid_layout.addWidget(self._qtgui_time_sink_x_1_win, 1,0,1,2)
         self.qtgui_time_sink_x_0 = qtgui.time_sink_c(
-        	1024, #size
+        	512, #size
         	samp_rate, #samp_rate
         	"TX Symbols", #name
         	1 #number of inputs
         )
         self.qtgui_time_sink_x_0.set_update_time(0.10)
-        self.qtgui_time_sink_x_0.set_y_axis(-1, 1)
+        self.qtgui_time_sink_x_0.set_y_axis(-1.5, 1.5)
 
         self.qtgui_time_sink_x_0.set_y_label('Amplitude', "")
 
@@ -240,19 +240,17 @@ class custom_encdec_1(gr.top_block, Qt.QWidget):
             self.qtgui_time_sink_x_0.set_line_alpha(i, alphas[i])
 
         self._qtgui_time_sink_x_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0.pyqwidget(), Qt.QWidget)
-        self.top_layout.addWidget(self._qtgui_time_sink_x_0_win)
-        self.packetizr_packet_encoder_0 = packetizr.packet_encoder(((1,-1,1,-1,1,1,-1,-1,1,1,-1,1,1,1,-1,1,1,-1,1,-1,-1,1,-1,-1,1,1,1,-1,-1,-1,1,-1,1,1,1,1,-1,-1,1,-1,1,-1,-1,-1,1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,-1,1,1,1,1,1,1,-1,-1)), constel_header.base(), constel_payload.base(), header_formatter, "packet_len", 100, False, 1)
-        self.packetizr_packet_decoder_0_0 = packetizr.packet_decoder((preamble), constel_header.base(), constel_payload.base(), header_formatter.base(), "packet_len", False, False, False, samp_rate, 1)
-        self.packetizr_packet_decoder_0 = packetizr.packet_decoder((preamble), constel_header.base(), constel_payload.base(), header_formatter.base(), "packet_len", False, True, False, samp_rate, 1)
-        self.fec_extended_tagged_encoder_0 = fec.extended_tagged_encoder(encoder_obj_list=enc_cc, puncpat='11', lentagname="packet_len", mtu=100)
-        self.fec_extended_tagged_decoder_0_0 = self.fec_extended_tagged_decoder_0_0 = fec_extended_tagged_decoder_0_0 = fec.extended_tagged_decoder(decoder_obj_list=dec_cc_2, ann=None, puncpat='11', integration_period=10000, lentagname="packet_len", mtu=100)
-        self.fec_extended_tagged_decoder_0 = self.fec_extended_tagged_decoder_0 = fec_extended_tagged_decoder_0 = fec.extended_tagged_decoder(decoder_obj_list=dec_cc_1, ann=None, puncpat='11', integration_period=10000, lentagname="packet_len", mtu=100)
-        self.digital_map_bb_0 = digital.map_bb(([-1,1]))
+        self.top_grid_layout.addWidget(self._qtgui_time_sink_x_0_win, 2,0,1,1)
+        self.packetizer_packet_encoder_0 = packetizer.packet_encoder((preamble), constel_header.base(), constel_payload.base(), header_formatter.base(), "packet_len", 100, False, 1)
+        self.packetizer_packet_decoder_0_0 = packetizer.packet_decoder((preamble), constel_header.base(), constel_payload.base(), header_formatter.base(), "packet_len", False, False, False, samp_rate, 1)
+        self.packetizer_packet_decoder_0 = packetizer.packet_decoder((preamble), constel_header.base(), constel_payload.base(), header_formatter.base(), "packet_len", False, True, False, samp_rate, 1)
+        self.packetizer_message_sequence_checker_0_0 = packetizer.message_sequence_checker("packet_num")
+        self.packetizer_message_sequence_checker_0 = packetizer.message_sequence_checker("packet_num")
+        self.digital_binary_slicer_fb_0 = digital.binary_slicer_fb()
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
-        self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 50, "packet_len")
+        self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 100, "packet_len")
         self.blocks_repack_bits_bb_0_1 = blocks.repack_bits_bb(8, 1, '', False, gr.GR_LSB_FIRST)
         self.blocks_char_to_float_1_0 = blocks.char_to_float(1, 1)
-        self.blocks_char_to_float_0_1 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0_0_0 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0 = blocks.char_to_float(1, 1)
         self.analog_random_source_x_0 = blocks.vector_source_b(map(int, numpy.random.randint(0, 256, 10)), True)
@@ -260,28 +258,26 @@ class custom_encdec_1(gr.top_block, Qt.QWidget):
         ##################################################
         # Connections
         ##################################################
+        self.msg_connect((self.packetizer_packet_decoder_0, 'header_data'), (self.packetizer_message_sequence_checker_0_0, 'data'))
+        self.msg_connect((self.packetizer_packet_decoder_0_0, 'header_data'), (self.packetizer_message_sequence_checker_0, 'data'))
         self.connect((self.analog_random_source_x_0, 0), (self.blocks_repack_bits_bb_0_1, 0))
         self.connect((self.blocks_char_to_float_0, 0), (self.qtgui_time_sink_x_1, 0))
         self.connect((self.blocks_char_to_float_0_0_0, 0), (self.qtgui_time_sink_x_1, 1))
-        self.connect((self.blocks_char_to_float_0_1, 0), (self.fec_extended_tagged_decoder_0_0, 0))
         self.connect((self.blocks_char_to_float_1_0, 0), (self.qtgui_time_sink_x_1, 2))
         self.connect((self.blocks_repack_bits_bb_0_1, 0), (self.blocks_stream_to_tagged_stream_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_char_to_float_0, 0))
-        self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.fec_extended_tagged_encoder_0, 0))
-        self.connect((self.blocks_throttle_0, 0), (self.packetizr_packet_decoder_0, 0))
-        self.connect((self.blocks_throttle_0, 0), (self.packetizr_packet_decoder_0_0, 0))
-        self.connect((self.digital_map_bb_0, 0), (self.blocks_char_to_float_0_1, 0))
-        self.connect((self.fec_extended_tagged_decoder_0, 0), (self.blocks_char_to_float_0_0_0, 0))
-        self.connect((self.fec_extended_tagged_decoder_0_0, 0), (self.blocks_char_to_float_1_0, 0))
-        self.connect((self.fec_extended_tagged_encoder_0, 0), (self.packetizr_packet_encoder_0, 0))
-        self.connect((self.packetizr_packet_decoder_0, 0), (self.fec_extended_tagged_decoder_0, 0))
-        self.connect((self.packetizr_packet_decoder_0, 0), (self.qtgui_time_sink_x_1_0, 0))
-        self.connect((self.packetizr_packet_decoder_0_0, 0), (self.digital_map_bb_0, 0))
-        self.connect((self.packetizr_packet_encoder_0, 0), (self.blocks_throttle_0, 0))
-        self.connect((self.packetizr_packet_encoder_0, 0), (self.qtgui_time_sink_x_0, 0))
+        self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.packetizer_packet_encoder_0, 0))
+        self.connect((self.blocks_throttle_0, 0), (self.packetizer_packet_decoder_0, 0))
+        self.connect((self.blocks_throttle_0, 0), (self.packetizer_packet_decoder_0_0, 0))
+        self.connect((self.digital_binary_slicer_fb_0, 0), (self.blocks_char_to_float_0_0_0, 0))
+        self.connect((self.packetizer_packet_decoder_0, 0), (self.digital_binary_slicer_fb_0, 0))
+        self.connect((self.packetizer_packet_decoder_0, 0), (self.qtgui_time_sink_x_1_0, 0))
+        self.connect((self.packetizer_packet_decoder_0_0, 0), (self.blocks_char_to_float_1_0, 0))
+        self.connect((self.packetizer_packet_encoder_0, 0), (self.blocks_throttle_0, 0))
+        self.connect((self.packetizer_packet_encoder_0, 0), (self.qtgui_time_sink_x_0, 0))
 
     def closeEvent(self, event):
-        self.settings = Qt.QSettings("GNU Radio", "custom_encdec_1")
+        self.settings = Qt.QSettings("GNU Radio", "encdec_custom")
         self.settings.setValue("geometry", self.saveGeometry())
         event.accept()
 
@@ -385,7 +381,7 @@ def argument_parser():
     return parser
 
 
-def main(top_block_cls=custom_encdec_1, options=None):
+def main(top_block_cls=encdec_custom, options=None):
     if options is None:
         options, _ = argument_parser().parse_args()
 

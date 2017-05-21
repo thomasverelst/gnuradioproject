@@ -1,6 +1,6 @@
 /* -*- c++ -*- */
 /* 
- * Copyright 2017 <+YOU OR YOUR COMPANY+>.
+ * Copyright 2017 Thomas Verelst.
  * 
  * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,9 +30,13 @@ namespace gr {
   namespace packetizer {
 
     /*!
-     * \brief <+description of block+>
+     * \brief Tagged Whitener : whitens and dewhitens incoming datastream
      * \ingroup packetizer
      *
+     * \details
+     * This block whitens or dewhitens the given data stream. It expects a tagged stream
+     * where the tag marks the beginning of the packet and the value is the length 
+     * of the value of the packet in chars.
      */
     class PACKETIZER_API tagged_whitener : virtual public gr::tagged_stream_block
     {
@@ -40,12 +44,11 @@ namespace gr {
       typedef boost::shared_ptr<tagged_whitener> sptr;
 
       /*!
-       * \brief Return a shared_ptr to a new instance of packetizer::tagged_whitener.
-       *
-       * To avoid accidental use of raw pointers, packetizer::tagged_whitener's
-       * constructor is in a private implementation
-       * class. packetizer::tagged_whitener::make is the public interface for
-       * creating new instances.
+       * \param use_lfsr Use an LFSR to generate semi-random data (slow)
+       * \param random_mask Use the given random mask as XOR mask. Should be a vector of chars (unsigned between 0 and 255).
+       *        Parameter not used if use_lfsr is true
+       * \param bits_per_byte: number of significant bits per byte
+       * \param lengthtagname Name of tag that marks beginning of packet and whose value is the length of the packet. 
        */
       static sptr make(
         const bool use_lfsr, 

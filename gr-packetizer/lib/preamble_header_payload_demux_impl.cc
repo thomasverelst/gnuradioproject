@@ -70,7 +70,6 @@ namespace gr {
     preamble_header_payload_demux::sptr
     preamble_header_payload_demux::make(
       int header_len,
-      int preamble_len,
       int items_per_symbol,
       int guard_interval,
       const std::string &length_tag_key,
@@ -80,13 +79,13 @@ namespace gr {
       const std::string &timing_tag_key,
       const double samp_rate, 
       const std::vector<std::string> &special_tags,
-      const size_t header_padding
+      const size_t header_padding,
+      int preamble_len
       )
     {
       return gnuradio::get_initial_sptr
         (new preamble_header_payload_demux_impl(
           header_len, 
-          preamble_len,
           items_per_symbol, 
           guard_interval, 
           length_tag_key, 
@@ -96,7 +95,8 @@ namespace gr {
           timing_tag_key,
           samp_rate, 
           special_tags, 
-          header_padding
+          header_padding,
+          preamble_len
         ));
     }
 
@@ -105,7 +105,6 @@ namespace gr {
      */
     preamble_header_payload_demux_impl::preamble_header_payload_demux_impl(
       int header_len,
-      int preamble_len,
       int items_per_symbol,
       int guard_interval,
       const std::string &length_tag_key,
@@ -115,7 +114,8 @@ namespace gr {
       const std::string &timing_tag_key, 
       const double samp_rate, 
       const std::vector<std::string> &special_tags,
-      const size_t header_padding
+      const size_t header_padding,
+      int preamble_len
     )
       : gr::block("preamble_header_payload_demux",
              io_signature::make2(1, 2, itemsize, sizeof(char)),

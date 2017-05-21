@@ -31,7 +31,7 @@ list(APPEND packetizer_sources
     tagged_whitener_impl.cc
     packet_encoder_impl.cc
     corr_est_cc_impl.cc
-    message_order_check_impl.cc
+    message_sequence_checker_impl.cc
 )
 
 set(packetizer_sources "${packetizer_sources}" PARENT_SCOPE)

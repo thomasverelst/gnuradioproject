@@ -26,7 +26,7 @@
 #include "packetizer/tagged_whitener.h"
 #include "packetizer/whitener.h"
 #include "packetizer/corr_est_cc.h"
-#include "packetizer/message_order_check.h"
+#include "packetizer/message_sequence_checker.h"
 %}
 
 
@@ -46,5 +46,5 @@ GR_SWIG_BLOCK_MAGIC2(packetizer, tagged_whitener);
 %include "packetizer/whitener.h"
 %include "packetizer/corr_est_cc.h"
 GR_SWIG_BLOCK_MAGIC2(packetizer, corr_est_cc);
-%include "packetizer/message_order_check.h"
-GR_SWIG_BLOCK_MAGIC2(packetizer, message_order_check);
+%include "packetizer/message_sequence_checker.h"
+GR_SWIG_BLOCK_MAGIC2(packetizer, message_sequence_checker);

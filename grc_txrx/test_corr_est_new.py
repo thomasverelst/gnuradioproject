@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 ##################################################
 # GNU Radio Python Flow Graph
-# Title: Test Corr Est
-# Generated: Sat May 20 23:19:25 2017
+# Title: Test Corr Est New
+# Generated: Sun May 21 16:51:51 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -34,12 +34,12 @@ import sys
 from gnuradio import qtgui
 
 
-class test_corr_est(gr.top_block, Qt.QWidget):
+class test_corr_est_new(gr.top_block, Qt.QWidget):
 
     def __init__(self):
-        gr.top_block.__init__(self, "Test Corr Est")
+        gr.top_block.__init__(self, "Test Corr Est New")
         Qt.QWidget.__init__(self)
-        self.setWindowTitle("Test Corr Est")
+        self.setWindowTitle("Test Corr Est New")
         qtgui.util.check_set_qss()
         try:
             self.setWindowIcon(Qt.QIcon.fromTheme('gnuradio-grc'))
@@ -57,7 +57,7 @@ class test_corr_est(gr.top_block, Qt.QWidget):
         self.top_grid_layout = Qt.QGridLayout()
         self.top_layout.addLayout(self.top_grid_layout)
 
-        self.settings = Qt.QSettings("GNU Radio", "test_corr_est")
+        self.settings = Qt.QSettings("GNU Radio", "test_corr_est_new")
         self.restoreGeometry(self.settings.value("geometry").toByteArray())
 
         ##################################################
@@ -284,7 +284,7 @@ class test_corr_est(gr.top_block, Qt.QWidget):
         self.connect((self.packetizer_corr_est_cc_0, 0), (self.digital_pfb_clock_sync_xxx_0, 0))
 
     def closeEvent(self, event):
-        self.settings = Qt.QSettings("GNU Radio", "test_corr_est")
+        self.settings = Qt.QSettings("GNU Radio", "test_corr_est_new")
         self.settings.setValue("geometry", self.saveGeometry())
         event.accept()
 
@@ -418,7 +418,7 @@ class test_corr_est(gr.top_block, Qt.QWidget):
         self.bb_filter = bb_filter
 
 
-def main(top_block_cls=test_corr_est, options=None):
+def main(top_block_cls=test_corr_est_new, options=None):
 
     from distutils.version import StrictVersion
     if StrictVersion(Qt.qVersion()) >= StrictVersion("4.5.0"):

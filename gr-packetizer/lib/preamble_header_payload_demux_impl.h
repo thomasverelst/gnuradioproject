@@ -103,7 +103,6 @@ namespace gr {
      public:
       preamble_header_payload_demux_impl(
         const int header_len,
-        const int preamble_len,
         const int items_per_symbol,
         const int guard_interval,
         const std::string &length_tag_key,
@@ -113,7 +112,8 @@ namespace gr {
         const std::string &timing_tag_key, 
         const double samp_rate, 
         const std::vector<std::string> &special_tags,
-        const size_t header_padding
+        const size_t header_padding,
+        const int preamble_len
         );
       ~preamble_header_payload_demux_impl();
 

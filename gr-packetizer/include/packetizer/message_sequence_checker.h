@@ -1,6 +1,6 @@
 /* -*- c++ -*- */
 /* 
- * Copyright 2017 <+YOU OR YOUR COMPANY+>.
+ * Copyright 2017 Thomas Verelst.
  * 
  * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,8 +19,8 @@
  */
 
 
-#ifndef INCLUDED_PACKETIZER_MESSAGE_ORDER_CHECK_H
-#define INCLUDED_PACKETIZER_MESSAGE_ORDER_CHECK_H
+#ifndef INCLUDED_PACKETIZER_MESSAGE_SEQUENCE_CHECKER_H
+#define INCLUDED_PACKETIZER_MESSAGE_SEQUENCE_CHECKER_H
 
 #include <packetizer/api.h>
 #include <gnuradio/sync_block.h>
@@ -33,17 +33,17 @@ namespace gr {
      * \ingroup packetizer
      *
      */
-    class PACKETIZER_API message_order_check : virtual public gr::sync_block
+    class PACKETIZER_API message_sequence_checker : virtual public gr::sync_block
     {
      public:
-      typedef boost::shared_ptr<message_order_check> sptr;
+      typedef boost::shared_ptr<message_sequence_checker> sptr;
 
       /*!
-       * \brief Return a shared_ptr to a new instance of packetizer::message_order_check.
+       * \brief Return a shared_ptr to a new instance of packetizer::message_sequence_checker.
        *
-       * To avoid accidental use of raw pointers, packetizer::message_order_check's
+       * To avoid accidental use of raw pointers, packetizer::message_sequence_checker's
        * constructor is in a private implementation
-       * class. packetizer::message_order_check::make is the public interface for
+       * class. packetizer::message_sequence_checker::make is the public interface for
        * creating new instances.
        */
       static sptr make(const std::string &num_key);
@@ -52,5 +52,5 @@ namespace gr {
   } // namespace packetizer
 } // namespace gr
 
-#endif /* INCLUDED_PACKETIZER_MESSAGE_ORDER_CHECK_H */
+#endif /* INCLUDED_PACKETIZER_MESSAGE_SEQUENCE_CHECKER_H */
 
