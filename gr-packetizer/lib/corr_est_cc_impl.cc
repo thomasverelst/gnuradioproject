@@ -44,19 +44,20 @@ namespace gr {
     corr_est_cc::sptr
     corr_est_cc::make(const std::vector<gr_complex> &symbols,
                       float sps, unsigned int mark_delay,
-                      double threshold, float abs_threshold)
+                      double threshold, float abs_threshold, bool verbose)
     {
       return gnuradio::get_initial_sptr
-        (new corr_est_cc_impl(symbols, sps, mark_delay, threshold, abs_threshold));
+        (new corr_est_cc_impl(symbols, sps, mark_delay, threshold, abs_threshold, verbose));
     }
 
     corr_est_cc_impl::corr_est_cc_impl(const std::vector<gr_complex> &symbols,
                                        float sps, unsigned int mark_delay,
-                                       double threshold, float abs_threshold)
+                                       double threshold, float abs_threshold, bool verbose)
       : gr::sync_block("corr_est_cc",
                    io_signature::make(1, 1, sizeof(gr_complex)),
                    io_signature::make(1, 2, sizeof(gr_complex))),
-        d_src_id(pmt::intern(alias()))
+        d_src_id(pmt::intern(alias())),
+        d_verbose(verbose)
     {
       d_sps = sps;
 
@@ -270,14 +271,14 @@ namespace gr {
       volk_32fc_magnitude_squared_32f(&d_corr_mag[0], corr, noutput_items);
 
       // Calculate the average squared correlation magnitude of the input
-      float detection = 0;
-      for(int i = 0; i < hist_len; i++) {
-        detection += d_corr_mag[i];
-      }
-      detection /= static_cast<float>(hist_len);
+      // float detection = 0;
+      // for(int i = 0; i < noutput_items; i++) {
+      //  detection += d_corr_mag[i];
+      // }
+      // detection /= static_cast<float>(noutput_items);
 
-      // Multiply by our threshold factor
-      detection *= d_pfa;
+      // //Multiply by our threshold factor
+      // detection *= d_pfa;
       // add_item_tag(1, nitems_written(0), pmt::intern("START"),
       //                pmt::from_double(detection), d_src_id);
       // add_item_tag(0, nitems_written(0)+noutput_items, pmt::intern("END"),
@@ -293,12 +294,26 @@ namespace gr {
         // is much lower.
         float corr_mag = d_corr_mag[i] + d_corr_mag[i+1];
 
+        // Dynamic threshold
+        // Calculate the average squared correlation magnitude of the input
+        float detection = 0;
+        for(int k = 0; k < hist_len; k++) {
+          detection += d_corr_mag[i+k];
+        }
+        detection /= static_cast<float>(hist_len);
+
+        // Multiply by our threshold factor
+        detection *= d_pfa;
+
+
         if(corr_mag <= 4*detection || corr_mag <= d_abs_thresh) {
           // Move detection threshold to next sample
           //detection += (d_corr_mag[i+hist_len-1]*d_pfa - d_corr_mag[i-1]*d_pfa)/static_cast<float>(hist_len);
           i++;
           continue;
         }
+        if(d_verbose)
+          std::cout << "Detection with correlation magnitude "<<corr_mag<<" versus adaptive threshold of "<<4*detection << " and fixed threshold of "<<d_abs_thresh<<std::endl;
 
         // Go to (just past) the current correlator output peak
         while ((i < (noutput_items-1)) &&

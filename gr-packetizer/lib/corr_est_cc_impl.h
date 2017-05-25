@@ -48,6 +48,8 @@ namespace gr {
       float d_scale;
       float d_pfa; // probability of false alarm
 
+      bool d_verbose;
+
       void _set_mark_delay(unsigned int mark_delay);
       void _set_threshold(double threshold);
       void _set_abs_threshold(float abs_threshold);
@@ -55,7 +57,7 @@ namespace gr {
     public:
       corr_est_cc_impl(const std::vector<gr_complex> &symbols,
                        float sps, unsigned int mark_delay,
-                       double threshold=0.9, float abs_threshold=0.9);
+                       double threshold=0.9, float abs_threshold=0.9, bool verbose=false);
       ~corr_est_cc_impl();
 
       std::vector<gr_complex> symbols() const;

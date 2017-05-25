@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Encdec Custom Fec
-# Generated: Sun May 21 16:45:31 2017
+# Generated: Thu May 25 11:21:48 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -97,28 +97,28 @@ class encdec_custom_fec(gr.top_block, Qt.QWidget):
         self._samp_rate_range = Range(1, 256000, 10, 32000, 100)
         self._samp_rate_win = RangeWidget(self._samp_rate_range, self.set_samp_rate, 'Sample rate', "slider", int)
         self.top_grid_layout.addWidget(self._samp_rate_win, 0,0,1,1)
-        self.qtgui_time_sink_x_1_0 = qtgui.time_sink_f(
-        	512, #size
+        self.qtgui_time_sink_x_3 = qtgui.time_sink_f(
+        	1024, #size
         	samp_rate, #samp_rate
-        	'Soft demapped bits', #name
+        	"BER", #name
         	1 #number of inputs
         )
-        self.qtgui_time_sink_x_1_0.set_update_time(0.10)
-        self.qtgui_time_sink_x_1_0.set_y_axis(-1.5, 1.5)
+        self.qtgui_time_sink_x_3.set_update_time(0.10)
+        self.qtgui_time_sink_x_3.set_y_axis(-1, 1)
 
-        self.qtgui_time_sink_x_1_0.set_y_label('Amplitude', "")
+        self.qtgui_time_sink_x_3.set_y_label('Amplitude', "")
 
-        self.qtgui_time_sink_x_1_0.enable_tags(-1, True)
-        self.qtgui_time_sink_x_1_0.set_trigger_mode(qtgui.TRIG_MODE_NORM, qtgui.TRIG_SLOPE_POS, 0.5, 0, 0, "packet_len")
-        self.qtgui_time_sink_x_1_0.enable_autoscale(False)
-        self.qtgui_time_sink_x_1_0.enable_grid(False)
-        self.qtgui_time_sink_x_1_0.enable_axis_labels(True)
-        self.qtgui_time_sink_x_1_0.enable_control_panel(False)
+        self.qtgui_time_sink_x_3.enable_tags(-1, True)
+        self.qtgui_time_sink_x_3.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, 0, "")
+        self.qtgui_time_sink_x_3.enable_autoscale(False)
+        self.qtgui_time_sink_x_3.enable_grid(False)
+        self.qtgui_time_sink_x_3.enable_axis_labels(True)
+        self.qtgui_time_sink_x_3.enable_control_panel(False)
 
         if not True:
-          self.qtgui_time_sink_x_1_0.disable_legend()
+          self.qtgui_time_sink_x_3.disable_legend()
 
-        labels = ["Soft demapped bits", "Soft decoded data", "Hard decoded data", '', '',
+        labels = ['', '', '', '', '',
                   '', '', '', '', '']
         widths = [1, 1, 1, 1, 1,
                   1, 1, 1, 1, 1]
@@ -133,17 +133,17 @@ class encdec_custom_fec(gr.top_block, Qt.QWidget):
 
         for i in xrange(1):
             if len(labels[i]) == 0:
-                self.qtgui_time_sink_x_1_0.set_line_label(i, "Data {0}".format(i))
+                self.qtgui_time_sink_x_3.set_line_label(i, "Data {0}".format(i))
             else:
-                self.qtgui_time_sink_x_1_0.set_line_label(i, labels[i])
-            self.qtgui_time_sink_x_1_0.set_line_width(i, widths[i])
-            self.qtgui_time_sink_x_1_0.set_line_color(i, colors[i])
-            self.qtgui_time_sink_x_1_0.set_line_style(i, styles[i])
-            self.qtgui_time_sink_x_1_0.set_line_marker(i, markers[i])
-            self.qtgui_time_sink_x_1_0.set_line_alpha(i, alphas[i])
+                self.qtgui_time_sink_x_3.set_line_label(i, labels[i])
+            self.qtgui_time_sink_x_3.set_line_width(i, widths[i])
+            self.qtgui_time_sink_x_3.set_line_color(i, colors[i])
+            self.qtgui_time_sink_x_3.set_line_style(i, styles[i])
+            self.qtgui_time_sink_x_3.set_line_marker(i, markers[i])
+            self.qtgui_time_sink_x_3.set_line_alpha(i, alphas[i])
 
-        self._qtgui_time_sink_x_1_0_win = sip.wrapinstance(self.qtgui_time_sink_x_1_0.pyqwidget(), Qt.QWidget)
-        self.top_grid_layout.addWidget(self._qtgui_time_sink_x_1_0_win, 3,2,1,2)
+        self._qtgui_time_sink_x_3_win = sip.wrapinstance(self.qtgui_time_sink_x_3.pyqwidget(), Qt.QWidget)
+        self.top_layout.addWidget(self._qtgui_time_sink_x_3_win)
         self.qtgui_time_sink_x_1 = qtgui.time_sink_f(
         	1024, #size
         	samp_rate, #samp_rate
@@ -191,6 +191,53 @@ class encdec_custom_fec(gr.top_block, Qt.QWidget):
 
         self._qtgui_time_sink_x_1_win = sip.wrapinstance(self.qtgui_time_sink_x_1.pyqwidget(), Qt.QWidget)
         self.top_grid_layout.addWidget(self._qtgui_time_sink_x_1_win, 2,0,1,4)
+        self.qtgui_time_sink_x_0_0_0 = qtgui.time_sink_f(
+        	1024, #size
+        	samp_rate, #samp_rate
+        	"Demodulated comparison", #name
+        	2 #number of inputs
+        )
+        self.qtgui_time_sink_x_0_0_0.set_update_time(0.10)
+        self.qtgui_time_sink_x_0_0_0.set_y_axis(-1, 2)
+
+        self.qtgui_time_sink_x_0_0_0.set_y_label('Amplitude', "")
+
+        self.qtgui_time_sink_x_0_0_0.enable_tags(-1, True)
+        self.qtgui_time_sink_x_0_0_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, 0, "")
+        self.qtgui_time_sink_x_0_0_0.enable_autoscale(False)
+        self.qtgui_time_sink_x_0_0_0.enable_grid(False)
+        self.qtgui_time_sink_x_0_0_0.enable_axis_labels(True)
+        self.qtgui_time_sink_x_0_0_0.enable_control_panel(False)
+
+        if not True:
+          self.qtgui_time_sink_x_0_0_0.disable_legend()
+
+        labels = ["Soft data with hard decisions", "Hard data", '', '', '',
+                  '', '', '', '', '']
+        widths = [1, 1, 1, 1, 1,
+                  1, 1, 1, 1, 1]
+        colors = ["blue", "red", "green", "black", "cyan",
+                  "magenta", "yellow", "dark red", "dark green", "blue"]
+        styles = [1, 1, 1, 1, 1,
+                  1, 1, 1, 1, 1]
+        markers = [-1, -1, -1, -1, -1,
+                   -1, -1, -1, -1, -1]
+        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
+                  1.0, 1.0, 1.0, 1.0, 1.0]
+
+        for i in xrange(2):
+            if len(labels[i]) == 0:
+                self.qtgui_time_sink_x_0_0_0.set_line_label(i, "Data {0}".format(i))
+            else:
+                self.qtgui_time_sink_x_0_0_0.set_line_label(i, labels[i])
+            self.qtgui_time_sink_x_0_0_0.set_line_width(i, widths[i])
+            self.qtgui_time_sink_x_0_0_0.set_line_color(i, colors[i])
+            self.qtgui_time_sink_x_0_0_0.set_line_style(i, styles[i])
+            self.qtgui_time_sink_x_0_0_0.set_line_marker(i, markers[i])
+            self.qtgui_time_sink_x_0_0_0.set_line_alpha(i, alphas[i])
+
+        self._qtgui_time_sink_x_0_0_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0_0_0.pyqwidget(), Qt.QWidget)
+        self.top_layout.addWidget(self._qtgui_time_sink_x_0_0_0_win)
         self.qtgui_time_sink_x_0 = qtgui.time_sink_c(
         	512, #size
         	samp_rate, #samp_rate
@@ -244,17 +291,21 @@ class encdec_custom_fec(gr.top_block, Qt.QWidget):
         self.packetizer_packet_encoder_0 = packetizer.packet_encoder((preamble), constel_header.base(), constel_payload.base(), header_formatter.base(), "packet_len", 100, False, 1)
         self.packetizer_packet_decoder_0_0 = packetizer.packet_decoder((preamble), constel_header.base(), constel_payload.base(), header_formatter.base(), "packet_len", False, False, False, samp_rate, 1)
         self.packetizer_packet_decoder_0 = packetizer.packet_decoder((preamble), constel_header.base(), constel_payload.base(), header_formatter.base(), "packet_len", False, True, False, samp_rate, 1)
-        self.packetizer_message_order_check_0_0 = packetizer.message_order_check("packet_num")
-        self.packetizer_message_order_check_0 = packetizer.message_order_check("packet_num")
+        self.packetizer_message_sequence_checker_0_0 = packetizer.message_sequence_checker("packet_num")
+        self.packetizer_message_sequence_checker_0 = packetizer.message_sequence_checker("packet_num")
         self.fec_extended_tagged_encoder_0 = fec.extended_tagged_encoder(encoder_obj_list=enc_cc, puncpat='11', lentagname="packet_len", mtu=100)
         self.fec_extended_tagged_decoder_0_0 = self.fec_extended_tagged_decoder_0_0 = fec_extended_tagged_decoder_0_0 = fec.extended_tagged_decoder(decoder_obj_list=dec_cc_2, ann=None, puncpat='11', integration_period=10000, lentagname="packet_len", mtu=100)
         self.fec_extended_tagged_decoder_0 = self.fec_extended_tagged_decoder_0 = fec_extended_tagged_decoder_0 = fec.extended_tagged_decoder(decoder_obj_list=dec_cc_1, ann=None, puncpat='11', integration_period=10000, lentagname="packet_len", mtu=100)
+        self.fec_ber_bf_1 = fec.ber_bf(False, 100, -7.0)
         self.digital_map_bb_0 = digital.map_bb(([-1,1]))
+        self.digital_binary_slicer_fb_0 = digital.binary_slicer_fb()
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
         self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 50, "packet_len")
         self.blocks_repack_bits_bb_0_1 = blocks.repack_bits_bb(8, 1, '', False, gr.GR_LSB_FIRST)
         self.blocks_char_to_float_1_0 = blocks.char_to_float(1, 1)
+        self.blocks_char_to_float_0_1_0 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0_1 = blocks.char_to_float(1, 1)
+        self.blocks_char_to_float_0_0_1 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0_0_0 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0 = blocks.char_to_float(1, 1)
         self.analog_random_source_x_0 = blocks.vector_source_b(map(int, numpy.random.randint(0, 256, 10)), True)
@@ -262,25 +313,32 @@ class encdec_custom_fec(gr.top_block, Qt.QWidget):
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.packetizer_packet_decoder_0, 'header_data'), (self.packetizer_message_order_check_0, 'data'))
-        self.msg_connect((self.packetizer_packet_decoder_0_0, 'header_data'), (self.packetizer_message_order_check_0_0, 'data'))
+        self.msg_connect((self.packetizer_packet_decoder_0, 'header_data'), (self.packetizer_message_sequence_checker_0, 'data'))
+        self.msg_connect((self.packetizer_packet_decoder_0_0, 'header_data'), (self.packetizer_message_sequence_checker_0_0, 'data'))
         self.connect((self.analog_random_source_x_0, 0), (self.blocks_repack_bits_bb_0_1, 0))
         self.connect((self.blocks_char_to_float_0, 0), (self.qtgui_time_sink_x_1, 0))
         self.connect((self.blocks_char_to_float_0_0_0, 0), (self.qtgui_time_sink_x_1, 1))
+        self.connect((self.blocks_char_to_float_0_0_1, 0), (self.qtgui_time_sink_x_0_0_0, 0))
         self.connect((self.blocks_char_to_float_0_1, 0), (self.fec_extended_tagged_decoder_0_0, 0))
+        self.connect((self.blocks_char_to_float_0_1_0, 0), (self.qtgui_time_sink_x_0_0_0, 1))
         self.connect((self.blocks_char_to_float_1_0, 0), (self.qtgui_time_sink_x_1, 2))
         self.connect((self.blocks_repack_bits_bb_0_1, 0), (self.blocks_stream_to_tagged_stream_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_char_to_float_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.fec_extended_tagged_encoder_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.packetizer_packet_decoder_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.packetizer_packet_decoder_0_0, 0))
+        self.connect((self.digital_binary_slicer_fb_0, 0), (self.blocks_char_to_float_0_0_1, 0))
+        self.connect((self.digital_binary_slicer_fb_0, 0), (self.fec_ber_bf_1, 0))
         self.connect((self.digital_map_bb_0, 0), (self.blocks_char_to_float_0_1, 0))
+        self.connect((self.fec_ber_bf_1, 0), (self.qtgui_time_sink_x_3, 0))
         self.connect((self.fec_extended_tagged_decoder_0, 0), (self.blocks_char_to_float_0_0_0, 0))
         self.connect((self.fec_extended_tagged_decoder_0_0, 0), (self.blocks_char_to_float_1_0, 0))
         self.connect((self.fec_extended_tagged_encoder_0, 0), (self.packetizer_packet_encoder_0, 0))
+        self.connect((self.packetizer_packet_decoder_0, 0), (self.digital_binary_slicer_fb_0, 0))
         self.connect((self.packetizer_packet_decoder_0, 0), (self.fec_extended_tagged_decoder_0, 0))
-        self.connect((self.packetizer_packet_decoder_0, 0), (self.qtgui_time_sink_x_1_0, 0))
+        self.connect((self.packetizer_packet_decoder_0_0, 0), (self.blocks_char_to_float_0_1_0, 0))
         self.connect((self.packetizer_packet_decoder_0_0, 0), (self.digital_map_bb_0, 0))
+        self.connect((self.packetizer_packet_decoder_0_0, 0), (self.fec_ber_bf_1, 1))
         self.connect((self.packetizer_packet_encoder_0, 0), (self.blocks_throttle_0, 0))
         self.connect((self.packetizer_packet_encoder_0, 0), (self.qtgui_time_sink_x_0, 0))
 
@@ -330,8 +388,9 @@ class encdec_custom_fec(gr.top_block, Qt.QWidget):
 
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
-        self.qtgui_time_sink_x_1_0.set_samp_rate(self.samp_rate)
+        self.qtgui_time_sink_x_3.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_1.set_samp_rate(self.samp_rate)
+        self.qtgui_time_sink_x_0_0_0.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_0.set_samp_rate(self.samp_rate)
         self.blocks_throttle_0.set_sample_rate(self.samp_rate)
 

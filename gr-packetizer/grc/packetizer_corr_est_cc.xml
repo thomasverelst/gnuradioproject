@@ -4,10 +4,10 @@
   <key>packetizer_corr_est_cc</key>
   <category>[Packetizer]</category>
   <import>import packetizer</import>
-  <make>packetizer.corr_est_cc($symbols, $sps, $mark_delay, $threshold, $absolute_threshold)</make>
+  <make>packetizer.corr_est_cc($symbols, $sps, $mark_delay, $threshold, $absolute_threshold,$verbose)</make>
   <callback>set_mark_delay($mark_delay)</callback>
   <callback>set_threshold($threshold)</callback>
-  <callback>set__absthreshold($absolute_threshold)</callback>
+  <callback>set_abs_threshold($absolute_threshold)</callback>
 
   <param>
     <name>Symbols</name>
@@ -41,6 +41,20 @@
     <type>float</type>
   </param>
 
+  <param>
+    <name>Verbose</name>
+    <key>verbose</key>
+    <type>enum</type>
+    <option>
+      <name>False</name>
+      <key>False</key>
+    </option>
+    <option>
+      <name>True</name>
+      <key>True</key>
+    </option>
+  </param>
+
   <sink>
     <name>in</name>
     <type>complex</type>
@@ -56,4 +70,7 @@
     <type>complex</type>
     <optional>1</optional>
   </source>
+
+
+
 </block>

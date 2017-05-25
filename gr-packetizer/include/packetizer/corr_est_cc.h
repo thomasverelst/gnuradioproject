@@ -101,7 +101,7 @@ namespace gr {
        *                   correlation (1.0). Default is 0.9.
        */
       static sptr make(const std::vector<gr_complex> &symbols,
-                       float sps, unsigned int mark_delay, double threshold=0.999999, float abs_threshold=0.9);
+                       float sps, unsigned int mark_delay, double threshold=0.999999, float abs_threshold=0.9, bool verbose=false);
 
       virtual std::vector<gr_complex> symbols() const = 0;
       virtual void set_symbols(const std::vector<gr_complex> &symbols) = 0;

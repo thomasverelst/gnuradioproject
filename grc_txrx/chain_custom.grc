@@ -1554,9 +1554,13 @@
       <key>threshold</key>
       <value>0.9999996</value>
     </param>
+    <param>
+      <key>verbose</key>
+      <value>False</value>
+    </param>
   </block>
   <block>
-    <key>packetizer_message_order_check</key>
+    <key>packetizer_message_sequence_checker</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -1579,7 +1583,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(648, 1372)</value>
+      <value>(616, 1372)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1587,7 +1591,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>packetizer_message_order_check_0</value>
+      <value>packetizer_message_sequence_checker_0</value>
     </param>
   </block>
   <block>
@@ -1706,10 +1710,6 @@
     <param>
       <key>id</key>
       <value>packetizer_packet_encoder_0</value>
-    </param>
-    <param>
-      <key>itemsize</key>
-      <value>1</value>
     </param>
     <param>
       <key>lengthtagname</key>
@@ -3665,7 +3665,7 @@
   </connection>
   <connection>
     <source_block_id>packetizer_packet_decoder_0</source_block_id>
-    <sink_block_id>packetizer_message_order_check_0</sink_block_id>
+    <sink_block_id>packetizer_message_sequence_checker_0</sink_block_id>
     <source_key>header_data</source_key>
     <sink_key>data</sink_key>
   </connection>
