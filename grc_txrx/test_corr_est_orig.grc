@@ -363,7 +363,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>20000</value>
+      <value>2000</value>
     </param>
   </block>
   <block>
@@ -542,7 +542,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>992</value>
+      <value>100</value>
     </param>
   </block>
   <block>
@@ -894,49 +894,6 @@
     <param>
       <key>scale</key>
       <value>1</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_complex_to_float</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1235, 194)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_complex_to_float_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
     </param>
     <param>
       <key>vlen</key>
@@ -1690,7 +1647,7 @@
     </param>
     <param>
       <key>threshold</key>
-      <value>0.9999999</value>
+      <value>0.99999</value>
     </param>
   </block>
   <block>
@@ -3223,11 +3180,11 @@
     </param>
     <param>
       <key>nconnections</key>
-      <value>3</value>
+      <value>1</value>
     </param>
     <param>
       <key>size</key>
-      <value>8000</value>
+      <value>5000</value>
     </param>
     <param>
       <key>srate</key>
@@ -3247,7 +3204,7 @@
     </param>
     <param>
       <key>tr_mode</key>
-      <value>qtgui.TRIG_MODE_NORM</value>
+      <value>qtgui.TRIG_MODE_FREE</value>
     </param>
     <param>
       <key>tr_slope</key>
@@ -3267,7 +3224,7 @@
     </param>
     <param>
       <key>ylabel</key>
-      <value>Amplitude</value>
+      <value>Correlation Amplitude</value>
     </param>
     <param>
       <key>yunit</key>
@@ -3299,18 +3256,6 @@
     <sink_block_id>qtgui_time_sink_x_0_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_complex_to_float_0</source_block_id>
-    <sink_block_id>qtgui_time_sink_x_1</sink_block_id>
-    <source_key>1</source_key>
-    <sink_key>2</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_complex_to_float_0</source_block_id>
-    <sink_block_id>qtgui_time_sink_x_1</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>1</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_complex_to_mag_0</source_block_id>
@@ -3398,14 +3343,8 @@
   </connection>
   <connection>
     <source_block_id>digital_corr_est_cc_0</source_block_id>
-    <sink_block_id>blocks_complex_to_float_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>digital_corr_est_cc_0</source_block_id>
     <sink_block_id>blocks_complex_to_mag_0</sink_block_id>
-    <source_key>0</source_key>
+    <source_key>1</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>

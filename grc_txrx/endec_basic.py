@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Endec Basic
-# Generated: Thu May 25 11:18:31 2017
+# Generated: Thu May 25 17:44:22 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -66,8 +66,7 @@ class endec_basic(gr.top_block, Qt.QWidget):
         self.samp_rate = samp_rate = 32000
         self.preamble = preamble = [1,-1,1,-1,1,1,-1,-1,1,1,-1,1,1,1,-1,1,1,-1,1,-1,-1,1,-1,-1,1,1,1,-1,-1,-1,1,-1,1,1,1,1,-1,-1,1,-1,1,-1,-1,-1,1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,-1,1,1,1,1,1,1,-1,-1]
         self.header_formatter = header_formatter = digital.packet_header_default(32/constel_header.bits_per_symbol(), "packet_len", "packet_num", constel_header.bits_per_symbol())
-        self.constel_preamble = constel_preamble = digital.constellation_bpsk()
-        self.constel_payload = constel_payload = digital.constellation_bpsk()
+        self.constel_payload = constel_payload = digital.constellation_qpsk()
 
         ##################################################
         # Blocks
@@ -78,11 +77,11 @@ class endec_basic(gr.top_block, Qt.QWidget):
         self.qtgui_time_sink_x_1 = qtgui.time_sink_f(
         	1024, #size
         	samp_rate, #samp_rate
-        	"", #name
+        	"In/out comparison", #name
         	3 #number of inputs
         )
         self.qtgui_time_sink_x_1.set_update_time(0.10)
-        self.qtgui_time_sink_x_1.set_y_axis(-1, 1)
+        self.qtgui_time_sink_x_1.set_y_axis(-0.5, 1.5)
 
         self.qtgui_time_sink_x_1.set_y_label('Amplitude', "")
 
@@ -96,7 +95,7 @@ class endec_basic(gr.top_block, Qt.QWidget):
         if not True:
           self.qtgui_time_sink_x_1.disable_legend()
 
-        labels = ['', '', '', '', '',
+        labels = ['Source data', 'Soft decoded data', 'Hard decoded data', '', '',
                   '', '', '', '', '']
         widths = [1, 1, 1, 1, 1,
                   1, 1, 1, 1, 1]
@@ -272,56 +271,6 @@ class endec_basic(gr.top_block, Qt.QWidget):
 
         self._qtgui_time_sink_x_0_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0_0.pyqwidget(), Qt.QWidget)
         self.top_layout.addWidget(self._qtgui_time_sink_x_0_0_win)
-        self.qtgui_time_sink_x_0 = qtgui.time_sink_c(
-        	1024, #size
-        	samp_rate, #samp_rate
-        	"TX Symbols", #name
-        	1 #number of inputs
-        )
-        self.qtgui_time_sink_x_0.set_update_time(0.10)
-        self.qtgui_time_sink_x_0.set_y_axis(-1, 1)
-
-        self.qtgui_time_sink_x_0.set_y_label('Amplitude', "")
-
-        self.qtgui_time_sink_x_0.enable_tags(-1, True)
-        self.qtgui_time_sink_x_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, 0, "")
-        self.qtgui_time_sink_x_0.enable_autoscale(False)
-        self.qtgui_time_sink_x_0.enable_grid(False)
-        self.qtgui_time_sink_x_0.enable_axis_labels(True)
-        self.qtgui_time_sink_x_0.enable_control_panel(False)
-
-        if not True:
-          self.qtgui_time_sink_x_0.disable_legend()
-
-        labels = ['', '', '', '', '',
-                  '', '', '', '', '']
-        widths = [1, 1, 1, 1, 1,
-                  1, 1, 1, 1, 1]
-        colors = ["blue", "red", "green", "black", "cyan",
-                  "magenta", "yellow", "dark red", "dark green", "blue"]
-        styles = [1, 1, 1, 1, 1,
-                  1, 1, 1, 1, 1]
-        markers = [-1, -1, -1, -1, -1,
-                   -1, -1, -1, -1, -1]
-        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
-                  1.0, 1.0, 1.0, 1.0, 1.0]
-
-        for i in xrange(2):
-            if len(labels[i]) == 0:
-                if(i % 2 == 0):
-                    self.qtgui_time_sink_x_0.set_line_label(i, "Re{{Data {0}}}".format(i/2))
-                else:
-                    self.qtgui_time_sink_x_0.set_line_label(i, "Im{{Data {0}}}".format(i/2))
-            else:
-                self.qtgui_time_sink_x_0.set_line_label(i, labels[i])
-            self.qtgui_time_sink_x_0.set_line_width(i, widths[i])
-            self.qtgui_time_sink_x_0.set_line_color(i, colors[i])
-            self.qtgui_time_sink_x_0.set_line_style(i, styles[i])
-            self.qtgui_time_sink_x_0.set_line_marker(i, markers[i])
-            self.qtgui_time_sink_x_0.set_line_alpha(i, alphas[i])
-
-        self._qtgui_time_sink_x_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0.pyqwidget(), Qt.QWidget)
-        self.top_layout.addWidget(self._qtgui_time_sink_x_0_win)
         self.qtgui_const_sink_x_0_0 = qtgui.const_sink_c(
         	1024, #size
         	"RX  Header Constellations", #name
@@ -366,21 +315,26 @@ class endec_basic(gr.top_block, Qt.QWidget):
         self.packetizr_preamble_header_payload_demux_0 =  packetizr.preamble_header_payload_demux(32/constel_header.bits_per_symbol(), len(preamble), 1, 0, "packet_len", "packet_len", True, gr.sizeof_gr_complex, '', samp_rate, (), 0)
         self.digital_packet_headerparser_b_0 = digital.packet_headerparser_b(header_formatter.base())
         self.digital_packet_headergenerator_bb_0 = digital.packet_headergenerator_bb(header_formatter, "packet_len")
+        self.digital_constellation_soft_decoder_cf_0 = digital.constellation_soft_decoder_cf(constel_payload.base())
         self.digital_constellation_decoder_cb_1 = digital.constellation_decoder_cb(constel_payload.base())
         self.digital_constellation_decoder_cb_0 = digital.constellation_decoder_cb(constel_header.base())
         self.digital_chunks_to_symbols_xx_0_0 = digital.chunks_to_symbols_bc((constel_payload.points()), 1)
         self.digital_chunks_to_symbols_xx_0 = digital.chunks_to_symbols_bc((constel_header.points()), 1)
+        self.digital_binary_slicer_fb_0 = digital.binary_slicer_fb()
         self.blocks_vector_source_x_0 = blocks.vector_source_c(preamble, True, 1, [])
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
         self.blocks_tagged_stream_mux_0 = blocks.tagged_stream_mux(gr.sizeof_gr_complex*1, 'packet_len', 0)
         self.blocks_stream_to_tagged_stream_1 = blocks.stream_to_tagged_stream(gr.sizeof_gr_complex, 1, len(preamble), "packet_len")
         self.blocks_stream_to_tagged_stream_0_0_0 = blocks.stream_to_tagged_stream(gr.sizeof_gr_complex, 1, 100, "packet_len")
         self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 50, "packet_len")
+        self.blocks_repack_bits_bb_1 = blocks.repack_bits_bb(constel_payload.bits_per_symbol(), 1, "", False, gr.GR_MSB_FIRST)
         self.blocks_repack_bits_bb_0_2 = blocks.repack_bits_bb(constel_payload.bits_per_symbol(), 8, '', False, gr.GR_LSB_FIRST)
-        self.blocks_repack_bits_bb_0_1 = blocks.repack_bits_bb(8, constel_payload.bits_per_symbol(), '', False, gr.GR_LSB_FIRST)
+        self.blocks_repack_bits_bb_0_1 = blocks.repack_bits_bb(8, 1, '', False, gr.GR_LSB_FIRST)
+        self.blocks_repack_bits_bb_0 = blocks.repack_bits_bb(1, constel_payload.bits_per_symbol(), "", False, gr.GR_MSB_FIRST)
         self.blocks_null_source_0 = blocks.null_source(gr.sizeof_gr_complex*1)
         self.blocks_message_debug_0 = blocks.message_debug()
         self.blocks_char_to_float_1_0 = blocks.char_to_float(1, 1)
+        self.blocks_char_to_float_1 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0 = blocks.char_to_float(1, 1)
         self.analog_random_source_x_0 = blocks.vector_source_b(map(int, numpy.random.randint(0, 256, 10)), True)
 
@@ -391,28 +345,32 @@ class endec_basic(gr.top_block, Qt.QWidget):
         self.msg_connect((self.digital_packet_headerparser_b_0, 'header_data'), (self.packetizr_preamble_header_payload_demux_0, 'header_data'))
         self.connect((self.analog_random_source_x_0, 0), (self.blocks_repack_bits_bb_0_1, 0))
         self.connect((self.blocks_char_to_float_0, 0), (self.qtgui_time_sink_x_1, 0))
-        self.connect((self.blocks_char_to_float_1_0, 0), (self.qtgui_time_sink_x_1, 1))
+        self.connect((self.blocks_char_to_float_1, 0), (self.qtgui_time_sink_x_1, 1))
         self.connect((self.blocks_char_to_float_1_0, 0), (self.qtgui_time_sink_x_1, 2))
         self.connect((self.blocks_null_source_0, 0), (self.blocks_stream_to_tagged_stream_0_0_0, 0))
+        self.connect((self.blocks_repack_bits_bb_0, 0), (self.blocks_repack_bits_bb_0_2, 0))
+        self.connect((self.blocks_repack_bits_bb_0, 0), (self.digital_chunks_to_symbols_xx_0_0, 0))
         self.connect((self.blocks_repack_bits_bb_0_1, 0), (self.blocks_stream_to_tagged_stream_0, 0))
         self.connect((self.blocks_repack_bits_bb_0_2, 0), (self.digital_packet_headergenerator_bb_0, 0))
+        self.connect((self.blocks_repack_bits_bb_1, 0), (self.blocks_char_to_float_1_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_char_to_float_0, 0))
-        self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_repack_bits_bb_0_2, 0))
-        self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.digital_chunks_to_symbols_xx_0_0, 0))
+        self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_repack_bits_bb_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0_0_0, 0), (self.blocks_tagged_stream_mux_0, 3))
         self.connect((self.blocks_stream_to_tagged_stream_1, 0), (self.blocks_tagged_stream_mux_0, 0))
         self.connect((self.blocks_tagged_stream_mux_0, 0), (self.blocks_throttle_0, 0))
-        self.connect((self.blocks_tagged_stream_mux_0, 0), (self.qtgui_time_sink_x_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.packetizr_preamble_header_payload_demux_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.qtgui_time_sink_x_0_0, 0))
         self.connect((self.blocks_vector_source_x_0, 0), (self.blocks_stream_to_tagged_stream_1, 0))
+        self.connect((self.digital_binary_slicer_fb_0, 0), (self.blocks_char_to_float_1, 0))
         self.connect((self.digital_chunks_to_symbols_xx_0, 0), (self.blocks_tagged_stream_mux_0, 1))
         self.connect((self.digital_chunks_to_symbols_xx_0_0, 0), (self.blocks_tagged_stream_mux_0, 2))
         self.connect((self.digital_constellation_decoder_cb_0, 0), (self.digital_packet_headerparser_b_0, 0))
-        self.connect((self.digital_constellation_decoder_cb_1, 0), (self.blocks_char_to_float_1_0, 0))
+        self.connect((self.digital_constellation_decoder_cb_1, 0), (self.blocks_repack_bits_bb_1, 0))
+        self.connect((self.digital_constellation_soft_decoder_cf_0, 0), (self.digital_binary_slicer_fb_0, 0))
         self.connect((self.digital_packet_headergenerator_bb_0, 0), (self.digital_chunks_to_symbols_xx_0, 0))
         self.connect((self.packetizr_preamble_header_payload_demux_0, 0), (self.digital_constellation_decoder_cb_0, 0))
         self.connect((self.packetizr_preamble_header_payload_demux_0, 1), (self.digital_constellation_decoder_cb_1, 0))
+        self.connect((self.packetizr_preamble_header_payload_demux_0, 1), (self.digital_constellation_soft_decoder_cf_0, 0))
         self.connect((self.packetizr_preamble_header_payload_demux_0, 0), (self.qtgui_const_sink_x_0_0, 0))
         self.connect((self.packetizr_preamble_header_payload_demux_0, 0), (self.qtgui_time_sink_x_0_1_0_0_1, 0))
         self.connect((self.packetizr_preamble_header_payload_demux_0, 1), (self.qtgui_time_sink_x_0_1_0_0_1_0, 0))
@@ -437,7 +395,6 @@ class endec_basic(gr.top_block, Qt.QWidget):
         self.qtgui_time_sink_x_0_1_0_0_1_0.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_0_1_0_0_1.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_0_0.set_samp_rate(self.samp_rate)
-        self.qtgui_time_sink_x_0.set_samp_rate(self.samp_rate)
         self.blocks_throttle_0.set_sample_rate(self.samp_rate)
 
     def get_preamble(self):
@@ -455,12 +412,6 @@ class endec_basic(gr.top_block, Qt.QWidget):
     def set_header_formatter(self, header_formatter):
         self.header_formatter = header_formatter
         self.digital_packet_headergenerator_bb_0.set_header_formatter(self.header_formatter)
-
-    def get_constel_preamble(self):
-        return self.constel_preamble
-
-    def set_constel_preamble(self, constel_preamble):
-        self.constel_preamble = constel_preamble
 
     def get_constel_payload(self):
         return self.constel_payload

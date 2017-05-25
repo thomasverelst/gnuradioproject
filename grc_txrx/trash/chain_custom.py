@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Chain Custom
-# Generated: Thu May 25 11:16:43 2017
+# Generated: Thu May 25 22:58:40 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -32,6 +32,7 @@ from gnuradio.qtgui import Range, RangeWidget
 from optparse import OptionParser
 import numpy
 import packetizer
+import packetizr
 import sip
 import sys
 from gnuradio import qtgui
@@ -74,19 +75,19 @@ class chain_custom(gr.top_block, Qt.QWidget):
         self.samp_rate = samp_rate = 32000
         self.rxshape = rxshape = filter.pfb_arb_resampler_ccf(sps,  rrc_taps , 32)
         self.preamble = preamble = [1,-1,1,-1,1,1,-1,-1,1,1,-1,1,1,1,-1,1,1,-1,1,-1,-1,1,-1,-1,1,1,1,-1,-1,-1,1,-1,1,1,1,1,-1,-1,1,-1,1,-1,-1,-1,1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,-1,1,1,1,1,1,1,-1,-1]
+        self.phase_offset = phase_offset = 0
         self.noise = noise = 0.01
         self.freq_offset = freq_offset = 0
-        self.freq_bw = freq_bw = 0
         self.constel_header = constel_header = digital.constellation_bpsk()
+        self.zero_padding = zero_padding = 100
         self.time_offset_label = time_offset_label = time_offset
         self.shaped_preamble = shaped_preamble = packetizer.pulseshape_vector(rxshape .to_basic_block(), preamble)
         self.samp_rate_label = samp_rate_label = samp_rate
         self.rrc_taps_rx = rrc_taps_rx = firdes.root_raised_cosine(nfilts, nfilts, 1.0/float(sps), eb, 5*sps*nfilts)
+        self.phase_offset_label = phase_offset_label = phase_offset
         self.noise_label = noise_label = noise
         self.header_formatter = header_formatter = digital.packet_header_default(32/constel_header.bits_per_symbol(), "packet_len", "packet_num", constel_header.bits_per_symbol())
         self.freq_offset_label = freq_offset_label = freq_offset
-        self.freq_bw_label = freq_bw_label = freq_bw
-        self.constel_preamble = constel_preamble = digital.constellation_bpsk()
         self.constel_payload = constel_payload = digital.constellation_bpsk()
 
         ##################################################
@@ -98,6 +99,9 @@ class chain_custom(gr.top_block, Qt.QWidget):
         self._samp_rate_range = Range(1, 256000, 10, 32000, 100)
         self._samp_rate_win = RangeWidget(self._samp_rate_range, self.set_samp_rate, 'Sample rate', "slider", int)
         self.top_grid_layout.addWidget(self._samp_rate_win, 0,0,1,1)
+        self._phase_offset_range = Range(-2*3.14, 2*3.14, 0.01, 0, 200)
+        self._phase_offset_win = RangeWidget(self._phase_offset_range, self.set_phase_offset, 'Phase Offset', "slider", float)
+        self.top_grid_layout.addWidget(self._phase_offset_win, 21,2,1,1)
         self._noise_range = Range(0, 1, 0.005, 0.01, 200)
         self._noise_win = RangeWidget(self._noise_range, self.set_noise, 'Noise', "slider", float)
         self.top_grid_layout.addWidget(self._noise_win, 20,0,1,1)
@@ -132,10 +136,10 @@ class chain_custom(gr.top_block, Qt.QWidget):
         	512, #size
         	samp_rate, #samp_rate
         	"In/out comparison", #name
-        	2 #number of inputs
+        	3 #number of inputs
         )
         self.qtgui_time_sink_x_1.set_update_time(0.10)
-        self.qtgui_time_sink_x_1.set_y_axis(-1, 1)
+        self.qtgui_time_sink_x_1.set_y_axis(-0.5, 1.5)
 
         self.qtgui_time_sink_x_1.set_y_label('Amplitude', "")
 
@@ -162,7 +166,7 @@ class chain_custom(gr.top_block, Qt.QWidget):
         alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
                   1.0, 1.0, 1.0, 1.0, 1.0]
 
-        for i in xrange(2):
+        for i in xrange(3):
             if len(labels[i]) == 0:
                 self.qtgui_time_sink_x_1.set_line_label(i, "Data {0}".format(i))
             else:
@@ -322,6 +326,56 @@ class chain_custom(gr.top_block, Qt.QWidget):
 
         self._qtgui_time_sink_x_0_1_0_0_0_0_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0_1_0_0_0_0_0.pyqwidget(), Qt.QWidget)
         self.top_grid_layout.addWidget(self._qtgui_time_sink_x_0_1_0_0_0_0_0_win, 5,0,1,2)
+        self.qtgui_time_sink_x_0_0_0 = qtgui.time_sink_c(
+        	1024, #size
+        	samp_rate, #samp_rate
+        	"RX Symbols", #name
+        	1 #number of inputs
+        )
+        self.qtgui_time_sink_x_0_0_0.set_update_time(0.10)
+        self.qtgui_time_sink_x_0_0_0.set_y_axis(-1, 1)
+
+        self.qtgui_time_sink_x_0_0_0.set_y_label('Amplitude', "")
+
+        self.qtgui_time_sink_x_0_0_0.enable_tags(-1, True)
+        self.qtgui_time_sink_x_0_0_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, 0, "")
+        self.qtgui_time_sink_x_0_0_0.enable_autoscale(False)
+        self.qtgui_time_sink_x_0_0_0.enable_grid(False)
+        self.qtgui_time_sink_x_0_0_0.enable_axis_labels(True)
+        self.qtgui_time_sink_x_0_0_0.enable_control_panel(False)
+
+        if not True:
+          self.qtgui_time_sink_x_0_0_0.disable_legend()
+
+        labels = ['', '', '', '', '',
+                  '', '', '', '', '']
+        widths = [1, 1, 1, 1, 1,
+                  1, 1, 1, 1, 1]
+        colors = ["blue", "red", "green", "black", "cyan",
+                  "magenta", "yellow", "dark red", "dark green", "blue"]
+        styles = [1, 1, 1, 1, 1,
+                  1, 1, 1, 1, 1]
+        markers = [-1, -1, -1, -1, -1,
+                   -1, -1, -1, -1, -1]
+        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
+                  1.0, 1.0, 1.0, 1.0, 1.0]
+
+        for i in xrange(2):
+            if len(labels[i]) == 0:
+                if(i % 2 == 0):
+                    self.qtgui_time_sink_x_0_0_0.set_line_label(i, "Re{{Data {0}}}".format(i/2))
+                else:
+                    self.qtgui_time_sink_x_0_0_0.set_line_label(i, "Im{{Data {0}}}".format(i/2))
+            else:
+                self.qtgui_time_sink_x_0_0_0.set_line_label(i, labels[i])
+            self.qtgui_time_sink_x_0_0_0.set_line_width(i, widths[i])
+            self.qtgui_time_sink_x_0_0_0.set_line_color(i, colors[i])
+            self.qtgui_time_sink_x_0_0_0.set_line_style(i, styles[i])
+            self.qtgui_time_sink_x_0_0_0.set_line_marker(i, markers[i])
+            self.qtgui_time_sink_x_0_0_0.set_line_alpha(i, alphas[i])
+
+        self._qtgui_time_sink_x_0_0_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0_0_0.pyqwidget(), Qt.QWidget)
+        self.top_layout.addWidget(self._qtgui_time_sink_x_0_0_0_win)
         self.qtgui_time_sink_x_0_0 = qtgui.time_sink_c(
         	512*4, #size
         	samp_rate, #samp_rate
@@ -465,16 +519,110 @@ class chain_custom(gr.top_block, Qt.QWidget):
 
         self._qtgui_freq_sink_x_0_win = sip.wrapinstance(self.qtgui_freq_sink_x_0.pyqwidget(), Qt.QWidget)
         self.top_grid_layout.addWidget(self._qtgui_freq_sink_x_0_win, 7,0,1,2)
+        self.qtgui_const_sink_x_1 = qtgui.const_sink_c(
+        	512, #size
+        	"Payload constellations after phase sync", #name
+        	1 #number of inputs
+        )
+        self.qtgui_const_sink_x_1.set_update_time(0.10)
+        self.qtgui_const_sink_x_1.set_y_axis(-2, 2)
+        self.qtgui_const_sink_x_1.set_x_axis(-2, 2)
+        self.qtgui_const_sink_x_1.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, "")
+        self.qtgui_const_sink_x_1.enable_autoscale(False)
+        self.qtgui_const_sink_x_1.enable_grid(False)
+        self.qtgui_const_sink_x_1.enable_axis_labels(True)
+
+        if not True:
+          self.qtgui_const_sink_x_1.disable_legend()
+
+        labels = ['', '', '', '', '',
+                  '', '', '', '', '']
+        widths = [1, 1, 1, 1, 1,
+                  1, 1, 1, 1, 1]
+        colors = ["blue", "red", "red", "red", "red",
+                  "red", "red", "red", "red", "red"]
+        styles = [0, 0, 0, 0, 0,
+                  0, 0, 0, 0, 0]
+        markers = [0, 0, 0, 0, 0,
+                   0, 0, 0, 0, 0]
+        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
+                  1.0, 1.0, 1.0, 1.0, 1.0]
+        for i in xrange(1):
+            if len(labels[i]) == 0:
+                self.qtgui_const_sink_x_1.set_line_label(i, "Data {0}".format(i))
+            else:
+                self.qtgui_const_sink_x_1.set_line_label(i, labels[i])
+            self.qtgui_const_sink_x_1.set_line_width(i, widths[i])
+            self.qtgui_const_sink_x_1.set_line_color(i, colors[i])
+            self.qtgui_const_sink_x_1.set_line_style(i, styles[i])
+            self.qtgui_const_sink_x_1.set_line_marker(i, markers[i])
+            self.qtgui_const_sink_x_1.set_line_alpha(i, alphas[i])
+
+        self._qtgui_const_sink_x_1_win = sip.wrapinstance(self.qtgui_const_sink_x_1.pyqwidget(), Qt.QWidget)
+        self.top_grid_layout.addWidget(self._qtgui_const_sink_x_1_win, 8,2,1,2)
+        self.qtgui_const_sink_x_0 = qtgui.const_sink_c(
+        	512, #size
+        	"Payload constellations before phase sync", #name
+        	1 #number of inputs
+        )
+        self.qtgui_const_sink_x_0.set_update_time(0.10)
+        self.qtgui_const_sink_x_0.set_y_axis(-2, 2)
+        self.qtgui_const_sink_x_0.set_x_axis(-2, 2)
+        self.qtgui_const_sink_x_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, "")
+        self.qtgui_const_sink_x_0.enable_autoscale(False)
+        self.qtgui_const_sink_x_0.enable_grid(False)
+        self.qtgui_const_sink_x_0.enable_axis_labels(True)
+
+        if not True:
+          self.qtgui_const_sink_x_0.disable_legend()
+
+        labels = ['', '', '', '', '',
+                  '', '', '', '', '']
+        widths = [1, 1, 1, 1, 1,
+                  1, 1, 1, 1, 1]
+        colors = ["blue", "red", "red", "red", "red",
+                  "red", "red", "red", "red", "red"]
+        styles = [0, 0, 0, 0, 0,
+                  0, 0, 0, 0, 0]
+        markers = [0, 0, 0, 0, 0,
+                   0, 0, 0, 0, 0]
+        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
+                  1.0, 1.0, 1.0, 1.0, 1.0]
+        for i in xrange(1):
+            if len(labels[i]) == 0:
+                self.qtgui_const_sink_x_0.set_line_label(i, "Data {0}".format(i))
+            else:
+                self.qtgui_const_sink_x_0.set_line_label(i, labels[i])
+            self.qtgui_const_sink_x_0.set_line_width(i, widths[i])
+            self.qtgui_const_sink_x_0.set_line_color(i, colors[i])
+            self.qtgui_const_sink_x_0.set_line_style(i, styles[i])
+            self.qtgui_const_sink_x_0.set_line_marker(i, markers[i])
+            self.qtgui_const_sink_x_0.set_line_alpha(i, alphas[i])
+
+        self._qtgui_const_sink_x_0_win = sip.wrapinstance(self.qtgui_const_sink_x_0.pyqwidget(), Qt.QWidget)
+        self.top_grid_layout.addWidget(self._qtgui_const_sink_x_0_win, 8,0,1,2)
+        self._phase_offset_label_tool_bar = Qt.QToolBar(self)
+
+        if None:
+          self._phase_offset_label_formatter = None
+        else:
+          self._phase_offset_label_formatter = lambda x: x
+
+        self._phase_offset_label_tool_bar.addWidget(Qt.QLabel('Phase offset'+": "))
+        self._phase_offset_label_label = Qt.QLabel(str(self._phase_offset_label_formatter(self.phase_offset_label)))
+        self._phase_offset_label_tool_bar.addWidget(self._phase_offset_label_label)
+        self.top_grid_layout.addWidget(self._phase_offset_label_tool_bar, 21,3,1,1)
+
         self.pfb_arb_resampler_xxx_0 = pfb.arb_resampler_ccf(
         	  sps,
                   taps=(rrc_taps),
         	  flt_size=32)
         self.pfb_arb_resampler_xxx_0.declare_sample_delay(0)
 
+        self.packetizr_preamble_header_payload_demux_0 =  packetizr.preamble_header_payload_demux(32/constel_header.bits_per_symbol(), len(preamble), 1, 0, "packet_len", "corr_est", True, gr.sizeof_gr_complex, '', samp_rate, (), 0)
         self.packetizer_packet_encoder_0 = packetizer.packet_encoder((preamble), constel_header.base(), constel_payload.base(), header_formatter.base(), "packet_len", 100, False, 1)
-        self.packetizer_packet_decoder_0 = packetizer.packet_decoder((preamble), constel_header.base(), constel_payload.base(), header_formatter.base(), "corr_est", True, False, False, samp_rate, 1)
         self.packetizer_message_sequence_checker_0 = packetizer.message_sequence_checker("packet_num")
-        self.packetizer_corr_est_cc_0 = packetizer.corr_est_cc((shaped_preamble), 4, 100, 0.999996, 0.90,False)
+        self.packetizer_corr_est_cc_0 = packetizer.corr_est_cc((shaped_preamble), 4, 100, 0.999999, 0.50,False)
         self._noise_label_tool_bar = Qt.QToolBar(self)
 
         if None:
@@ -499,35 +647,29 @@ class chain_custom(gr.top_block, Qt.QWidget):
         self._freq_offset_label_tool_bar.addWidget(self._freq_offset_label_label)
         self.top_grid_layout.addWidget(self._freq_offset_label_tool_bar, 21,1,1,1)
 
-        self._freq_bw_label_tool_bar = Qt.QToolBar(self)
-
-        if None:
-          self._freq_bw_label_formatter = None
-        else:
-          self._freq_bw_label_formatter = lambda x: x
-
-        self._freq_bw_label_tool_bar.addWidget(Qt.QLabel('Freq bw'+": "))
-        self._freq_bw_label_label = Qt.QLabel(str(self._freq_bw_label_formatter(self.freq_bw_label)))
-        self._freq_bw_label_tool_bar.addWidget(self._freq_bw_label_label)
-        self.top_grid_layout.addWidget(self._freq_bw_label_tool_bar, 21,3,1,1)
-
-        self._freq_bw_range = Range(0, 0.1, 0.001, 0, 200)
-        self._freq_bw_win = RangeWidget(self._freq_bw_range, self.set_freq_bw, 'Frequency bandwidth', "slider", float)
-        self.top_grid_layout.addWidget(self._freq_bw_win, 21,2,1,1)
         self.digital_pfb_clock_sync_xxx_0_0_0 = digital.pfb_clock_sync_ccf(sps, 3.14*2/100, (rrc_taps_rx), 32, 0, 1.5, 1)
+        self.digital_packet_headerparser_b_0 = digital.packet_headerparser_b(header_formatter.base())
+        self.digital_costas_loop_cc_0_0 = digital.costas_loop_cc(3.14*2/100, 2**constel_header.bits_per_symbol(), False)
+        self.digital_costas_loop_cc_0 = digital.costas_loop_cc(3.14*2/100, 2**constel_header.bits_per_symbol(), False)
+        self.digital_constellation_soft_decoder_cf_0 = digital.constellation_soft_decoder_cf(constel_payload.base())
+        self.digital_constellation_decoder_cb_1 = digital.constellation_decoder_cb(constel_payload.base())
+        self.digital_constellation_decoder_cb_0 = digital.constellation_decoder_cb(constel_header.base())
+        self.digital_binary_slicer_fb_0 = digital.binary_slicer_fb()
         self.channels_channel_model_0 = channels.channel_model(
         	noise_voltage=noise,
         	frequency_offset=freq_offset,
         	epsilon=time_offset,
-        	taps=(1.0, ),
+        	taps=(1.0+phase_offset*1j, ),
         	noise_seed=0,
         	block_tags=True
         )
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
-        self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 100, "packet_len")
+        self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 50, "packet_len")
+        self.blocks_repack_bits_bb_1 = blocks.repack_bits_bb(constel_payload.bits_per_symbol(), 1, "", False, gr.GR_MSB_FIRST)
         self.blocks_repack_bits_bb_0_1 = blocks.repack_bits_bb(8, 1, '', False, gr.GR_LSB_FIRST)
         self.blocks_complex_to_mag_0 = blocks.complex_to_mag(1)
         self.blocks_char_to_float_1_0 = blocks.char_to_float(1, 1)
+        self.blocks_char_to_float_1 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0 = blocks.char_to_float(1, 1)
         self.analog_random_source_x_0 = blocks.vector_source_b(map(int, numpy.random.randint(0, 256, 10)), True)
         self.analog_agc2_xx_0_0_0_0 = analog.agc2_cc(1e-3, 1e-4, 0.7, 0.7)
@@ -536,27 +678,41 @@ class chain_custom(gr.top_block, Qt.QWidget):
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.packetizer_packet_decoder_0, 'header_data'), (self.packetizer_message_sequence_checker_0, 'data'))
+        self.msg_connect((self.digital_packet_headerparser_b_0, 'header_data'), (self.packetizer_message_sequence_checker_0, 'data'))
+        self.msg_connect((self.digital_packet_headerparser_b_0, 'header_data'), (self.packetizr_preamble_header_payload_demux_0, 'header_data'))
         self.connect((self.analog_agc2_xx_0_0_0_0, 0), (self.packetizer_corr_est_cc_0, 0))
         self.connect((self.analog_random_source_x_0, 0), (self.blocks_repack_bits_bb_0_1, 0))
         self.connect((self.blocks_char_to_float_0, 0), (self.qtgui_time_sink_x_1, 0))
-        self.connect((self.blocks_char_to_float_1_0, 0), (self.qtgui_time_sink_x_1, 1))
+        self.connect((self.blocks_char_to_float_1, 0), (self.qtgui_time_sink_x_1, 1))
+        self.connect((self.blocks_char_to_float_1_0, 0), (self.qtgui_time_sink_x_1, 2))
         self.connect((self.blocks_complex_to_mag_0, 0), (self.qtgui_time_sink_x_0_1_0_0_0_0_0_0, 0))
         self.connect((self.blocks_repack_bits_bb_0_1, 0), (self.blocks_stream_to_tagged_stream_0, 0))
+        self.connect((self.blocks_repack_bits_bb_1, 0), (self.blocks_char_to_float_1_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_char_to_float_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.packetizer_packet_encoder_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.channels_channel_model_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.qtgui_freq_sink_x_0, 0))
         self.connect((self.channels_channel_model_0, 0), (self.analog_agc2_xx_0_0_0_0, 0))
         self.connect((self.channels_channel_model_0, 0), (self.qtgui_freq_sink_x_0, 1))
-        self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.packetizer_packet_decoder_0, 0))
+        self.connect((self.digital_binary_slicer_fb_0, 0), (self.blocks_char_to_float_1, 0))
+        self.connect((self.digital_constellation_decoder_cb_0, 0), (self.digital_packet_headerparser_b_0, 0))
+        self.connect((self.digital_constellation_decoder_cb_1, 0), (self.blocks_repack_bits_bb_1, 0))
+        self.connect((self.digital_constellation_soft_decoder_cf_0, 0), (self.digital_binary_slicer_fb_0, 0))
+        self.connect((self.digital_costas_loop_cc_0, 0), (self.digital_constellation_decoder_cb_0, 0))
+        self.connect((self.digital_costas_loop_cc_0_0, 0), (self.digital_constellation_decoder_cb_1, 0))
+        self.connect((self.digital_costas_loop_cc_0_0, 0), (self.digital_constellation_soft_decoder_cf_0, 0))
+        self.connect((self.digital_costas_loop_cc_0_0, 0), (self.qtgui_const_sink_x_1, 0))
+        self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.packetizr_preamble_header_payload_demux_0, 0))
+        self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.qtgui_time_sink_x_0_0_0, 0))
         self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.qtgui_time_sink_x_0_1_0_0_2_0, 0))
         self.connect((self.packetizer_corr_est_cc_0, 1), (self.blocks_complex_to_mag_0, 0))
         self.connect((self.packetizer_corr_est_cc_0, 0), (self.digital_pfb_clock_sync_xxx_0_0_0, 0))
         self.connect((self.packetizer_corr_est_cc_0, 0), (self.qtgui_time_sink_x_0_1_0_0_0_0_0, 0))
-        self.connect((self.packetizer_packet_decoder_0, 0), (self.blocks_char_to_float_1_0, 0))
         self.connect((self.packetizer_packet_encoder_0, 0), (self.pfb_arb_resampler_xxx_0, 0))
         self.connect((self.packetizer_packet_encoder_0, 0), (self.qtgui_time_sink_x_0, 0))
+        self.connect((self.packetizr_preamble_header_payload_demux_0, 0), (self.digital_costas_loop_cc_0, 0))
+        self.connect((self.packetizr_preamble_header_payload_demux_0, 1), (self.digital_costas_loop_cc_0_0, 0))
+        self.connect((self.packetizr_preamble_header_payload_demux_0, 1), (self.qtgui_const_sink_x_0, 0))
         self.connect((self.pfb_arb_resampler_xxx_0, 0), (self.blocks_throttle_0, 0))
         self.connect((self.pfb_arb_resampler_xxx_0, 0), (self.qtgui_time_sink_x_0_0, 0))
 
@@ -617,6 +773,7 @@ class chain_custom(gr.top_block, Qt.QWidget):
         self.qtgui_time_sink_x_0_1_0_0_2_0.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_0_1_0_0_0_0_0_0.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_0_1_0_0_0_0_0.set_samp_rate(self.samp_rate)
+        self.qtgui_time_sink_x_0_0_0.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_0_0.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_0.set_samp_rate(self.samp_rate)
         self.qtgui_freq_sink_x_0.set_frequency_range(0, self.samp_rate)
@@ -634,6 +791,14 @@ class chain_custom(gr.top_block, Qt.QWidget):
     def set_preamble(self, preamble):
         self.preamble = preamble
 
+    def get_phase_offset(self):
+        return self.phase_offset
+
+    def set_phase_offset(self, phase_offset):
+        self.phase_offset = phase_offset
+        self.set_phase_offset_label(self._phase_offset_label_formatter(self.phase_offset))
+        self.channels_channel_model_0.set_taps((1.0+self.phase_offset*1j, ))
+
     def get_noise(self):
         return self.noise
 
@@ -650,18 +815,17 @@ class chain_custom(gr.top_block, Qt.QWidget):
         self.set_freq_offset_label(self._freq_offset_label_formatter(self.freq_offset))
         self.channels_channel_model_0.set_frequency_offset(self.freq_offset)
 
-    def get_freq_bw(self):
-        return self.freq_bw
-
-    def set_freq_bw(self, freq_bw):
-        self.freq_bw = freq_bw
-        self.set_freq_bw_label(self._freq_bw_label_formatter(self.freq_bw))
-
     def get_constel_header(self):
         return self.constel_header
 
     def set_constel_header(self, constel_header):
         self.constel_header = constel_header
+
+    def get_zero_padding(self):
+        return self.zero_padding
+
+    def set_zero_padding(self, zero_padding):
+        self.zero_padding = zero_padding
 
     def get_time_offset_label(self):
         return self.time_offset_label
@@ -690,6 +854,13 @@ class chain_custom(gr.top_block, Qt.QWidget):
         self.rrc_taps_rx = rrc_taps_rx
         self.digital_pfb_clock_sync_xxx_0_0_0.update_taps((self.rrc_taps_rx))
 
+    def get_phase_offset_label(self):
+        return self.phase_offset_label
+
+    def set_phase_offset_label(self, phase_offset_label):
+        self.phase_offset_label = phase_offset_label
+        Qt.QMetaObject.invokeMethod(self._phase_offset_label_label, "setText", Qt.Q_ARG("QString", eng_notation.num_to_str(self.phase_offset_label)))
+
     def get_noise_label(self):
         return self.noise_label
 
@@ -709,19 +880,6 @@ class chain_custom(gr.top_block, Qt.QWidget):
     def set_freq_offset_label(self, freq_offset_label):
         self.freq_offset_label = freq_offset_label
         Qt.QMetaObject.invokeMethod(self._freq_offset_label_label, "setText", Qt.Q_ARG("QString", eng_notation.num_to_str(self.freq_offset_label)))
-
-    def get_freq_bw_label(self):
-        return self.freq_bw_label
-
-    def set_freq_bw_label(self, freq_bw_label):
-        self.freq_bw_label = freq_bw_label
-        Qt.QMetaObject.invokeMethod(self._freq_bw_label_label, "setText", Qt.Q_ARG("QString", eng_notation.num_to_str(self.freq_bw_label)))
-
-    def get_constel_preamble(self):
-        return self.constel_preamble
-
-    def set_constel_preamble(self, constel_preamble):
-        self.constel_preamble = constel_preamble
 
     def get_constel_payload(self):
         return self.constel_payload

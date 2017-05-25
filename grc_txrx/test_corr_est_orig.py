@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 ##################################################
 # GNU Radio Python Flow Graph
-# Title: Test Corr Est New
-# Generated: Thu May 25 14:03:15 2017
+# Title: Test Corr Est Orig
+# Generated: Thu May 25 14:05:46 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -27,19 +27,18 @@ from gnuradio.eng_option import eng_option
 from gnuradio.filter import firdes
 from gnuradio.qtgui import Range, RangeWidget
 from optparse import OptionParser
-import packetizer
 import random
 import sip
 import sys
 from gnuradio import qtgui
 
 
-class test_corr_est_new(gr.top_block, Qt.QWidget):
+class test_corr_est_orig(gr.top_block, Qt.QWidget):
 
     def __init__(self):
-        gr.top_block.__init__(self, "Test Corr Est New")
+        gr.top_block.__init__(self, "Test Corr Est Orig")
         Qt.QWidget.__init__(self)
-        self.setWindowTitle("Test Corr Est New")
+        self.setWindowTitle("Test Corr Est Orig")
         qtgui.util.check_set_qss()
         try:
             self.setWindowIcon(Qt.QIcon.fromTheme('gnuradio-grc'))
@@ -57,7 +56,7 @@ class test_corr_est_new(gr.top_block, Qt.QWidget):
         self.top_grid_layout = Qt.QGridLayout()
         self.top_layout.addLayout(self.top_grid_layout)
 
-        self.settings = Qt.QSettings("GNU Radio", "test_corr_est_new")
+        self.settings = Qt.QSettings("GNU Radio", "test_corr_est_orig")
         self.restoreGeometry(self.settings.value("geometry").toByteArray())
 
         ##################################################
@@ -70,7 +69,7 @@ class test_corr_est_new(gr.top_block, Qt.QWidget):
 
         self.rxmod = rxmod = digital.generic_mod(constel, False, sps, True, eb, False, False)
         self.preamble = preamble = [0xac, 0xdd, 0xa4, 0xe2, 0xf2, 0x8c, 0x20, 0xfc]
-        self.payload_size = payload_size = 992
+        self.payload_size = payload_size = 100
         self.nfilts = nfilts = 32
         self.time_offset = time_offset = 1
         self.samp_rate = samp_rate = 100000
@@ -79,7 +78,7 @@ class test_corr_est_new(gr.top_block, Qt.QWidget):
         self.noise = noise = 0.1
         self.modulated_sync_word = modulated_sync_word = digital.modulate_vector_bc(rxmod .to_basic_block(), (preamble), ([1]))
         self.matched_filter = matched_filter = firdes.root_raised_cosine(nfilts, nfilts, 1, eb, int(11*sps*nfilts))
-        self.gap = gap = 20000
+        self.gap = gap = 2000
         self.freq_offset = freq_offset = 0
         self.data = data = [0]*4+[random.getrandbits(8) for i in range(payload_size)]
         self.bb_filter = bb_filter = firdes.root_raised_cosine(sps, sps, 1, eb, 101)
@@ -97,7 +96,7 @@ class test_corr_est_new(gr.top_block, Qt.QWidget):
         self._freq_offset_win = RangeWidget(self._freq_offset_range, self.set_freq_offset, 'Frequency Offset', "slider", float)
         self.top_grid_layout.addWidget(self._freq_offset_win, 4,0,1,1)
         self.qtgui_time_sink_x_1 = qtgui.time_sink_f(
-        	80000, #size
+        	5000, #size
         	samp_rate, #samp_rate
         	'Correlation', #name
         	1 #number of inputs
@@ -108,7 +107,7 @@ class test_corr_est_new(gr.top_block, Qt.QWidget):
         self.qtgui_time_sink_x_1.set_y_label('Correlation Amplitude', "")
 
         self.qtgui_time_sink_x_1.enable_tags(-1, True)
-        self.qtgui_time_sink_x_1.set_trigger_mode(qtgui.TRIG_MODE_NORM, qtgui.TRIG_SLOPE_POS, 100, 0, 0, "")
+        self.qtgui_time_sink_x_1.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 100, 0, 0, "")
         self.qtgui_time_sink_x_1.enable_autoscale(False)
         self.qtgui_time_sink_x_1.enable_grid(False)
         self.qtgui_time_sink_x_1.enable_axis_labels(True)
@@ -144,7 +143,7 @@ class test_corr_est_new(gr.top_block, Qt.QWidget):
         self._qtgui_time_sink_x_1_win = sip.wrapinstance(self.qtgui_time_sink_x_1.pyqwidget(), Qt.QWidget)
         self.top_grid_layout.addWidget(self._qtgui_time_sink_x_1_win, 1,0,1,2)
         self.qtgui_time_sink_x_0 = qtgui.time_sink_c(
-        	50000*4, #size
+        	50000, #size
         	samp_rate, #samp_rate
         	'Output', #name
         	1 #number of inputs
@@ -155,7 +154,7 @@ class test_corr_est_new(gr.top_block, Qt.QWidget):
         self.qtgui_time_sink_x_0.set_y_label('Amplitude', "")
 
         self.qtgui_time_sink_x_0.enable_tags(-1, True)
-        self.qtgui_time_sink_x_0.set_trigger_mode(qtgui.TRIG_MODE_TAG, qtgui.TRIG_SLOPE_POS, 1, 0.1, 0, 'corr_est')
+        self.qtgui_time_sink_x_0.set_trigger_mode(qtgui.TRIG_MODE_TAG, qtgui.TRIG_SLOPE_POS, 1, 0.1, 0, 'time_est')
         self.qtgui_time_sink_x_0.enable_autoscale(False)
         self.qtgui_time_sink_x_0.enable_grid(False)
         self.qtgui_time_sink_x_0.enable_axis_labels(True)
@@ -238,9 +237,9 @@ class test_corr_est_new(gr.top_block, Qt.QWidget):
         self._phase_range = Range(-2*3.14, 2*3.14, 0.1, 0, 200)
         self._phase_win = RangeWidget(self._phase_range, self.set_phase, 'Phase offset', "slider", float)
         self.top_grid_layout.addWidget(self._phase_win, 3,1,1,1)
-        self.packetizer_corr_est_cc_0 = packetizer.corr_est_cc((modulated_sync_word), 4, 1, 0.9999, 0,False)
         self.digital_pfb_clock_sync_xxx_0 = digital.pfb_clock_sync_ccf(sps, 2*3.14/100.0, (rrc_taps), nfilts, 0, 0.5, 1)
         self.digital_costas_loop_cc_0 = digital.costas_loop_cc(1*3.14/50.0, 2, False)
+        self.digital_corr_est_cc_0 = digital.corr_est_cc((modulated_sync_word), sps, 1, 0.99999)
         self.digital_constellation_modulator_0 = digital.generic_mod(
           constellation=constel,
           differential=False,
@@ -272,16 +271,16 @@ class test_corr_est_new(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_stream_mux_0_0, 0), (self.blocks_throttle_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.channels_channel_model_0, 0))
         self.connect((self.blocks_vector_source_x_0_0, 0), (self.digital_constellation_modulator_0, 0))
-        self.connect((self.channels_channel_model_0, 0), (self.packetizer_corr_est_cc_0, 0))
+        self.connect((self.channels_channel_model_0, 0), (self.digital_corr_est_cc_0, 0))
         self.connect((self.digital_constellation_modulator_0, 0), (self.blocks_stream_mux_0_0, 0))
+        self.connect((self.digital_corr_est_cc_0, 1), (self.blocks_complex_to_mag_0, 0))
+        self.connect((self.digital_corr_est_cc_0, 0), (self.digital_pfb_clock_sync_xxx_0, 0))
         self.connect((self.digital_costas_loop_cc_0, 0), (self.qtgui_const_sink_x_0, 0))
         self.connect((self.digital_costas_loop_cc_0, 0), (self.qtgui_time_sink_x_0, 0))
         self.connect((self.digital_pfb_clock_sync_xxx_0, 0), (self.digital_costas_loop_cc_0, 0))
-        self.connect((self.packetizer_corr_est_cc_0, 1), (self.blocks_complex_to_mag_0, 0))
-        self.connect((self.packetizer_corr_est_cc_0, 0), (self.digital_pfb_clock_sync_xxx_0, 0))
 
     def closeEvent(self, event):
-        self.settings = Qt.QSettings("GNU Radio", "test_corr_est_new")
+        self.settings = Qt.QSettings("GNU Radio", "test_corr_est_orig")
         self.settings.setValue("geometry", self.saveGeometry())
         event.accept()
 
@@ -415,7 +414,7 @@ class test_corr_est_new(gr.top_block, Qt.QWidget):
         self.bb_filter = bb_filter
 
 
-def main(top_block_cls=test_corr_est_new, options=None):
+def main(top_block_cls=test_corr_est_orig, options=None):
 
     from distutils.version import StrictVersion
     if StrictVersion(Qt.qVersion()) >= StrictVersion("4.5.0"):
