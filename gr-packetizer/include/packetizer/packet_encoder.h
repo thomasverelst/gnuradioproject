@@ -60,6 +60,7 @@ namespace gr {
        * \param header_formatter Header formatter object
        * \param lengthtagname Name of tag that indicates the start of the payload data and the length of it.
        * \param zero_padding Amount of zero samples between two packets. 0 to disable. 
+       * \param whiten Indicate whether to whiten packet data
        * \param itemsize No effect yet. Input is always bytes, output is always complex symbols.
        */
       static sptr make(

@@ -46,7 +46,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>chain_custom</value>
+      <value>chain_rx_debug</value>
     </param>
     <param>
       <key>max_nouts</key>
@@ -132,7 +132,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>digital.constellation_bpsk()</value>
+      <value>digital.constellation_qpsk()</value>
     </param>
   </block>
   <block>
@@ -780,6 +780,92 @@
     </param>
   </block>
   <block>
+    <key>variable_qtgui_label</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>"----------------------------------"</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>formatter</key>
+      <value>None</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(368, 84)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value>100,1,1,1</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>spacer_label1</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value>  </value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>string</value>
+    </param>
+  </block>
+  <block>
+    <key>variable_qtgui_label</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>"-----------------------------------"</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>formatter</key>
+      <value>None</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(512, 92)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value>100,3,1,1</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>spacer_label2</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value>  </value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>string</value>
+    </param>
+  </block>
+  <block>
     <key>variable</key>
     <param>
       <key>comment</key>
@@ -1050,7 +1136,7 @@
     </param>
     <param>
       <key>num_samps</key>
-      <value>10</value>
+      <value>1000</value>
     </param>
     <param>
       <key>type</key>
@@ -1308,7 +1394,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(160, 228)</value>
+      <value>(168, 220)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1830,7 +1916,7 @@
     </param>
     <param>
       <key>order</key>
-      <value>2**constel_header.bits_per_symbol()</value>
+      <value>2**constel_payload.bits_per_symbol()</value>
     </param>
     <param>
       <key>use_snr</key>
@@ -1928,7 +2014,7 @@
     </param>
     <param>
       <key>max_dev</key>
-      <value>1.5</value>
+      <value>0.5</value>
     </param>
     <param>
       <key>minoutbuf</key>
@@ -2047,10 +2133,6 @@
   <block>
     <key>packetizer_corr_est_cc</key>
     <param>
-      <key>absolute_threshold</key>
-      <value>0.50</value>
-    </param>
-    <param>
       <key>alias</key>
       <value></value>
     </param>
@@ -2065,6 +2147,10 @@
     <param>
       <key>_enabled</key>
       <value>1</value>
+    </param>
+    <param>
+      <key>fixed_threshold</key>
+      <value>0.5</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -2096,11 +2182,11 @@
     </param>
     <param>
       <key>mark_delay</key>
-      <value>100</value>
+      <value>99</value>
     </param>
     <param>
       <key>threshold</key>
-      <value>0.999999</value>
+      <value>0.99999</value>
     </param>
     <param>
       <key>verbose</key>
@@ -2206,7 +2292,7 @@
     </param>
     <param>
       <key>zero_padding</key>
-      <value>100</value>
+      <value>0</value>
     </param>
   </block>
   <block>
@@ -2273,7 +2359,7 @@
     </param>
     <param>
       <key>output_symbols</key>
-      <value>True</value>
+      <value>False</value>
     </param>
     <param>
       <key>preamble_len</key>
@@ -3440,7 +3526,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>fftsize</key>

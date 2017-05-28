@@ -57,7 +57,7 @@ public:
   * Initiates a whitener for \p bits_per_byte significant bits per byte 
   * using the given \p random_mask to XOR data with.
   * If \p random_mask is an empty vector (for example 
-  * initalized as std::vector<unsigned char> empty_mask;),
+  * initialized as std::vector<unsigned char> empty_mask;),
   * a precomputed random mask will be used.
   */
   whitener(std::vector<unsigned char> random_mask, int bits_per_byte);

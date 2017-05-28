@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Test Pulseshape
-# Generated: Mon May 22 22:34:07 2017
+# Generated: Thu May 25 23:51:33 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -67,15 +67,16 @@ class test_pulseshape(gr.top_block, Qt.QWidget):
         self.samp_rate = samp_rate = 32000
         self.rrc_taps_clocksync = rrc_taps_clocksync = firdes.root_raised_cosine(nfilts, nfilts, 1.0/float(sps), eb, 5*sps*nfilts)
         self.rrc_taps = rrc_taps = firdes.root_raised_cosine(nfilts, nfilts, 1.0, eb, 11*sps*nfilts)
+        self.constel = constel = digital.constellation_bpsk()
 
         ##################################################
         # Blocks
         ##################################################
-        self.qtgui_time_sink_x_0_0_0 = qtgui.time_sink_c(
-        	512*4, #size
+        self.qtgui_time_sink_x_0_0_0 = qtgui.time_sink_f(
+        	512, #size
         	samp_rate, #samp_rate
         	"Data comparison", #name
-        	2 #number of inputs
+        	1 #number of inputs
         )
         self.qtgui_time_sink_x_0_0_0.set_update_time(0.10)
         self.qtgui_time_sink_x_0_0_0.set_y_axis(-1.5, 1.5)
@@ -98,19 +99,16 @@ class test_pulseshape(gr.top_block, Qt.QWidget):
                   1, 1, 1, 1, 1]
         colors = ["blue", "red", "green", "black", "cyan",
                   "magenta", "yellow", "dark red", "dark green", "blue"]
-        styles = [5, 5, 1, 1, 1,
+        styles = [1, 1, 1, 1, 1,
                   1, 1, 1, 1, 1]
         markers = [-1, -1, -1, -1, -1,
                    -1, -1, -1, -1, -1]
         alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
                   1.0, 1.0, 1.0, 1.0, 1.0]
 
-        for i in xrange(4):
+        for i in xrange(1):
             if len(labels[i]) == 0:
-                if(i % 2 == 0):
-                    self.qtgui_time_sink_x_0_0_0.set_line_label(i, "Re{{Data {0}}}".format(i/2))
-                else:
-                    self.qtgui_time_sink_x_0_0_0.set_line_label(i, "Im{{Data {0}}}".format(i/2))
+                self.qtgui_time_sink_x_0_0_0.set_line_label(i, "Data {0}".format(i))
             else:
                 self.qtgui_time_sink_x_0_0_0.set_line_label(i, labels[i])
             self.qtgui_time_sink_x_0_0_0.set_line_width(i, widths[i])
@@ -120,7 +118,7 @@ class test_pulseshape(gr.top_block, Qt.QWidget):
             self.qtgui_time_sink_x_0_0_0.set_line_alpha(i, alphas[i])
 
         self._qtgui_time_sink_x_0_0_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0_0_0.pyqwidget(), Qt.QWidget)
-        self.top_grid_layout.addWidget(self._qtgui_time_sink_x_0_0_0_win, 2,0,1,2)
+        self.top_grid_layout.addWidget(self._qtgui_time_sink_x_0_0_0_win, 2,0,1,4)
         self.qtgui_time_sink_x_0_0 = qtgui.time_sink_c(
         	512*4, #size
         	samp_rate, #samp_rate
@@ -170,34 +168,33 @@ class test_pulseshape(gr.top_block, Qt.QWidget):
             self.qtgui_time_sink_x_0_0.set_line_alpha(i, alphas[i])
 
         self._qtgui_time_sink_x_0_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0_0.pyqwidget(), Qt.QWidget)
-        self.top_grid_layout.addWidget(self._qtgui_time_sink_x_0_0_win, 4,2,1,2)
+        self.top_grid_layout.addWidget(self._qtgui_time_sink_x_0_0_win, 4,0,1,4)
         self.pfb_arb_resampler_xxx_0 = pfb.arb_resampler_ccf(
         	  sps,
                   taps=(rrc_taps),
         	  flt_size=32)
         self.pfb_arb_resampler_xxx_0.declare_sample_delay(0)
 
-        self.digital_pfb_clock_sync_xxx_0 = digital.pfb_clock_sync_ccf(sps, 2*3.14/100, (rrc_taps_clocksync), 32, 0, 1.5, 1)
-        self.digital_map_bb_0 = digital.map_bb(([1,-1]))
-        self.blocks_uchar_to_float_0 = blocks.uchar_to_float()
-        self.blocks_throttle_0 = blocks.throttle(gr.sizeof_char*1, samp_rate,True)
-        self.blocks_null_source_0 = blocks.null_source(gr.sizeof_float*1)
-        self.blocks_null_sink_0 = blocks.null_sink(gr.sizeof_gr_complex*1)
-        self.blocks_float_to_complex_0 = blocks.float_to_complex(1)
-        self.analog_random_source_x_0 = blocks.vector_source_b(map(int, numpy.random.randint(0, 2, 1000)), True)
+        self.digital_pfb_clock_sync_xxx_0 = digital.pfb_clock_sync_ccf(sps, 2*3.14/100, (rrc_taps_clocksync), 32, 0, 0.5, 1)
+        self.digital_constellation_decoder_cb_0_0 = digital.constellation_decoder_cb(constel.base())
+        self.digital_chunks_to_symbols_xx_0_0 = digital.chunks_to_symbols_bc((constel.points()), 1)
+        self.blocks_uchar_to_float_1 = blocks.uchar_to_float()
+        self.blocks_throttle_1 = blocks.throttle(gr.sizeof_char*1, samp_rate,True)
+        self.blocks_repack_bits_bb_1 = blocks.repack_bits_bb(8, constel.bits_per_symbol(), "", False, gr.GR_LSB_FIRST)
+        self.blocks_repack_bits_bb_0_0 = blocks.repack_bits_bb(constel.bits_per_symbol(), 8, "", False, gr.GR_LSB_FIRST)
+        self.analog_random_source_x_0_0 = blocks.vector_source_b(map(int, numpy.random.randint(0, 256, 10000)), True)
 
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.analog_random_source_x_0, 0), (self.blocks_throttle_0, 0))
-        self.connect((self.blocks_float_to_complex_0, 0), (self.pfb_arb_resampler_xxx_0, 0))
-        self.connect((self.blocks_float_to_complex_0, 0), (self.qtgui_time_sink_x_0_0_0, 0))
-        self.connect((self.blocks_null_source_0, 0), (self.blocks_float_to_complex_0, 1))
-        self.connect((self.blocks_throttle_0, 0), (self.digital_map_bb_0, 0))
-        self.connect((self.blocks_uchar_to_float_0, 0), (self.blocks_float_to_complex_0, 0))
-        self.connect((self.digital_map_bb_0, 0), (self.blocks_uchar_to_float_0, 0))
-        self.connect((self.digital_pfb_clock_sync_xxx_0, 0), (self.blocks_null_sink_0, 0))
-        self.connect((self.digital_pfb_clock_sync_xxx_0, 0), (self.qtgui_time_sink_x_0_0_0, 1))
+        self.connect((self.analog_random_source_x_0_0, 0), (self.blocks_throttle_1, 0))
+        self.connect((self.blocks_repack_bits_bb_0_0, 0), (self.blocks_uchar_to_float_1, 0))
+        self.connect((self.blocks_repack_bits_bb_1, 0), (self.digital_chunks_to_symbols_xx_0_0, 0))
+        self.connect((self.blocks_throttle_1, 0), (self.blocks_repack_bits_bb_1, 0))
+        self.connect((self.blocks_uchar_to_float_1, 0), (self.qtgui_time_sink_x_0_0_0, 0))
+        self.connect((self.digital_chunks_to_symbols_xx_0_0, 0), (self.pfb_arb_resampler_xxx_0, 0))
+        self.connect((self.digital_constellation_decoder_cb_0_0, 0), (self.blocks_repack_bits_bb_0_0, 0))
+        self.connect((self.digital_pfb_clock_sync_xxx_0, 0), (self.digital_constellation_decoder_cb_0_0, 0))
         self.connect((self.pfb_arb_resampler_xxx_0, 0), (self.digital_pfb_clock_sync_xxx_0, 0))
         self.connect((self.pfb_arb_resampler_xxx_0, 0), (self.qtgui_time_sink_x_0_0, 0))
 
@@ -238,7 +235,7 @@ class test_pulseshape(gr.top_block, Qt.QWidget):
         self.samp_rate = samp_rate
         self.qtgui_time_sink_x_0_0_0.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_0_0.set_samp_rate(self.samp_rate)
-        self.blocks_throttle_0.set_sample_rate(self.samp_rate)
+        self.blocks_throttle_1.set_sample_rate(self.samp_rate)
 
     def get_rrc_taps_clocksync(self):
         return self.rrc_taps_clocksync
@@ -253,6 +250,12 @@ class test_pulseshape(gr.top_block, Qt.QWidget):
     def set_rrc_taps(self, rrc_taps):
         self.rrc_taps = rrc_taps
         self.pfb_arb_resampler_xxx_0.set_taps((self.rrc_taps))
+
+    def get_constel(self):
+        return self.constel
+
+    def set_constel(self, constel):
+        self.constel = constel
 
 
 def main(top_block_cls=test_pulseshape, options=None):

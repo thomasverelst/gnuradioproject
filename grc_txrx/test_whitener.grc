@@ -105,7 +105,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>07</value>
+      <value>1</value>
     </param>
   </block>
   <block>
@@ -317,7 +317,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(200, 564)</value>
+      <value>(200, 660)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -435,7 +435,7 @@
     </param>
     <param>
       <key>lengths</key>
-      <value>20,100</value>
+      <value>5,70</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -588,7 +588,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(224, 448)</value>
+      <value>(224, 544)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -627,7 +627,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(392, 576)</value>
+      <value>(392, 672)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -666,7 +666,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(224, 496)</value>
+      <value>(224, 592)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -689,7 +689,7 @@
     <key>packetizer_tagged_whitener</key>
     <param>
       <key>bits_per_byte</key>
-      <value>7</value>
+      <value>bpb</value>
     </param>
     <param>
       <key>alias</key>
@@ -704,12 +704,16 @@
       <value></value>
     </param>
     <param>
+      <key>enable</key>
+      <value>True</value>
+    </param>
+    <param>
       <key>_enabled</key>
       <value>True</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(784, 312)</value>
+      <value>(600, 312)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -744,7 +748,7 @@
     <key>packetizer_tagged_whitener</key>
     <param>
       <key>bits_per_byte</key>
-      <value>7</value>
+      <value>bpb</value>
     </param>
     <param>
       <key>alias</key>
@@ -759,12 +763,16 @@
       <value></value>
     </param>
     <param>
+      <key>enable</key>
+      <value>True</value>
+    </param>
+    <param>
       <key>_enabled</key>
       <value>True</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(208, 312)</value>
+      <value>(272, 312)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -792,7 +800,7 @@
     </param>
     <param>
       <key>use_lfsr</key>
-      <value>False</value>
+      <value>True</value>
     </param>
   </block>
   <block>
@@ -831,11 +839,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(416, 440)</value>
+      <value>(416, 536)</value>
     </param>
     <param>
       <key>gui_hint</key>
-      <value>2,0,1,4</value>
+      <value>2,0,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -863,7 +871,7 @@
     </param>
     <param>
       <key>label1</key>
-      <value>"Original data"</value>
+      <value>"Input data"</value>
     </param>
     <param>
       <key>marker1</key>
@@ -911,7 +919,7 @@
     </param>
     <param>
       <key>label2</key>
-      <value>"After whitening and dewhitening"</value>
+      <value>"Output"</value>
     </param>
     <param>
       <key>marker2</key>
@@ -1103,7 +1111,7 @@
     </param>
     <param>
       <key>size</key>
-      <value>1024</value>
+      <value>256</value>
     </param>
     <param>
       <key>srate</key>
@@ -1194,11 +1202,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(552, 552)</value>
+      <value>(552, 648)</value>
     </param>
     <param>
       <key>gui_hint</key>
-      <value>3,0,1,4</value>
+      <value>2,1,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1466,7 +1474,7 @@
     </param>
     <param>
       <key>size</key>
-      <value>1024</value>
+      <value>256</value>
     </param>
     <param>
       <key>srate</key>
@@ -1533,7 +1541,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(568, 356)</value>
+      <value>(608, 420)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1560,7 +1568,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1120, 332)</value>
+      <value>(920, 340)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1614,7 +1622,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(24, 332)</value>
+      <value>(96, 340)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1641,7 +1649,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(40, 444)</value>
+      <value>(40, 540)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1668,7 +1676,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(40, 492)</value>
+      <value>(40, 588)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1695,7 +1703,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 572)</value>
+      <value>(8, 668)</value>
     </param>
     <param>
       <key>_rotation</key>

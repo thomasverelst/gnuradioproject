@@ -39,7 +39,7 @@ namespace gr {
       float d_sps;
       unsigned int d_mark_delay, d_stashed_mark_delay;
       double d_thresh, d_stashed_threshold;
-      float d_abs_thresh, d_stashed_abs_threshold;
+      float d_fixed_thresh, d_stashed_fixed_threshold;
       kernel::fft_filter_ccc *d_filter;
 
       gr_complex *d_corr;
@@ -52,12 +52,12 @@ namespace gr {
 
       void _set_mark_delay(unsigned int mark_delay);
       void _set_threshold(double threshold);
-      void _set_abs_threshold(float abs_threshold);
+      void _set_fixed_threshold(float fixed_threshold);
 
     public:
       corr_est_cc_impl(const std::vector<gr_complex> &symbols,
                        float sps, unsigned int mark_delay,
-                       double threshold=0.9, float abs_threshold=0.9, bool verbose=false);
+                       double threshold=0.9, float fixed_threshold=0.9, bool verbose=false);
       ~corr_est_cc_impl();
 
       std::vector<gr_complex> symbols() const;
@@ -69,8 +69,8 @@ namespace gr {
       double threshold() const;
       void set_threshold(double threshold);
 
-      float abs_threshold() const;
-      void set_abs_threshold(float abs_threshold);
+      float fixed_threshold() const;
+      void set_fixed_threshold(float fixed_threshold);
 
       int work(int noutput_items,
                gr_vector_const_void_star &input_items,

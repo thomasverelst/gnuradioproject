@@ -44,15 +44,15 @@ namespace gr {
     corr_est_cc::sptr
     corr_est_cc::make(const std::vector<gr_complex> &symbols,
                       float sps, unsigned int mark_delay,
-                      double threshold, float abs_threshold, bool verbose)
+                      double threshold, float fixed_threshold, bool verbose)
     {
       return gnuradio::get_initial_sptr
-        (new corr_est_cc_impl(symbols, sps, mark_delay, threshold, abs_threshold, verbose));
+        (new corr_est_cc_impl(symbols, sps, mark_delay, threshold, fixed_threshold, verbose));
     }
 
     corr_est_cc_impl::corr_est_cc_impl(const std::vector<gr_complex> &symbols,
                                        float sps, unsigned int mark_delay,
-                                       double threshold, float abs_threshold, bool verbose)
+                                       double threshold, float fixed_threshold, bool verbose)
       : gr::sync_block("corr_est_cc",
                    io_signature::make(1, 1, sizeof(gr_complex)),
                    io_signature::make(1, 2, sizeof(gr_complex))),
@@ -81,7 +81,7 @@ namespace gr {
 
       set_mark_delay(mark_delay);
       set_threshold(threshold);
-      set_abs_threshold(abs_threshold);
+      set_fixed_threshold(fixed_threshold);
 
       // Correlation filter
       d_filter = new kernel::fft_filter_ccc(1, d_symbols);
@@ -200,9 +200,9 @@ namespace gr {
 
 
     float
-    corr_est_cc_impl::abs_threshold() const
+    corr_est_cc_impl::fixed_threshold() const
     {
-      return d_abs_thresh;
+      return d_fixed_thresh;
     }
 
 
@@ -221,9 +221,9 @@ namespace gr {
     }
 
     void
-    corr_est_cc_impl::_set_abs_threshold(float abs_threshold)
+    corr_est_cc_impl::_set_fixed_threshold(float fixed_threshold)
     {
-      d_stashed_abs_threshold = abs_threshold;
+      d_stashed_fixed_threshold = fixed_threshold;
       // Compute a correlation threshold.
       // Compute the value of the discrete autocorrelation of the matched
       // filter with offset 0 (aka the autocorrelation peak).
@@ -231,14 +231,14 @@ namespace gr {
       for(size_t i = 0; i < d_symbols.size(); i++){
         corr += abs(d_symbols[i]*conj(d_symbols[i]));
       }
-      d_abs_thresh = abs_threshold*corr*corr;
+      d_fixed_thresh = fixed_threshold*corr*corr;
     }
 
     void
-    corr_est_cc_impl::set_abs_threshold(float abs_threshold)
+    corr_est_cc_impl::set_fixed_threshold(float fixed_threshold)
     {
       gr::thread::scoped_lock lock(d_setlock);
-      _set_abs_threshold(abs_threshold);
+      _set_fixed_threshold(fixed_threshold);
     }
 
     int
@@ -268,7 +268,7 @@ namespace gr {
       d_filter->filter(noutput_items, &in[hist_len], corr); // nitems, input, output
 
       // Find the magnitude squared of the correlation
-      volk_32fc_magnitude_squared_32f(&d_corr_mag[0], corr, noutput_items);
+       volk_32fc_magnitude_squared_32f(&d_corr_mag[0], corr, noutput_items);
 
       // Calculate the average squared correlation magnitude of the input
       // float detection = 0;
@@ -306,14 +306,14 @@ namespace gr {
         detection *= d_pfa;
 
 
-        if(corr_mag <= 4*detection || corr_mag <= d_abs_thresh) {
+        if(corr_mag <= 4*detection || corr_mag <= d_fixed_thresh) {
           // Move detection threshold to next sample
           //detection += (d_corr_mag[i+hist_len-1]*d_pfa - d_corr_mag[i-1]*d_pfa)/static_cast<float>(hist_len);
           i++;
           continue;
         }
         if(d_verbose)
-          std::cout << "Detection with correlation magnitude "<<corr_mag<<" versus adaptive threshold of "<<4*detection << " and fixed threshold of "<<d_abs_thresh<<std::endl;
+          std::cout << "Detection with correlation magnitude "<<corr_mag<<" versus adaptive threshold of "<<4*detection << " and fixed threshold of "<<d_fixed_thresh<<std::endl;
 
         // Go to (just past) the current correlator output peak
         while ((i < (noutput_items-1)) &&

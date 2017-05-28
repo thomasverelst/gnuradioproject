@@ -36,7 +36,8 @@ namespace gr {
      * \details
      * This block whitens or dewhitens the given data stream. It expects a tagged stream
      * where the tag marks the beginning of the packet and the value is the length 
-     * of the value of the packet in chars.
+     * of the value of the packet in chars. To dewhiten, just use the same block with exactly the same settings
+     * again on the stream.
      */
     class PACKETIZER_API tagged_whitener : virtual public gr::tagged_stream_block
     {

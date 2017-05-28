@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <block>
-  <name>Tagged Stream Whitener 2 </name>
+  <name>Tagged Stream Whitener</name>
   <key>packetizer_tagged_whitener</key>
   <category>[Packetizer]</category>
   <import>import packetizer</import>

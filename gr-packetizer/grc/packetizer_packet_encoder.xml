@@ -9,7 +9,7 @@
     <name>Preamble (sequence of 1 and -1)</name>
     <key>preamble</key>
     <value>(1,-1,1,-1,1,1,-1,-1,1,1,-1,1,1,1,-1,1,1,-1,1,-1,-1,1,-1,-1,1,1,1,-1,-1,-1,1,-1,1,1,1,1,-1,-1,1,-1,1,-1,-1,-1,1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,-1,1,1,1,1,1,1,-1,-1)</value>
-    <type>int_vector</type>
+    <type>complex_vector</type>
   </param>
 
  <param>

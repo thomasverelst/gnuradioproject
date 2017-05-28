@@ -101,7 +101,7 @@ namespace gr {
        *                   correlation (1.0). Default is 0.9.
        */
       static sptr make(const std::vector<gr_complex> &symbols,
-                       float sps, unsigned int mark_delay, double threshold=0.999999, float abs_threshold=0.9, bool verbose=false);
+                       float sps, unsigned int mark_delay, double threshold=0.999999, float fixed_threshold=0.9, bool verbose=false);
 
       virtual std::vector<gr_complex> symbols() const = 0;
       virtual void set_symbols(const std::vector<gr_complex> &symbols) = 0;
@@ -112,8 +112,8 @@ namespace gr {
       virtual double threshold() const = 0;
       virtual void set_threshold(double threshold) = 0;
 
-      virtual float abs_threshold() const = 0;
-      virtual void set_abs_threshold(float abs_threshold) = 0;
+      virtual float fixed_threshold() const = 0;
+      virtual void set_fixed_threshold(float fixed_threshold) = 0;
     };
 
   } // namespace packetizer

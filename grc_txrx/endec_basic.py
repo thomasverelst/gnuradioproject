@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Endec Basic
-# Generated: Thu May 25 17:44:22 2017
+# Generated: Sun May 28 00:21:45 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -63,6 +63,7 @@ class endec_basic(gr.top_block, Qt.QWidget):
         # Variables
         ##################################################
         self.constel_header = constel_header = digital.constellation_bpsk()
+        self.zero_padding = zero_padding = 100
         self.samp_rate = samp_rate = 32000
         self.preamble = preamble = [1,-1,1,-1,1,1,-1,-1,1,1,-1,1,1,1,-1,1,1,-1,1,-1,-1,1,-1,-1,1,1,1,-1,-1,-1,1,-1,1,1,1,1,-1,-1,1,-1,1,-1,-1,-1,1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,-1,1,1,1,1,1,1,-1,-1]
         self.header_formatter = header_formatter = digital.packet_header_default(32/constel_header.bits_per_symbol(), "packet_len", "packet_num", constel_header.bits_per_symbol())
@@ -325,10 +326,10 @@ class endec_basic(gr.top_block, Qt.QWidget):
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
         self.blocks_tagged_stream_mux_0 = blocks.tagged_stream_mux(gr.sizeof_gr_complex*1, 'packet_len', 0)
         self.blocks_stream_to_tagged_stream_1 = blocks.stream_to_tagged_stream(gr.sizeof_gr_complex, 1, len(preamble), "packet_len")
-        self.blocks_stream_to_tagged_stream_0_0_0 = blocks.stream_to_tagged_stream(gr.sizeof_gr_complex, 1, 100, "packet_len")
+        self.blocks_stream_to_tagged_stream_0_0_0 = blocks.stream_to_tagged_stream(gr.sizeof_gr_complex, 1, zero_padding, "packet_len")
         self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 50, "packet_len")
         self.blocks_repack_bits_bb_1 = blocks.repack_bits_bb(constel_payload.bits_per_symbol(), 1, "", False, gr.GR_MSB_FIRST)
-        self.blocks_repack_bits_bb_0_2 = blocks.repack_bits_bb(constel_payload.bits_per_symbol(), 8, '', False, gr.GR_LSB_FIRST)
+        self.blocks_repack_bits_bb_0_2 = blocks.repack_bits_bb(1, 4, '', False, gr.GR_LSB_FIRST)
         self.blocks_repack_bits_bb_0_1 = blocks.repack_bits_bb(8, 1, '', False, gr.GR_LSB_FIRST)
         self.blocks_repack_bits_bb_0 = blocks.repack_bits_bb(1, constel_payload.bits_per_symbol(), "", False, gr.GR_MSB_FIRST)
         self.blocks_null_source_0 = blocks.null_source(gr.sizeof_gr_complex*1)
@@ -348,13 +349,13 @@ class endec_basic(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_char_to_float_1, 0), (self.qtgui_time_sink_x_1, 1))
         self.connect((self.blocks_char_to_float_1_0, 0), (self.qtgui_time_sink_x_1, 2))
         self.connect((self.blocks_null_source_0, 0), (self.blocks_stream_to_tagged_stream_0_0_0, 0))
-        self.connect((self.blocks_repack_bits_bb_0, 0), (self.blocks_repack_bits_bb_0_2, 0))
         self.connect((self.blocks_repack_bits_bb_0, 0), (self.digital_chunks_to_symbols_xx_0_0, 0))
         self.connect((self.blocks_repack_bits_bb_0_1, 0), (self.blocks_stream_to_tagged_stream_0, 0))
         self.connect((self.blocks_repack_bits_bb_0_2, 0), (self.digital_packet_headergenerator_bb_0, 0))
         self.connect((self.blocks_repack_bits_bb_1, 0), (self.blocks_char_to_float_1_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_char_to_float_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_repack_bits_bb_0, 0))
+        self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_repack_bits_bb_0_2, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0_0_0, 0), (self.blocks_tagged_stream_mux_0, 3))
         self.connect((self.blocks_stream_to_tagged_stream_1, 0), (self.blocks_tagged_stream_mux_0, 0))
         self.connect((self.blocks_tagged_stream_mux_0, 0), (self.blocks_throttle_0, 0))
@@ -385,6 +386,14 @@ class endec_basic(gr.top_block, Qt.QWidget):
 
     def set_constel_header(self, constel_header):
         self.constel_header = constel_header
+
+    def get_zero_padding(self):
+        return self.zero_padding
+
+    def set_zero_padding(self, zero_padding):
+        self.zero_padding = zero_padding
+        self.blocks_stream_to_tagged_stream_0_0_0.set_packet_len(self.zero_padding)
+        self.blocks_stream_to_tagged_stream_0_0_0.set_packet_len_pmt(self.zero_padding)
 
     def get_samp_rate(self):
         return self.samp_rate
