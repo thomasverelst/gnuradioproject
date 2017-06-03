@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 ##################################################
 # GNU Radio Python Flow Graph
-# Title: Test Fec Soft
-# Generated: Sat Jun  3 20:06:18 2017
+# Title: Test Fec
+# Generated: Sat Jun  3 22:19:01 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -33,12 +33,12 @@ import sys
 from gnuradio import qtgui
 
 
-class test_fec_soft(gr.top_block, Qt.QWidget):
+class test_fec(gr.top_block, Qt.QWidget):
 
     def __init__(self, frame_size=60, puncpat='11'):
-        gr.top_block.__init__(self, "Test Fec Soft")
+        gr.top_block.__init__(self, "Test Fec")
         Qt.QWidget.__init__(self)
-        self.setWindowTitle("Test Fec Soft")
+        self.setWindowTitle("Test Fec")
         qtgui.util.check_set_qss()
         try:
             self.setWindowIcon(Qt.QIcon.fromTheme('gnuradio-grc'))
@@ -56,7 +56,7 @@ class test_fec_soft(gr.top_block, Qt.QWidget):
         self.top_grid_layout = Qt.QGridLayout()
         self.top_layout.addLayout(self.top_grid_layout)
 
-        self.settings = Qt.QSettings("GNU Radio", "test_fec_soft")
+        self.settings = Qt.QSettings("GNU Radio", "test_fec")
         self.restoreGeometry(self.settings.value("geometry").toByteArray())
 
         ##################################################
@@ -240,7 +240,7 @@ class test_fec_soft(gr.top_block, Qt.QWidget):
         self.connect((self.fec_extended_tagged_encoder_0, 0), (self.blocks_repack_bits_bb_0_1_1_0, 0))
 
     def closeEvent(self, event):
-        self.settings = Qt.QSettings("GNU Radio", "test_fec_soft")
+        self.settings = Qt.QSettings("GNU Radio", "test_fec")
         self.settings.setValue("geometry", self.saveGeometry())
         event.accept()
 
@@ -333,7 +333,7 @@ def argument_parser():
     return parser
 
 
-def main(top_block_cls=test_fec_soft, options=None):
+def main(top_block_cls=test_fec, options=None):
     if options is None:
         options, _ = argument_parser().parse_args()
 

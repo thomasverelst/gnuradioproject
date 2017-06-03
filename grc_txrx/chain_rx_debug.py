@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Chain Rx Debug
-# Generated: Sun May 28 18:55:58 2017
+# Generated: Sat Jun  3 20:27:11 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -204,11 +204,11 @@ class chain_rx_debug(gr.top_block, Qt.QWidget):
             self.qtgui_time_sink_x_1.set_line_alpha(i, alphas[i])
 
         self._qtgui_time_sink_x_1_win = sip.wrapinstance(self.qtgui_time_sink_x_1.pyqwidget(), Qt.QWidget)
-        self.top_grid_layout.addWidget(self._qtgui_time_sink_x_1_win, 3,0,1,4)
+        self.top_grid_layout.addWidget(self._qtgui_time_sink_x_1_win, 8,2,1,2)
         self.qtgui_time_sink_x_0_1_0_0_2_0 = qtgui.time_sink_c(
         	1024, #size
         	samp_rate, #samp_rate
-        	"RX  Polyphased Stream", #name
+        	"RX  Time synced Stream", #name
         	1 #number of inputs
         )
         self.qtgui_time_sink_x_0_1_0_0_2_0.set_update_time(0.10)
@@ -508,7 +508,7 @@ class chain_rx_debug(gr.top_block, Qt.QWidget):
         	0, #fc
         	samp_rate, #bw
         	"Channel spectrum", #name
-        	2 #number of inputs
+        	3 #number of inputs
         )
         self.qtgui_freq_sink_x_0.set_update_time(0.10)
         self.qtgui_freq_sink_x_0.set_y_axis(-140, 10)
@@ -534,7 +534,7 @@ class chain_rx_debug(gr.top_block, Qt.QWidget):
                   "magenta", "yellow", "dark red", "dark green", "dark blue"]
         alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
                   1.0, 1.0, 1.0, 1.0, 1.0]
-        for i in xrange(2):
+        for i in xrange(3):
             if len(labels[i]) == 0:
                 self.qtgui_freq_sink_x_0.set_line_label(i, "Data {0}".format(i))
             else:
@@ -544,10 +544,10 @@ class chain_rx_debug(gr.top_block, Qt.QWidget):
             self.qtgui_freq_sink_x_0.set_line_alpha(i, alphas[i])
 
         self._qtgui_freq_sink_x_0_win = sip.wrapinstance(self.qtgui_freq_sink_x_0.pyqwidget(), Qt.QWidget)
-        self.top_grid_layout.addWidget(self._qtgui_freq_sink_x_0_win, 7,0,1,2)
+        self.top_grid_layout.addWidget(self._qtgui_freq_sink_x_0_win, 8,0,1,2)
         self.qtgui_const_sink_x_1 = qtgui.const_sink_c(
         	512, #size
-        	"Payload constellations after phase sync", #name
+        	"Header constellations after phase sync", #name
         	1 #number of inputs
         )
         self.qtgui_const_sink_x_1.set_update_time(0.10)
@@ -585,10 +585,10 @@ class chain_rx_debug(gr.top_block, Qt.QWidget):
             self.qtgui_const_sink_x_1.set_line_alpha(i, alphas[i])
 
         self._qtgui_const_sink_x_1_win = sip.wrapinstance(self.qtgui_const_sink_x_1.pyqwidget(), Qt.QWidget)
-        self.top_grid_layout.addWidget(self._qtgui_const_sink_x_1_win, 8,2,1,2)
+        self.top_grid_layout.addWidget(self._qtgui_const_sink_x_1_win, 7,2,1,2)
         self.qtgui_const_sink_x_0 = qtgui.const_sink_c(
         	512, #size
-        	"Payload constellations before phase sync", #name
+        	"Header constellations before phase sync", #name
         	1 #number of inputs
         )
         self.qtgui_const_sink_x_0.set_update_time(0.10)
@@ -626,7 +626,7 @@ class chain_rx_debug(gr.top_block, Qt.QWidget):
             self.qtgui_const_sink_x_0.set_line_alpha(i, alphas[i])
 
         self._qtgui_const_sink_x_0_win = sip.wrapinstance(self.qtgui_const_sink_x_0.pyqwidget(), Qt.QWidget)
-        self.top_grid_layout.addWidget(self._qtgui_const_sink_x_0_win, 8,0,1,2)
+        self.top_grid_layout.addWidget(self._qtgui_const_sink_x_0_win, 7,0,1,2)
         self._phase_offset_label_tool_bar = Qt.QToolBar(self)
 
         if None:
@@ -645,8 +645,8 @@ class chain_rx_debug(gr.top_block, Qt.QWidget):
         	  flt_size=32)
         self.pfb_arb_resampler_xxx_0.declare_sample_delay(0)
 
-        self.packetizr_preamble_header_payload_demux_0 =  packetizr.preamble_header_payload_demux(32/constel_header.bits_per_symbol(), len(preamble), 1, 0, "packet_len", "corr_est", False, gr.sizeof_gr_complex, '', samp_rate, (), 0)
-        self.packetizer_packet_encoder_0 = packetizer.packet_encoder((preamble), constel_header.base(), constel_payload.base(), header_formatter.base(), "packet_len", 0, False, 1)
+        self.packetizr_preamble_header_payload_demux_0 =  packetizr.preamble_header_payload_demux(32/constel_header.bits_per_symbol(), len(preamble), 1, 0, "packet_len", "corr_est", True, gr.sizeof_gr_complex, '', samp_rate, ("phase_est", "time_est"), 0)
+        self.packetizer_packet_encoder_0 = packetizer.packet_encoder((preamble), constel_header.base(), constel_payload.base(), header_formatter.base(), "packet_len", 50, False, 1)
         self.packetizer_message_sequence_checker_0 = packetizer.message_sequence_checker("packet_num")
         self.packetizer_corr_est_cc_0 = packetizer.corr_est_cc((shaped_preamble), 4, 99, 0.99999, 0.5,False)
         self._noise_label_tool_bar = Qt.QToolBar(self)
@@ -673,13 +673,14 @@ class chain_rx_debug(gr.top_block, Qt.QWidget):
         self._freq_offset_label_tool_bar.addWidget(self._freq_offset_label_label)
         self.top_grid_layout.addWidget(self._freq_offset_label_tool_bar, 21,1,1,1)
 
-        self.digital_pfb_clock_sync_xxx_0_0_0 = digital.pfb_clock_sync_ccf(sps, 3.14*2/100, (rrc_taps_rx), 32, 0, 0.5, 1)
+        self.digital_pfb_clock_sync_xxx_0_0_0 = digital.pfb_clock_sync_ccf(sps, 3.14*2/100, (rrc_taps_rx), 32, 0, 1.5, 1)
         self.digital_packet_headerparser_b_0 = digital.packet_headerparser_b(header_formatter.base())
         self.digital_costas_loop_cc_0_0 = digital.costas_loop_cc(3.14*2/100, 2**constel_payload.bits_per_symbol(), False)
         self.digital_costas_loop_cc_0 = digital.costas_loop_cc(3.14*2/100, 2**constel_header.bits_per_symbol(), False)
         self.digital_constellation_soft_decoder_cf_0 = digital.constellation_soft_decoder_cf(constel_payload.base())
         self.digital_constellation_decoder_cb_1 = digital.constellation_decoder_cb(constel_payload.base())
         self.digital_constellation_decoder_cb_0 = digital.constellation_decoder_cb(constel_header.base())
+        self.digital_cma_equalizer_cc_0 = digital.cma_equalizer_cc(15, 1, 0.01, 1)
         self.digital_binary_slicer_fb_0 = digital.binary_slicer_fb()
         self.channels_channel_model_0 = channels.channel_model(
         	noise_voltage=noise,
@@ -690,6 +691,7 @@ class chain_rx_debug(gr.top_block, Qt.QWidget):
         	block_tags=True
         )
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
+        self.blocks_tagged_stream_multiply_length_0 = blocks.tagged_stream_multiply_length(gr.sizeof_float*1, "packet_len", constel_payload.bits_per_symbol())
         self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 50, "packet_len")
         self.blocks_repack_bits_bb_1 = blocks.repack_bits_bb(constel_payload.bits_per_symbol(), 1, "", False, gr.GR_MSB_FIRST)
         self.blocks_repack_bits_bb_0_1 = blocks.repack_bits_bb(8, 1, '', False, gr.GR_LSB_FIRST)
@@ -698,6 +700,7 @@ class chain_rx_debug(gr.top_block, Qt.QWidget):
         self.blocks_char_to_float_1 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0 = blocks.char_to_float(1, 1)
         self.analog_random_source_x_0 = blocks.vector_source_b(map(int, numpy.random.randint(0, 256, 1000)), True)
+        self.analog_pll_carriertracking_cc_0 = analog.pll_carriertracking_cc(3.14/1000, 0.5, -0.5)
         self.analog_agc2_xx_0_0_0_0 = analog.agc2_cc(1e-3, 1e-4, 0.7, 0.7)
         self.analog_agc2_xx_0_0_0_0.set_max_gain(5)
 
@@ -707,6 +710,8 @@ class chain_rx_debug(gr.top_block, Qt.QWidget):
         self.msg_connect((self.digital_packet_headerparser_b_0, 'header_data'), (self.packetizer_message_sequence_checker_0, 'data'))
         self.msg_connect((self.digital_packet_headerparser_b_0, 'header_data'), (self.packetizr_preamble_header_payload_demux_0, 'header_data'))
         self.connect((self.analog_agc2_xx_0_0_0_0, 0), (self.packetizer_corr_est_cc_0, 0))
+        self.connect((self.analog_pll_carriertracking_cc_0, 0), (self.analog_agc2_xx_0_0_0_0, 0))
+        self.connect((self.analog_pll_carriertracking_cc_0, 0), (self.qtgui_freq_sink_x_0, 2))
         self.connect((self.analog_random_source_x_0, 0), (self.blocks_repack_bits_bb_0_1, 0))
         self.connect((self.blocks_char_to_float_0, 0), (self.qtgui_time_sink_x_1, 0))
         self.connect((self.blocks_char_to_float_1, 0), (self.qtgui_time_sink_x_1, 1))
@@ -716,20 +721,22 @@ class chain_rx_debug(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_repack_bits_bb_1, 0), (self.blocks_char_to_float_1_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_char_to_float_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.packetizer_packet_encoder_0, 0))
+        self.connect((self.blocks_tagged_stream_multiply_length_0, 0), (self.digital_binary_slicer_fb_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.channels_channel_model_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.qtgui_freq_sink_x_0, 0))
-        self.connect((self.channels_channel_model_0, 0), (self.analog_agc2_xx_0_0_0_0, 0))
+        self.connect((self.channels_channel_model_0, 0), (self.analog_pll_carriertracking_cc_0, 0))
         self.connect((self.channels_channel_model_0, 0), (self.qtgui_freq_sink_x_0, 1))
         self.connect((self.digital_binary_slicer_fb_0, 0), (self.blocks_char_to_float_1, 0))
+        self.connect((self.digital_cma_equalizer_cc_0, 0), (self.packetizr_preamble_header_payload_demux_0, 0))
+        self.connect((self.digital_cma_equalizer_cc_0, 0), (self.qtgui_time_sink_x_0_0_0, 0))
         self.connect((self.digital_constellation_decoder_cb_0, 0), (self.digital_packet_headerparser_b_0, 0))
         self.connect((self.digital_constellation_decoder_cb_1, 0), (self.blocks_repack_bits_bb_1, 0))
-        self.connect((self.digital_constellation_soft_decoder_cf_0, 0), (self.digital_binary_slicer_fb_0, 0))
+        self.connect((self.digital_constellation_soft_decoder_cf_0, 0), (self.blocks_tagged_stream_multiply_length_0, 0))
         self.connect((self.digital_costas_loop_cc_0, 0), (self.digital_constellation_decoder_cb_0, 0))
+        self.connect((self.digital_costas_loop_cc_0, 0), (self.qtgui_const_sink_x_1, 0))
         self.connect((self.digital_costas_loop_cc_0_0, 0), (self.digital_constellation_decoder_cb_1, 0))
         self.connect((self.digital_costas_loop_cc_0_0, 0), (self.digital_constellation_soft_decoder_cf_0, 0))
-        self.connect((self.digital_costas_loop_cc_0_0, 0), (self.qtgui_const_sink_x_1, 0))
-        self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.packetizr_preamble_header_payload_demux_0, 0))
-        self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.qtgui_time_sink_x_0_0_0, 0))
+        self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.digital_cma_equalizer_cc_0, 0))
         self.connect((self.digital_pfb_clock_sync_xxx_0_0_0, 0), (self.qtgui_time_sink_x_0_1_0_0_2_0, 0))
         self.connect((self.packetizer_corr_est_cc_0, 1), (self.blocks_complex_to_mag_0, 0))
         self.connect((self.packetizer_corr_est_cc_0, 0), (self.digital_pfb_clock_sync_xxx_0_0_0, 0))
@@ -738,7 +745,7 @@ class chain_rx_debug(gr.top_block, Qt.QWidget):
         self.connect((self.packetizer_packet_encoder_0, 0), (self.qtgui_time_sink_x_0, 0))
         self.connect((self.packetizr_preamble_header_payload_demux_0, 0), (self.digital_costas_loop_cc_0, 0))
         self.connect((self.packetizr_preamble_header_payload_demux_0, 1), (self.digital_costas_loop_cc_0_0, 0))
-        self.connect((self.packetizr_preamble_header_payload_demux_0, 1), (self.qtgui_const_sink_x_0, 0))
+        self.connect((self.packetizr_preamble_header_payload_demux_0, 0), (self.qtgui_const_sink_x_0, 0))
         self.connect((self.pfb_arb_resampler_xxx_0, 0), (self.blocks_throttle_0, 0))
         self.connect((self.pfb_arb_resampler_xxx_0, 0), (self.qtgui_time_sink_x_0_0, 0))
 

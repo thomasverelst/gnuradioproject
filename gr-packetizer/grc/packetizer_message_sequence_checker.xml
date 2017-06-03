@@ -13,6 +13,14 @@
     <type>string</type>
   </param>
 
+
+ <param>
+    <name>Number of bits of sequence field (0 if unknown)</name>
+    <key>nb_bits</key>
+    <value>0</value>
+    <type>int</type>
+  </param>
+
   <sink>
     <name>data</name>
     <type>message</type>

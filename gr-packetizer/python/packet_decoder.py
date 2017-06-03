@@ -41,14 +41,14 @@ class packet_decoder(gr.hier_block2):
 
         # Feedback loop for payload length
         if(do_costas):
-            header_costas = digital.costas_loop_cc(3.14*2/1000, 2**constel_header.bits_per_symbol(), False)
+            header_costas = digital.costas_loop_cc(3.14*2/100, 2**constel_header.bits_per_symbol(), False)
         #header_repack_bits = blocks.repack_bits_bb(constel_header.bits_per_symbol(), 1, "", False, gr.GR_LSB_FIRST)
         header_constel_decoder = digital.constellation_decoder_cb(constel_header)
         header_headerparser = digital.packet_headerparser_b(header_formatter.base())
 
         # Output
         if(do_costas):
-            payload_costas = digital.costas_loop_cc(3.14*2/1000, 2**constel_payload.bits_per_symbol(), False)
+            payload_costas = digital.costas_loop_cc(3.14*2/100, 2**constel_payload.bits_per_symbol(), False)
         
 
         if(do_whiten):
@@ -56,6 +56,7 @@ class packet_decoder(gr.hier_block2):
 
         if(soft_output):
             payload_constel_soft_decoder = digital.constellation_soft_decoder_cf(constel_payload.base())
+            tagged_stream_multiply_length = blocks.tagged_stream_multiply_length(gr.sizeof_float*1, "packet_len", constel_payload.bits_per_symbol())
         else:
             payload_constel_decoder = digital.constellation_decoder_cb(constel_payload)
             #payload_repack_symbols = blocks.repack_bits_bb(8,8, "", False, gr.GR_LSB_FIRST)
@@ -84,7 +85,8 @@ class packet_decoder(gr.hier_block2):
             else:
                 self.connect((header_payload_demux, 1), payload_constel_soft_decoder) 
             
-            self.connect(payload_constel_soft_decoder, self)
+            self.connect(payload_constel_soft_decoder, tagged_stream_multiply_length)
+            self.connect(tagged_stream_multiply_length, self)
 
         else:
             if(do_costas):

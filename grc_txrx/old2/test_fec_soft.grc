@@ -348,6 +348,33 @@
     </param>
     <param>
       <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(376, 40)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>packet_len</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>50</value>
+    </param>
+  </block>
+  <block>
+    <key>variable</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
       <value>1</value>
     </param>
     <param>
@@ -395,10 +422,14 @@
     </param>
   </block>
   <block>
-    <key>variable</key>
+    <key>variable_qtgui_range</key>
     <param>
       <key>comment</key>
       <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>32000</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -406,7 +437,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(208, 12)</value>
+      <value>(200, 0)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value>0,1,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -417,8 +452,36 @@
       <value>samp_rate</value>
     </param>
     <param>
-      <key>value</key>
-      <value>32000</value>
+      <key>label</key>
+      <value>Sample rate</value>
+    </param>
+    <param>
+      <key>min_len</key>
+      <value>100</value>
+    </param>
+    <param>
+      <key>orient</key>
+      <value>Qt.Horizontal</value>
+    </param>
+    <param>
+      <key>start</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>step</key>
+      <value>10</value>
+    </param>
+    <param>
+      <key>stop</key>
+      <value>256000</value>
+    </param>
+    <param>
+      <key>rangeType</key>
+      <value>int</value>
+    </param>
+    <param>
+      <key>widget</key>
+      <value>slider</value>
     </param>
   </block>
   <block>
@@ -496,7 +559,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -590,7 +653,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -684,7 +747,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -719,7 +782,7 @@
     <key>blocks_repack_bits_bb</key>
     <param>
       <key>k</key>
-      <value>2</value>
+      <value>constel.bits_per_symbol()</value>
     </param>
     <param>
       <key>l</key>
@@ -739,7 +802,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>endianness</key>
@@ -877,7 +940,7 @@
     </param>
     <param>
       <key>packet_len</key>
-      <value>32</value>
+      <value>packet_len</value>
     </param>
     <param>
       <key>type</key>
@@ -1041,7 +1104,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -1143,7 +1206,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -1225,7 +1288,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -1296,7 +1359,7 @@
     </param>
     <param>
       <key>mtu</key>
-      <value>4</value>
+      <value>packet_len/8+1</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -1339,7 +1402,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -1418,7 +1481,7 @@
     </param>
     <param>
       <key>mtu</key>
-      <value>4</value>
+      <value>packet_len/8+1</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -1519,7 +1582,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -1885,7 +1948,7 @@
     </param>
     <param>
       <key>nconnections</key>
-      <value>3</value>
+      <value>2</value>
     </param>
     <param>
       <key>size</key>
@@ -1976,11 +2039,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(776, 608)</value>
+      <value>(776, 592)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -2244,11 +2307,11 @@
     </param>
     <param>
       <key>name</key>
-      <value>"Demodulated comparison"</value>
+      <value>"Demodulated soft stream"</value>
     </param>
     <param>
       <key>nconnections</key>
-      <value>2</value>
+      <value>1</value>
     </param>
     <param>
       <key>size</key>
@@ -2268,11 +2331,11 @@
     </param>
     <param>
       <key>tr_level</key>
-      <value>0.0</value>
+      <value>0.5</value>
     </param>
     <param>
       <key>tr_mode</key>
-      <value>qtgui.TRIG_MODE_FREE</value>
+      <value>qtgui.TRIG_MODE_TAG</value>
     </param>
     <param>
       <key>tr_slope</key>
@@ -2280,7 +2343,7 @@
     </param>
     <param>
       <key>tr_tag</key>
-      <value>""</value>
+      <value>"packet_len"</value>
     </param>
     <param>
       <key>type</key>
@@ -2369,7 +2432,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -2407,22 +2470,10 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_char_to_float_0_1</source_block_id>
-    <sink_block_id>qtgui_time_sink_x_0_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>1</sink_key>
-  </connection>
-  <connection>
     <source_block_id>blocks_char_to_float_1</source_block_id>
     <sink_block_id>qtgui_time_sink_x_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>1</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_char_to_float_1_0</source_block_id>
-    <sink_block_id>qtgui_time_sink_x_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>2</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_repack_bits_bb_0</source_block_id>

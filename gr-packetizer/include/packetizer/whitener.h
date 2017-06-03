@@ -79,7 +79,7 @@ public:
   /*!
   * Do the whitening. Start reading data in at pointer \p data_in
   * Starts outputting data at \p data_out
-  * Processes \p data_length byts of data.
+  * Processes \p data_length bytes of data.
    */
   void
   do_whitening(const unsigned char* data_in, unsigned char* data_out, unsigned int data_length, unsigned int whitening_offset);

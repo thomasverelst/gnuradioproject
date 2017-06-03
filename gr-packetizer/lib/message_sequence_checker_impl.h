@@ -33,11 +33,16 @@ namespace gr {
      private:
       std::string d_num_key;
       long d_prev_num;
+      long d_packet_fail;
+      long d_packet_correct;
+      long d_max_seq_nb;
+      double d_recent_packet_fail;
+      double d_recent_packet_correct;
 
       void check(pmt::pmt_t msg);
 
      public:
-      message_sequence_checker_impl(const std::string &num_key);
+      message_sequence_checker_impl(const std::string &num_key, const int nb_bits = 12);
       ~message_sequence_checker_impl();
 
       int work(int noutput_items,

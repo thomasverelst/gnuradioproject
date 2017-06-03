@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Endec Basic
-# Generated: Sun May 28 00:21:45 2017
+# Generated: Sat Jun  3 22:47:06 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -328,16 +328,15 @@ class endec_basic(gr.top_block, Qt.QWidget):
         self.blocks_stream_to_tagged_stream_1 = blocks.stream_to_tagged_stream(gr.sizeof_gr_complex, 1, len(preamble), "packet_len")
         self.blocks_stream_to_tagged_stream_0_0_0 = blocks.stream_to_tagged_stream(gr.sizeof_gr_complex, 1, zero_padding, "packet_len")
         self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 50, "packet_len")
-        self.blocks_repack_bits_bb_1 = blocks.repack_bits_bb(constel_payload.bits_per_symbol(), 1, "", False, gr.GR_MSB_FIRST)
-        self.blocks_repack_bits_bb_0_2 = blocks.repack_bits_bb(1, 4, '', False, gr.GR_LSB_FIRST)
+        self.blocks_repack_bits_bb_1 = blocks.repack_bits_bb(constel_payload.bits_per_symbol(), 1, "packet_len", False, gr.GR_MSB_FIRST)
         self.blocks_repack_bits_bb_0_1 = blocks.repack_bits_bb(8, 1, '', False, gr.GR_LSB_FIRST)
-        self.blocks_repack_bits_bb_0 = blocks.repack_bits_bb(1, constel_payload.bits_per_symbol(), "", False, gr.GR_MSB_FIRST)
+        self.blocks_repack_bits_bb_0 = blocks.repack_bits_bb(1, constel_payload.bits_per_symbol(), "packet_len", False, gr.GR_MSB_FIRST)
         self.blocks_null_source_0 = blocks.null_source(gr.sizeof_gr_complex*1)
         self.blocks_message_debug_0 = blocks.message_debug()
         self.blocks_char_to_float_1_0 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_1 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0 = blocks.char_to_float(1, 1)
-        self.analog_random_source_x_0 = blocks.vector_source_b(map(int, numpy.random.randint(0, 256, 10)), True)
+        self.analog_random_source_x_0 = blocks.vector_source_b(map(int, numpy.random.randint(0, 256, 10000)), True)
 
         ##################################################
         # Connections
@@ -350,12 +349,11 @@ class endec_basic(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_char_to_float_1_0, 0), (self.qtgui_time_sink_x_1, 2))
         self.connect((self.blocks_null_source_0, 0), (self.blocks_stream_to_tagged_stream_0_0_0, 0))
         self.connect((self.blocks_repack_bits_bb_0, 0), (self.digital_chunks_to_symbols_xx_0_0, 0))
+        self.connect((self.blocks_repack_bits_bb_0, 0), (self.digital_packet_headergenerator_bb_0, 0))
         self.connect((self.blocks_repack_bits_bb_0_1, 0), (self.blocks_stream_to_tagged_stream_0, 0))
-        self.connect((self.blocks_repack_bits_bb_0_2, 0), (self.digital_packet_headergenerator_bb_0, 0))
         self.connect((self.blocks_repack_bits_bb_1, 0), (self.blocks_char_to_float_1_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_char_to_float_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_repack_bits_bb_0, 0))
-        self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_repack_bits_bb_0_2, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0_0_0, 0), (self.blocks_tagged_stream_mux_0, 3))
         self.connect((self.blocks_stream_to_tagged_stream_1, 0), (self.blocks_tagged_stream_mux_0, 0))
         self.connect((self.blocks_tagged_stream_mux_0, 0), (self.blocks_throttle_0, 0))

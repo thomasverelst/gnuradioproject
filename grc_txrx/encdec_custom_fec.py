@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Encdec Custom Fec
-# Generated: Fri May 26 00:14:57 2017
+# Generated: Sat Jun  3 22:55:38 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -75,6 +75,8 @@ class encdec_custom_fec(gr.top_block, Qt.QWidget):
         self.constel_header = constel_header = digital.constellation_bpsk()
         self.samp_rate = samp_rate = 32000
         self.preamble = preamble = [1,-1,1,-1,1,1,-1,-1,1,1,-1,1,1,1,-1,1,1,-1,1,-1,-1,1,-1,-1,1,1,1,-1,-1,-1,1,-1,1,1,1,1,-1,-1,1,-1,1,-1,-1,-1,1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,-1,1,1,1,1,1,1,-1,-1]
+        self.packlen = packlen = 48
+        self.mtu = mtu = 1000
         self.header_formatter = header_formatter = digital.packet_header_default(32/constel_header.bits_per_symbol(), "packet_len", "packet_num", constel_header.bits_per_symbol())
 
 
@@ -88,8 +90,7 @@ class encdec_custom_fec(gr.top_block, Qt.QWidget):
 
         self.dec_cc_1 = dec_cc_1 = fec.cc_decoder.make(frame_size*8, k, rate, (polys), 0, -1, fec.CC_STREAMING, False)
 
-        self.constel_preamble = constel_preamble = digital.constellation_bpsk()
-        self.constel_payload = constel_payload = digital.constellation_bpsk()
+        self.constel_payload = constel_payload = digital.constellation_8psk()
 
         ##################################################
         # Blocks
@@ -98,13 +99,13 @@ class encdec_custom_fec(gr.top_block, Qt.QWidget):
         self._samp_rate_win = RangeWidget(self._samp_rate_range, self.set_samp_rate, 'Sample rate', "slider", int)
         self.top_grid_layout.addWidget(self._samp_rate_win, 0,0,1,1)
         self.qtgui_time_sink_x_1 = qtgui.time_sink_f(
-        	1024, #size
+        	512, #size
         	samp_rate, #samp_rate
         	"In/out comparison", #name
         	3 #number of inputs
         )
         self.qtgui_time_sink_x_1.set_update_time(0.10)
-        self.qtgui_time_sink_x_1.set_y_axis(-1, 1)
+        self.qtgui_time_sink_x_1.set_y_axis(-0.5, 1.5)
 
         self.qtgui_time_sink_x_1.set_y_label('Amplitude', "")
 
@@ -145,10 +146,10 @@ class encdec_custom_fec(gr.top_block, Qt.QWidget):
         self._qtgui_time_sink_x_1_win = sip.wrapinstance(self.qtgui_time_sink_x_1.pyqwidget(), Qt.QWidget)
         self.top_grid_layout.addWidget(self._qtgui_time_sink_x_1_win, 2,0,1,4)
         self.qtgui_time_sink_x_0_0_0 = qtgui.time_sink_f(
-        	1024, #size
+        	512, #size
         	samp_rate, #samp_rate
         	"Demodulated comparison", #name
-        	2 #number of inputs
+        	3 #number of inputs
         )
         self.qtgui_time_sink_x_0_0_0.set_update_time(0.10)
         self.qtgui_time_sink_x_0_0_0.set_y_axis(-1, 2)
@@ -165,7 +166,7 @@ class encdec_custom_fec(gr.top_block, Qt.QWidget):
         if not True:
           self.qtgui_time_sink_x_0_0_0.disable_legend()
 
-        labels = ["Soft data with hard decisions", "Hard data", '', '', '',
+        labels = ["Soft data with hard decisions", "Hard data", "Original data", '', '',
                   '', '', '', '', '']
         widths = [1, 1, 1, 1, 1,
                   1, 1, 1, 1, 1]
@@ -178,7 +179,7 @@ class encdec_custom_fec(gr.top_block, Qt.QWidget):
         alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
                   1.0, 1.0, 1.0, 1.0, 1.0]
 
-        for i in xrange(2):
+        for i in xrange(3):
             if len(labels[i]) == 0:
                 self.qtgui_time_sink_x_0_0_0.set_line_label(i, "Data {0}".format(i))
             else:
@@ -241,38 +242,49 @@ class encdec_custom_fec(gr.top_block, Qt.QWidget):
 
         self._qtgui_time_sink_x_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0.pyqwidget(), Qt.QWidget)
         self.top_grid_layout.addWidget(self._qtgui_time_sink_x_0_win, 3,0,1,2)
-        self.packetizer_packet_encoder_0 = packetizer.packet_encoder((preamble), constel_header.base(), constel_payload.base(), header_formatter.base(), "packet_len", 100, False, 1)
+        self.packetizer_packet_encoder_0 = packetizer.packet_encoder((preamble), constel_header.base(), constel_payload.base(), header_formatter.base(), "packet_len", 0, False, 1)
         self.packetizer_packet_decoder_0_0 = packetizer.packet_decoder((preamble), constel_header.base(), constel_payload.base(), header_formatter.base(), "packet_len", False, False, False, samp_rate, 1)
         self.packetizer_packet_decoder_0 = packetizer.packet_decoder((preamble), constel_header.base(), constel_payload.base(), header_formatter.base(), "packet_len", False, True, False, samp_rate, 1)
         self.packetizer_message_sequence_checker_0_0 = packetizer.message_sequence_checker("packet_num")
         self.packetizer_message_sequence_checker_0 = packetizer.message_sequence_checker("packet_num")
-        self.fec_extended_tagged_encoder_0 = fec.extended_tagged_encoder(encoder_obj_list=enc_cc, puncpat='11', lentagname="packet_len", mtu=100)
-        self.fec_extended_tagged_decoder_0_0 = self.fec_extended_tagged_decoder_0_0 = fec_extended_tagged_decoder_0_0 = fec.extended_tagged_decoder(decoder_obj_list=dec_cc_2, ann=None, puncpat='11', integration_period=10000, lentagname="packet_len", mtu=100)
-        self.fec_extended_tagged_decoder_0 = self.fec_extended_tagged_decoder_0 = fec_extended_tagged_decoder_0 = fec.extended_tagged_decoder(decoder_obj_list=dec_cc_1, ann=None, puncpat='11', integration_period=10000, lentagname="packet_len", mtu=100)
+        self.fec_extended_tagged_encoder_0 = fec.extended_tagged_encoder(encoder_obj_list=enc_cc, puncpat='11', lentagname="packet_len", mtu=mtu)
+        self.fec_extended_tagged_decoder_0_0 = self.fec_extended_tagged_decoder_0_0 = fec_extended_tagged_decoder_0_0 = fec.extended_tagged_decoder(decoder_obj_list=dec_cc_2, ann=None, puncpat='11', integration_period=10000, lentagname="packet_len", mtu=mtu)
+        self.fec_extended_tagged_decoder_0 = self.fec_extended_tagged_decoder_0 = fec_extended_tagged_decoder_0 = fec.extended_tagged_decoder(decoder_obj_list=dec_cc_1, ann=None, puncpat='11', integration_period=10000, lentagname="packet_len", mtu=mtu)
         self.digital_map_bb_0 = digital.map_bb(([-1,1]))
         self.digital_binary_slicer_fb_0 = digital.binary_slicer_fb()
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
-        self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 50, "packet_len")
+        self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, packlen, "packet_len")
         self.blocks_repack_bits_bb_0_1 = blocks.repack_bits_bb(8, 1, '', False, gr.GR_LSB_FIRST)
+        self.blocks_message_debug_0 = blocks.message_debug()
+        self.blocks_file_sink_0_1 = blocks.file_sink(gr.sizeof_char*1, '/home/thomas/Desktop/test0.txt', False)
+        self.blocks_file_sink_0_1.set_unbuffered(False)
+        self.blocks_file_sink_0_0 = blocks.file_sink(gr.sizeof_char*1, '/home/thomas/Desktop/test2.txt', False)
+        self.blocks_file_sink_0_0.set_unbuffered(False)
+        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_char*1, '/home/thomas/Desktop/test1.txt', False)
+        self.blocks_file_sink_0.set_unbuffered(False)
         self.blocks_char_to_float_1_0 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0_1_0 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0_1 = blocks.char_to_float(1, 1)
+        self.blocks_char_to_float_0_0_1_0 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0_0_1 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0_0_0 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0 = blocks.char_to_float(1, 1)
-        self.analog_random_source_x_0 = blocks.vector_source_b(map(int, numpy.random.randint(0, 256, 10)), True)
+        self.analog_random_source_x_0 = blocks.vector_source_b(map(int, numpy.random.randint(0, 256, 10000)), True)
 
         ##################################################
         # Connections
         ##################################################
+        self.msg_connect((self.packetizer_packet_decoder_0, 'header_data'), (self.blocks_message_debug_0, 'print'))
         self.msg_connect((self.packetizer_packet_decoder_0, 'header_data'), (self.packetizer_message_sequence_checker_0, 'data'))
         self.msg_connect((self.packetizer_packet_decoder_0_0, 'header_data'), (self.packetizer_message_sequence_checker_0_0, 'data'))
         self.connect((self.analog_random_source_x_0, 0), (self.blocks_repack_bits_bb_0_1, 0))
         self.connect((self.blocks_char_to_float_0, 0), (self.qtgui_time_sink_x_1, 0))
         self.connect((self.blocks_char_to_float_0_0_0, 0), (self.qtgui_time_sink_x_1, 1))
-        self.connect((self.blocks_char_to_float_0_0_1, 0), (self.qtgui_time_sink_x_0_0_0, 0))
+        self.connect((self.blocks_char_to_float_0_0_1, 0), (self.qtgui_time_sink_x_0_0_0, 1))
+        self.connect((self.blocks_char_to_float_0_0_1_0, 0), (self.qtgui_time_sink_x_0_0_0, 0))
+        self.connect((self.blocks_char_to_float_0_1, 0), (self.fec_extended_tagged_decoder_0, 0))
         self.connect((self.blocks_char_to_float_0_1, 0), (self.fec_extended_tagged_decoder_0_0, 0))
-        self.connect((self.blocks_char_to_float_0_1_0, 0), (self.qtgui_time_sink_x_0_0_0, 1))
+        self.connect((self.blocks_char_to_float_0_1_0, 0), (self.qtgui_time_sink_x_0_0_0, 2))
         self.connect((self.blocks_char_to_float_1_0, 0), (self.qtgui_time_sink_x_1, 2))
         self.connect((self.blocks_repack_bits_bb_0_1, 0), (self.blocks_stream_to_tagged_stream_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_char_to_float_0, 0))
@@ -280,13 +292,16 @@ class encdec_custom_fec(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_throttle_0, 0), (self.packetizer_packet_decoder_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.packetizer_packet_decoder_0_0, 0))
         self.connect((self.digital_binary_slicer_fb_0, 0), (self.blocks_char_to_float_0_0_1, 0))
+        self.connect((self.digital_binary_slicer_fb_0, 0), (self.blocks_file_sink_0, 0))
         self.connect((self.digital_map_bb_0, 0), (self.blocks_char_to_float_0_1, 0))
         self.connect((self.fec_extended_tagged_decoder_0, 0), (self.blocks_char_to_float_0_0_0, 0))
         self.connect((self.fec_extended_tagged_decoder_0_0, 0), (self.blocks_char_to_float_1_0, 0))
+        self.connect((self.fec_extended_tagged_encoder_0, 0), (self.blocks_char_to_float_0_0_1_0, 0))
+        self.connect((self.fec_extended_tagged_encoder_0, 0), (self.blocks_file_sink_0_1, 0))
         self.connect((self.fec_extended_tagged_encoder_0, 0), (self.packetizer_packet_encoder_0, 0))
         self.connect((self.packetizer_packet_decoder_0, 0), (self.digital_binary_slicer_fb_0, 0))
-        self.connect((self.packetizer_packet_decoder_0, 0), (self.fec_extended_tagged_decoder_0, 0))
         self.connect((self.packetizer_packet_decoder_0_0, 0), (self.blocks_char_to_float_0_1_0, 0))
+        self.connect((self.packetizer_packet_decoder_0_0, 0), (self.blocks_file_sink_0_0, 0))
         self.connect((self.packetizer_packet_decoder_0_0, 0), (self.digital_map_bb_0, 0))
         self.connect((self.packetizer_packet_encoder_0, 0), (self.blocks_throttle_0, 0))
         self.connect((self.packetizer_packet_encoder_0, 0), (self.qtgui_time_sink_x_0, 0))
@@ -348,6 +363,20 @@ class encdec_custom_fec(gr.top_block, Qt.QWidget):
     def set_preamble(self, preamble):
         self.preamble = preamble
 
+    def get_packlen(self):
+        return self.packlen
+
+    def set_packlen(self, packlen):
+        self.packlen = packlen
+        self.blocks_stream_to_tagged_stream_0.set_packet_len(self.packlen)
+        self.blocks_stream_to_tagged_stream_0.set_packet_len_pmt(self.packlen)
+
+    def get_mtu(self):
+        return self.mtu
+
+    def set_mtu(self, mtu):
+        self.mtu = mtu
+
     def get_header_formatter(self):
         return self.header_formatter
 
@@ -371,12 +400,6 @@ class encdec_custom_fec(gr.top_block, Qt.QWidget):
 
     def set_dec_cc_1(self, dec_cc_1):
         self.dec_cc_1 = dec_cc_1
-
-    def get_constel_preamble(self):
-        return self.constel_preamble
-
-    def set_constel_preamble(self, constel_preamble):
-        self.constel_preamble = constel_preamble
 
     def get_constel_payload(self):
         return self.constel_payload

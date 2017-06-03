@@ -264,7 +264,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(968, 772)</value>
+      <value>(984, 796)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -327,7 +327,7 @@
     </param>
     <param>
       <key>num_samps</key>
-      <value>10</value>
+      <value>10000</value>
     </param>
     <param>
       <key>type</key>
@@ -534,7 +534,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(528, 768)</value>
+      <value>(632, 768)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -597,7 +597,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(448, 676)</value>
+      <value>(384, 676)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -609,7 +609,7 @@
     </param>
     <param>
       <key>len_tag_key</key>
-      <value>""</value>
+      <value>"packet_len"</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -687,65 +687,6 @@
     <key>blocks_repack_bits_bb</key>
     <param>
       <key>k</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>l</key>
-      <value>4</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>endianness</key>
-      <value>gr.GR_LSB_FIRST</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(448, 596)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_repack_bits_bb_0_2</value>
-    </param>
-    <param>
-      <key>len_tag_key</key>
-      <value></value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>align_output</key>
-      <value>False</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_repack_bits_bb</key>
-    <param>
-      <key>k</key>
       <value>constel_payload.bits_per_symbol()</value>
     </param>
     <param>
@@ -786,7 +727,7 @@
     </param>
     <param>
       <key>len_tag_key</key>
-      <value>""</value>
+      <value>"packet_len"</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -876,7 +817,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(688, 756)</value>
+      <value>(784, 756)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1202,7 +1143,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(848, 596)</value>
+      <value>(824, 596)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1261,7 +1202,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(688, 676)</value>
+      <value>(784, 676)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1449,7 +1390,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(632, 596)</value>
+      <value>(592, 596)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3737,7 +3678,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(240, 684)</value>
+      <value>(216, 684)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3789,14 +3730,14 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_repack_bits_bb_0_1</source_block_id>
-    <sink_block_id>blocks_stream_to_tagged_stream_0</sink_block_id>
+    <source_block_id>blocks_repack_bits_bb_0</source_block_id>
+    <sink_block_id>digital_packet_headergenerator_bb_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_repack_bits_bb_0_2</source_block_id>
-    <sink_block_id>digital_packet_headergenerator_bb_0</sink_block_id>
+    <source_block_id>blocks_repack_bits_bb_0_1</source_block_id>
+    <sink_block_id>blocks_stream_to_tagged_stream_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -3977,12 +3918,6 @@
   <connection>
     <source_block_id>virtual_source_4</source_block_id>
     <sink_block_id>blocks_repack_bits_bb_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>virtual_source_4</source_block_id>
-    <sink_block_id>blocks_repack_bits_bb_0_2</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

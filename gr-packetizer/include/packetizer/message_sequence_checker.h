@@ -46,7 +46,7 @@ namespace gr {
        * class. packetizer::message_sequence_checker::make is the public interface for
        * creating new instances.
        */
-      static sptr make(const std::string &num_key);
+      static sptr make(const std::string &num_key, const int nb_bits = 12);
     };
 
   } // namespace packetizer
