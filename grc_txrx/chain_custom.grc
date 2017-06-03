@@ -132,7 +132,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>digital.constellation_qpsk()</value>
+      <value>digital.constellation_bpsk()</value>
     </param>
   </block>
   <block>
@@ -1647,7 +1647,7 @@
     </param>
     <param>
       <key>packet_len</key>
-      <value>100</value>
+      <value>102</value>
     </param>
     <param>
       <key>type</key>
@@ -2460,7 +2460,7 @@
     </param>
     <param>
       <key>zero_padding</key>
-      <value>50</value>
+      <value>0</value>
     </param>
   </block>
   <block>
@@ -5581,7 +5581,7 @@
     </param>
     <param>
       <key>label2</key>
-      <value>"Soft decoded data"</value>
+      <value>"Received data"</value>
     </param>
     <param>
       <key>marker2</key>
@@ -6203,7 +6203,7 @@
     </param>
     <param>
       <key>stream_id</key>
-      <value>rx_tracked_stream</value>
+      <value>rx_stream</value>
     </param>
   </block>
   <block>

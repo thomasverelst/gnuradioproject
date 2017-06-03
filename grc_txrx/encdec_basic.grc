@@ -132,7 +132,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>digital.constellation_qpsk()</value>
+      <value>digital.constellation_8psk()</value>
     </param>
   </block>
   <block>
@@ -358,7 +358,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(712, 1612)</value>
+      <value>(664, 1660)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -405,7 +405,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1120, 1268)</value>
+      <value>(640, 1708)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -452,7 +452,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1112, 1412)</value>
+      <value>(1112, 1396)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -495,7 +495,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>0</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -597,7 +597,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(384, 676)</value>
+      <value>(584, 676)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -727,7 +727,7 @@
     </param>
     <param>
       <key>len_tag_key</key>
-      <value>"packet_len"</value>
+      <value></value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -901,6 +901,108 @@
     <param>
       <key>type</key>
       <value>complex</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_tagged_stream_align</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(792, 1332)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_tagged_stream_align_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>lengthtagname</key>
+      <value>packet_len</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_tagged_stream_align</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(968, 1516)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_tagged_stream_align_0_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>lengthtagname</key>
+      <value>packet_len</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
     </param>
     <param>
       <key>vlen</key>
@@ -1100,7 +1202,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(968, 1272)</value>
+      <value>(472, 1712)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1457,7 +1559,7 @@
     </param>
   </block>
   <block>
-    <key>packetizr_preamble_header_payload_demux</key>
+    <key>packetizer_preamble_header_payload_demux</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -1472,11 +1574,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>True</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(280, 1108)</value>
+      <value>(280, 1100)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1491,12 +1593,16 @@
       <value>32/constel_header.bits_per_symbol()</value>
     </param>
     <param>
+      <key>header_len_divider</key>
+      <value>constel_payload.bits_per_symbol()</value>
+    </param>
+    <param>
       <key>header_padding</key>
       <value>0</value>
     </param>
     <param>
       <key>id</key>
-      <value>packetizr_preamble_header_payload_demux_0</value>
+      <value>packetizer_preamble_header_payload_demux_0</value>
     </param>
     <param>
       <key>type</key>
@@ -1536,7 +1642,7 @@
     </param>
     <param>
       <key>timing_tag_key</key>
-      <value></value>
+      <value>"rx_time"</value>
     </param>
     <param>
       <key>trigger_tag_key</key>
@@ -1926,7 +2032,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(248, 1016)</value>
+      <value>(248, 1000)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -3015,7 +3121,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(872, 1656)</value>
+      <value>(904, 1704)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -3435,7 +3541,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1288, 1268)</value>
+      <value>(1264, 1252)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3516,7 +3622,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(328, 1612)</value>
+      <value>(360, 1660)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3597,7 +3703,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(328, 1716)</value>
+      <value>(360, 1764)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3624,7 +3730,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(328, 1668)</value>
+      <value>(248, 1708)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3707,13 +3813,13 @@
   </connection>
   <connection>
     <source_block_id>blocks_char_to_float_1</source_block_id>
-    <sink_block_id>virtual_sink_2</sink_block_id>
+    <sink_block_id>qtgui_time_sink_x_1</sink_block_id>
     <source_key>0</source_key>
-    <sink_key>0</sink_key>
+    <sink_key>1</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_char_to_float_1_0</source_block_id>
-    <sink_block_id>virtual_sink_2_0</sink_block_id>
+    <sink_block_id>blocks_tagged_stream_align_0_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -3726,12 +3832,6 @@
   <connection>
     <source_block_id>blocks_repack_bits_bb_0</source_block_id>
     <sink_block_id>digital_chunks_to_symbols_xx_0_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_repack_bits_bb_0</source_block_id>
-    <sink_block_id>digital_packet_headergenerator_bb_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -3762,6 +3862,18 @@
   <connection>
     <source_block_id>blocks_stream_to_tagged_stream_1</source_block_id>
     <sink_block_id>blocks_tagged_stream_mux_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_tagged_stream_align_0</source_block_id>
+    <sink_block_id>virtual_sink_2</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_tagged_stream_align_0_0</source_block_id>
+    <sink_block_id>virtual_sink_2_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -3815,7 +3927,7 @@
   </connection>
   <connection>
     <source_block_id>digital_constellation_soft_decoder_cf_0</source_block_id>
-    <sink_block_id>digital_binary_slicer_fb_0</sink_block_id>
+    <sink_block_id>blocks_tagged_stream_align_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -3833,31 +3945,25 @@
   </connection>
   <connection>
     <source_block_id>digital_packet_headerparser_b_0</source_block_id>
-    <sink_block_id>packetizr_preamble_header_payload_demux_0</sink_block_id>
+    <sink_block_id>packetizer_preamble_header_payload_demux_0</sink_block_id>
     <source_key>header_data</source_key>
     <sink_key>header_data</sink_key>
   </connection>
   <connection>
-    <source_block_id>packetizr_preamble_header_payload_demux_0</source_block_id>
+    <source_block_id>packetizer_preamble_header_payload_demux_0</source_block_id>
     <sink_block_id>virtual_sink_3</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>packetizr_preamble_header_payload_demux_0</source_block_id>
+    <source_block_id>packetizer_preamble_header_payload_demux_0</source_block_id>
     <sink_block_id>digital_constellation_decoder_cb_1</sink_block_id>
     <source_key>1</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>packetizr_preamble_header_payload_demux_0</source_block_id>
+    <source_block_id>packetizer_preamble_header_payload_demux_0</source_block_id>
     <sink_block_id>digital_constellation_soft_decoder_cf_0</sink_block_id>
-    <source_key>1</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>packetizr_preamble_header_payload_demux_0</source_block_id>
-    <sink_block_id>qtgui_time_sink_x_0_1_0_0_1_0</sink_block_id>
     <source_key>1</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -3869,7 +3975,7 @@
   </connection>
   <connection>
     <source_block_id>virtual_source_1</source_block_id>
-    <sink_block_id>packetizr_preamble_header_payload_demux_0</sink_block_id>
+    <sink_block_id>packetizer_preamble_header_payload_demux_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -3893,9 +3999,9 @@
   </connection>
   <connection>
     <source_block_id>virtual_source_2_0</source_block_id>
-    <sink_block_id>qtgui_time_sink_x_1</sink_block_id>
+    <sink_block_id>digital_binary_slicer_fb_0</sink_block_id>
     <source_key>0</source_key>
-    <sink_key>1</sink_key>
+    <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>virtual_source_3</source_block_id>
@@ -3918,6 +4024,12 @@
   <connection>
     <source_block_id>virtual_source_4</source_block_id>
     <sink_block_id>blocks_repack_bits_bb_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>virtual_source_4</source_block_id>
+    <sink_block_id>digital_packet_headergenerator_bb_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

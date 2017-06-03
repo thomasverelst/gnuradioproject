@@ -52,6 +52,7 @@ namespace gr {
       uint64_t d_last_time_offset; //!< Item number of the last time tag
       pmt::pmt_t d_last_time; //!< The actual time that was indicated
       double d_sampling_time; //!< Inverse sampling rate
+      int d_header_len_divider;
       std::vector<pmt::pmt_t> d_special_tags; //!< List of special tags
       std::vector<pmt::pmt_t> d_special_tags_last_value; //!< The current value of the special tags
 
@@ -113,7 +114,8 @@ namespace gr {
         const double samp_rate, 
         const std::vector<std::string> &special_tags,
         const size_t header_padding,
-        const int preamble_len
+        const int preamble_len,
+        const int d_header_len_divider
         );
       ~preamble_header_payload_demux_impl();
 
