@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Encdec Custom
-# Generated: Sat Jun  3 22:01:17 2017
+# Generated: Sun Jun  4 17:40:01 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -36,7 +36,7 @@ from gnuradio import qtgui
 
 class encdec_custom(gr.top_block, Qt.QWidget):
 
-    def __init__(self, frame_size=60, puncpat='11'):
+    def __init__(self):
         gr.top_block.__init__(self, "Encdec Custom")
         Qt.QWidget.__init__(self)
         self.setWindowTitle("Encdec Custom")
@@ -61,33 +61,12 @@ class encdec_custom(gr.top_block, Qt.QWidget):
         self.restoreGeometry(self.settings.value("geometry").toByteArray())
 
         ##################################################
-        # Parameters
-        ##################################################
-        self.frame_size = frame_size
-        self.puncpat = puncpat
-
-        ##################################################
         # Variables
         ##################################################
-        self.rate = rate = 2
-        self.polys = polys = [109, 79]
-        self.k = k = 7
         self.constel_header = constel_header = digital.constellation_bpsk()
         self.samp_rate = samp_rate = 32000
         self.preamble = preamble = [1,-1,1,-1,1,1,-1,-1,1,1,-1,1,1,1,-1,1,1,-1,1,-1,-1,1,-1,-1,1,1,1,-1,-1,-1,1,-1,1,1,1,1,-1,-1,1,-1,1,-1,-1,-1,1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,-1,1,1,1,1,1,1,-1,-1]
         self.header_formatter = header_formatter = digital.packet_header_default(32/constel_header.bits_per_symbol(), "packet_len", "packet_num", constel_header.bits_per_symbol())
-
-
-        self.enc_cc = enc_cc = fec.cc_encoder_make(frame_size*8, k, rate, (polys), 0, fec.CC_STREAMING, False)
-
-
-
-        self.dec_cc_2 = dec_cc_2 = fec.cc_decoder.make(frame_size*8, k, rate, (polys), 0, -1, fec.CC_STREAMING, False)
-
-
-
-        self.dec_cc_1 = dec_cc_1 = fec.cc_decoder.make(frame_size*8, k, rate, (polys), 0, -1, fec.CC_STREAMING, False)
-
         self.constel_payload = constel_payload = digital.constellation_8psk()
 
         ##################################################
@@ -312,7 +291,7 @@ class encdec_custom(gr.top_block, Qt.QWidget):
         self.digital_binary_slicer_fb_0_0 = digital.binary_slicer_fb()
         self.digital_binary_slicer_fb_0 = digital.binary_slicer_fb()
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
-        self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 96, "packet_len")
+        self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 50, "packet_len")
         self.blocks_repack_bits_bb_0_2 = blocks.repack_bits_bb(1, 8, "", False, gr.GR_LSB_FIRST)
         self.blocks_repack_bits_bb_0_1 = blocks.repack_bits_bb(8, 1, '', False, gr.GR_LSB_FIRST)
         self.blocks_repack_bits_bb_0_0_0 = blocks.repack_bits_bb(1, 8, "", False, gr.GR_LSB_FIRST)
@@ -321,7 +300,7 @@ class encdec_custom(gr.top_block, Qt.QWidget):
         self.blocks_char_to_float_1_0 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0_0_0 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0 = blocks.char_to_float(1, 1)
-        self.analog_random_source_x_0 = blocks.vector_source_b(map(int, numpy.random.randint(0, 256, 10)), True)
+        self.analog_random_source_x_0 = blocks.vector_source_b(map(int, numpy.random.randint(0, 256, 10000)), True)
 
         ##################################################
         # Connections
@@ -360,36 +339,6 @@ class encdec_custom(gr.top_block, Qt.QWidget):
         self.settings.setValue("geometry", self.saveGeometry())
         event.accept()
 
-    def get_frame_size(self):
-        return self.frame_size
-
-    def set_frame_size(self, frame_size):
-        self.frame_size = frame_size
-
-    def get_puncpat(self):
-        return self.puncpat
-
-    def set_puncpat(self, puncpat):
-        self.puncpat = puncpat
-
-    def get_rate(self):
-        return self.rate
-
-    def set_rate(self, rate):
-        self.rate = rate
-
-    def get_polys(self):
-        return self.polys
-
-    def set_polys(self, polys):
-        self.polys = polys
-
-    def get_k(self):
-        return self.k
-
-    def set_k(self, k):
-        self.k = k
-
     def get_constel_header(self):
         return self.constel_header
 
@@ -418,24 +367,6 @@ class encdec_custom(gr.top_block, Qt.QWidget):
     def set_header_formatter(self, header_formatter):
         self.header_formatter = header_formatter
 
-    def get_enc_cc(self):
-        return self.enc_cc
-
-    def set_enc_cc(self, enc_cc):
-        self.enc_cc = enc_cc
-
-    def get_dec_cc_2(self):
-        return self.dec_cc_2
-
-    def set_dec_cc_2(self, dec_cc_2):
-        self.dec_cc_2 = dec_cc_2
-
-    def get_dec_cc_1(self):
-        return self.dec_cc_1
-
-    def set_dec_cc_1(self, dec_cc_1):
-        self.dec_cc_1 = dec_cc_1
-
     def get_constel_payload(self):
         return self.constel_payload
 
@@ -443,20 +374,7 @@ class encdec_custom(gr.top_block, Qt.QWidget):
         self.constel_payload = constel_payload
 
 
-def argument_parser():
-    parser = OptionParser(usage="%prog: [options]", option_class=eng_option)
-    parser.add_option(
-        "", "--frame-size", dest="frame_size", type="intx", default=60,
-        help="Set Frame Size [default=%default]")
-    parser.add_option(
-        "", "--puncpat", dest="puncpat", type="string", default='11',
-        help="Set puncpat [default=%default]")
-    return parser
-
-
 def main(top_block_cls=encdec_custom, options=None):
-    if options is None:
-        options, _ = argument_parser().parse_args()
 
     from distutils.version import StrictVersion
     if StrictVersion(Qt.qVersion()) >= StrictVersion("4.5.0"):
@@ -464,7 +382,7 @@ def main(top_block_cls=encdec_custom, options=None):
         Qt.QApplication.setGraphicsSystem(style)
     qapp = Qt.QApplication(sys.argv)
 
-    tb = top_block_cls(frame_size=options.frame_size, puncpat=options.puncpat)
+    tb = top_block_cls()
     tb.start()
     tb.show()
 

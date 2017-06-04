@@ -5,7 +5,7 @@
   <category>[Packetizer]</category>
   <import>import packetizer</import>
   <import>from gnuradio import digital</import>
-  <make> packetizer.preamble_header_payload_demux($header_len, $items_per_symbol, $guard_interval, $length_tag_key, $trigger_tag_key, $output_symbols, $type.itemsize, $timing_tag_key, $samp_rate, $special_tags, $header_padding, $preamble_len) </make>
+  <make> packetizer.preamble_header_payload_demux($header_len, $items_per_symbol, $guard_interval, $length_tag_key, $trigger_tag_key, $output_symbols, $type.itemsize, $timing_tag_key, $samp_rate, $special_tags, $header_padding, $preamble_len, $header_len_divider) </make>
  <param>
     <name>Header Length (Symbols)</name>
     <key>header_len</key>
@@ -109,6 +109,16 @@
     <value>(,)</value>
     <type>raw</type>
   </param>
+  <param>
+    <name>Header Length value divider</name>
+    <key>header_len_divider</key>
+    <value>1</value>
+    <type>int</type>
+  </param>
+
+
+
+
   <sink>
     <name>in</name>
     <type>$type</type>

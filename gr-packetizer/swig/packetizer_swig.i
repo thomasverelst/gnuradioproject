@@ -48,3 +48,7 @@ GR_SWIG_BLOCK_MAGIC2(packetizer, tagged_whitener);
 GR_SWIG_BLOCK_MAGIC2(packetizer, corr_est_cc);
 %include "packetizer/message_sequence_checker.h"
 GR_SWIG_BLOCK_MAGIC2(packetizer, message_sequence_checker);
+%include "gnuradio/block_gateway.h"
+
+%include "gnuradio/block.h"
+%include "gnuradio/tags.h"

@@ -37,7 +37,7 @@ class packet_decoder(gr.hier_block2):
         self.message_port_register_hier_out("header_data")
 
         #Demux
-        header_payload_demux = packetizer.preamble_header_payload_demux(header_formatter.header_len(), 1, 0, "packet_len", triggertagname, True, gr.sizeof_gr_complex, "rx_time", samp_rate, ("phase_est", "time_est"), 0, len(preamble))
+        header_payload_demux = packetizer.preamble_header_payload_demux(header_formatter.header_len(), 1, 0, "packet_len", triggertagname, True, gr.sizeof_gr_complex, "rx_time", samp_rate, ("phase_est", "time_est"), 0, len(preamble), constel_payload.bits_per_symbol())
 
         # Feedback loop for payload length
         if(do_costas):
@@ -50,17 +50,16 @@ class packet_decoder(gr.hier_block2):
         if(do_costas):
             payload_costas = digital.costas_loop_cc(3.14*2/100, 2**constel_payload.bits_per_symbol(), False)
         
+        payload_constel_soft_decoder = digital.constellation_soft_decoder_cf(constel_payload.base())
+        payload_tagged_stream_fix = packetizer.tagged_stream_fix("packet_len")
+
+        if not soft_output:
+            payload_slice_bits = digital.binary_slicer_fb()
 
         if(do_whiten):
             payload_tagged_whitener = packetizer.tagged_whitener(False, (), 1, "packet_len")
 
-        if(soft_output):
-            payload_constel_soft_decoder = digital.constellation_soft_decoder_cf(constel_payload.base())
-            tagged_stream_multiply_length = blocks.tagged_stream_multiply_length(gr.sizeof_float*1, "packet_len", constel_payload.bits_per_symbol())
-        else:
-            payload_constel_decoder = digital.constellation_decoder_cb(constel_payload)
-            #payload_repack_symbols = blocks.repack_bits_bb(8,8, "", False, gr.GR_LSB_FIRST)
-            payload_repack_bits = blocks.repack_bits_bb(constel_payload.bits_per_symbol(), 1, "packet_len", False, gr.GR_MSB_FIRST)
+
         #Connect
 
         #Input
@@ -78,29 +77,21 @@ class packet_decoder(gr.hier_block2):
 
         #Payload chain
         
-        if(soft_output):
-            if(do_costas):
-                self.connect((header_payload_demux, 1), payload_costas)
-                self.connect(payload_costas, payload_constel_soft_decoder)
-            else:
-                self.connect((header_payload_demux, 1), payload_constel_soft_decoder) 
-            
-            self.connect(payload_constel_soft_decoder, tagged_stream_multiply_length)
-            self.connect(tagged_stream_multiply_length, self)
-
+        if do_costas:
+            self.connect((header_payload_demux, 1), payload_costas)
+            self.connect(payload_costas, payload_constel_soft_decoder)
         else:
-            if(do_costas):
-                self.connect((header_payload_demux, 1), payload_costas)
-                self.connect(payload_costas, payload_constel_decoder)
-            else:
-                self.connect((header_payload_demux, 1), payload_constel_decoder)        
+            self.connect((header_payload_demux, 1), payload_constel_soft_decoder) 
+            
+        self.connect(payload_constel_soft_decoder, payload_tagged_stream_fix)
+           
 
-
-            self.connect(payload_constel_decoder, payload_repack_bits)
-            #self.connect(payload_repack_symbols, payload_repack_bits)
-
+        if soft_output:
+            self.connect(payload_tagged_stream_fix, self)
+        else:
+            self.connect(payload_tagged_stream_fix, payload_slice_bits)
             if(do_whiten):
-                self.connect(payload_repack_bits, payload_tagged_whitener)
+                self.connect(payload_slice_bits, payload_tagged_whitener)
                 self.connect(payload_tagged_whitener, self)
             else:
-                self.connect(payload_repack_bits, self)
+                self.connect(payload_slice_bits, self)

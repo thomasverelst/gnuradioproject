@@ -26,6 +26,8 @@
 #include "preamble_header_payload_demux_impl.h"
 #include <boost/format.hpp>
 #include <climits>
+#include <math.h> 
+#include <stdio.h> 
 
 using namespace std;
 
@@ -80,7 +82,8 @@ namespace gr {
       const double samp_rate, 
       const std::vector<std::string> &special_tags,
       const size_t header_padding,
-      int preamble_len
+      int preamble_len,
+      int header_len_divider
       )
     {
       return gnuradio::get_initial_sptr
@@ -96,7 +99,8 @@ namespace gr {
           samp_rate, 
           special_tags, 
           header_padding,
-          preamble_len
+          preamble_len,
+          header_len_divider
         ));
     }
 
@@ -115,7 +119,8 @@ namespace gr {
       const double samp_rate, 
       const std::vector<std::string> &special_tags,
       const size_t header_padding,
-      int preamble_len
+      int preamble_len,
+      int header_len_divider
     )
       : gr::block("preamble_header_payload_demux",
              io_signature::make2(1, 2, itemsize, sizeof(char)),
@@ -142,8 +147,13 @@ namespace gr {
       d_payload_offset_key(pmt::intern("payload_offset")),
       d_last_time_offset(0),
       d_last_time(pmt::make_tuple(pmt::from_uint64(0L), pmt::from_double(0.0))),
-      d_sampling_time(1.0/samp_rate)
+      d_sampling_time(1.0/samp_rate),
+      d_header_len_divider(header_len_divider)
     {
+
+
+
+
       //cout << "PREAMBLE HEADER PAYLOAD DEMUX SAYS HELLO WORLD";
       if (d_header_len < 1) {
         throw std::invalid_argument("Header length must be at least 1 symbol.");
@@ -458,7 +468,12 @@ namespace gr {
       d_state = STATE_HEADER_RX_FAIL;
 
       if (pmt::is_integer(header_data)) {
-        d_curr_payload_len = pmt::to_long(header_data);
+        if(d_header_len_divider > 1){
+            d_curr_payload_len = ceil(( (double) pmt::to_long(header_data))/d_header_len_divider) ;
+        }else{
+            d_curr_payload_len = pmt::to_long(header_data);
+        }
+        
         d_payload_tag_keys.push_back(d_len_tag_key);
         d_payload_tag_values.push_back(header_data);
         d_state = STATE_HEADER_RX_SUCCESS;
@@ -469,7 +484,15 @@ namespace gr {
           d_payload_tag_keys.push_back(pmt::car(this_item));
           d_payload_tag_values.push_back(pmt::cdr(this_item));
           if (pmt::equal(pmt::car(this_item), d_len_tag_key)) {
-            d_curr_payload_len = pmt::to_long(pmt::cdr(this_item));
+            if(d_header_len_divider > 1){
+              d_curr_payload_len = ceil(( (double) pmt::to_long(pmt::cdr(this_item)))/d_header_len_divider) ;
+            }else{
+                d_curr_payload_len = pmt::to_long(pmt::cdr(this_item));
+            }
+
+
+
+            
             d_state = STATE_HEADER_RX_SUCCESS;
           }
           if (pmt::equal(pmt::car(this_item), d_payload_offset_key)) {
@@ -504,6 +527,7 @@ namespace gr {
           set_min_noutput_items(d_curr_payload_len * (d_output_symbols ? 1 : d_items_per_symbol));
         }
       }
+      //std::cout<< "d_curr_payload_len" << d_curr_payload_len << std::endl;
     } /* parse_header_data_msg() */
 
 

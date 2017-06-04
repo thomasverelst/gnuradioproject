@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<block>
+  <name>Tagged Stream Fix</name>
+  <key>packetizer_tagged_stream_fix</key>
+  <category>[Packetizer]</category>
+  <import>import packetizer</import>
+  <make>packetizer.tagged_stream_fix($tagname)</make>
+  <param>
+  <name>Tag Name</name>
+    <key>tagname</key>
+    <value>"packet_len"</value>
+    <type>string</type>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>float</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>float</type>
+  </source>
+</block>

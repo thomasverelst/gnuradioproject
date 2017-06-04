@@ -48,3 +48,7 @@ GR_SWIG_BLOCK_MAGIC2(packetizr, tagged_whitener);
 %include "packetizr/whitener.h"
 %include "packetizr/corr_est_cc.h"
 GR_SWIG_BLOCK_MAGIC2(packetizr, corr_est_cc);
+
+%include "gnuradio/block_gateway.h"
+
+%include "gnuradio/block.h"

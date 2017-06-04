@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Encdec Custom Fec
-# Generated: Sat Jun  3 22:55:38 2017
+# Generated: Sun Jun  4 18:34:56 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -256,12 +256,6 @@ class encdec_custom_fec(gr.top_block, Qt.QWidget):
         self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, packlen, "packet_len")
         self.blocks_repack_bits_bb_0_1 = blocks.repack_bits_bb(8, 1, '', False, gr.GR_LSB_FIRST)
         self.blocks_message_debug_0 = blocks.message_debug()
-        self.blocks_file_sink_0_1 = blocks.file_sink(gr.sizeof_char*1, '/home/thomas/Desktop/test0.txt', False)
-        self.blocks_file_sink_0_1.set_unbuffered(False)
-        self.blocks_file_sink_0_0 = blocks.file_sink(gr.sizeof_char*1, '/home/thomas/Desktop/test2.txt', False)
-        self.blocks_file_sink_0_0.set_unbuffered(False)
-        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_char*1, '/home/thomas/Desktop/test1.txt', False)
-        self.blocks_file_sink_0.set_unbuffered(False)
         self.blocks_char_to_float_1_0 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0_1_0 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0_1 = blocks.char_to_float(1, 1)
@@ -292,16 +286,13 @@ class encdec_custom_fec(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_throttle_0, 0), (self.packetizer_packet_decoder_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.packetizer_packet_decoder_0_0, 0))
         self.connect((self.digital_binary_slicer_fb_0, 0), (self.blocks_char_to_float_0_0_1, 0))
-        self.connect((self.digital_binary_slicer_fb_0, 0), (self.blocks_file_sink_0, 0))
         self.connect((self.digital_map_bb_0, 0), (self.blocks_char_to_float_0_1, 0))
         self.connect((self.fec_extended_tagged_decoder_0, 0), (self.blocks_char_to_float_0_0_0, 0))
         self.connect((self.fec_extended_tagged_decoder_0_0, 0), (self.blocks_char_to_float_1_0, 0))
         self.connect((self.fec_extended_tagged_encoder_0, 0), (self.blocks_char_to_float_0_0_1_0, 0))
-        self.connect((self.fec_extended_tagged_encoder_0, 0), (self.blocks_file_sink_0_1, 0))
         self.connect((self.fec_extended_tagged_encoder_0, 0), (self.packetizer_packet_encoder_0, 0))
         self.connect((self.packetizer_packet_decoder_0, 0), (self.digital_binary_slicer_fb_0, 0))
         self.connect((self.packetizer_packet_decoder_0_0, 0), (self.blocks_char_to_float_0_1_0, 0))
-        self.connect((self.packetizer_packet_decoder_0_0, 0), (self.blocks_file_sink_0_0, 0))
         self.connect((self.packetizer_packet_decoder_0_0, 0), (self.digital_map_bb_0, 0))
         self.connect((self.packetizer_packet_encoder_0, 0), (self.blocks_throttle_0, 0))
         self.connect((self.packetizer_packet_encoder_0, 0), (self.qtgui_time_sink_x_0, 0))

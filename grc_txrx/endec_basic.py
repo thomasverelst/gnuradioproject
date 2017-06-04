@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Endec Basic
-# Generated: Sat Jun  3 22:47:06 2017
+# Generated: Sun Jun  4 17:32:57 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -27,7 +27,7 @@ from gnuradio.filter import firdes
 from gnuradio.qtgui import Range, RangeWidget
 from optparse import OptionParser
 import numpy
-import packetizr
+import packetizer
 import sip
 import sys
 from gnuradio import qtgui
@@ -67,7 +67,7 @@ class endec_basic(gr.top_block, Qt.QWidget):
         self.samp_rate = samp_rate = 32000
         self.preamble = preamble = [1,-1,1,-1,1,1,-1,-1,1,1,-1,1,1,1,-1,1,1,-1,1,-1,-1,1,-1,-1,1,1,1,-1,-1,-1,1,-1,1,1,1,1,-1,-1,1,-1,1,-1,-1,-1,1,1,-1,-1,-1,-1,1,-1,-1,-1,-1,-1,1,1,1,1,1,1,-1,-1]
         self.header_formatter = header_formatter = digital.packet_header_default(32/constel_header.bits_per_symbol(), "packet_len", "packet_num", constel_header.bits_per_symbol())
-        self.constel_payload = constel_payload = digital.constellation_qpsk()
+        self.constel_payload = constel_payload = digital.constellation_8psk()
 
         ##################################################
         # Blocks
@@ -313,7 +313,9 @@ class endec_basic(gr.top_block, Qt.QWidget):
 
         self._qtgui_const_sink_x_0_0_win = sip.wrapinstance(self.qtgui_const_sink_x_0_0.pyqwidget(), Qt.QWidget)
         self.top_layout.addWidget(self._qtgui_const_sink_x_0_0_win)
-        self.packetizr_preamble_header_payload_demux_0 =  packetizr.preamble_header_payload_demux(32/constel_header.bits_per_symbol(), len(preamble), 1, 0, "packet_len", "packet_len", True, gr.sizeof_gr_complex, '', samp_rate, (), 0)
+        self.packetizer_tagged_stream_fix_0_0 = packetizer.tagged_stream_fix("packet_len")
+        self.packetizer_tagged_stream_fix_0 = packetizer.tagged_stream_fix("packet_len")
+        self.packetizer_preamble_header_payload_demux_0 =  packetizer.preamble_header_payload_demux(32/constel_header.bits_per_symbol(), 1, 0, "packet_len", "packet_len", False, gr.sizeof_gr_complex, "rx_time", samp_rate, (), 0, len(preamble), constel_payload.bits_per_symbol())
         self.digital_packet_headerparser_b_0 = digital.packet_headerparser_b(header_formatter.base())
         self.digital_packet_headergenerator_bb_0 = digital.packet_headergenerator_bb(header_formatter, "packet_len")
         self.digital_constellation_soft_decoder_cf_0 = digital.constellation_soft_decoder_cf(constel_payload.base())
@@ -328,11 +330,10 @@ class endec_basic(gr.top_block, Qt.QWidget):
         self.blocks_stream_to_tagged_stream_1 = blocks.stream_to_tagged_stream(gr.sizeof_gr_complex, 1, len(preamble), "packet_len")
         self.blocks_stream_to_tagged_stream_0_0_0 = blocks.stream_to_tagged_stream(gr.sizeof_gr_complex, 1, zero_padding, "packet_len")
         self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, 50, "packet_len")
-        self.blocks_repack_bits_bb_1 = blocks.repack_bits_bb(constel_payload.bits_per_symbol(), 1, "packet_len", False, gr.GR_MSB_FIRST)
+        self.blocks_repack_bits_bb_1 = blocks.repack_bits_bb(constel_payload.bits_per_symbol(), 1, '', False, gr.GR_MSB_FIRST)
         self.blocks_repack_bits_bb_0_1 = blocks.repack_bits_bb(8, 1, '', False, gr.GR_LSB_FIRST)
-        self.blocks_repack_bits_bb_0 = blocks.repack_bits_bb(1, constel_payload.bits_per_symbol(), "packet_len", False, gr.GR_MSB_FIRST)
+        self.blocks_repack_bits_bb_0 = blocks.repack_bits_bb(1, constel_payload.bits_per_symbol(), "packet_len", True, gr.GR_MSB_FIRST)
         self.blocks_null_source_0 = blocks.null_source(gr.sizeof_gr_complex*1)
-        self.blocks_message_debug_0 = blocks.message_debug()
         self.blocks_char_to_float_1_0 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_1 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0 = blocks.char_to_float(1, 1)
@@ -341,23 +342,22 @@ class endec_basic(gr.top_block, Qt.QWidget):
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.digital_packet_headerparser_b_0, 'header_data'), (self.blocks_message_debug_0, 'print'))
-        self.msg_connect((self.digital_packet_headerparser_b_0, 'header_data'), (self.packetizr_preamble_header_payload_demux_0, 'header_data'))
+        self.msg_connect((self.digital_packet_headerparser_b_0, 'header_data'), (self.packetizer_preamble_header_payload_demux_0, 'header_data'))
         self.connect((self.analog_random_source_x_0, 0), (self.blocks_repack_bits_bb_0_1, 0))
         self.connect((self.blocks_char_to_float_0, 0), (self.qtgui_time_sink_x_1, 0))
         self.connect((self.blocks_char_to_float_1, 0), (self.qtgui_time_sink_x_1, 1))
-        self.connect((self.blocks_char_to_float_1_0, 0), (self.qtgui_time_sink_x_1, 2))
+        self.connect((self.blocks_char_to_float_1_0, 0), (self.packetizer_tagged_stream_fix_0_0, 0))
         self.connect((self.blocks_null_source_0, 0), (self.blocks_stream_to_tagged_stream_0_0_0, 0))
         self.connect((self.blocks_repack_bits_bb_0, 0), (self.digital_chunks_to_symbols_xx_0_0, 0))
-        self.connect((self.blocks_repack_bits_bb_0, 0), (self.digital_packet_headergenerator_bb_0, 0))
         self.connect((self.blocks_repack_bits_bb_0_1, 0), (self.blocks_stream_to_tagged_stream_0, 0))
         self.connect((self.blocks_repack_bits_bb_1, 0), (self.blocks_char_to_float_1_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_char_to_float_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.blocks_repack_bits_bb_0, 0))
+        self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.digital_packet_headergenerator_bb_0, 0))
         self.connect((self.blocks_stream_to_tagged_stream_0_0_0, 0), (self.blocks_tagged_stream_mux_0, 3))
         self.connect((self.blocks_stream_to_tagged_stream_1, 0), (self.blocks_tagged_stream_mux_0, 0))
         self.connect((self.blocks_tagged_stream_mux_0, 0), (self.blocks_throttle_0, 0))
-        self.connect((self.blocks_throttle_0, 0), (self.packetizr_preamble_header_payload_demux_0, 0))
+        self.connect((self.blocks_throttle_0, 0), (self.packetizer_preamble_header_payload_demux_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.qtgui_time_sink_x_0_0, 0))
         self.connect((self.blocks_vector_source_x_0, 0), (self.blocks_stream_to_tagged_stream_1, 0))
         self.connect((self.digital_binary_slicer_fb_0, 0), (self.blocks_char_to_float_1, 0))
@@ -365,14 +365,16 @@ class endec_basic(gr.top_block, Qt.QWidget):
         self.connect((self.digital_chunks_to_symbols_xx_0_0, 0), (self.blocks_tagged_stream_mux_0, 2))
         self.connect((self.digital_constellation_decoder_cb_0, 0), (self.digital_packet_headerparser_b_0, 0))
         self.connect((self.digital_constellation_decoder_cb_1, 0), (self.blocks_repack_bits_bb_1, 0))
-        self.connect((self.digital_constellation_soft_decoder_cf_0, 0), (self.digital_binary_slicer_fb_0, 0))
+        self.connect((self.digital_constellation_soft_decoder_cf_0, 0), (self.packetizer_tagged_stream_fix_0, 0))
         self.connect((self.digital_packet_headergenerator_bb_0, 0), (self.digital_chunks_to_symbols_xx_0, 0))
-        self.connect((self.packetizr_preamble_header_payload_demux_0, 0), (self.digital_constellation_decoder_cb_0, 0))
-        self.connect((self.packetizr_preamble_header_payload_demux_0, 1), (self.digital_constellation_decoder_cb_1, 0))
-        self.connect((self.packetizr_preamble_header_payload_demux_0, 1), (self.digital_constellation_soft_decoder_cf_0, 0))
-        self.connect((self.packetizr_preamble_header_payload_demux_0, 0), (self.qtgui_const_sink_x_0_0, 0))
-        self.connect((self.packetizr_preamble_header_payload_demux_0, 0), (self.qtgui_time_sink_x_0_1_0_0_1, 0))
-        self.connect((self.packetizr_preamble_header_payload_demux_0, 1), (self.qtgui_time_sink_x_0_1_0_0_1_0, 0))
+        self.connect((self.packetizer_preamble_header_payload_demux_0, 0), (self.digital_constellation_decoder_cb_0, 0))
+        self.connect((self.packetizer_preamble_header_payload_demux_0, 1), (self.digital_constellation_decoder_cb_1, 0))
+        self.connect((self.packetizer_preamble_header_payload_demux_0, 1), (self.digital_constellation_soft_decoder_cf_0, 0))
+        self.connect((self.packetizer_preamble_header_payload_demux_0, 0), (self.qtgui_const_sink_x_0_0, 0))
+        self.connect((self.packetizer_preamble_header_payload_demux_0, 0), (self.qtgui_time_sink_x_0_1_0_0_1, 0))
+        self.connect((self.packetizer_preamble_header_payload_demux_0, 1), (self.qtgui_time_sink_x_0_1_0_0_1_0, 0))
+        self.connect((self.packetizer_tagged_stream_fix_0, 0), (self.digital_binary_slicer_fb_0, 0))
+        self.connect((self.packetizer_tagged_stream_fix_0_0, 0), (self.qtgui_time_sink_x_1, 2))
 
     def closeEvent(self, event):
         self.settings = Qt.QSettings("GNU Radio", "endec_basic")

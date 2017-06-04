@@ -32,7 +32,8 @@ GR_PYTHON_INSTALL(
     FILES
     __init__.py
     packet_decoder.py
-    pulseshape_vector.py DESTINATION ${GR_PYTHON_DIR}/packetizer
+    pulseshape_vector.py
+    tagged_stream_fix.py DESTINATION ${GR_PYTHON_DIR}/packetizer
 )
 
 ########################################################################

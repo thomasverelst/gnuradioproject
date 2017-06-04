@@ -33,4 +33,5 @@ except ImportError:
 # import any pure python here
 from packet_decoder import packet_decoder
 from pulseshape_vector import pulseshape_vector
+from tagged_stream_fix import tagged_stream_fix
 #

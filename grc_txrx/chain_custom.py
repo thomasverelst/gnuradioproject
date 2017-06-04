@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Chain Custom
-# Generated: Sat Jun  3 22:13:40 2017
+# Generated: Sun Jun  4 17:45:46 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -89,7 +89,7 @@ class chain_custom(gr.top_block, Qt.QWidget):
         self.noise_label = noise_label = noise
         self.header_formatter = header_formatter = digital.packet_header_default(32/constel_header.bits_per_symbol(), "packet_len", "packet_num", constel_header.bits_per_symbol())
         self.freq_offset_label = freq_offset_label = freq_offset
-        self.constel_payload = constel_payload = digital.constellation_qpsk()
+        self.constel_payload = constel_payload = digital.constellation_8psk()
 
         ##################################################
         # Blocks
@@ -569,7 +569,7 @@ class chain_custom(gr.top_block, Qt.QWidget):
         	0, #fc
         	samp_rate, #bw
         	"Channel spectrum", #name
-        	3 #number of inputs
+        	2 #number of inputs
         )
         self.qtgui_freq_sink_x_0.set_update_time(0.10)
         self.qtgui_freq_sink_x_0.set_y_axis(-140, 10)
@@ -595,7 +595,7 @@ class chain_custom(gr.top_block, Qt.QWidget):
                   "magenta", "yellow", "dark red", "dark green", "dark blue"]
         alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
                   1.0, 1.0, 1.0, 1.0, 1.0]
-        for i in xrange(3):
+        for i in xrange(2):
             if len(labels[i]) == 0:
                 self.qtgui_freq_sink_x_0.set_line_label(i, "Data {0}".format(i))
             else:
@@ -628,7 +628,7 @@ class chain_custom(gr.top_block, Qt.QWidget):
         self.packetizer_packet_decoder_0_0 = packetizer.packet_decoder((preamble), constel_header.base(), constel_payload.base(), header_formatter.base(), "corr_est", True, True, False, samp_rate, 1)
         self.packetizer_packet_decoder_0 = packetizer.packet_decoder((preamble), constel_header.base(), constel_payload.base(), header_formatter.base(), "corr_est", True, False, False, samp_rate, 1)
         self.packetizer_message_sequence_checker_0 = packetizer.message_sequence_checker("packet_num")
-        self.packetizer_corr_est_cc_0 = packetizer.corr_est_cc((shaped_preamble), 4, 99, 0.999993, 0.9,False)
+        self.packetizer_corr_est_cc_0 = packetizer.corr_est_cc((shaped_preamble), 4, 99, 0.999993, 0.8,False)
         self._noise_label_tool_bar = Qt.QToolBar(self)
 
         if None:
@@ -676,8 +676,7 @@ class chain_custom(gr.top_block, Qt.QWidget):
         self.blocks_complex_to_mag_0 = blocks.complex_to_mag(1)
         self.blocks_char_to_float_1_0 = blocks.char_to_float(1, 1)
         self.blocks_char_to_float_0 = blocks.char_to_float(1, 1)
-        self.analog_random_source_x_0 = blocks.vector_source_b(map(int, numpy.random.randint(0, 256, 1000)), True)
-        self.analog_pll_carriertracking_cc_0 = analog.pll_carriertracking_cc(3.14/1000, 0.5, -0.5)
+        self.analog_random_source_x_0 = blocks.vector_source_b(map(int, numpy.random.randint(0, 256, 10000)), True)
         self.analog_agc2_xx_0_0_0_0 = analog.agc2_cc(1e-3, 1e-4, 0.7, 0.7)
         self.analog_agc2_xx_0_0_0_0.set_max_gain(5)
 
@@ -686,8 +685,6 @@ class chain_custom(gr.top_block, Qt.QWidget):
         ##################################################
         self.msg_connect((self.packetizer_packet_decoder_0, 'header_data'), (self.packetizer_message_sequence_checker_0, 'data'))
         self.connect((self.analog_agc2_xx_0_0_0_0, 0), (self.packetizer_corr_est_cc_0, 0))
-        self.connect((self.analog_pll_carriertracking_cc_0, 0), (self.analog_agc2_xx_0_0_0_0, 0))
-        self.connect((self.analog_pll_carriertracking_cc_0, 0), (self.qtgui_freq_sink_x_0, 2))
         self.connect((self.analog_random_source_x_0, 0), (self.blocks_repack_bits_bb_0_1, 0))
         self.connect((self.blocks_char_to_float_0, 0), (self.qtgui_time_sink_x_1, 0))
         self.connect((self.blocks_char_to_float_1_0, 0), (self.qtgui_time_sink_x_1, 1))
@@ -703,7 +700,7 @@ class chain_custom(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_stream_to_tagged_stream_0, 0), (self.packetizer_packet_encoder_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.channels_channel_model_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.qtgui_freq_sink_x_0, 0))
-        self.connect((self.channels_channel_model_0, 0), (self.analog_pll_carriertracking_cc_0, 0))
+        self.connect((self.channels_channel_model_0, 0), (self.analog_agc2_xx_0_0_0_0, 0))
         self.connect((self.channels_channel_model_0, 0), (self.qtgui_freq_sink_x_0, 1))
         self.connect((self.digital_binary_slicer_fb_0_0, 0), (self.blocks_repack_bits_bb_0_0, 0))
         self.connect((self.digital_cma_equalizer_cc_0, 0), (self.packetizer_packet_decoder_0, 0))

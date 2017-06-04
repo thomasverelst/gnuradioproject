@@ -187,7 +187,6 @@ packet_encoder_impl::work(int noutput_items,
   // Some variables
   unsigned int header_bps = d_constel_header->bits_per_symbol();
   unsigned int header_length = d_header_formatter->header_len(); // Header length in number of symbols
-  //std::cout << "HEADER_LENGTH "<<header_length;
 
   unsigned int payload_bps = d_constel_payload->bits_per_symbol();
   unsigned int payload_length = ceil((float) ninput_items[0] / payload_bps); // Payload length in symbols
@@ -202,7 +201,7 @@ packet_encoder_impl::work(int noutput_items,
   /************* HEADER **************/
   /* Generate header */
   unsigned char* header_in = new unsigned char[header_length];
-  if (!d_header_formatter->header_formatter(payload_length, header_in)) {
+  if (!d_header_formatter->header_formatter(ninput_items[0], header_in)) {
     GR_LOG_FATAL(d_logger, boost::format("header_formatter() returned false (this shouldn't happen). Offending header started at %1%") % nitems_read(0));
     throw std::runtime_error("header formatter returned false.");
   }
