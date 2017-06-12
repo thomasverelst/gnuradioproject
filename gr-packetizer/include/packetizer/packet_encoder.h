@@ -68,6 +68,8 @@ namespace gr {
         const gr::digital::constellation_sptr constel_header, 
         const gr::digital::constellation_sptr constel_payload, 
         const gr::digital::packet_header_default::sptr &header_formatter, 
+        const bool diff_header = 0,
+        const bool diff_payload = 0,
         const std::string &lengthtagname = "packet_len", 
         const int zero_padding = 0,
         const bool whiten = 0,

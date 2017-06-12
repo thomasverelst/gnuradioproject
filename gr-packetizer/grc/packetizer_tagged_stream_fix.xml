@@ -4,7 +4,41 @@
   <key>packetizer_tagged_stream_fix</key>
   <category>[Packetizer]</category>
   <import>import packetizer</import>
-  <make>packetizer.tagged_stream_fix($tagname)</make>
+  <make>packetizer.tagged_stream_fix($tagname,$type.datatype)</make>
+
+   <param>
+    <name>IO Type</name>
+    <key>type</key>
+    <type>enum</type>
+<!--     <option>
+      <name>Complex</name>
+      <key>complex</key>
+      <opt>size:gr.sizeof_gr_complex</opt>
+    </option> -->
+    <option>
+      <name>Float</name>
+      <key>float</key>
+      <opt>size:gr.sizeof_float</opt>
+      <opt>datatype:numpy.float32</opt>
+    </option>
+<!--     <option>
+      <name>Int</name>
+      <key>int</key>
+      <opt>size:gr.sizeof_int</opt>
+    </option>
+    <option>
+      <name>Short</name>
+      <key>short</key>
+      <opt>size:gr.sizeof_short</opt>
+    </option> -->
+    <option>
+      <name>Byte</name>
+      <key>byte</key>
+      <opt>size:gr.sizeof_char</opt>
+      <opt>datatype:numpy.int8</opt>
+    </option>
+  </param>
+  
   <param>
   <name>Tag Name</name>
     <key>tagname</key>
@@ -12,13 +46,14 @@
     <type>string</type>
   </param>
 
-  <sink>
+ <sink>
     <name>in</name>
-    <type>float</type>
+    <type>$type</type>
+    <vlen>$vlen</vlen>
   </sink>
-
   <source>
     <name>out</name>
-    <type>float</type>
+    <type>$type</type>
+    <vlen>$vlen</vlen>
   </source>
 </block>

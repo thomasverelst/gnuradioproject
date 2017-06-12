@@ -23,18 +23,23 @@ import pmt
 from gnuradio import gr
 from gnuradio import digital
 from gnuradio import blocks
+import numpy
 import packetizer
 
 class packet_decoder(gr.hier_block2):
     """
     docstring for block packet_decoder
     """
-    def __init__(self, preamble, constel_header, constel_payload, header_formatter, triggertagname, do_costas, soft_output, do_whiten, samp_rate, itemsize):
+    def __init__(self, preamble, constel_header, constel_payload, header_formatter, samp_rate=32000,  diff_header=False, diff_payload=False,triggertagname="corr_est", do_costas=False, soft_output=False, do_whiten=False, itemsize=1):
         gr.hier_block2.__init__(self,
             "packet_decoder",
             gr.io_signature(1, 1, gr.sizeof_gr_complex),  # Input signature
             gr.io_signature(1, 1, gr.sizeof_float if soft_output else gr.sizeof_char))    # Output signature
         self.message_port_register_hier_out("header_data")
+
+        if(soft_output == True and diff_payload == True):
+            print "WARNING: Packet Decocer: soft output with differential decoding of payload not supported! Soft output disabled"
+            soft_output = False
 
         #Demux
         header_payload_demux = packetizer.preamble_header_payload_demux(header_formatter.header_len(), 1, 0, "packet_len", triggertagname, True, gr.sizeof_gr_complex, "rx_time", samp_rate, ("phase_est", "time_est"), 0, len(preamble), constel_payload.bits_per_symbol())
@@ -42,6 +47,10 @@ class packet_decoder(gr.hier_block2):
         # Feedback loop for payload length
         if(do_costas):
             header_costas = digital.costas_loop_cc(3.14*2/100, 2**constel_header.bits_per_symbol(), False)
+
+        if(diff_header):
+            header_diff_dec = digital.diff_decoder_bb(len(constel_header.points()))
+
         #header_repack_bits = blocks.repack_bits_bb(constel_header.bits_per_symbol(), 1, "", False, gr.GR_LSB_FIRST)
         header_constel_decoder = digital.constellation_decoder_cb(constel_header)
         header_headerparser = digital.packet_headerparser_b(header_formatter.base())
@@ -50,14 +59,28 @@ class packet_decoder(gr.hier_block2):
         if(do_costas):
             payload_costas = digital.costas_loop_cc(3.14*2/100, 2**constel_payload.bits_per_symbol(), False)
         
-        payload_constel_soft_decoder = digital.constellation_soft_decoder_cf(constel_payload.base())
-        payload_tagged_stream_fix = packetizer.tagged_stream_fix("packet_len")
+        
+        
 
-        if not soft_output:
-            payload_slice_bits = digital.binary_slicer_fb()
+        if soft_output:
+            payload_constel_decoder = digital.constellation_soft_decoder_cf(constel_payload.base())
+            payload_tagged_stream_fix = packetizer.tagged_stream_fix("packet_len", numpy.float32)
+        else:
+            payload_constel_decoder = digital.constellation_decoder_cb(constel_payload.base())
+            payload_tagged_stream_fix = packetizer.tagged_stream_fix("packet_len", numpy.int8)
+            if(diff_payload):
+                payload_diff_dec = digital.diff_decoder_bb(len(constel_payload.points()))
+            payload_repack_bits = blocks.repack_bits_bb(constel_payload.bits_per_symbol(), 1, "", False, gr.GR_MSB_FIRST)
+            payload_repack_bits_2 = blocks.repack_bits_bb(1, constel_payload.bits_per_symbol(), "", False, gr.GR_MSB_FIRST)
+            payload_repack_bits_3 = blocks.repack_bits_bb(constel_payload.bits_per_symbol(), 1, "", False, gr.GR_MSB_FIRST)
+            
+            if(do_whiten):
+                payload_tagged_whitener = packetizer.tagged_whitener(False, (), 1, "packet_len")
+            #payload_slice_bits = digital.binary_slicer_fb()
 
-        if(do_whiten):
-            payload_tagged_whitener = packetizer.tagged_whitener(False, (), 1, "packet_len")
+
+       
+        
 
 
         #Connect
@@ -71,27 +94,47 @@ class packet_decoder(gr.hier_block2):
             self.connect(header_costas, header_constel_decoder)
         else:
             self.connect((header_payload_demux, 0), header_constel_decoder)
-        self.connect(header_constel_decoder, header_headerparser)
+
+        
+        if(diff_header):
+            self.connect(header_constel_decoder, header_diff_dec)
+            self.connect(header_diff_dec, header_headerparser)
+        else:
+            self.connect(header_constel_decoder, header_headerparser)
+
         self.msg_connect((header_headerparser, "header_data"), (header_payload_demux, "header_data"))
         self.msg_connect((header_headerparser, "header_data"), (self, "header_data"))
 
+
         #Payload chain
-        
         if do_costas:
             self.connect((header_payload_demux, 1), payload_costas)
-            self.connect(payload_costas, payload_constel_soft_decoder)
+            self.connect(payload_costas, payload_constel_decoder)
         else:
-            self.connect((header_payload_demux, 1), payload_constel_soft_decoder) 
+            self.connect((header_payload_demux, 1), payload_constel_decoder) 
             
-        self.connect(payload_constel_soft_decoder, payload_tagged_stream_fix)
-           
-
+       
         if soft_output:
+            self.connect(payload_constel_decoder, payload_tagged_stream_fix)
             self.connect(payload_tagged_stream_fix, self)
+
         else:
-            self.connect(payload_tagged_stream_fix, payload_slice_bits)
-            if(do_whiten):
-                self.connect(payload_slice_bits, payload_tagged_whitener)
-                self.connect(payload_tagged_whitener, self)
+            self.connect(payload_constel_decoder, payload_repack_bits)
+            self.connect(payload_repack_bits, payload_tagged_stream_fix)
+
+            if(diff_payload):
+                self.connect(payload_tagged_stream_fix, payload_repack_bits_2)
+                self.connect(payload_repack_bits_2, payload_diff_dec)
+                self.connect(payload_diff_dec, payload_repack_bits_3)
+                if(do_whiten):
+                    self.connect(payload_repack_bits_3, payload_tagged_whitener)
+                    self.connect(payload_tagged_whitener, self)
+                else:
+                    self.connect(payload_repack_bits_3, self)
             else:
-                self.connect(payload_slice_bits, self)
+                if(do_whiten):
+                    self.connect(payload_tagged_stream_fix, payload_tagged_whitener)
+                    self.connect(payload_tagged_whitener, self)
+                else:
+                    self.connect(payload_tagged_stream_fix, self)
+            

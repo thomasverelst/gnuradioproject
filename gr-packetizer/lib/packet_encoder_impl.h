@@ -41,6 +41,10 @@ namespace gr {
       bool d_whiten;
       size_t d_itemsize;
       kernel::whitener d_whitener;
+      int d_last_diff;
+      int d_last_diff_payload;
+      bool d_diff_header;
+      bool d_diff_payload;
       
 
      protected:
@@ -50,13 +54,15 @@ namespace gr {
 
       packet_encoder_impl(
         const std::vector<int> preamble, 
-        digital::constellation_sptr constel_header, 
-        digital::constellation_sptr constel_payload, 
+        const digital::constellation_sptr constel_header, 
+        const digital::constellation_sptr constel_payload, 
         const digital::packet_header_default::sptr &header_formatter, 
+        const bool diff_header,
+        const bool diff_payload,
         const std::string &lengthtagname, 
-        int zero_padding, 
-        bool whiten,
-        size_t itemsize
+        const int zero_padding, 
+        const bool whiten,
+        const size_t itemsize
       );
       ~packet_encoder_impl();
 

@@ -37,11 +37,11 @@ class tagged_stream_fix(gr.basic_block):
     Tagged_stream blocks cannot handle "unbalanced" streams (more samples between packets than the packet length indicates), so 
     this block will "fix" the stream.
     """
-    def __init__(self, tagname):
+    def __init__(self, tagname, itemsize):
         gr.basic_block.__init__(self,
             name="tagged_stream_fix",
-            in_sig=[numpy.float32],
-            out_sig=[numpy.float32])
+            in_sig=[itemsize],
+            out_sig=[itemsize])
         self.todo = 0; #how many samples from last frame that should be outputted
         self.n_consumed = 0;
         self.tagname = tagname

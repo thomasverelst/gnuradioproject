@@ -4,7 +4,7 @@
   <key>packetizer_packet_decoder</key>
   <category>[Packetizer]</category>
   <import>import packetizer</import>
-  <make>packetizer.packet_decoder($preamble, $constel_header, $constel_payload, $header_formatter, $triggertagname, $do_costas, $soft_output, $whiten, $samp_rate, $itemsize)</make>
+  <make>packetizer.packet_decoder($preamble, $constel_header, $constel_payload, $header_formatter, $samp_rate, $diff_header, $diff_payload, $triggertagname, $do_costas, $soft_output, $whiten, $itemsize)</make>
 
   <param>
     <name>Preamble (sequence of 1 and -1)</name>
@@ -18,13 +18,38 @@
     <key>constel_header</key>
     <type>raw</type>
    </param>
+<param>
+    <name>Header differential mapping</name>
+    <key>diff_header</key>
+    <type>enum</type>
+    <option>
+      <name>False</name>
+      <key>False</key>
+    </option>
+    <option>
+      <name>True</name>
+      <key>True</key>
+    </option>
+  </param>
 
 <param>
     <name>Payload Constellation</name>
     <key>constel_payload</key>
     <type>raw</type>
   </param>
-
+<param>
+    <name>Payload differential mapping</name>
+    <key>diff_payload</key>
+    <type>enum</type>
+    <option>
+      <name>False</name>
+      <key>False</key>
+    </option>
+    <option>
+      <name>True</name>
+      <key>True</key>
+    </option>
+  </param>
 <param>
     <name>Header Formatter</name>
     <key>header_formatter</key>

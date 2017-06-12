@@ -36,9 +36,11 @@ namespace packetizer {
 packet_encoder::sptr
 packet_encoder::make(
   const std::vector<int> preamble,
-  digital::constellation_sptr constel_header,
-  digital::constellation_sptr constel_payload,
+  const digital::constellation_sptr constel_header,
+  const digital::constellation_sptr constel_payload,
   const digital::packet_header_default::sptr& header_formatter,
+  const bool diff_header,
+  const bool diff_payload,
   const std::string& lengthtagname,
   int zero_padding,
   bool whiten,
@@ -50,6 +52,8 @@ packet_encoder::make(
              constel_header,
              constel_payload,
              header_formatter,
+             diff_header,
+             diff_payload,
              lengthtagname,
              zero_padding,
              whiten,
@@ -61,23 +65,29 @@ packet_encoder::make(
 */
 packet_encoder_impl::packet_encoder_impl(
   const std::vector<int> preamble,
-  digital::constellation_sptr constel_header,
-  digital::constellation_sptr constel_payload,
+  const digital::constellation_sptr constel_header,
+  const digital::constellation_sptr constel_payload,
   const digital::packet_header_default::sptr& header_formatter,
+  const bool diff_header,
+  const bool diff_payload,
   const std::string& lengthtagname,
-  int zero_padding,
-  bool whiten,
-  size_t itemsize)
+  const int zero_padding,
+  const bool whiten,
+  const size_t itemsize)
   : gr::tagged_stream_block("packet_encoder",
                             gr::io_signature::make(1, 1, sizeof(char)),
                             gr::io_signature::make(1, 1, sizeof(gr_complex)), lengthtagname)
   , d_preamble(preamble)
   , d_constel_header(constel_header)
+  , d_diff_header(diff_header)
   , d_constel_payload(constel_payload)
+  , d_diff_payload(diff_payload)
   , d_zero_padding(zero_padding)
   , d_whiten(whiten)
   , d_itemsize(1)
   , d_header_formatter(header_formatter)
+  , d_last_diff(0)
+  , d_last_diff_payload(0)
 
 {
   //set_min_output_buffer(128000);
@@ -106,36 +116,6 @@ packet_encoder_impl::calculate_output_stream_length(const gr_vector_int& ninput_
   //std::cout << "PACKET_ENCODER : expected length " << nout << "\n";
   return nout;
 }
-
-// void
-// unpack_bits_lsb(const unsigned char* packed, unsigned char* unpacked, unsigned int n, unsigned int bits_n)
-// {
-//   unsigned char newval = 0;
-//   unsigned int tempindex = 1;
-//   unsigned int newindex = 0;
-
-//   // LSB FIRST for both (start extracting with LSB first, start filling with LSB first)
-//   // 00011010|10011011 with bits_n = 2
-//   // will become 01|01|10|00|11|01|10|01
-
-//   // for every incoming byte
-//   for (unsigned int i = 0; i < n; i++) {
-//     char val = packed[i];
-
-//     // for every bit of incoming byte
-//     for (unsigned int j = 0; j < sizeof(char) * CHAR_BIT; j++) { // TODO check char length
-//       newval = newval | ((val & 0b1) << (tempindex - 1));
-//       if (tempindex == bits_n) {
-//         unpacked[newindex] = newval;
-//         newindex++;
-//         newval = 0;
-//         tempindex = 0;
-//       }
-//       tempindex++;
-//       val = val >> 1;
-//     }
-//   }
-// }
 
 void
 pack_bits_msb(const unsigned char* unpacked, unsigned char* packed, unsigned int n, unsigned int bits_n)
@@ -167,6 +147,7 @@ pack_bits_msb(const unsigned char* unpacked, unsigned char* packed, unsigned int
    // Fill last byte
    packed[newindex] = newval;
 }
+
 
 int
 packet_encoder_impl::work(int noutput_items,
@@ -206,13 +187,14 @@ packet_encoder_impl::work(int noutput_items,
     throw std::runtime_error("header formatter returned false.");
   }
 
-  /* Pack byte data to symbol */
-
-  // Pack 1-bit chars to a char with k significant bit (MSB first)
-  // where k is the number of bits per symbol for the given constellation
-  // unsigned char* header_packed = new unsigned char[header_length];
-  // pack_bits(header_in, header_packed, d_header_formatter->header_len(), header_bps);
-  // delete[] header_in;
+  /* Apply differental code, if  needed */
+  if(d_diff_header){
+    int order = (d_constel_header->points()).size();
+    for(int i = 0; i < header_length; i++) {
+      header_in[i] = (header_in[i] + d_last_diff) % order;
+      d_last_diff = header_in[i];
+    }
+  }
 
   /* Mapping */
 
@@ -233,9 +215,19 @@ packet_encoder_impl::work(int noutput_items,
     d_whitener.do_whitening(payload_in, payload_in, ninput_items[0], 0);
   }
 
+
   /* Pack payload data */
   unsigned char* payload_packed = new unsigned char[payload_length];
   pack_bits_msb(payload_in, payload_packed, ninput_items[0], payload_bps);
+
+  /* Apply differental code, if needed */
+  if(d_diff_payload){
+    int order = (d_constel_payload->points()).size();
+    for(int i = 0; i < payload_length; i++) {
+      payload_packed[i] = (payload_packed[i] + d_last_diff_payload) % order;
+      d_last_diff_payload = payload_packed[i];
+    }
+  }
 
   /* Mapping */
   gr_complex* payload_symbols = new gr_complex[payload_length];

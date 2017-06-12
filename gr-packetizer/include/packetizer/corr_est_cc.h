@@ -97,8 +97,9 @@ namespace gr {
        * \param mark_delay tag marking delay in samples after the
        *                   corr_start tag
        * \param threshold  Adaptive Threshold, relative to signal power level.
-       * \param absolute_treshold Threshold of correlator, relative to a 100%
+       * \param fixed_treshold Threshold of correlator, relative to a 100%
        *                   correlation (1.0). Default is 0.9.
+       * \param verbose    Show debug information
        */
       static sptr make(const std::vector<gr_complex> &symbols,
                        float sps, unsigned int mark_delay, double threshold=0.999999, float fixed_threshold=0.9, bool verbose=false);

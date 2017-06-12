@@ -480,37 +480,6 @@
     </param>
   </block>
   <block>
-    <key>blocks_message_debug</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(64, 1392)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_message_debug_0</value>
-    </param>
-  </block>
-  <block>
     <key>blocks_null_source</key>
     <param>
       <key>alias</key>
@@ -597,7 +566,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(592, 676)</value>
+      <value>(608, 676)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1080,7 +1049,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1176, 1368)</value>
+      <value>(1136, 1312)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1182,7 +1151,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(784, 676)</value>
+      <value>(824, 676)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1241,7 +1210,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(248, 1332)</value>
+      <value>(256, 1348)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1284,7 +1253,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(712, 1268)</value>
+      <value>(664, 1268)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1327,7 +1296,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(592, 596)</value>
+      <value>(600, 596)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1374,7 +1343,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(32, 1332)</value>
+      <value>(40, 1348)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1500,11 +1469,11 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>1</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(976, 1268)</value>
+      <value>(904, 1268)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1513,6 +1482,10 @@
     <param>
       <key>id</key>
       <value>packetizer_tagged_stream_fix_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -1555,7 +1528,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(240, 1484)</value>
+      <value>(224, 1532)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -1910,7 +1883,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(248, 1016)</value>
+      <value>(248, 960)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -2273,7 +2246,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(224, 1392)</value>
+      <value>(208, 1448)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -2636,7 +2609,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(784, 1168)</value>
+      <value>(776, 1160)</value>
     </param>
     <param>
       <key>gui_hint</key>
@@ -3446,7 +3419,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1320, 1364)</value>
+      <value>(1304, 1316)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3635,7 +3608,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(480, 1332)</value>
+      <value>(504, 1380)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3662,7 +3635,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(344, 684)</value>
+      <value>(416, 684)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3796,12 +3769,6 @@
     <sink_block_id>digital_chunks_to_symbols_xx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>digital_packet_headerparser_b_0</source_block_id>
-    <sink_block_id>blocks_message_debug_0</sink_block_id>
-    <source_key>header_data</source_key>
-    <sink_key>print</sink_key>
   </connection>
   <connection>
     <source_block_id>digital_packet_headerparser_b_0</source_block_id>

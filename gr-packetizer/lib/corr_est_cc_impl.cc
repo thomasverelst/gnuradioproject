@@ -26,8 +26,6 @@
 
 
 
-
-
 #include <gnuradio/io_signature.h>
 #include <gnuradio/math.h>
 #include "corr_est_cc_impl.h"
@@ -270,19 +268,6 @@ namespace gr {
       // Find the magnitude squared of the correlation
        volk_32fc_magnitude_squared_32f(&d_corr_mag[0], corr, noutput_items);
 
-      // Calculate the average squared correlation magnitude of the input
-      // float detection = 0;
-      // for(int i = 0; i < noutput_items; i++) {
-      //  detection += d_corr_mag[i];
-      // }
-      // detection /= static_cast<float>(noutput_items);
-
-      // //Multiply by our threshold factor
-      // detection *= d_pfa;
-      // add_item_tag(1, nitems_written(0), pmt::intern("START"),
-      //                pmt::from_double(detection), d_src_id);
-      // add_item_tag(0, nitems_written(0)+noutput_items, pmt::intern("END"),
-      //                pmt::from_double(d_cnt), d_src_id);
 
       int isps = (int)(d_sps + 0.5f);
       int i = 0;
@@ -431,83 +416,3 @@ namespace gr {
 
   } /* namespace packetizer */
 } /* namespace gr */
-
-
-/*
-Generating: '/home/thomas/gr/gr-packetizer/examples/test_corr_est.py'
-
-Executing: /usr/bin/python2 -u /home/thomas/gr/gr-packetizer/examples/test_corr_est.py
-
-detection threshold: 7631.67
-correlated mag: 50680.4
-detection threshold: 8032.96
-detection threshold: 8614.67
-detection threshold: 7996.73
-detection threshold: 8355.84
-detection threshold: 7570.28
-detection threshold: 7811.37
-detection threshold: 9660.25
-detection threshold: 7976.39
-detection threshold: 9408.57
-detection threshold: 8414.57
-detection threshold: 8650.6
-detection threshold: 8058.32
-detection threshold: 7724.49
-detection threshold: 8682.8
-detection threshold: 8718.2
-detection threshold: 9041.4
-detection threshold: 7944.57
-detection threshold: 7781.51
-detection threshold: 8556.93
-detection threshold: 8082.82
-detection threshold: 8641.46
-detection threshold: 7118.68
-detection threshold: 25.1861
-correlated mag: 212.496
-detection threshold: 21.0574
-detection threshold: 22.8856
-detection threshold: 22.4578
-correlated mag: 212.641
-detection threshold: 21.8651
-correlated mag: 213.02
-detection threshold: 22.6148
-correlated mag: 212.245
-detection threshold: 23.5564
-detection threshold: 19.8529
-detection threshold: 21.9366
-correlated mag: 212.226
-detection threshold: 25.5764
-correlated mag: 216.712
-detection threshold: 21.9507
-detection threshold: 24.118
-detection threshold: 2695.81
-correlated mag: 28544.6
-detection threshold: 8454.21
-detection threshold: 8220.81
-detection threshold: 8459.57
-detection threshold: 7948.92
-detection threshold: 8642.37
-detection threshold: 7619.05
-detection threshold: 8442.55
-detection threshold: 9383.5
-detection threshold: 7346.4
-detection threshold: 8408.07
-detection threshold: 7787.48
-detection threshold: 8450.87
-detection threshold: 8734.48
-detection threshold: 7974.83
-detection threshold: 7702.9
-detection threshold: 8245.47
-detection threshold: 9565.13
-detection threshold: 8580.1
-detection threshold: 2703.45
-correlated mag: 11540.8
-detection threshold: 24.3947
-detection threshold: 25.3835
-detection threshold: 23.9396
-detection threshold: 23.9984
-detection threshold: 25.3023
-detection threshold: 24.0033
-detection threshold: 20.3142
-detection threshold: 20.9668
-*/

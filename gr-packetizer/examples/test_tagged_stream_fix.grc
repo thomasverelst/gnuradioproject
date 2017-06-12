@@ -298,6 +298,53 @@
     </param>
   </block>
   <block>
+    <key>blocks_char_to_float</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(856, 628)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_char_to_float_0_1</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>scale</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
     <key>blocks_null_source</key>
     <param>
       <key>alias</key>
@@ -537,7 +584,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(808, 596)</value>
+      <value>(1032, 508)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -546,6 +593,57 @@
     <param>
       <key>id</key>
       <value>packetizer_tagged_stream_fix_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>float</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>tagname</key>
+      <value>"packet_len"</value>
+    </param>
+  </block>
+  <block>
+    <key>packetizer_tagged_stream_fix</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(728, 564)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>packetizer_tagged_stream_fix_0_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>byte</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -628,7 +726,7 @@
     </param>
     <param>
       <key>label1</key>
-      <value>"Fixed data"</value>
+      <value>"Fixed data (floats)"</value>
     </param>
     <param>
       <key>marker1</key>
@@ -676,7 +774,7 @@
     </param>
     <param>
       <key>label2</key>
-      <value>"Original data"</value>
+      <value>"Fixed data (bytes)"</value>
     </param>
     <param>
       <key>marker2</key>
@@ -700,7 +798,7 @@
     </param>
     <param>
       <key>label3</key>
-      <value></value>
+      <value>"Original data"</value>
     </param>
     <param>
       <key>marker3</key>
@@ -864,7 +962,7 @@
     </param>
     <param>
       <key>nconnections</key>
-      <value>2</value>
+      <value>3</value>
     </param>
     <param>
       <key>size</key>
@@ -1308,6 +1406,12 @@
     <source_block_id>blocks_char_to_float_0_0</source_block_id>
     <sink_block_id>qtgui_time_sink_x_0</sink_block_id>
     <source_key>0</source_key>
+    <sink_key>2</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_char_to_float_0_1</source_block_id>
+    <sink_block_id>qtgui_time_sink_x_0</sink_block_id>
+    <source_key>0</source_key>
     <sink_key>1</sink_key>
   </connection>
   <connection>
@@ -1319,6 +1423,12 @@
   <connection>
     <source_block_id>blocks_stream_mux_0</source_block_id>
     <sink_block_id>blocks_char_to_float_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_stream_mux_0</source_block_id>
+    <sink_block_id>packetizer_tagged_stream_fix_0_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -1343,6 +1453,12 @@
   <connection>
     <source_block_id>packetizer_tagged_stream_fix_0</source_block_id>
     <sink_block_id>qtgui_time_sink_x_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>packetizer_tagged_stream_fix_0_0</source_block_id>
+    <sink_block_id>blocks_char_to_float_0_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
