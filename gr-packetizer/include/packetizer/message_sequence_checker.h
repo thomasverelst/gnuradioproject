@@ -29,7 +29,8 @@ namespace gr {
   namespace packetizer {
 
     /*!
-     * \brief <+description of block+>
+     * \brief Checks the sequence number of messages to check for dropped messages (used in combination with 
+     * the Extended Packet Decoder to check the sequence number of the packet header)
      * \ingroup packetizer
      *
      */
@@ -39,12 +40,11 @@ namespace gr {
       typedef boost::shared_ptr<message_sequence_checker> sptr;
 
       /*!
-       * \brief Return a shared_ptr to a new instance of packetizer::message_sequence_checker.
+       * \brief Checks the sequence number of messages to check for dropped messages (used in combination with 
+       * the Extended Packet Decoder to check the sequence number of the packet header)
        *
-       * To avoid accidental use of raw pointers, packetizer::message_sequence_checker's
-       * constructor is in a private implementation
-       * class. packetizer::message_sequence_checker::make is the public interface for
-       * creating new instances.
+       * \param num_key String indicating the message field name
+       * \param nb_bits Indicates the number of bits the header field has (to detect overflows)
        */
       static sptr make(const std::string &num_key, const int nb_bits = 12);
     };

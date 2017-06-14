@@ -1,6 +1,6 @@
 /* -*- c++ -*- */
 /* 
- * Copyright 2017 <+YOU OR YOUR COMPANY+>.
+ * Copyright 2017 Thomas Verelst, modified version of Header/Payload Demux block from GNU Radio (copyright Free Software Foundation, Inc).
  * 
  * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,10 +28,16 @@
 namespace gr {
   namespace packetizer {
     /*!
-     * \brief Header/Payload demuxer (HPD).
+     * \brief Preamble/Header/Payload demuxer (PHPD).
      * \ingroup packet_operators_blk
      *
      * \details
+     * This block is an extension of the Header/Payload Demux block, and adds support for preambles.
+     * Also, the payload length indicated by the packet header can be divided by a constant, to cope with 
+     * the difference between packet lengths in bits and payloads in symbols.
+     * 
+     * Header/Payload Demux description:
+     * 
      * This block is designed to demultiplex packets from a bursty transmission.
      * The typical application for this block is the case when you are receiving
      * packets with yet-to-determine length. This block will pass the header

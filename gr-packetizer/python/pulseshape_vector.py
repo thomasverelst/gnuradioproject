@@ -23,6 +23,9 @@ from gnuradio import gr
 from gnuradio import digital
 from gnuradio import blocks
 
+"""
+Applies the given pulse shaper filter (\param pulseshaper) on the given data (\param data).
+"""
 def pulseshape_vector(pulseshaper, data):
 
     tb = gr.top_block ("pulseshape_vector")

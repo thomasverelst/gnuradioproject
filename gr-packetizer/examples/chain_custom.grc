@@ -132,7 +132,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>digital.constellation_dqpsk()</value>
+      <value>digital.constellation_qpsk()</value>
     </param>
   </block>
   <block>

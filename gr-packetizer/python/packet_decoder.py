@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # 
-# Copyright 2017 <+YOU OR YOUR COMPANY+>.
+# Copyright 2017 Thomas Verelst.
 # 
 # This is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -28,7 +28,21 @@ import packetizer
 
 class packet_decoder(gr.hier_block2):
     """
-    docstring for block packet_decoder
+    Decodes packets which have been generated with the packet encoder. (format: preamble/header/payload)
+    Will output payload symbols (soft or hard output) and header data on the message port. 
+
+    \param preamble Sequence of modulated preamble symbols (BPSK: -1 and 1)
+    \param constel_header Constellation object for header
+    \param constel_payload Constellation object for payload
+    \param header_formatter Header formatter object
+    \param samp_rate Sample rate (optional for time tag)
+    \param diff_header Boolean indicating to use differential decoding for header
+    \param diff_payload Boolean indicating to use differential decoding for payload
+    \param triggertagname Name of tag that indicates the start of the packet (often set by frame sync)
+    \param do_costas Indicate whether to use Costas Loop for phase sync/carrier tracking
+    \param soft_output Use soft output (floats) or hard output (unpacked bytes with 1 bit/symbol)
+    \param do_whiten Indicate whether to dewhiten packet data (if whitened with packet encoder)
+    \param itemsize No effect yet. Input is always complex samples, output is always floats (for soft output) or unpacked bytes (1bit/symbol).
     """
     def __init__(self, preamble, constel_header, constel_payload, header_formatter, samp_rate=32000,  diff_header=False, diff_payload=False,triggertagname="corr_est", do_costas=False, soft_output=False, do_whiten=False, itemsize=1):
         gr.hier_block2.__init__(self,
@@ -38,7 +52,7 @@ class packet_decoder(gr.hier_block2):
         self.message_port_register_hier_out("header_data")
 
         if(soft_output == True and diff_payload == True):
-            print "WARNING: Packet Decocer: soft output with differential decoding of payload not supported! Soft output disabled"
+            print "WARNING: Packet Decoder: soft output with differential decoding of payload not supported! Soft output disabled"
             soft_output = False
 
         #Demux
