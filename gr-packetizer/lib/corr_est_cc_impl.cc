@@ -282,7 +282,7 @@ namespace gr {
         // Dynamic threshold
         // Calculate the average squared correlation magnitude of the input
         float detection = 0;
-        for(int k = 0; k < hist_len; k++) {
+        for(int k = 0; k < hist_len/4; k++) {
           detection += d_corr_mag[i+k];
         }
         detection /= static_cast<float>(hist_len);
@@ -394,11 +394,6 @@ namespace gr {
         // Skip ahead to the next potential symbol peak
         // (for non-offset/interleaved symbols)
         // Move detection threshold to next sample
-        int k = 0;
-        for(k=0;k<isps;k++){
-            ++i;
-           // detection += (d_corr_mag[i+hist_len-1]*d_pfa-d_corr_mag[i-1]*d_pfa)/static_cast<float>(hist_len);
-        }
         i+=isps;
       }
 

@@ -246,6 +246,10 @@ packet_encoder_impl::work(int noutput_items,
   // std::cout << "PACKET ENCODER: preamble_length " << d_preamble.size() << ", header length "<<header_length << ", payload length" << payload_length << ", padding length" << d_zero_padding << "\n";
   gr_complex* signal_symbols = new gr_complex[total_length];
   unsigned int index = 0;
+  for (unsigned int i = 0; i < d_zero_padding; i++) {
+    signal_symbols[index] = 0;
+    index += 1;
+  }
   for (unsigned int i = 0; i < d_preamble.size(); i++) {
     signal_symbols[index] = preamble_symbols[i];
     // std::cout << preamble_symbols[i] << "\n";
@@ -258,10 +262,6 @@ packet_encoder_impl::work(int noutput_items,
   }
   for (unsigned int i = 0; i < payload_length; i++) {
     signal_symbols[index] = payload_symbols[i];
-    index += 1;
-  }
-  for (unsigned int i = 0; i < d_zero_padding; i++) {
-    signal_symbols[index] = 0;
     index += 1;
   }
   delete[] preamble_symbols;
