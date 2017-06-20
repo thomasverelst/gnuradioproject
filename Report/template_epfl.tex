@@ -1,0 +1,180 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{subfig}
+\usepackage{multirow}
+\usepackage[a4paper, margin= 3cm]{geometry}
+
+
+\begin{document}
+\begin{titlepage}
+ \begin{center}
+% ____________________________________________________________________
+% Top of the page
+  \includegraphics[width=0.2\textwidth]{logo_epfl.png}\\[1cm]
+  % This part is to use if two school involved:
+  % \begin{minipage}{0.4\textwidth}
+  % \begin{flushleft} \large
+  % \includegraphics[width=0.45\textwidth]{logo_epfl.png}\\[1cm]
+  % \end{flushleft}
+  % \end{minipage}
+  % \begin{minipage}{0.4\textwidth}
+  % \begin{flushright} \large
+  % \includegraphics[width=0.45\textwidth]{logo_other_school.png}\\[1cm]   <---- Introduce other school logo here
+  % \end{flushright}
+  % \end{minipage}
+ 
+\Large \textsc{Master Project}\\[2cm] %or Semester Project
+
+% ____________________________________________________________________
+% title
+{ \huge \bfseries Latex template for student project accomplished in IPESE}\\[2cm]
+
+% ____________________________________________________________________ 
+% Author, supervisor and date
+\today\\[2cm]
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+YYYY YYYY
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisor:} \\
+Prof. F. Mar\'echal 
+\\[0.5cm]
+\emph{Assistant:} \\
+XXXX XXXX
+\end{flushright}
+\end{minipage}
+\vfill
+
+% ____________________________________________________________________ 
+% Bottom of the page
+\begin{minipage}{0.6\textwidth}
+\small{Industrial Process and Energy Systems Engineering}\\
+\small{Ecole Polytechnique F\'ed\'erale de Lausanne}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\begin{flushright}
+%\includegraphics[width=0.4\textwidth]{leni_systems.png} 
+\large{\textbf{\textit{IPESE}}}
+\end{flushright}
+\end{minipage}
+ \end{center}
+\end{titlepage}
+
+\newpage
+\begin{abstract}
+A brief introduction to latex will be made in this report. The main sources of information and the way to include figures, tables and equation will be shortly describe.
+\end{abstract}
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction}
+This report is a latex template for people making a master/semester project in the IPESE group. The purpose is not to deliver a latex tutorial since there is already a lot of documentation on the web (don't forget that google is your friend). Some more information can be found in \cite{wiki, tut}.\\
+The global structure (abstract, introduction, ...) and the purpose of each part is described in \cite{baumann,guidelines}. %This report can be downloaded on \url{http://leni.epfl.ch/index.php?option=com_content&task=view&id=349&Itemid=62}.
+
+\section{Bibliography}
+The references are stored in the file template.bib. Some examples are given concerning:
+\begin{itemize}
+ \item Books \cite{kehlhofer:combined-cycle}
+ \item Article \cite{bolland.kvamsdal.ea:comparison}
+ \item PhD Thesis \cite{bolland.kvamsdal.ea:comparison}
+\end{itemize}
+
+More information about how to correctly cite look at \url{http://citation.epfl.ch/}
+
+\section{Structure}
+The hierarchy in the latex code is:
+\section{Section}
+\subsection{Subsection}
+\subsubsection{Subsubsection}
+\paragraph{Paragraph}
+\subparagraph{Subparagraph}
+
+\section{Figures}
+Figures can be added the following way:
+\subsection{One figure}
+\label{subsect_1figure}
+If there is only one figure:
+\begin{figure}[H]
+ \begin{center}
+  \includegraphics[width=0.5\textwidth]{Pareto.png}
+  \caption{Example with one figure}
+  \label{fig_onefig}
+ \end{center}
+\end{figure}
+When inserting the figure \ref{fig_onefig} in the subsection \ref{subsect_1figure}, the "[H]" placed after "begin{figure}" allows to placed the figure where it appears in the text when combined with the package "float".
+
+\subsection{Two figures}
+\begin{figure}[H]
+  \begin{center}
+  \subfloat[][First figure]{\label{fig_pareto}\includegraphics[width=0.5\textwidth]{Pareto.png}}                
+  \subfloat[][Then another one]{\label{fig_system}\includegraphics[width=0.5\textwidth]{SOFCpresssimple_uncrt.png}}
+  \caption{Example with two figures}
+    \label{fig_2fig}
+  \end{center}
+\end{figure}
+
+\section{Table}
+The same trick ("[H]" with float package) can be used for table placement. The table \ref{table_example} shows different option for table, like multirow or multiline
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l|l|p{3cm}|}
+\hline
+Column title 1 & Column title 2 & Column title 3\\
+\hline
+\hline
+ Still column 1 & \multicolumn{2}{c|}{Joining column 2 and 3}\\
+\hline
+ \multirow{2}{*}{Joining line 1 and 2}
+            & line1 column2 & the width of this column is limited by p{3cm}\\
+            & line2 column2 & line2 column3\\
+\hline
+line3 column1 & line3 column2 & line3 column3 \\
+\hline
+\end{tabular}
+\caption{Example of table with multicolumn and multirow}
+\label{table_example}
+\end{center}
+\end{table}
+
+\section{Equation}
+There are several ways to include equations. Small expression can be included in the text, like $A=B+C$, by placing expression between two \$. However, by this way, equation won't be numbered.\\
+In other cases, equations can be written as following:
+\begin{equation}
+ t_{i,j}=\cfrac{P_j\cdot t_{tot}}{\sum_{j=1}^{n_{period}}P_j}
+\end{equation}
+Finally, the "split" environment allows to set equation on several line under the same numerotation as in equation \ref{equ_split}.
+\begin{equation}
+ \begin{split}
+  \max_X F(X,O,U)\\
+g(X,O,U) = 0\\
+h(X,O,U) \geqslant 0
+ \end{split}
+\label{equ_split}
+\end{equation}
+% equ sur 1/plusieurs lignes, et dans le texte
+
+\section{Recommendation}
+Here a few "tricks" to build and compile a latex file:
+\begin{enumerate}
+ \item Depending on the editor in use, it may be necessary to compile several times the latex file, so that the references of figures and tables appear correctly.
+ \item The bibliography has to be compiled separately on several editors.
+ \item As you can see, the references (citation like \cite{baumann}, figures like \ref{fig_onefig}, tables like \ref{table_example}, equation \ref{equ_split} and chapter like \ref{subsect_1figure}) are framed. This allows to move in the document by clicking on the link. Normally it does not appear when the document is printed, but if it is the case, the solution is to comment the package "hyperref".
+\end{enumerate}
+
+
+\newpage
+\bibliographystyle{plain}
+\bibliography{template}
+\end{document}

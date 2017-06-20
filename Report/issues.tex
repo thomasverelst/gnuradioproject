@@ -1,0 +1,58 @@
+\section{GNU Radio Challenges, Shortcomings and Lessons Learned }
+
+
+\subsection{Existing blocks}
+GNU Radio is open-source software and constantly in development. Blocks can behave inconsistently because they are mostly contributed by enthusiasts. For example, some blocks do not process tags well because the tagging system was introduced later. In addition, extensive documentation and examples are often lacking or they are outdated. \medskip
+
+
+GNU Radio has a steep learning curve, and it can be challenging to get an overview of all possibilities and features. In general, knowledge of GNU Radio API's and block development is very useful when implementing a system. Often it is only possible to get the desired functionality with a custom implementation. The knowledge of GNU Radio development is also useful when evaluating existing blocks.\medskip
+
+Several blocks have similar functionality. For example, blocks related to frame synchronization are: $Correlation\ Estimator$, $PN\ Correlator$, $Correlate\ and\ Sync$, $Simple\ Correlator$, $Correlate\ Access\ Code\ \-\ Tag\ Stream$, $Correlate\ Access\ Code\ -\ Tag$. % TODO Fix the misuse of latex code tags 
+Some of these blocks are undocumented, some have no examples and some of them do not work at all with the latest version of the framework. \medskip
+
+Blocks used for repacking bytes also demonstrate this, as \textit{Pack K bits}, \textit{Unpack K bits}, \textit{Packed to Unpacked} and \textit{Unpacked to Packed} do not propagate tags. The best implementation is the \textit{Repack Bits} block which works for both repacking and unpacking, and propagates tags.\medskip
+
+Often, parameters should be set by guessing an initial value and looking at the effect. Phase locked loops have  a loop bandwidth parameter which is not well defined and documentation says it should be set around $2*pi/100$. \medskip
+
+
+\subsection{Installing GNU Radio}
+
+Even the installation of GNU Radio can be challenging for a beginner. Although binaries for Windows exist, it is strongly recommended to use GNU Radio in Linux, especially when developing Out-of-Tree modules. Many dependencies and libraries are tedious to install under Windows. \medskip
+
+This project was made on Ubuntu, and one has to be careful when installing GNU Radio. The recommended way % TODO REF https://wiki.gnuradio.org/index.php/InstallingGR
+to install GNU Radio is via the gnuradio package from your distribution's standard repositories \cite{gr_install}. On Ubuntu 16.04, these binaries install the older GNU Radio 3.7.9. In order to get the most recent version, GNU Radio should be built from source.\medskip
+
+When installing from source, some optional dependencies might not be available, and GNU Radio will not explicitly notify this. During this project, the FEC Decoder block returned a debug message for every decoded packet. When transmitting at high throughput, the continuous flow of debug messages in the console made the GNU Radio Companion crash.\medskip
+
+This behavior is caused by the lack of the \textit{log4cpp} dependency. Although several ways to disable debug messages are proposed on the internet \cite{gr_logging} , the only short-term way that helped in this project was rebuilding GNU Radio with a parameter: % TODO source 
+\begin{minted}[frame=single,breaklines=true]{C}
+cmake -DENABLE_GR_LOG=off <srcdir>
+\end{minted}
+This solution is inconvenient and will also disable all other debug messages, except fatal errors.
+
+\subsection{Debug possibilities}
+Debugging input/output data is rather difficult in GNU Radio, especially when implementing a system in GNU Radio Companion. The common way to view signals is to attach a scope as output, but there is no convenient way to pause a system, to analyze the current state. A workaround is to add a slider to the GUI which controls the sample rate. While a sample rate of 0 does not have the desired effect, a sample rate of 1 does freeze the system. The tag positions are not always correctly displayed in the GUI plots when decreasing the sample rate to very low values. \medskip
+
+Systems lock up when the scheduler cannot balance the data flow in the system. This may happen when a block, that has two ports which consume the same amount of samples per time instant, receives data streams with a different number of samples per second. GNU Radio will not indicate the block that is causing problems. \medskip
+
+In general, it is challenging for beginners to locate the problem when something is not working. It could be the wrong use of an undocumented block, a wrong parameter or a problem with the block's implementation.
+
+\subsection{Block development}
+Block development uses the GNU Make to compile the code and install the blocks. GNU Radio provides an excellent beginner tutorial to learn coding blocks in both C++ and Python. The amount of tools and interfaces can be overwhelming. The \textit{gr\_modtool} facilitates the development of GNU Radio blocks by auto-generating the required config files, but sometimes minor adjustments have to be made manually.
+\begin{tight_itemize}
+\item Make: terminal commands, makelists
+\item SWIG: interface files
+\item GNU Radio development: several APIs for blocks and data transfer
+\item GRC: XML with Cheetah templates as an interface between Python and GRC
+\end{tight_itemize}
+Often, the trial-and-error involved in the process can be cumbersome. For example, the process when installing an Out-of-Order module consists of the following terminal commands:
+\begin{minted}[frame=single,breaklines=true]{C}
+cd /path/to/oot/module
+mkdir build
+cd build
+cmake ../
+make
+sudo make install
+sudo ldconfig
+\end{minted}
+When changing the block's main initializer in a C++ header file, these steps will not work if the project was already compiled before.  SWIG will throw an error mentioning the arguments in the header file are not correct. Beginners might think there is a problem with the C++ code, but in fact, the \textit{build} folder has to be removed in order to remove the old compiled files and caches.

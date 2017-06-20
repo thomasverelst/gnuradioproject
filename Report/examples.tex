@@ -1,0 +1,63 @@
+\section{Example circuits}
+This section describes the example circuits to test implemented blocks. The files are located in the $Examples$ folder in the Out-of-Tree module $gr$-$packetizer$
+
+\subsection{Basic test circuits}
+
+\subsubsection*{Mapping}
+\textit{test\_mapping.grc} is a basic example demonstrating mapping by using the \textit{Chunks to Symbols} block and decoding with the \textit{Constellation Decoder}.
+
+\subsubsection*{Time and phase synchronization}
+\textit{test\_time\_phase\_sync.grc} is an extension of mapping example. The symbols are shaped with a root raised cosine filter. A channel model is added to add a time offset, frequency offset, phase offset and noise to the signal. Time and phase synchronization is added with the Polyphase Clock Sync block and Costas Loop. A BER output is also provided to analyze the effects.
+
+
+\subsubsection*{Soft decoding}
+\textit{test\_soft\_decoder.grc} illustrates the use of the {Constellation Decoder} block versus the {Constellations Soft Decoder} block. An important thing to notice is that the bits should be repacked by MSB first (instead of the default LSB first), before mapping the bytes to symbols. The constellation receiver seems to output the decoded bits MSB-first.
+
+\subsubsection*{Forward Error Correction}
+\textit{test\_fec.grc} illustrates the use of the \textit{FEC Extended Tagged Encoder} and \textit{FEC Extended Tagged Decoder}. Note that the FEC Encoder expects a data stream of bytes with 1 significant bit per byte. The output of the encoder is manually mapped to soft bits (-1 and 1). \medskip
+
+\textit{test\_fec\_soft.grc} illustrates the combination of FEC and constellations encoding/decoding. Note that a CC Decoder object has been set for each FEC Decoder.
+
+\subsubsection*{Whitener}
+\textit{test\_whitener.grc} illustrates the use of the \textit{Tagged Stream Whitener} blocks.
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Packet encoder/decoder}
+\subsubsection*{Basic encoder/decoder}
+\textit{encdec\_basic.grc} implements the full-featured packet encoder and decoder using basic GNU Radio blocks. Note that his examples crashes after about 490 generated packets. This is due to a scheduling problem with the packet encoder part. \medskip
+
+%\subsubsection{Basic encoder/decoder with FEC}
+\textit{encdec\_basic\_fec.grc} implements a packet encoder and decoder combined with forward error correction, both with hard and soft demapping. Again, this example crashes after a few seconds.
+
+
+\subsubsection*{Packet encoder/decoder blocks }
+\textit{encdec\_custom.grc} uses the extended packet encoder/decoder blocks, for both hard and soft demapping. \medskip
+
+
+%\subsubsection{Packet encoder/decoder blocks with FEC}
+\textit{encdec\_custom\_fec.grc} uses the extended packet encoder/decoder blocks, for both hard and soft demapping in combination with forward error correction. Note that only the FEC Decoder that uses the soft output produces completely correct results. When using hard decoding, some decoding mistakes occur, even though the output data of the soft and hard demapper is exactly the same.
+
+\subsection{Communication chain}
+\subsection*{Communication chain with extended packet encoder/decoder blocks}
+\textit{chain\_custom.grc} implements the full communication chain with packet encoder, pulse shaper, channel modeler, carrier tracking, adaptive gain control, correlation estimator (preamble detector), time synchronization and the packet decoder (which includes phase synchronization).
+
+\subsubsection*{Communication chain with RX receiver built with fundamental blocks}
+\textit{chain\_rx\_debug.grc} implements the same communication chain as the previous example, except the carrier tracking. In this example, the packet decoder is built in fundamental blocks, in order to debug the individual components of the packet decoder.
+
+
+
+
+
+
+
+
+

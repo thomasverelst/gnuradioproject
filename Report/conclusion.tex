@@ -1,0 +1,27 @@
+\section{Conclusion}
+The main goal of this project was to become familiar with GNU Radio and implement a communication chain with an improved packet encoder/decoder pair. The combination of learning GNU Radio and wireless communication principles at the same time was the biggest challenge. \medskip
+
+Some software development in Python and C++ added diversity to the project work. A new Out-of-Tree module called \textit{packetizer} combines the blocks created during the project. We included several examples to demonstrate the blocks in the GNU Radio Companion. \medskip
+
+We implemented new blocks to expand the functionality of GNU Radio:
+\begin{tight_enumerate}
+\item \textit{Extended Packet Encoder}: creates packets from a given bit stream and outputs mapped symbols
+\item \textit{Extended Packet Decoder}: decodes packets received as symbols and outputs a bit stream
+\item \textit{Tagged Stream Fix}: removes unnecessary samples between packets in a tagged stream
+\item \textit{Message Sequence Checker}: checks for dropped packets and reports the packet loss rate
+\item \textit{Tagged Stream Whitener}: whitens or dewhitens a byte stream
+\item \textit{Pulse shape vector}: applies a pulse shaping filter on a given sequence of symbols
+\end{tight_enumerate}
+
+Some existing blocks have been modified:
+\begin{tight_enumerate}
+\item The \textit{Preamble/Header/Payload Demux} is an extension of the existing \textit{Header/Payload Demux} block. The extended block supports preambles.
+
+\item The \textit{Correlation Estimator 2} block solves some problems with the dynamic threshold of the existing \textit{Correlation Estimator} block. Preamble detection is more reliable now.
+\end{tight_enumerate}
+
+In terms of functionality, some new blocks would fit in the core of the GNU Radio framework. The \textit{Tagged Stream Fix} and \textit{Pulse shape vector} provide important functionality that is not yet possible with the current blocks of GNU Radio. The \textit{Extended Packet Encoder/Decoder} blocks are useful to quickly build a communication chain. They are a replacement for the deprecated \textit{Packet Encoder} and \textit{Packet Decoder} blocks. The improved blocks are compatible with their original implementation, so existing systems do not need to be adjusted.
+
+\medskip
+
+The blocks are not ready to directly contribute them to GNU Radio, because it must be verified that they meet all the requirements for blocks in the GNU Radio core \cite{gr_development}. In particular, some code cleanup has to be done, extra unit tests should be created and compatibility with the upcoming version of GNU Radio should be tested. 
